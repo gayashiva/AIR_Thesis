@@ -17,3 +17,5 @@ example-thesis/cleanthesis.sty
 dist
 *.out.ps
 *.dvi
+*.pdf
+*.synctex*
