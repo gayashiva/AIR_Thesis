@@ -21,10 +21,91 @@ storage function of the cryosphere, especially in spring. In order to cope with 
 water harvesting technologies and community arrangements have been developed
 \citep{nusserSociohydrologyArtificialGlaciers2019} (see Fig. \ref{fig:AIRdesigns}). 
 
-In this chapter, we focus on the ice terrace and ice stupa form of water harvesting technologies that are used
-to conserve winter run-off water for utilization during summer. Through an analysis of their application in
-Ladakh, we detail their construction process and cost. Then, we propose new strategies through which their
-water loss, maintenance effort and cost can be reduced.
+In this chapter, we focus on the ice stupa form of AIRs and provide construction strategies to reduce their
+water-use efficiency, maximum ice volume and maintenance effort
+
+\section{Ice stupas}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=12cm]{figs/IS_example.jpg}
+
+\caption{Ice stupa of Shara}
+
+\label{fig:ISexample}
+\end{figure}
+
+Ice stupas were invented by Sonam Wangchuk in 2013 \cite{wangchukIceStupaArtificial2014} to provide a much
+cheaper alternative to achieve water storage compared to ice terraces. Ice stupas can also be placed much closer
+to the plantations since they absorb lesser solar radiation per unit volume compared to ice terraces due to
+their conical shape. However, the typical volume range of ice stupas (see Fig. \ref{fig:airs_ladakh}) are also
+much smaller than ice terraces. Over the past decade, several ice stupas have been built to supplement
+irrigation water supply of mountain villages in India \citep{wangchukIceStupaCompetition2020,
+palmerStoringFrozenWater2022, aggarwalAdaptationClimateChange2021}, Kyrgyzstan
+\citep{bbcnewsBrightArtificialGlacier2020} and Chile \citep{reutersConservationistsChileAim2021}. 
+
+\subsection{Construction strategy and its limitations}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=8cm]{figs/IS_science.jpg}
+
+\caption{The construction process of ice stupas. Diagrams by: Francesco Muzzi }
+
+\label{fig:ISconstruction}
+\end{figure}
+
+A typical AIR (see Fig. \ref{fig:ISexample}) simply requires a fountain nozzle mounted on a supply pipeline. The
+water source is usually a glacial stream. Due to the altitude difference between the pipeline input and fountain
+output, water ejects from the fountain nozzle as droplets which freeze under subzero winter conditions. The
+fountain is manually activated during winter nights. The fountain nozzle is raised through the addition of metal
+pipes when significant ice accumulates below (see Fig. \ref{fig:ISconstruction}).  Typically, a dome of branches
+is constructed around the metal pipes so that pipe extensions can be done from within this dome. Threads, tree
+branches and fishing nets are used to guide and accelerate the ice formation.
+
+One of the common problems with AIR construction systems is related to fountain scheduling. Fountain scheduling
+is simply answering the questions of “When do we spray?”, “How much do we spray?” and “How long do we spray?”.
+Starting a fountain spray too early, spraying too much water or running a fountain spray too long might lead to
+overwatering. At the very least, this practice wastes water.  Similarly, starting the fountain spray too late,
+spraying too little water or not running the system long enough might lead to underwatering and can cause
+reduced ice volumes.
+
+Paper I has shown that traditional construction systems suffer from overwatering. In order to avoid this issue,
+it is important to understand surface freezing rates, which can be calculated by means of the full energy
+balance model developed in the previous chapter. This model requires an accurate estimation of fountain spray
+radius to produce recommended discharge rates. In theory, such an estimation is possible by modelling the
+projectile motion of water droplets using fountain characteristics like aperture diameter, and discharge rate.
+However, in practice, this estimation also depends on the relative importance of wind-driven redistribution
+effects in determining the fountain spray radius. Therefore, estimating the fountain spray radius requires a
+better understanding of the relative contribution of these two processes.
+
+There are some practical issues that need to be addressed before dealing with the fountain scheduling processes.
+For example, in the case of the Indian AIR, the fountain discharge rate could have been halved since they were
+always two times higher than the modelled freezing rate (paper I). However, in practice, reduction of discharge
+rate could increase the maintenance cost due to higher risk of freezing events in the fountain pipeline.
+
+An optimum construction strategy, therefore, should first prevent the occurrence of freezing events in the
+fountain pipeline. These events can be prevented by setting a minimum threshold for the recommended discharge
+rate. Additionally, recommended discharge rate needs to be sensitive to constraints on the water supply or
+weather of the construction site. For example, locations limited by their water supply like Ladakh, India
+would prioritize water use efficiency whereas those limited by the duration of their favourable weather windows
+like Guttannen, Switzerland would prioritize maximum ice volume. Accordingly, we use two types of model
+parameter optimizations that prevent underwatering and overwatering to attain higher ice volumes and higher
+water use efficiency respectively.
+
+However, manually adjusting the fountain discharge rate is not practical due to two reasons- Firstly, this would
+involve constant adjustments of discharge rates in response to the significant diurnal and seasonal variations
+of the freezing rates. Secondly, frequent pipeline water drainage is required to avoid water losses. Therefore,
+operation of scheduled fountains via automation systems is preferred to reduce the long-term maintenance costs.
+
+% In this chapter, we study the performance of two AIRs produced with and without the use of automated fountain
+% scheduling strategies but exposed to identical meteorological conditions. The specific objectives of this study
+% are to compare the water-use efficiency, maximum ice volume and maintenance effort between these two
+% construction strategies.
+
+% Then, we discuss how existing construction strategies for the ice terrace and ice stupa form of AIRs can be improved. Through an analysis
+% of their application in Ladakh, we also compare their water storage and cost. Then, we propose new strategies
+% through which their water loss, maintenance effort and cost can be reduced.
 
 \begin{figure}[htb]
 \centering
@@ -32,6 +113,34 @@ water loss, maintenance effort and cost can be reduced.
 \caption{Adapted from: \cite{nusserSociohydrologyArtificialGlaciers2019}}
 \label{fig:AIRdesigns}
 \end{figure}
+
+
+\subsection{Comparison of AIR construction strategies}
+
+Table \ref{tab:mb} shows how the two different fountain scheduling strategies influence the mass and energy balance
+of the respective AIR.  The overall impact of the radiation fluxes (long-wave and short-wave) and the
+turbulent fluxes (sensible and latent) on the freezing and melting energies is determined from their 
+energy turnover. The energy turnover is calculated as the sum of energy fluxes in absolute values (see Table
+\ref{tab:mb}). 
+
+Fountain scheduling reduced the fountain discharge input and fountain wastewater output by an order of
+magnitude. However, this is not resulting in an appreciable difference in the volume evolution of the automated
+and traditional AIRs as shown in Fig. \ref{fig:simvsreal}. This is due to two counteracting surface processes
+during fountain spray: (a) dampening of albedo to ice albedo and (b) absorption of the heat energy of the
+fountain water droplets. The temporal variation of the magnitude of these processes are shown in Fig.
+\ref{fig:dis_processes}.
+
+There is a considerable difference in the contribution of the shortwave radiation due to the effect of process
+(a). Even though the unscheduled fountain was active for a much longer duration, the frequent snowfall events
+counteracted the albedo feedback of its fountain discharge. In contrast, the albedo of the automated AIR was
+reduced by late fountain spray events particularly in the months of March and April as shown in Fig.
+\ref{fig:dis_processes}. These poorly timed fountain spray events occurred because the global solar radiation
+diurnal variation of the automation system is calibrated based on values for the month of February. Therefore,
+poor calibration of the automation system resulted in an increased impact of shortwave radiation on the
+automated AIR. Similarly, the fountain discharge heat flux for the traditional AIR was enhanced due to process
+(b). The higher discharge quantity of the unscheduled fountains and its longer duration were responsible for the
+higher contribution of fountain discharge heat flux in the overall energy turnover. Therefore, higher melt of
+the automated AIR due to process (a) counteracted the higher melt of the traditional AIR due to process (b).
 
 \section{Ice terraces}
 
@@ -126,7 +235,7 @@ terraces, therefore, were prohibitive for widespread adoption.
 
 Ice stupas were invented by Sonam Wangchuk in 2013 \cite{wangchukIceStupaArtificial2014} to provide a much
 cheaper alternative to achieve water storage compared to ice terraces. Ice stupas can also be placed much closer
-to the plantations since they absorb lesser solar radiation per unit volume compared o ice terraces due to their
+to the plantations since they absorb lesser solar radiation per unit volume compared to ice terraces due to their
 conical shape. However, the typical volume range of ice stupas (see Fig. \ref{fig:airs_ladakh}) are also much
 smaller than ice terraces. Around 26 villages in Ladakh \cite{wangchukIceStupaCompetition2020} have integrated
 ice stupas in their water resource management strategy.
