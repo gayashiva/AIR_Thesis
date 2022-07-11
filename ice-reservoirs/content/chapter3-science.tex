@@ -127,13 +127,13 @@ wastewater of the AIR. In each hourly time step, the model uses the AIR surface 
 balance calculations to estimate its ice volume, surface temperature and wastewater as shown in Fig.
 \ref{fig:schema}.
 
-\begin{figure}
-	\begin{center}
-		\includegraphics[width=10 cm]{figs/Figure_3.jpg}
-	\end{center}
-	\caption{Model schematic showing the workflow used in the model at every time step. }
-	\label{fig:schema}
-\end{figure}
+% \begin{figure}
+% 	\begin{center}
+% 		\includegraphics[width=10 cm]{figs/Figure_3.jpg}
+% 	\end{center}
+% 	\caption{Model schematic showing the workflow used in the model at every time step. }
+% 	\label{fig:schema}
+% \end{figure}
 
 \subsection{Surface area calculation} \label{sec:shape}
 
@@ -200,14 +200,14 @@ Icestupa at each time step $i$ can be determined by considering the following ru
 
 \subsection{Energy balance calculation} \label{sec:energy}
 
-\begin{figure}
-	\begin{center}
-		\includegraphics[width=10 cm]{figs/Figure_4.jpeg}
-	\end{center}
-	\caption{Shape variables of the AIR. $r_{cone}$ is the radius, $h_{cone}$ is the height, $j_{cone}$ is the
-		thickness change and $s_{cone}$ is the slope of the ice cone. $r_F$ is the spray radius of the fountain.}
-	\label{fig:shape}
-\end{figure}
+% \begin{figure}
+% 	\begin{center}
+% 		\includegraphics[width=10 cm]{figs/Figure_4.jpeg}
+% 	\end{center}
+% 	\caption{Shape variables of the AIR. $r_{cone}$ is the radius, $h_{cone}$ is the height, $j_{cone}$ is the
+% 		thickness change and $s_{cone}$ is the slope of the ice cone. $r_F$ is the spray radius of the fountain.}
+% 	\label{fig:shape}
+% \end{figure}
 
 We approximate the energy balance at the surface of an AIR by a one-dimensional description of energy fluxes
 into and out of a (thin) layer with thickness $\Delta x$:
@@ -644,16 +644,16 @@ surface layer thickness. The RMSE between the drone surveys and the model ice vo
 surface layer thickness are shown in Fig. \ref{fig:param_hist} (b). The optimum value of $\Delta x$ was found to
 be 45 $mm$ and 65 $mm$ with an RMSE of 9 $m^3$ and 30 $m^3$ for CH21 and IN21 AIRs respectively.
 
-\begin{figure}
-	\begin{center}
-		\includegraphics[width=\linewidth]{Figures/Figure_5.jpg}
-	\end{center}
-  \caption{(a) Total-order sensitivities of all the uncertain parameters of the model with net water loss as the
-  objective. (b) The calibration of the sensitive parameter, $\Delta x$ with the RMSE between the drone and
-model estimates of the ice volume. The dots denote the optimum values. The estimates from the Swiss and Indian
-AIRs are denoted with blue and red colors respectively. }
-	\label{fig:param_hist}
-\end{figure}
+% \begin{figure}
+% 	\begin{center}
+% 		\includegraphics[width=\linewidth]{Figures/Figure_5.jpg}
+% 	\end{center}
+%   \caption{(a) Total-order sensitivities of all the uncertain parameters of the model with net water loss as the
+%   objective. (b) The calibration of the sensitive parameter, $\Delta x$ with the RMSE between the drone and
+% model estimates of the ice volume. The dots denote the optimum values. The estimates from the Swiss and Indian
+% AIRs are denoted with blue and red colors respectively. }
+% 	\label{fig:param_hist}
+% \end{figure}
 
 \subsection{Weather and fountain forcing uncertainty quantification}
 
@@ -697,16 +697,16 @@ There was also one drone survey of the CH20 AIR volume for validation purposes (
 RMSE of that observation with the modelled volume was $19\, m^3$ which is 18 \% of the maximum simulated ice
 volume of CH20 AIR.
 
-\begin{figure}
-	\begin{center}
-		\includegraphics[width=\linewidth]{Figures/Figure_6.jpg}
-	\end{center}
-	\caption{Simulated ice volume during the lifetime of the AIRs (blue curve). The shaded regions (light blue and
-		orange) represent the 90\% prediction interval of the AIR ice volume caused by the variations in weather and
-    fountain forcing parameters, respectively. Violet points indicate the drone ice volume observations.  The grey
-  dashed line represents the observed expiry date for each AIR.  }
-	\label{fig:results}
-\end{figure}
+% \begin{figure}
+% 	\begin{center}
+% 		\includegraphics[width=\linewidth]{Figures/Figure_6.jpg}
+% 	\end{center}
+% 	\caption{Simulated ice volume during the lifetime of the AIRs (blue curve). The shaded regions (light blue and
+% 		orange) represent the 90\% prediction interval of the AIR ice volume caused by the variations in weather and
+%     fountain forcing parameters, respectively. Violet points indicate the drone ice volume observations.  The grey
+%   dashed line represents the observed expiry date for each AIR.  }
+% 	\label{fig:results}
+% \end{figure}
 
 \section{Model extensions}
 
