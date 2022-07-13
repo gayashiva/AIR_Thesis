@@ -47,7 +47,7 @@ feature points can be detected and matched in the vicinity of the AIR. Thus, we 
 $\pm 10 \%$ for all the AIR observations to accommodate for this.
 
 \section{Ladakh AIRs dataset}
-\label{sec:appendix:sec1}
+\label{sec:ladakh_data}
 
 \Blindtext[1][1]
 
@@ -61,6 +61,104 @@ $\pm 10 \%$ for all the AIR observations to accommodate for this.
 	\label{tab:table1}
 	\caption{This is a caption text.}
 \end{table}
+
+\section{Model forcing based on water-use efficiency and maximum ice volume objectives}
+\label{sec:auto_software}
+
+The model complexity and data requirement \citep{balasubramanianInfluenceMeteorologicalConditions2022} were
+reduced through assumptions that optimise for the ice volume or the water-use efficiency objectives. The
+corresponding model assumptions are called IVOM and WEOM respectively. We define the freezing rate and melting
+rate as the positive and negative mass change rate, respectively. Assumptions are chosen, based on whether they
+overestimate/underestimate the freezing rate. IVOM assumptions overestimates freezing rate whereas WEOM
+assumptions underestimates freezing rate. We describe these two kinds of assumptions applied on each of the
+energy balance components below: 
+
+\subsection{Surface Area $A_{cone}$ assumptions}
+
+Determination of the surface area during the accumulation period is achieved by assuming a constant ice cone
+radius equal to the fountain spray radius. The surface area scales the freezing rate of the AIR. Hence, for the
+IVOM version, we assume the maximum possible slope of 1 for the ice cone or in other words $h_{cone} = r_{F}$.
+Therefore, area is estimated as:  
+
+\begin{equation} A_{cone} =\sqrt{2} \cdot \pi \cdot r_{F}^2  \end{equation}
+
+Similarly, for the water-use efficiency objective, the area of the conical AIR is approximated to the area of
+its circular base. Therefore, area is estimated as:
+
+\begin{equation} A_{cone} =\pi \cdot r_{F}^2  \end{equation}
+
+\subsection{Net shortwave radiation \texorpdfstring{$q_{SW}$}{Lg} assumptions}
+\label{sec:SW}
+
+The net shortwave radiation $q_{SW}$ is computed as follows:
+
+\begin{equation} 
+q_{SW} = (1- \alpha) \cdot ( SW_{direct} \cdot f_{cone} + SW_{diffuse})
+\label{eqn:SW} 
+\end{equation}
+
+where $\alpha$ is the albedo value ; $SW_{direct}$ is the direct shortwave radiation; $SW_{diffuse}$ is the
+diffuse shortwave radiation and $f_{cone}$ is the solar area fraction.
+
+The data requirement was reduced by estimating the global shortwave radiation and pressure directly using the
+location's coordinates and altitude through the solar radiation model described in
+\citet{holmgrenPvlibPythonPython2018}. The algorithm used to estimate the clear-sky global radiation is
+described in \citet{ineichenBroadbandSimplifiedVersion2008}.  
+
+The diffuse and direct shortwave radiation is determined using the estimated global solar radiation as follows:
+
+\begin{equation}
+\begin{split}
+  SW_{diffuse} &= cld \cdot SW_{global}\\
+  SW_{direct} &= (1-cld) \cdot SW_{global}
+\end{split}
+\end{equation}
+
+where $cld$ is the cloudiness factor. $cld$ is assumed to be 1 and 0 for the water-use efficiency and ice volume
+objective respectively.
+
+We ignore the variations in the albedo and assume it to be equal to snow albedo and ice albedo for the  ice
+volume and water-use efficiency objective, respectively.
+
+The solar area fraction $f_{cone}$ of the ice structure exposed to the direct shortwave radiation depends on the
+shape considered. It is computed as
+
+\begin{equation}
+		f_{cone} =\frac{(0.5 \cdot r_{cone} \cdot h_{cone}) \cdot cos \theta_{sun} +(\pi \cdot
+			{(r_{cone})}^2/2) \cdot sin \theta_{sun} }{\pi \cdot r_{cone} \cdot ({(r_{cone})}^2+{(h_{cone})}^2)^{1/2}}\\
+\end{equation}
+
+For the ice volume objective, since we assume the slope of the cone to be 1, $f_{cone}$ is determined as follows:
+
+\begin{equation}
+		f_{cone} =\frac{ cos \theta_{sun} + \pi \cdot sin \theta_{sun} }{2\sqrt{2} \cdot \pi }
+\end{equation}
+
+Similarly, for the water-use efficiency objective, since we assume the slope of the cone to be negligible, we get:
+
+\begin{equation}
+		f_{cone} =\frac{ sin \theta_{sun} }{2 }
+\end{equation}
+
+\subsection{Net Longwave radiation \texorpdfstring{$q_{LW}$}{Lg} assumptions} 
+
+We assume $T_{ice} = 0 \degree C$ in order to determine outgoing longwave radiation. Since it is challenging to
+constrain the minimum ice temperature, we maintain this assumption for both our objectives. However, in order to
+estimate atmospheric emissivity, we again assume $cld$ to be 1 and 0 for the water-use efficiency and ice volume
+objective respectively.
+
+\subsection{Turbulent fluxes assumptions} \label{sec:Qs}
+
+Turbulent fluxes estimation depend on the slope of the cone through the $\mu_{cone}$ parameter. As suggested 
+by \citet{oerlemansBriefCommunicationGrowth2021}, we estimated this parameter as follows:
+
+\begin{equation}
+  \mu_{cone} =1 + s_{cone}/2
+\end{equation}
+
+Hence, the $\mu_{cone}$ parameter takes values of 1.5 and 1 for the ice volume and water-use efficiency
+objective respectively.  Since turbulent fluxes impact both the freezing and the melting rates, this assumption
+may not favor the corresponding objectives for certain sites.
 
 \section{Appendix Section 2}
 \label{sec:appendix:sec2}

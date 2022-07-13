@@ -13,13 +13,15 @@ reduction possible through use of cheaper pipeline materials and sizes. Water su
 real-time weather conditions can dramatically improve water-use efficiency. However, constant water supply is
 provided for fountain operation despite the significant diurnal and seasonal variation of weather conditions.
 
-Among the above optimization issues, the one that can potentially increase the efficacy of the technology
-several fold and within the reach of this thesis is water supply management through fountain scheduling.
-Fountain scheduling is simply answering the questions of “When do we spray?”, “How much do we spray?” and “How
-long do we spray?”. Starting a fountain spray too early, spraying too much water or running a fountain spray too
-long might lead to overwatering. At the very least, this practice wastes water.  Similarly, starting the
-fountain spray too late, spraying too little water or not running the system long enough might lead to
-underwatering and can cause reduced ice volumes.
+\section{Fountain scheduling strategies for AIR water supply management}
+
+Among the above optimization issues, water supply management is the only one where the methodologies developed
+in this thesis can be applicable. Water supply management can be achieved through fountain scheduling. Fountain
+scheduling is simply answering the questions of “When do we spray?”, “How much do we spray?” and “How long do we
+spray?”. Starting a fountain spray too early, spraying too much water or running a fountain spray too long might
+lead to overwatering. At the very least, this practice wastes water.  Similarly, starting the fountain spray too
+late, spraying too little water or not running the system long enough might lead to underwatering and can cause
+reduced ice volumes or freezing of water supply pipelines.
 
 Paper I has shown that traditional construction systems suffer from overwatering. In order to avoid this issue,
 it is important to understand surface freezing rates, which can be calculated by means of the full energy
@@ -55,7 +57,18 @@ AIRs studied in previous winters were quantified using model simulations.
 \label{fig:2AIR}
 \end{figure}
 
-\section{Benefits of fountain scheduling: A case study}
+\begin{figure}[htb]
+\includegraphics[width=12cm]{figs/disvstemp.png}
+\caption{Temperature and discharge measurements of the two fountains at the Guttannen construction site.}
+\label{fig:disvstemp}
+\end{figure}
+
+\begin{figure}[htb]
+\includegraphics[width=12cm]{figs/auto_validation.png}
+\caption{Volume validation of the scheduled and unscheduled fountain construction strategies.} 
+\label{fig:auto_validation} \end{figure}
+
+\subsection{Benefits of fountain scheduling}
 
 The two AIRs built using a traditional and automated construction strategy are shown in Fig. \ref{fig:2AIR}. We
 found that overwatering by unscheduled fountains not just increased the fountain wastewater production but also
@@ -79,7 +92,6 @@ locations across two winters are presented in Fig. \ref{fig:wue} (a). Four exper
 circles) are shown together with five simulated values (highlighted by squares).  The experimental values were
 taken from the IN21 and CH21 AIRs studied in paper I and
 the CH22 AIRs presented in paper II. 
-
 
 The water-use efficiency of all the unscheduled fountains are below 20 \%. In general, the water-use efficiency
 increases more than three folds when the weather-sensitive or water-sensitive fountains are used in both
