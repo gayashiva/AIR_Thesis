@@ -3,6 +3,7 @@
 \chapter{Appendix}
 \label{sec:appendix}
 
+
 \section{Drone data processing methodology}
 \label{sec:drone_method}
 
@@ -46,6 +47,78 @@ There is temporal and spatial uncertainty associated with this process. Weather 
 of each drone survey variably. Moreover, since ice/snow surfaces do not have many identifiable features, few
 feature points can be detected and matched in the vicinity of the AIR. Thus, we attach a high uncertainty of
 $\pm 10 \%$ for all the AIR observations to accommodate for this.
+
+\section{Sensitivity and uncertainty analysis} \label{sec:uncertainpy}
+In this section, we summarise the theory behind the methods for uncertainty quantification and sensitivity
+analysis used. For detailed explanation of this methodology, see \cite{uncertainpy_2018}.
+
+\subsection{Problem definition}
+Consider our model $U$ that depends on timestep $i$, has $d$ uncertain parameters $Q = [Q_1, Q_2, \dots, Q_d]$, and
+gives output $V_{ice}$:
+
+\begin{equation}
+V_{ice} = U(i,Q)
+\end{equation}
+
+The output $V_{ice}$ can have any value within the output space and has an unknown probability density function
+$\rho_{V_{ice}}$. The goal of our uncertainty quantification is to describe the unknown $\rho_{V_{ice}}$ through
+statistical metrics.
+
+We assume that all these parameters are statistically independent from each other and have a uniform probability
+density function $\rho_{Q_j}$. The joint multivariate probability density function for the uncertain parameters
+is then:
+
+\begin{equation}
+\rho_{Q} = \prod_{j = 1}^{d} \rho_{Q_j}
+\end{equation}
+
+As mentioned, the goal of an uncertainty quantification is to describe the unknown distribution of the model
+output through statistical metrics. A useful metric is the $(100 \cdot x)$-th percentile $P_x$ of $V_{ice}$,
+which defines a value below  which $100 \cdot x$ percent of the model outputs are located. We can combine two
+percentiles to create a prediction interval, which is a range of values within which a $100 \cdot x$
+percentage of the outputs $V_{ice}$ occur. In our methodology, we use the 90 \% prediction interval $I^k$, as
+the metric to compare the uncertainties of a given set of parameters $Q^k$. This is defined as:  
+
+\begin{equation}
+I^k = [P_{(0.9/2)}, P_{(1-0.9/2)}]
+\end{equation}
+
+\subsection{Sensitivity analysis}
+
+We use a variance-based sensitivity analysis and compute the commonly considered Sobol sensitivity indices
+(Sobol, 1990). The Sobol sensitivity indices quantify how much of the variance in the model output each
+uncertain parameter is responsible for. There are several types of Sobol indices. The first order Sobol
+sensitivity index $S_j$ measures the direct effect each parameter has on the variance of the model. Higher order
+Sobol indices give the sensitivity due to interactions between a parameter $Q_j$ and various other parameters.
+The total Sobol sensitivity $S_{T_{j}}$ includes the sensitivity of both first-order effects, as well as the
+sensitivity due to interactions between a given parameter $Q_j$ and all combinations of the other
+parameters. The sum of the total Sobol sensitivity indices is equal to or greater than one, and is only equal to
+one if there are no interactions between the parameters. Our goal is to use sensitivity analysis to fix
+parameters with high sensitivity, so the total-order Sobol indices are an appropriate metric.
+
+\subsection{Polynomial Chaos Expansions}
+
+A recent mathematical framework for efficient uncertainty quantification and sensitivity analysis is that of
+polynomial chaos expansions (\cite{Xiu_2005}). This method calculates the same statistical metrics as the Monte
+Carlo method but typically much faster.
+
+The general idea behind polynomial chaos expansions is to approximate the model $U$ with a polynomial expansion
+$\hat{U}$ : 
+
+\begin{equation} U \approx \hat{U}(i, Q) = \sum_{n=0}^{N_p-1} c_n(i) \phi_n(Q) \end{equation}
+
+where $\phi_n$ are polynomials, and $c_n$ are expansion coefficients. The number of expansion factors $N_p$ is
+given by
+
+\begin{equation}
+  N_p = \binom{d+p}{p}
+\end{equation}
+
+where $p$ is the polynomial order. 
+
+The first and total-order indices can also be calculated directly from the polynomial chaos expansion. On the
+other hand, the $90\, \%$ prediction interval ($I$) must be estimated by using $\hat{U}$ as a surrogate
+model.
 
 \section{Ladakh AIRs dataset}
 \label{sec:ladakh_data}

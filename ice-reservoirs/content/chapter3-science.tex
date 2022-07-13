@@ -48,14 +48,13 @@ average summer rainfall between July and September reaches 37.5 $mm$, the averag
 January and March amounts to 27.3 $ mm$ and falls almost entirely as snow. AIRs were constructed here as part of
 the Ice Stupa Competition by the Himalayan Institute of Alternatives, Ladakh (HIAL). 
 
-% \begin{figure}
-%   \centering
-% 	\includegraphics[width=12 cm]{figs/2AIRs.jpg}
-%   \caption{The Swiss and Indian AIRs were 5 $m$ and 13 $m$ tall on January 9 and March 3, 2021 respectively. Picture
-% credits: Daniel Bürki (left) and Thinles Norboo (right)} 
-% \label{fig:2AIRs} 
-
-% \end{figure}
+\begin{figure}
+  \centering
+	\includegraphics[width=12 cm]{figs/2AIRs.jpg}
+  \caption{The Swiss and Indian AIRs were 5 $m$ and 13 $m$ tall on January 9 and March 3, 2021 respectively. Picture
+credits: Daniel Bürki (left) and Thinles Norboo (right)}
+\label{fig:2AIRs}
+\end{figure}
 
 \subsection{Meteorological data}
 
@@ -72,14 +71,15 @@ period as $\mu \pm \sigma$. }
 
 	\label{tab:Observations}
 	\begin{tabular}{|lllll|}
-		\textbf{Name}               & \textbf{Symbol} & \textbf{IN21} & \textbf{CH21} & \textbf{Units}   \\ 
+    \hline
+		\textbf{Name}               & \textbf{Symbol} & \textbf{IN21} & \textbf{CH21} & \textbf{Units}   \\ \hline
 		Air temperature             & $T_a    $       & $0 \pm 7$     & $2 \pm 6$     & $\degree C$      \\
 		Relative humidity           & $RH     $       & $35 \pm 20$   & $79 \pm 18$   & \%               \\
     Wind speed                  & $v_a        $   & $3 \pm 1$     & $2 \pm 2$     & $m/s$            \\
 		Direct Shortwave            & $SW_{direct} $  & $246 \pm 333$ & $80 \pm 156$  & $W\,m^{-2}$      \\
 		Diffuse Shortwave           & $SW_{diffuse}$  & $0 \pm 0$     & $58 \pm 87$   & $W\,m^{-2}$      \\
 		Hourly Precipitation        & $ppt        $   & $0 \pm 0$     & $139 \pm 457$ & $mm$             \\
-		Pressure                    & $p_a         $  & $623 \pm 3$   & $794 \pm 9$   & $hPa$            \\
+		Pressure                    & $p_a         $  & $623 \pm 3$   & $794 \pm 9$   & $hPa$            \\\hline
 	\end{tabular}
 \end{table}
 
@@ -101,15 +101,16 @@ the observed ice radius formed from the fountain water droplets is denoted as sp
   \caption{List of all the studied AIRs. The study period starts when the fountain was first switched on
   (denoted as Start Date) and ends when the respective AIR either melted or broke into several ice blocks
 (denoted as Expiry Date). }
-
 	\label{tab:AIRs}
 	\begin{tabular}{|lllll|}
-		\textbf{Name}     & \textbf{Start Date} & \textbf{Expiry Date} & \textbf{No. of flights} & \textbf{Spray radius} \\
-    Traditional CH20  &  & & 2 & \\
+    \hline
+		\textbf{Name}     & \textbf{Start Date} & \textbf{Expiry Date} & \textbf{No. of flights} & \textbf{Spray
+    radius} \\ \hline
+    Traditional CH20  & Jan 3 2020 & Apr 6 2020 & 2 & 7.7 $m$ \\
     Traditional CH21  & Nov 22 2020   & May 10 2021 & 8 & 6.9 $m$ \\
     Traditional IN21  & Jan 18 2021   & June 20 2021 & 6 & 10.2 $m$ \\
-    Traditional CH22  & Dec 8 2021 & April 12 2022 & 8 & \\
-		Automated CH22  &  Dec 8 2021 & April 12 2022 & 6 & \\
+    Traditional CH22  & Dec 8 2021 & April 12 2022 & 8 & 4.1 $m$ \\
+		Automated CH22  &  Dec 8 2021 & April 12 2022 & 6 & 4.8 $m$ \\ \hline
 	\end{tabular}
 \end{table}
 
@@ -127,13 +128,13 @@ wastewater of the AIR. In each hourly time step, the model uses the AIR surface 
 balance calculations to estimate its ice volume, surface temperature and wastewater as shown in Fig.
 \ref{fig:schema}.
 
-% \begin{figure}
-% 	\begin{center}
-% 		\includegraphics[width=10 cm]{figs/Figure_3.jpg}
-% 	\end{center}
-% 	\caption{Model schematic showing the workflow used in the model at every time step. }
-% 	\label{fig:schema}
-% \end{figure}
+\begin{figure}
+	\begin{center}
+		\includegraphics[width=10 cm]{figs/model_schematic.jpg}
+	\end{center}
+	\caption{Model schematic showing the workflow used in the model at every time step. }
+	\label{fig:schema}
+\end{figure}
 
 \subsection{Surface area calculation} \label{sec:shape}
 
@@ -200,14 +201,14 @@ Icestupa at each time step $i$ can be determined by considering the following ru
 
 \subsection{Energy balance calculation} \label{sec:energy}
 
-% \begin{figure}
-% 	\begin{center}
-% 		\includegraphics[width=10 cm]{figs/Figure_4.jpeg}
-% 	\end{center}
-% 	\caption{Shape variables of the AIR. $r_{cone}$ is the radius, $h_{cone}$ is the height, $j_{cone}$ is the
-% 		thickness change and $s_{cone}$ is the slope of the ice cone. $r_F$ is the spray radius of the fountain.}
-% 	\label{fig:shape}
-% \end{figure}
+\begin{figure}
+	\begin{center}
+		\includegraphics[width=10 cm]{figs/AIR_schematic.jpeg}
+	\end{center}
+	\caption{Shape variables of the AIR. $r_{cone}$ is the radius, $h_{cone}$ is the height, $j_{cone}$ is the
+		thickness change and $s_{cone}$ is the slope of the ice cone. $r_F$ is the spray radius of the fountain.}
+	\label{fig:shape}
+\end{figure}
 
 We approximate the energy balance at the surface of an AIR by a one-dimensional description of energy fluxes
 into and out of a (thin) layer with thickness $\Delta x$:
@@ -572,66 +573,64 @@ $5\,\%$ are below this interval. The methodology to obtain this is described in 
 For validation, the calibrated model was tested with two datasets namely, the expiry date of all AIRs and the
 drone surveys of CH20 AIR.
 
-% \begin{table}
-%   \caption{Free parameters in the model categorised as constant, derived, model hyperparameters, weather and
-%   fountain forcing parameters with their respective values/ranges.}
-
-% 	\label{tab:parameters}
-% 	\begin{tabular}{lllll}
-% 		\toprule
-% 		\textbf{Constant Parameters}                       & \textbf{Symbol} & \textbf{Value} &
-%     \textbf{Unit} & \textbf{References} \\
-%     Van Karman constant & $\kappa$      & 0.4        &dimensionless & \citeauthor{CuffeyPaterson_2010}              \\
-%     Stefan Boltzmann constant & $\sigma$ & $\num{5.67 e-8} $& $W\, m^{-2}\, K^{-4}$ & \citeauthor{CuffeyPaterson_2010}\\
-%     Air pressure at sea level & $p_{0,a}$ & 1013 & $hPa$  & \citeauthor{MolgHardy_2004}\\
-%     Density of water & $\rho_{w}$ & 1000 & $kg\, m^{-3}$    & \citeauthor{CuffeyPaterson_2010}\\
-%     Density of ice & $\rho_{ice}$ & 917 & $kg\, m^{-3}$ & \citeauthor{CuffeyPaterson_2010}\\
-%     Density of air & $\rho_{a}$ &  1.29 & $kg\, m^{-3}$   & \citeauthor{MolgHardy_2004}\\
-%     Specific heat of water & $c_{w}$ & 4186 & $J\, kg^{-1}\,\degree C^{-1}$  & \citeauthor{CuffeyPaterson_2010}\\
-%     Specific heat of ice & $c_{ice}$ & 2097 & $J\, kg^{-1}\,\degree C^{-1}$ & \citeauthor{CuffeyPaterson_2010}\\
-%     Specific heat of air & $c_{a}$ & 1010 & $J\, kg^{-1}\,\degree C^{-1}$ & \citeauthor{MolgHardy_2004}\\
-%     Thermal conductivity of ice & $k_{ice}$ & 2.123  & $W\, m^{-1}\, K^{-1}$ & \citeauthor{Bonales_2017} \\
-%     Latent Heat of Sublimation & $L_{s}$ & \num{2.848e6}  & $J\, kg^{-1}$ &   \citeauthor{CuffeyPaterson_2010}\\
-%     Latent Heat of Fusion & $L_{f}$ & \num{3.34e5} & $J\, kg^{-1}$ & \citeauthor{CuffeyPaterson_2010}\\
-%     Gravitational acceleration & $g$ & 9.81 & $m\, s^{-2}$ &\citeauthor{CuffeyPaterson_2010}\\
-%     Weather station height & $h_{AWS}$ & 2 & $m$ & assumed \\
-%     Model timestep                            & $\Delta t$            & $3600$           & $s$ & assumed \\
-%     Fountain spray radius & $r_{F}$             &             & $m$& measured \\
-%     Fountain runtime & $t_{F}$             &             &  $hours$ & measured \\\midrule
-% 		\textbf{Derived Parameters} & \textbf{Symbol} & \textbf{} & \textbf{Unit} & \textbf{Section} \\
-%     Radius of AIR & $r_{cone}$ &  & $m$ & \ref{sec:shape}\\
-%     Height of AIR & $h_{cone}$ &  & $m$ & \ref{sec:shape}\\
-%     Slope of AIR  & $s_{cone}$ &  & dimensionless & \ref{sec:shape}\\
-%     Thickness change of AIR  & $j_{cone}$ &  & $m$  & \ref{sec:shape}\\
-%     Atmospheric emissivity & $\epsilon_{a}$ & & dimensionless    & \ref{sec:LW}\\
-%     Cloudiness & $cld$ &  & dimensionless  & assumed\\
-%     Vapour pressure over water & $p_{v,w}$ &  & $hPa$  & \ref{sec:Qs}\\
-%     Vapour pressure over ice & $p_{v,ice}$ &  & $hPa$ & \ref{sec:Qs}\\
-%     Solar elevation angle & $\theta_{sun}$ &  & $\degree$ & \ref{sec:SW}\\
-%     Albedo & $\alpha$ &  & dimensionless & \ref{sec:SW}\\
-%     Solar area fraction& $f_{cone}$ &  & dimensionless & \ref{sec:SW}\\
-%     Ice body and surface distance & $l_{cone}$ &  & $m$  & \ref{sec:Bulkflux}\\
-%     AIR surface temperature & $T_{ice}$ &  & $\degree C$  & \ref{sec:Bulkflux}\\
-%     AIR bulk temperature & $T_{bulk}$ &  & $\degree C$  & \ref{sec:Bulkflux}\\\midrule
-% 		\textbf{Model Hyperparameters} & \textbf{Symbol} & \textbf{Range} & \textbf{Unit} & \textbf{References} \\
-%     Surface layer thickness             & $\Delta x$            & $[\num{1e-2},\num{1e-1}]$           & $m$ & assumed
-%     \\\midrule
-% 		\textbf{Weather Parameters} & \textbf{Symbol} & \textbf{Range} & \textbf{Unit} & \textbf{References} \\
-%     Ice Emissivity                      & $\epsilon_{ice}$      & $[0.95,0.99]$         & dimensionless & \citeauthor{HORI2006486}             \\
-%     Surface Roughness                   & $z_0$                 & $[\num{1e-3},\num{5e-3}]$            & $m$  & \citeauthor{BrockWillisSharp_2006}       \\
-%     Ice Albedo                          & $\alpha_{ice}$        & $[0.15,0.35]$         & dimensionless  &
-%     \citeauthor{steiner_2015};            \\
-%     & &    &  & \citeauthor{ZollesMaussion_2019}      \\
-%     Snow Albedo                         & $\alpha_{snow}$       & $[0.8,0.9]$        & dimensionless  & \citeauthor{ZollesMaussion_2019}              \\
-%     Precipitation Temperature threshold & $T_{ppt}$             & $[0,2]$            & $\degree C$& \citeauthor{Zhou_2010}  \\
-%     Albedo Decay Rate                   & $\tau$                & $[10,22]$           & $days$ &
-%     \citeauthor{Schmidt_2017};      \\
-%     & &    &  & \citeauthor{OerlemansKnap_1998}      \\\midrule
-% 		\textbf{Fountain Forcing Parameters} & \textbf{Symbol} & \textbf{Range} & \textbf{Unit} & \textbf{References} \\
-%     Discharge rate & $d_{F}$             & $[0.5 \cdot d_{F},1.5 \cdot d_{F}]$            & $l/min$& assumed  \\
-%     Water temperature & $T_{F}$             & $[0,3]$            & $\degree C$  & assumed  \\\bottomrule
-% 	\end{tabular}
-% \end{table}
+\begin{table}
+  \caption{Free parameters in the model categorised as constant, derived, model hyperparameters, weather and
+  fountain forcing parameters with their respective values/ranges.}
+	\label{tab:parameters}
+	\begin{tabular}{lllll}
+		\toprule
+		\textbf{Constant Parameters}                       & \textbf{Symbol} & \textbf{Value} &
+    \textbf{Unit} & \textbf{Refs} \\
+    Van Karman constant & $\kappa$      & 0.4        &dimensionless & \cite{cuffeyPhysicsGlaciers2010}              \\
+    Stefan Boltzmann constant & $\sigma$ & $\num{5.67 e-8} $& $W\, m^{-2}\, K^{-4}$ & \cite{cuffeyPhysicsGlaciers2010}\\
+    Air pressure at sea level & $p_{0,a}$ & 1013 & $hPa$  & \cite{molgAblationAssociatedEnergy2004}\\
+    Density of water & $\rho_{w}$ & 1000 & $kg\, m^{-3}$    & \cite{cuffeyPhysicsGlaciers2010}\\
+    Density of ice & $\rho_{ice}$ & 917 & $kg\, m^{-3}$ & \cite{cuffeyPhysicsGlaciers2010}\\
+    Density of air & $\rho_{a}$ &  1.29 & $kg\, m^{-3}$   & \cite{molgAblationAssociatedEnergy2004}\\
+    Specific heat of water & $c_{w}$ & 4186 & $J\, kg^{-1}\,\degree C^{-1}$  & \cite{cuffeyPhysicsGlaciers2010}\\
+    Specific heat of ice & $c_{ice}$ & 2097 & $J\, kg^{-1}\,\degree C^{-1}$ & \cite{cuffeyPhysicsGlaciers2010}\\
+    Specific heat of air & $c_{a}$ & 1010 & $J\, kg^{-1}\,\degree C^{-1}$ &
+    \cite{molgAblationAssociatedEnergy2004}\\
+    Thermal conductivity of ice & $k_{ice}$ & 2.123  & $W\, m^{-1}\, K^{-1}$ & \cite{bonalesThermalConductivityIce2017} \\
+    Latent Heat of Sublimation & $L_{s}$ & \num{2.848e6}  & $J\, kg^{-1}$ &   \cite{cuffeyPhysicsGlaciers2010}\\
+    Latent Heat of Fusion & $L_{f}$ & \num{3.34e5} & $J\, kg^{-1}$ & \cite{cuffeyPhysicsGlaciers2010}\\
+    Gravitational acceleration & $g$ & 9.81 & $m\, s^{-2}$ &\cite{cuffeyPhysicsGlaciers2010}\\
+    Weather station height & $h_{AWS}$ & 2 & $m$ & assumed \\
+    Model timestep                            & $\Delta t$            & $3600$           & $s$ & assumed \\
+    Fountain spray radius & $r_{F}$             &             & $m$& measured \\
+    Fountain runtime & $t_{F}$             &             &  $hours$ & measured \\\midrule
+		\textbf{Derived Parameters} & \textbf{Symbol} & \textbf{} & \textbf{Unit} & \textbf{Section} \\
+    Radius of AIR & $r_{cone}$ &  & $m$ & \ref{sec:shape}\\
+    Height of AIR & $h_{cone}$ &  & $m$ & \ref{sec:shape}\\
+    Slope of AIR  & $s_{cone}$ &  & dimensionless & \ref{sec:shape}\\
+    Thickness change of AIR  & $j_{cone}$ &  & $m$  & \ref{sec:shape}\\
+    Atmospheric emissivity & $\epsilon_{a}$ & & dimensionless    & \ref{sec:LW}\\
+    Cloudiness & $cld$ &  & dimensionless  & assumed\\
+    Vapour pressure over water & $p_{v,w}$ &  & $hPa$  & \ref{sec:Qs}\\
+    Vapour pressure over ice & $p_{v,ice}$ &  & $hPa$ & \ref{sec:Qs}\\
+    Solar elevation angle & $\theta_{sun}$ &  & $\degree$ & \ref{sec:SW}\\
+    Albedo & $\alpha$ &  & dimensionless & \ref{sec:SW}\\
+    Solar area fraction& $f_{cone}$ &  & dimensionless & \ref{sec:SW}\\
+    Ice body and surface distance & $l_{cone}$ &  & $m$  & \ref{sec:Bulkflux}\\
+    AIR surface temperature & $T_{ice}$ &  & $\degree C$  & \ref{sec:Bulkflux}\\
+    AIR bulk temperature & $T_{bulk}$ &  & $\degree C$  & \ref{sec:Bulkflux}\\\midrule
+		\textbf{Model Hyperparameters} & \textbf{Symbol} & \textbf{Range} & \textbf{Unit} & \textbf{Refs} \\
+    Surface layer thickness             & $\Delta x$            & $[\num{1e-2},\num{1e-1}]$           & $m$ & assumed
+    \\\midrule
+		\textbf{Weather Parameters} & \textbf{Symbol} & \textbf{Range} & \textbf{Unit} & \textbf{Refs} \\
+    Ice Emissivity                      & $\epsilon_{ice}$      & $[0.95,0.99]$         & dimensionless & \cite{horiInsituMeasuredSpectral2006}             \\
+    Surface Roughness                   & $z_0$                 & $[\num{1e-3},\num{5e-3}]$            & $m$  & \cite{brockMeasurementParameterizationAerodynamic2006}       \\
+    Ice Albedo                          & $\alpha_{ice}$        & $[0.15,0.35]$         & dimensionless  &
+    \cite{steinerModellingIcecliffBackwasting2015, zollesRobustUncertaintyAssessment2019}           \\
+    Snow Albedo                         & $\alpha_{snow}$       & $[0.8,0.9]$        & dimensionless  & \cite{zollesRobustUncertaintyAssessment2019}              \\
+    Precipitation Temperature threshold & $T_{ppt}$             & $[0,2]$            & $\degree C$& \cite{shichangResponseZhadangGlacier2010}  \\
+    Albedo Decay Rate                   & $\tau$                & $[10,22]$           & $days$ &
+    \cite{schmidtImportanceAccurateGlacier2017, oerlemansYearRecordGlobal1998}   \\\midrule
+		\textbf{Fountain Forcing Parameters} & \textbf{Symbol} & \textbf{Range} & \textbf{Unit} & \textbf{Refs} \\
+    Discharge rate & $d_{F}$             & $[0.5 \cdot d_{F},1.5 \cdot d_{F}]$            & $l/min$& assumed  \\
+    Water temperature & $T_{F}$             & $[0,3]$            & $\degree C$  & assumed  \\\bottomrule
+	\end{tabular}
+\end{table}
 
 \section{Model application}
 
@@ -644,16 +643,15 @@ surface layer thickness. The RMSE between the drone surveys and the model ice vo
 surface layer thickness are shown in Fig. \ref{fig:param_hist} (b). The optimum value of $\Delta x$ was found to
 be 45 $mm$ and 65 $mm$ with an RMSE of 9 $m^3$ and 30 $m^3$ for CH21 and IN21 AIRs respectively.
 
-% \begin{figure}
-% 	\begin{center}
-% 		\includegraphics[width=\linewidth]{Figures/Figure_5.jpg}
-% 	\end{center}
-%   \caption{(a) Total-order sensitivities of all the uncertain parameters of the model with net water loss as the
-%   objective. (b) The calibration of the sensitive parameter, $\Delta x$ with the RMSE between the drone and
-% model estimates of the ice volume. The dots denote the optimum values. The estimates from the Swiss and Indian
-% AIRs are denoted with blue and red colors respectively. }
-% 	\label{fig:param_hist}
-% \end{figure}
+\begin{figure}
+	\centering
+	\includegraphics[width=\linewidth]{figs/model_calibration.jpg}
+  \caption{(a) Total-order sensitivities of all the uncertain parameters of the model with net water loss as the
+  objective. (b) The calibration of the sensitive parameter, $\Delta x$ with the RMSE between the drone and
+model estimates of the ice volume. The dots denote the optimum values. The estimates from the Swiss and Indian
+AIRs are denoted with blue and red colors respectively. }
+	\label{fig:param_hist}
+\end{figure}
 
 \subsection{Weather and fountain forcing uncertainty quantification}
 
@@ -697,16 +695,61 @@ There was also one drone survey of the CH20 AIR volume for validation purposes (
 RMSE of that observation with the modelled volume was $19\, m^3$ which is 18 \% of the maximum simulated ice
 volume of CH20 AIR.
 
-% \begin{figure}
-% 	\begin{center}
-% 		\includegraphics[width=\linewidth]{Figures/Figure_6.jpg}
-% 	\end{center}
-% 	\caption{Simulated ice volume during the lifetime of the AIRs (blue curve). The shaded regions (light blue and
-% 		orange) represent the 90\% prediction interval of the AIR ice volume caused by the variations in weather and
-%     fountain forcing parameters, respectively. Violet points indicate the drone ice volume observations.  The grey
-%   dashed line represents the observed expiry date for each AIR.  }
-% 	\label{fig:results}
-% \end{figure}
+\begin{figure}
+  \centering
+	\includegraphics[width=\linewidth]{figs/model_validation.jpg}
+	\caption{Simulated ice volume during the lifetime of the AIRs (blue curve). The shaded regions (light blue and
+		orange) represent the 90\% prediction interval of the AIR ice volume caused by the variations in weather and
+    fountain forcing parameters, respectively. Violet points indicate the drone ice volume observations.  The grey
+  dashed line represents the observed expiry date for each AIR.  }
+	\label{fig:results}
+\end{figure}
+
+
+\section{Model limitations and suggestions for improvement}
+
+\subsection{Initialisation and calibration requirements}
+
+\subsection{Turbulent heat flux parametrization}
+
+Fig. comparing measured and modelled sensible heat flux
+
+\subsection{Shape parameterization}
+
+The RMSE between the drone and the model estimates of the surface area for the IN21, CH21 and CH20 AIRs were 69
+\%, 25 and 65 \% of the maximum area of the respective AIRs. There are two crude assumptions that lead to such a
+largererror namely, assuming a conical shape and assuming a constant spray radius.
+
+\subsection{Uncertainty in validation datasets}
+
+\subsubsection{Meltwater quantities}
+
+The model validation set can be extended if daily AIR meltwater is measured. This dataset could serve as a
+superior way to validate the model compared to the drone surveys which are also used for determining the spray
+radius. However, the study site needs to satisfy two condintions in order to do this. First, the terrain of the
+site needs to be waterproof and oriented so that most of the AIR runoff can be collected. Second, the chosen
+location should not have high wind speeds, otherwise a significant fraction of AIR wastewater would be dispersed
+in the air.
+
+\subsubsection{Fountain characteristics}
+
+Fountain pressure
+
+\subsubsection{Drone flight analysis}
+
+Identification of AIR boundary is subjective.
+
+\subsection{Improvement of model algorithm}
+
+\subsubsection{Initialisation of model}
+
+\subsubsection{Better model parametrisations}
+
+For turbulent fluxes
+
+For other shapes/ shape evolution
+
+Albedo variation due to fountain
 
 \section{Model extensions}
 
@@ -737,11 +780,12 @@ be referred to as water-sensitive fountain and weather-sensitive fountain hencef
 \caption{Assumptions for the parametrisation introduced to simplify the ice volume optimised model (IVOM) and
 water-use efficiency optimised model (WEOM). $\alpha_{snow/ice}$ represents albedo of snow or ice respectively.}
 \label{tab:assumptions}
-\begin{tabular}{@{}lllll@{}}
-\textbf{Estimation of} & \textbf{Symbol} & \textbf{IVOM} & \textbf{WEOM} & \\ 
+\begin{tabular}{|lllll|}
+\toprule
+\textbf{Estimation of} & \textbf{Symbol} & \textbf{IVOM} & \textbf{WEOM} & \\\midrule
 \multicolumn{1}{|l}{Slope}        & $s_{cone}$ & $ 45 \degree $ & $0 \degree$ & \multicolumn{1}{l|}{} \\ 
 \multicolumn{1}{|l}{Albedo} & $\alpha$ & $\alpha_{snow}$ & $\alpha_{ice}$ & \multicolumn{1}{l|}{} \\
-\multicolumn{1}{|l}{Cloudiness}  & $cld$ & $0$ & $1$ & \multicolumn{1}{l|}{} \\ 
+\multicolumn{1}{|l}{Cloudiness}  & $cld$ & $0$ & $1$ & \multicolumn{1}{l|}{} \\\bottomrule 
 \end{tabular}
 \end{table}
 
@@ -843,42 +887,6 @@ User friendly and long-term maintenance
 \label{fig:Cosistupa}
 \end{figure}
 
-\section{Suggestions}
-
-\subsection{Model limitations}
-
-\subsection{Spray radius}
-
-\subsection{Further data acquisition}
-
-\subsubsection{Meltwater quantities}
-
-The model validation set can be extended if daily AIR meltwater is measured. This dataset could serve as a
-superior way to validate the model compared to the drone surveys which are also used for determining the spray
-radius. However, the study site needs to satisfy two condintions in order to do this. First, the terrain of the
-site needs to be waterproof and oriented so that most of the AIR runoff can be collected. Second, the chosen
-location should not have high wind speeds, otherwise a significant fraction of AIR wastewater would be dispersed
-in the air.
-
-\subsubsection{Fountain characteristics}
-
-Fountain pressure
-
-\subsubsection{Drone flight analysis}
-
-Identification of AIR boundary is subjective.
-
-\subsection{Improvement of model algorithm}
-
-\subsubsection{Initialisation of model}
-
-\subsubsection{Better model parametrisations}
-
-For turbulent fluxes
-
-For other shapes/ shape evolution
-
-Albedo variation due to fountain
 
 
 
