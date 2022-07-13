@@ -21,20 +21,21 @@ The drone flew automatically along a predefined flight course and took photograp
 position and altitude of the drone at the exposure stations, which were obtained by the built-in integrated
 Position and Orientation System (POS, composed of a global positioning system and inertial measurement units),
 were recorded in JPEG pictures. In this study, we adopted a three-step workflow as implemented in the
-commercial software package Pix4Dmapper version 4.6.4 (\cite{Pix4D}). A short summary of this workflow is
+commercial software package Pix4Dmapper version 4.6.4 (\cite{pix4dsaPix4DmapperUserManual2020}). A short summary of this workflow is
 described below:
 
 (1) Initial processing: This process generates a sparse point cloud with the structure-from motion algorithm
-(\cite{Turner_2012}). First, it searches for and matches key points in the photos that have certain overlapping
+(\cite{turnerAutomatedTechniqueGenerating2012}). First, it searches for and matches key points in the photos that have certain overlapping
 areas using a feature matching algorithm (e.g., the scale-invariant feature transform (SIFT) algorithm, which can
-detect key points in photos with different views and illumination conditions; \cite{Lowe_2004}). Second, the
-approximate locations and orientations of the camera at each exposure station are reconstructed with the internal
-parameters (focal length, coordinates of the principal point of the photograph), and external parameters (i.e. POS
-data). A sparse point cloud is created.
+detect key points in photos with different views and illumination conditions;
+\cite{loweDistinctiveImageFeatures2004}). Second, the approximate locations and orientations of the camera at
+each exposure station are reconstructed with the internal parameters (focal length, coordinates of the principal
+point of the photograph), and external parameters (i.e. POS data). A sparse point cloud is created.
 
-(2) Point cloud densification: In this step, the multi-view stereo technique is applied to achieve a higher point
-cloud density than in the previous step (\cite{Furukawa_2010}; \cite{Molg_2017}). Thus, the spatial resolution of
-the products can be increased, and an irregular network for the next step can be created (\cite{Kung_2011}).
+(2) Point cloud densification: In this step, the multi-view stereo technique is applied to achieve a higher
+point cloud density than in the previous step (\cite{furukawaAccurateDenseRobust2010};
+\cite{molgStructurefromMotionUsingHistorical2017}). Thus, the spatial resolution of the products can be
+increased, and an irregular network for the next step can be created (\cite{kungACCURACYAUTOMATICPHOTOGRAMMETRIC2011}).
 
 (3) AIR delineation: Ice radius, area and volume are the three final products. Perimeter was manually marked
 on the point cloud by identifying the AIR boundary (see Fig. \ref{fig:DEM}). For the Indian location, we identified identical rock features
@@ -65,13 +66,12 @@ $\pm 10 \%$ for all the AIR observations to accommodate for this.
 \section{Model forcing based on water-use efficiency and maximum ice volume objectives}
 \label{sec:auto_software}
 
-The model complexity and data requirement \citep{balasubramanianInfluenceMeteorologicalConditions2022} were
-reduced through assumptions that optimise for the ice volume or the water-use efficiency objectives. The
-corresponding model assumptions are called IVOM and WEOM respectively. We define the freezing rate and melting
-rate as the positive and negative mass change rate, respectively. Assumptions are chosen, based on whether they
-overestimate/underestimate the freezing rate. IVOM assumptions overestimates freezing rate whereas WEOM
-assumptions underestimates freezing rate. We describe these two kinds of assumptions applied on each of the
-energy balance components below: 
+The model complexity and data requirement (paper I) were reduced through assumptions that optimise for the ice
+volume or the water-use efficiency objectives. The corresponding model assumptions are called IVOM and WEOM
+respectively. We define the freezing rate and melting rate as the positive and negative mass change rate,
+respectively. Assumptions are chosen, based on whether they overestimate/underestimate the freezing rate. IVOM
+assumptions overestimates freezing rate whereas WEOM assumptions underestimates freezing rate. We describe these
+two kinds of assumptions applied on each of the energy balance components below: 
 
 \subsection{Surface Area $A_{cone}$ assumptions}
 
