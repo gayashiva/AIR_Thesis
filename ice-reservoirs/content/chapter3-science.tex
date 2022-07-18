@@ -257,7 +257,7 @@ use the scheme described in \cite{oerlemansYearRecordGlobal1998} to model this p
 decay of albedo with time after fresh snow is deposited on the surface. $\delta t$ records the number of time
 steps after the last snowfall event. After snowfall, albedo changes over a time step, $\delta t$ , as
 
-\begin{equation} \alpha=\alpha_{ice}+(\alpha_{snow}-\alpha_{ice}) \cdot e^{(-\delta t)/\tau} \label{eqn:a}
+\begin{equation} \alpha=\alpha_{ice}+(\alpha_{snow}-\alpha_{ice}) \cdot e^{(-\delta t)/\tau} \label{eqn:alb}
 \end{equation}
 
 where $\alpha_{ice}$ is the bare ice albedo value (0.25), $\alpha_{snow}$ is the fresh snow albedo value (0.85)
@@ -353,6 +353,7 @@ as follows:
 
 \begin{equation}
 	\mu_{cone} = 1 + \frac{s_{cone}}{2}
+	\label{eqn:mu}
 \end{equation}
 
 A possible source of error is the fact that wind measurements from the horizontal plane at the AWS are used,
@@ -708,48 +709,66 @@ volume of CH20 AIR.
 
 \section{Model limitations and suggestions for improvement}
 
-\subsection{Initialisation and calibration requirements}
+Model development is an art where subjective choices seek a balance between model simplicity and its accuracy.
+Below we detail some of these choices and recommend strategies that shift this balance towards further model
+accuracy.
+
+\subsection{Quality and quantity of calibration and validation datasets}
+
+The methodology used to acquire the radius, area and volume of AIRs (see Appendix \ref{sec:drone_method}) from
+each drone survey has several drawbacks. The calibration and validation process used has an inherent temporal
+and spatial bias due to the following subjective choices:
+
+\begin{itemize}
+  \item \textbf{The number of drone surveys}. For example, among the five surveys of IN21 AIR, most of them were
+    conducted around early March when the AIR volume was near its maximum whereas the seven surveys of the CH21
+    location were more evenly spaced out in comparison.
+
+  \item \textbf{The weather conditions under which they were performed.} Particularly, precipitation events reduce DEM quality since
+    they create uniform snow surfaces over AIRs. These surfaces dont have many identifiable features that can be
+    used to extract the radius and area of the AIR.
+
+\end{itemize}
+
+Thus, the quality of AIR calibration and validation is severly limited by the high uncertainties attached with
+the drone processing methodology.
+
+This limitation can be overcome by extending the model validation set with daily AIR meltwater measurements.
+However, the study site needs to satisfy two conditions in order to do this. First, the terrain of the site
+needs to be waterproof and oriented so that most of the AIR runoff can be collected. Second, the chosen location
+should not have high wind speeds, otherwise a significant fraction of AIR wastewater would be dispersed in the
+air.
 
 \subsection{Turbulent heat flux parametrization}
 
-Fig. comparing measured and modelled sensible heat flux
+Equation \ref{eqn:mu} about the exposure/roughness parameter $\mu$ is no more than an educated guess. It is hard
+to base estimates of this parameter on information in the literature. Many studies have been carried out on the
+effect of obstacles on atmospheric boundary layer flow (e.g. trees), but always in an ensemble setting, looking
+at the bulk effect of an ensemble of obstacles. We deal with a case of a single obstacle in open terrain, and we
+are confident that the roughness of the surface and the exposure will lead to larger turbulent fluxes.
+
+% Fig. comparing measured and modelled sensible heat flux
 
 \subsection{Shape parameterization}
 
 The RMSE between the drone and the model estimates of the surface area for the IN21, CH21 and CH20 AIRs were 69
-\%, 25 and 65 \% of the maximum area of the respective AIRs. There are two crude assumptions that lead to such a
-largererror namely, assuming a conical shape and assuming a constant spray radius.
+\%, 25 \% and 65 \% of the maximum area of the respective AIRs. There are two crude assumptions that lead to
+such a large error namely, assuming a conical shape and assuming a constant spray radius.
 
-\subsection{Uncertainty in validation datasets}
+Better quantification of the surface area can be achieved by assuming AIR cross section to be a gaussian curve
+rather than a triangle.
 
-\subsubsection{Meltwater quantities}
+Better quantification of the spray radius can be achieved by modelling the projectile motion of fountain water
+droplets using wind speed values and fountain characteristics. A preliminary application of this methodology is
+shown in Section \ref{sec:interannual}
 
-The model validation set can be extended if daily AIR meltwater is measured. This dataset could serve as a
-superior way to validate the model compared to the drone surveys which are also used for determining the spray
-radius. However, the study site needs to satisfy two condintions in order to do this. First, the terrain of the
-site needs to be waterproof and oriented so that most of the AIR runoff can be collected. Second, the chosen
-location should not have high wind speeds, otherwise a significant fraction of AIR wastewater would be dispersed
-in the air.
+\subsection{Albedo parametrisation}
 
-\subsubsection{Fountain characteristics}
-
-Fountain pressure
-
-\subsubsection{Drone flight analysis}
-
-Identification of AIR boundary is subjective.
-
-\subsection{Improvement of model algorithm}
-
-\subsubsection{Initialisation of model}
-
-\subsubsection{Better model parametrisations}
-
-For turbulent fluxes
-
-For other shapes/ shape evolution
-
-Albedo variation due to fountain
+The albedo parametrisation illustrated by Equation \ref{eqn:alb} had to be modified to accomodate the fountain
+discharge events. Little knowledge is available to understand the decay of albedo due to such events. Therefore,
+a simplistic approach of increasing the decay rate by a constant factor is used. However, the value of this
+factor is chosen without any basis on measurements. Field based albedo measurements are required to better
+parametrize the effect of water spray on the surface albedo decay rate.
 
 \section{Model extensions}
 
@@ -853,18 +872,18 @@ rate. To extend COSIPY into COSISTUPA, parametrizations of the following process
 
 \begin{itemize}
 
-  \item Fountain rain heat flux : The heat flux generated due to the difference in fountain water droplet
+  \item \textbf{Fountain rain heat flux} : The heat flux generated due to the difference in fountain water droplet
     temperature and surface temperature was introduced as a new energy balance component. This implementation is
     identical to that described in Sec. \ref{sec:heatflux}
 
-  \item Turbulent flux scaling : The sensible and the latent heat fluxes were scaled by the $\mu_{cone}$ factor
+  \item \textbf{Turbulent flux scaling} : The sensible and the latent heat fluxes were scaled by the $\mu_{cone}$ factor
     introduced in Sec. \ref{sec:Qs}
 
-  \item Freezing process : Phase transition processes were introduced during time periods when the fountain
+  \item \textbf{Freezing process} : Phase transition processes were introduced during time periods when the fountain
     discharge was active. These processes created new ice layers whenever the energy balance allowed it
     following the algorithm introduced in Sec. \ref{sec:phase}
 
-  \item Conical shape evolution : The surface mass balance estimation was converted to the volume estimation
+  \item \textbf{Conical shape evolution} : The surface mass balance estimation was converted to the volume estimation
     through the methodology introduced in Sec. \ref{sec:shape}
 
 \end{itemize}
