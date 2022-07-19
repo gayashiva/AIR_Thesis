@@ -781,14 +781,14 @@ Recommended discharge rates can only be produced if more information about the A
 weather conditions are available. Particularly, resolving the uncertainty in the expected freezing rate requires
 quantification of the following three model variables: slope, albedo and cloudiness. But these properties cannot
 be predicted beforehand. Therefore, we instead associate the upper and lower bound of each variable to a
-different model depending on whether they increase the freezing rate or not. Higher albedo values decrease the shortwave
-radiation impact. Higher cloudiness values increase both the shortwave and the longwave radiation impact. The
-model overestimating the freezing rate will be referred to as ice volume optimised model (IVOM) and the model
-underestimating the freezing rate will be referred to as water-use efficiency optimised model (WEOM),
-respectively. Accordingly, the values assigned for all the three variables in the respective model is shown in
-Table \ref{tab:assumptions}.
+different model depending on whether they increase the freezing rate or not. Higher slope and albedo values
+decrease the shortwave radiation impact. Higher cloudiness values increase both the shortwave and the longwave
+radiation impact. The model overestimating the freezing rate will be referred to as ice volume optimised model
+(IVOM) and the model underestimating the freezing rate will be referred to as water-use efficiency optimised
+model (WEOM), respectively. Accordingly, the values assigned for all the three variables in the respective model
+is shown in Table \ref{tab:assumptions}.
 
-The discharge scheduling software implements two types of fountain scheduling strategies depending on which
+The fountain scheduling software implements two types of fountain scheduling strategies depending on which
 model type is suitable. WEOM model type is used if the location has limited quantity since it is expected to
 produce better water-use efficiency. IVOM model type is used if the location had limited duration of favourable
 weather windows since it is expected to produce higher ice volumes. These two kinds of scheduled fountains will
