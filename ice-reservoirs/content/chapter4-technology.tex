@@ -15,7 +15,7 @@ layers of water creating superimposed sheets of ice.
 
 \begin{figure}[htb]
 \centering
-\includegraphics[width=12cm]{figs/AIR_designs}
+\includegraphics[width=\textwidth]{figs/AIR_designs}
 \caption{ Adapted from: \cite{nusserSociohydrologyArtificialGlaciers2019}}
 \label{fig:AIRdesigns}
 \end{figure}
@@ -39,7 +39,7 @@ a successful ice terrace with an almost continuous stretch of ice (Fig. \ref{fig
 
 \begin{figure}[htb]
 \centering
-\includegraphics[width=12cm]{figs/IT_example.png}
+\includegraphics[width=\textwidth]{figs/IT_example.png}
 \caption{Ice terrace of Phuktse, viewpoint 4430 m. (a) February 2014 (b) October 2014 Adapted from: \cite{nusserSociohydrologyArtificialGlaciers2019}}
 \label{fig:ITexample}
 \end{figure}
@@ -57,7 +57,7 @@ based on the valley topography. The water for the ice terrace is obtained throug
 
 \begin{figure}[htb]
 \centering
-\includegraphics[width=12cm]{figs/IT_science.png}
+\includegraphics[width=\textwidth]{figs/IT_science.png}
 
 \caption{ The process of ice accumulation for ice terraces Adapted from:
 \cite{nusserSociohydrologyArtificialGlaciers2019}}
@@ -65,7 +65,7 @@ based on the valley topography. The water for the ice terrace is obtained throug
 \label{fig:ITscience}
 \end{figure}
 
-As mentioned in the previous chapter, the design of the ice terraces is dependent on the suitability of the
+The design of the ice terraces is dependent on the suitability of the
 site. Furthermore, the following construction guidelines are used depending on the terrain of the site
 \cite{norphelSnowWaterHarvesting2015}:
 
@@ -98,8 +98,8 @@ terraces, therefore, were prohibitive for widespread adoption.
 
 \begin{figure}[htb]
 \centering
-\includegraphics[width=12cm]{figs/IS_example.jpg}
-\caption{Ice stupa of Shara}
+\includegraphics[width=\textwidth]{figs/IS_example.jpg}
+\caption{Ice stupa of Phyang village on March 2015.}
 \label{fig:ISexample}
 \end{figure}
 
@@ -120,7 +120,7 @@ palmerStoringFrozenWater2022, aggarwalAdaptationClimateChange2021}, Kyrgyzstan
 \label{fig:ISconstruction}
 \end{figure}
 
-A typical AIR (see Fig. \ref{fig:ISexample}) simply requires a fountain nozzle mounted on a supply pipeline. The
+A typical ice stupa (see Fig. \ref{fig:ISexample}) simply requires a fountain nozzle mounted on a supply pipeline. The
 water source is usually a glacial stream. Due to the altitude difference between the pipeline input and fountain
 output, water ejects from the fountain nozzle as droplets which freeze under subzero winter conditions. The
 fountain is manually activated during winter nights. The fountain nozzle is raised through the addition of metal
@@ -132,16 +132,16 @@ branches and fishing nets are used to guide and accelerate the ice formation.
 
 \begin{figure}[htb]
 \centering
-\includegraphics[width=12cm]{figs/IS_irrigation.jpeg}
+\includegraphics[width=\textwidth]{figs/IS_irrigation.jpeg}
 
-\caption{Irrigation channel of the IN17 and IN18 AIRs. (P.C. Lobzang Dadul) }
+\caption{Irrigation channel of the ice stupa at Phyang village. (P.C. Lobzang Dadul) }
 
 \label{fig:ISirrigation}
 \end{figure}
 
 \begin{figure}[htb]
 \centering
-\includegraphics[width=12cm]{figs/melt.png}
+\includegraphics[width=\textwidth]{figs/melt.png}
 
 \caption{Daily meltwater measurements for the IN17 and IN18 AIRs along with the corresponding model estimations
 for the IN21 AIR. }
@@ -170,14 +170,12 @@ running water supply for too long might lead to overwatering; at the very least,
 Similarly, starting the water supply too late, supplying too little water, or not running the water supply long
 enough might lead to underwatering and can cause reduced ice volume. The implementation of water supply management
 differs based on the type of the AIR used. In the following analysis, we restrict ourselves to the ice stupa
-form of AIRs.
+form of AIRs where water supply management can also be called as fountain scheduling.
 
-Paper I has shown that traditional ice stupa construction systems suffer from overwatering. To avoid
-this issue, we need to understand surface freezing rates. Other practical issues need to be addressed before
-dealing with the fountain scheduling processes, for example, in Indian AIRs, the fountain discharge rate could
-theoretically be halved since this is always twice as high as the modelled freezing rate (paper I). However, in
-practice, reduction of discharge rate could increase the maintenance cost due to higher risk of freezing events
-in the fountain pipeline.
+Paper I has shown that traditional ice stupa construction systems suffer from overwatering. For example, in
+Indian AIRs, the fountain discharge rate could theoretically be halved since this is always twice as high as the
+modelled freezing rate. However, in practice, reduction of discharge rate could increase the maintenance cost
+due to higher risk of freezing events in the fountain pipeline.
 
 An optimum construction strategy, therefore, should first prevent the occurrence of freezing events in the
 fountain pipeline. These events can be prevented by setting a minimum threshold for the recommended discharge
@@ -186,132 +184,89 @@ rate. The discharge scheduler software developed in the previous chapter satisfi
 Adjusting the fountain discharge rate manually is not practical due to two reasons: first, this would involve
 constant adjustments of discharge rates in response to the significant diurnal and seasonal variations of the
 freezing rates; second, frequent pipeline water drainage is required to avoid water losses. Therefore, operation
-of scheduled fountains via automation systems is preferred to reduce the long-term maintenance costs.
+of scheduled fountains via automation systems is preferred to reduce the long-term maintenance costs. The
+hardware used to implement such an automation system is described in paper II.
 
 This section aims to compare the water-use efficiency, maximum ice volume and maintenance effort between
 traditional and automated construction strategies. First, two AIRs were built in the same location but with and
-without automated fountain scheduling strategies; both were measured and compared. The associated datasets and
-the methods used to analyze them are described in paper II. In a second step, differences in construction
-strategies between Indian and Swiss AIRs studied in previous winters were quantified using model simulations.
-Later we discuss how these construction strategies can help scale the ice volumes and survival duration of AIRs. 
+without automated fountain scheduling strategies; both were measured and compared (Fig. \ref{fig:autovsman}).
+The associated datasets and the methods used to analyze them are described in paper II. In a second step,
+differences in construction strategies between Indian and Swiss AIRs studied in previous winters were quantified
+using model simulations. Later we discuss how these construction strategies can help scale the ice volumes and
+survival duration of AIRs. 
 
 \begin{figure}[htb]
-\includegraphics[width=12cm]{figs/AIR_fountains.jpg}
+\includegraphics[width=\textwidth]{figs/AIR_fountains.jpg}
 \caption{Unscheduled and scheduled fountains used for construction of traditional and automated AIRs at Guttannen. Picture credits: Daniel Bürki}
-\label{fig:2AIR}
+\label{fig:autovsman}
 \end{figure}
 
 \subsubsection{Comparison of traditional and automated construction strategies}
 
-\begin{figure*}[htb] \includegraphics[width=12cm] {figs/CH_validation.png} 
-  \caption{Volume validation of the scheduled and unscheduled fountain construction strategies.} \label{fig:validation} \end{figure*}
-
+\begin{figure*}[htb] \includegraphics[width=\textwidth] {figs/CH_validation.png} \caption{Volume validation of the
+scheduled and unscheduled fountain construction strategies.} \label{fig:validation} \end{figure*}
 
 Fountain scheduling reduced the fountain discharge input and fountain wastewater output by an order of
-magnitude. However, this is not resulting in an appreciable difference in the volume evolution of the automated
-and traditional AIRs as shown in Fig. \ref{fig:validation}. This is due to two counteracting surface processes
-during fountain spray: (a) dampening of albedo to ice albedo and (b) absorption of the heat energy of the
-fountain water droplets. The temporal variation of the magnitude of these processes are shown in Fig.
-\ref{fig:dis_processes}.
+magnitude. However, this does not result in an appreciable difference in the volume evolution of the automated
+or traditional AIR, as shown in Fig. \ref{fig:validation}. This is due to two counteracting surface processes
+during fountain spray: process A consists in the dampening of albedo to ice albedo and process B consists in the
+absorption of heat energy from the fountain water droplets. The temporal variation of the magnitude of these
+processes is shown in Fig. \ref{fig:dis_processes}.
 
 \begin{figure*}[htb]
-\includegraphics[width=12cm]{figs/dis_processes.png}
+\includegraphics[width=\textwidth]{figs/dis_processes.png}
 \caption{(a) Surface albedo  and (b) fountain discharge heat flux showed significant variations between the two
   AIRS due to the differences in their discharge rates.}
 \label{fig:dis_processes}
 \end{figure*}
 
-There is a considerable difference in the contribution of the shortwave radiation due to the effect of process
-(a). Even though the unscheduled fountain was active for a much longer duration, the frequent snowfall events
-counteracted the albedo feedback of its fountain discharge. In contrast, the albedo of the automated AIR was
-reduced by late fountain spray events particularly in the months of March and April as shown in Fig.
-\ref{fig:dis_processes}. These poorly timed fountain spray events occurred because of the global solar radiation
-diurnal variation since they were calibrated based on values for the month of February in the automation system.
-Therefore, poor calibration of the automation system resulted in an increased impact of shortwave radiation on
-the automated AIR. Similarly, the fountain discharge heat flux for the traditional AIR was enhanced due to
-process (b). The higher discharge quantity of the unscheduled fountains and its longer duration were responsible
-for the higher contribution of fountain discharge heat flux in the overall energy turnover. Therefore, higher
-melt of the automated AIR due to process (a) counteracted the higher melt of the traditional AIR due to process
-(b).
+% A considerable difference exists in the contribution of the shortwave radiation due to process A. Although the
+% unscheduled fountain was active for a longer duration, frequent snowfall events counteracted the albedo feedback
+% of the fountain discharge. In contrast, the albedo of the automated AIR was reduced by late fountain spray
+% events, in particular in March and April, as shown in Fig. \ref{fig:dis_processes}. These poorly timed fountain
+% spray events occurred because of the global solar radiation diurnal variation, since these were calibrated based
+% on values for February in the automation system. Therefore, poor calibration of the automation system resulted
+% in an increased impact of shortwave radiation on the automated AIR. Similarly, the fountain discharge heat flux
+% for the traditional AIR was enhanced due to process B. The higher discharge value of the unscheduled fountain
+% and its longer duration are responsible for the higher contribution of fountain discharge heat flux in the
+% overall energy turnover. Therefore, higher melt of the automated AIR due to process A counteracted the higher
+% melt of the traditional AIR due to process B.
 
-The two AIRs built using a traditional and automated construction strategy are shown in Fig. \ref{fig:2AIR}. We
-found that overwatering by unscheduled fountains not just increased the fountain wastewater production but also
-enhanced the melting rate of AIRs, mainly due to its surface albedo and fountain heat flux feedbacks. Scheduled
-fountains, in contrast, consumed only 13 \% of the unscheduled fountain's water supply. However, the volume
-evolution of both the AIRs showed no significant variations. 
+The difference in water-use efficiency and maximum ice volume between unscheduled and scheduled fountains in the
+Indian and Swiss locations across two winters is shown in Fig. \ref{fig:wue}a. Four experimental values
+(highlighted in circles) and five simulated values (highlighted in squares) are shown together.  The
+experimental values were taken from the IN21 and CH21 AIRs studied in paper I and the CH22 AIR investigated in
+paper II. 
 
-\begin{figure*}[htb]
+\begin{figure}[htb]
 \includegraphics[width=\textwidth]{figs/wue.png}
 
-\caption{(a) The maximum volumes and water-use efficiency estimated for AIRs constructed in different locations
-(represented by colours) with different fountain scheduling strategies (represented by symbols). Experimental
-values are highlighted by circles and simulated values are highlighted by squares. (b) Comparison of
-the unscheduled and scheduled fountain's discharge rates at the IN21 location.}
+\caption{(a) The maximum volume and water-use efficiency estimated for AIRs constructed in different locations
+(represented by symbols) with different fountain scheduling strategies (represented by colours). Experimental
+values are highlighted in circles and simulated values are highlighted in squares. (b) Comparison of
+the unscheduled and scheduled fountain discharge rates at the IN21 location.}
 
 \label{fig:wue}
-\end{figure*}
+\end{figure}
 
-The difference in water-use efficiency and maximum ice volume between unscheduled and scheduled fountains in the two
-locations across two winters are presented in Fig. \ref{fig:wue} (a). Four experimental values (highlighted by
-circles) are shown together with five simulated values (highlighted by squares).  The experimental values were
-taken from the IN21 and CH21 AIRs studied in paper I and
-the CH22 AIRs presented in paper II. 
-
-The water-use efficiency of all the unscheduled fountains are below 20 \%. In general, the water-use efficiency
-increases more than three folds when the weather-sensitive or water-sensitive fountains are used in both
+The water-use efficiency of all the unscheduled fountains is below 20 \%. In general, water-use efficiency
+exhibits a threefold increase when the weather- or water-sensitive fountains are used in both
 locations.  
 
-For the Indian location, the three kinds of fountains yield significantly different results.  The discharge
-duration and the max discharge rate of the three IN21 fountains were responsible for these different results
-(see Fig. \ref{fig:wue} (b)). The max discharge rate of the unscheduled fountain was more than twice that of
-scheduled fountains resulting in a higher water loss. Freezing events in the fountain pipeline caused frequent
-interruptions in the unscheduled discharge rate (see Fig. \ref{fig:wue} (b)). In contrast, the mean freezing
-rates of the other two fountains during these events were above their median values. This is because, very cold
-temperatures freeze the water inside rather than outside the fountain system instigating these freezing events in
-the fountain pipeline. Therefore, both the discharge duration and the mean freezing rate of the unscheduled
-fountain was much lower resulting in lower ice volumes. The water-sensitive fountain underestimated the freezing
-rate during the construction period and therefore produced much lower ice volumes compared to the
-weather-sensitive fountain. 
+For the Indian location, the three different kinds of fountains yielded significantly different results owing to discharge
+duration and max discharge rate
+(Fig. \ref{fig:wue}b). The unscheduled fountain showed a max discharge rate more than twice that of
+the scheduled fountains, resulting in higher water loss; freezing events in its pipeline caused frequent
+interruptions in the unscheduled discharge rate (Fig. \ref{fig:wue}b). In contrast, the mean freezing
+rates of the other two fountains during these events were above their median values. This is because very cold
+temperatures freeze the water inside rather than outside the fountain system, instigating these freezing events in
+the fountain pipeline. Therefore, the discharge duration of the unscheduled fountain was much lower, resulting in
+lower ice volume. The water-sensitive fountain underestimated the freezing rate during the construction period
+and therefore produced much lower ice volume compared with the weather-sensitive fountain. 
 
-For the Swiss locations, scheduled fountains yielded better water-use efficiency but did not alter the maximum
-volume obtained significantly. 
+For the Swiss locations, scheduled fountains yielded better water-use efficiency but did not significantly alter the maximum
+volume obtained. 
 
-\section{Future use-cases for AIR technology}
-
-\begin{figure}[htb]
-  \centering
-	\includegraphics[width=\textwidth]{figs/PIR_example.jpg}
-
-  \caption{Icestupa at Shara, Ladakh, built by local farmers in the winter of 2019-20, survived a full summer melt season and released
-  around 8 million litres of water.} 
-
-\label{fig:PIR} 
-\end{figure}
-
-\subsection{Perennial streams to supplement irrigation activities}
-
-
-Several ice stupas have been observed to last beyond a summer melt season. However, regions beyond Ladakh having
-such favourable weather conditions remain to be discovered. A possible way to study this question is to decrease
-the air temperature uniformly (temperature change $\Delta T$). This will imply a stronger negative sensible heat
-flux in summer, thus accelerating icestupa growth and slowing down its decay. Such simulations were produced in
-paper III for an ice stupa grown in the Engadin region of Switzerland .  We found a break-even point for $\Delta
-T = -2 \degree C$ (Fig. \ref{fig:PIR_evolution}). For larger negative values of $\Delta T$ the icestupa does not disappear
-in summer and keeps growing from year to year. For $\Delta T = -3 \degree C$, the maximum volume in the fifth
-year is about 4 times that in the first year. Therefore, there exists weather conditions where ice stupas can
-compound in size as long as the water supplies last (see Fig. \ref{fig:PIR}).
-
-\begin{figure}[htb]
-  \centering
-	\includegraphics[width=\textwidth]{figs/PIR_evolution.png}
-  \caption{The effect of a negative temperature perturbation. For $\Delta T = -3 \degree C$ the icestupa does
-  not disappear anymore but is growing from year to year.}
-\label{fig:PIR_evolution}
-\end{figure}
-
-\subsection{Sustainable tourism around perpetual ice reservoirs}
-
-Sculpture, religious monument, accomodation, ice climbing
 
 % \subsection{For ice terraces}
 
