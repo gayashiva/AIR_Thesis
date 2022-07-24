@@ -58,7 +58,7 @@ $\pm 10 \%$ for all the AIR observations to accommodate for this.
 
 \section{Sensitivity and uncertainty analysis} \label{sec:uncertainpy}
 In this section, we summarise the theory behind the methods for uncertainty quantification and sensitivity
-analysis used. For detailed explanation of this methodology, see \cite{uncertainpy_2018}.
+analysis used. For detailed explanation of this methodology, see \cite{tennoeUncertainpyPythonToolbox2018}.
 
 \subsection{Problem definition}
 Consider our model $U$ that depends on timestep $i$, has $d$ uncertain parameters $Q = [Q_1, Q_2, \dots, Q_d]$, and
@@ -107,7 +107,7 @@ parameters with high sensitivity, so the total-order Sobol indices are an approp
 \subsection{Polynomial Chaos Expansions}
 
 A recent mathematical framework for efficient uncertainty quantification and sensitivity analysis is that of
-polynomial chaos expansions (\cite{Xiu_2005}). This method calculates the same statistical metrics as the Monte
+polynomial chaos expansions (\cite{xiuHighOrderCollocationMethods2005}). This method calculates the same statistical metrics as the Monte
 Carlo method but typically much faster.
 
 The general idea behind polynomial chaos expansions is to approximate the model $U$ with a polynomial expansion
@@ -153,13 +153,11 @@ its circular base. Therefore, area is estimated as:
 \begin{equation} A_{cone} =\pi \cdot r_{F}^2  \end{equation}
 
 \subsection{Net shortwave radiation \texorpdfstring{$q_{SW}$}{Lg} assumptions}
-\label{sec:SW}
 
 The net shortwave radiation $q_{SW}$ is computed as follows:
 
 \begin{equation} 
 q_{SW} = (1- \alpha) \cdot ( SW_{direct} \cdot f_{cone} + SW_{diffuse})
-\label{eqn:SW} 
 \end{equation}
 
 where $\alpha$ is the albedo value ; $SW_{direct}$ is the direct shortwave radiation; $SW_{diffuse}$ is the
@@ -212,7 +210,7 @@ constrain the minimum ice temperature, we maintain this assumption for both our 
 estimate atmospheric emissivity, we again assume $cld$ to be 1 and 0 for the water-use efficiency and ice volume
 objective respectively.
 
-\subsection{Turbulent fluxes assumptions} \label{sec:Qs}
+\subsection{Turbulent fluxes assumptions} 
 
 Turbulent fluxes estimation depend on the slope of the cone through the $\mu_{cone}$ parameter. As suggested 
 by \citet{oerlemansBriefCommunicationGrowth2021}, we estimated this parameter as follows:
