@@ -28,14 +28,14 @@ locations worldwide.
 \section{Study sites and data}
 
 We chose the Swiss Alps and the Indian Himalayan mountain regions to collect the required datasets described
-above. The study period starts when the fountain was first switched on and ends when the respective AIR either
-melted or broke into several ice blocks. These two dates are denoted as start and expiry dates henceforth. Each
-AIR dataset was abbreviated based on the construction strategy used, prefix of the country code and the suffix
-of the year of its expiry date. The construction strategies are distinguished based on whether they used
-fountain scheduling strategies to regulate water supply. Those that did were codenamed automated construction
-strategy whereas the rest were codenamed traditional construction strategy. All except one construction campaign
-used traditional construction strategies. Therefore, traditional AIRs are referred to without explicitly
-specifying their construction strategy henceforth.
+above. The study period starts when the fountain was first switched on (start date) and ends when the respective
+AIR either melted or broke into several ice blocks (expiry date).  Each AIR dataset was abbreviated based on the
+construction strategy used, prefix of the country code and the suffix of the year of its expiry date. The
+construction strategies are distinguished based on whether they used fountain scheduling strategies to regulate
+water supply. Those that did were codenamed automated construction strategy whereas the rest were codenamed
+traditional construction strategy. All except one construction campaign used traditional construction
+strategies. Therefore, traditional AIRs are referred to without explicitly specifying their construction
+strategy henceforth.
 
 In total, ? AIRs were studied in these two regions across four winters  However, only four AIRs located in
 Guttannen, Switzerland and one in Gangles, India had complete weather, water and volume measurements. Therefore,
@@ -76,7 +76,7 @@ the Ice Stupa Competition by the Himalayan Institute of Alternatives, Ladakh (HI
 
 Air temperature, relative humidity, wind speed, pressure, longwave and global shortwave radiation are required
 to calculate the surface energy balance of an AIR.  The resulting dataset highlights the difference in
-meteorological influences driving ice volume evolution in the two study sites (see Table
+meteorological influences driving ice volume evolution in the two study sites ( Table
 \ref{tab:Observations}).
 
 \begin{table}
@@ -248,17 +248,6 @@ changes occur. $q_{SW}$ is the net shortwave radiation; $q_{LW}$ is the net long
 $q_{S}$ are the turbulent latent and sensible heat fluxes. $q_{F}$ and $q_{R}$ represent the heat exchange of
 the fountain water droplets and rain droplets with the AIR ice surface respectively. $q_{G}$ represents ground
 heat flux between the AIR surface and its interior.
-
-The density of the AIR $\rho_{cone}$ was parameterised as follows:
-
-\begin{equation}
-  \rho_{cone} = \frac{M_{F} + M_{dep} + M_{ppt}}{(M_{F} + M_{dep})/\rho_{ice} + M_{ppt}/\rho_{snow}}
-\end{equation}
-
-where $M_F$ is the cumulative mass of the fountain discharge; $M_{ppt}$ is the cumulative precipitation;
-$M_{dep}$ is the cumulative accumulation through water vapour deposition; $\rho_{ice}$ is the ice density (917
-$kg\,m^{-3}$) and $\rho_{snow}$ is the density of wet snow (300 $kg\,m^{-3}$) taken from
-\cite{cuffeyPhysicsGlaciers2010} .
 
 The energy flux acts upon the AIR surface layer, which has an upper and lower boundary defined by the atmosphere
 and the ice body of the AIR, respectively. Here, we define the surface temperature $T_{ice}$ to be the modelled
@@ -574,7 +563,7 @@ proportional to $\Delta t$. Therefore, we fix the temporal resolution of the mod
 investigate the uncertainty caused by $\Delta x$ here. Since the surface layer thickness for an AIR does not
 resemble to any parameter in the glaciological literature, we attribute a wide range of values for it (from 1 cm
 to 10 cm). The model parameters are henceforth called as weather parameters to distinguish them from the
-fountain forcing parameters. These were fixed within a range based on literature values (see Table
+fountain forcing parameters. These were fixed within a range based on literature values ( Table
 \ref{tab:parameters}). 
 
 The three types of uncertain parameters namely, model hyperparameters ($\Delta x$), fountain forcing parameters
@@ -584,10 +573,10 @@ volume estimates. In order to reduce this uncertainty, we perform a global sensi
 water loss as our objective. The objective of this sensitivity analysis was to reduce the dimension of the
 parameter space by calibrating the parameters with high total-order sensitivities ($S_{T_{j}} > 0.5$). The
 methodology to determine $S_{T_{j}}$ is described in Appendix \ref{sec:uncertainpy}. These sensitive model
-parameters were calibrated based on the root mean squared error (RMSE) between the drone surveys (see Table
-\ref{tab:uav}) and the model estimations of the ice volume. For this calibration procedure, all the other
-parameters were set to the median value of their respective ranges defined in Table \ref{tab:parameters}.  The
-sensitivity analysis and calibration were carried out with the drone surveys of CH21 and IN21 AIRs. 
+parameters were calibrated based on the root mean squared error (RMSE) between the drone surveys and the model
+estimations of the ice volume. For this calibration procedure, all the other parameters were set to the median
+value of their respective ranges defined in Table \ref{tab:parameters}.  The sensitivity analysis and
+calibration were carried out with the drone surveys of CH21 and IN21 AIRs. 
 
 The model uncertainty was quantified separately for the remaining parameters in $Q^M, Q^F$ and $Q^W$ using the
 corresponding $90\, \%$ prediction interval $I^M, I^F$ and $I^W$. The $90\, \%$ prediction interval, $I^k$, gives us the
@@ -657,7 +646,7 @@ drone surveys of CH20 AIR.
 	\end{tabular}
 \end{table}
 
-\section{Model application}
+\section{Model calibration, uncertainty and validation}
 
 \subsection{Calibration of sensitive parameters}
 
@@ -716,9 +705,8 @@ AIR no ice volume was left whereas for CH20 AIR ice volume of 12 $m^3$ was left 
 AIR, the determination of the expiry date was not possible. In reality, the IN21 AIR was found to have
 disintegrated into several ice blocks on 20th June, 2021. 
 
-There was also one drone survey of the CH20 AIR volume for validation purposes (see Table \ref{tab:uav}). The
-RMSE of that observation with the modelled volume was $19\, m^3$ which is 18 \% of the maximum simulated ice
-volume of CH20 AIR.
+There was also one drone survey of the CH20 AIR volume for validation purposes. The RMSE of that observation
+with the modelled volume was $19\, m^3$ which is 18 \% of the maximum simulated ice volume of CH20 AIR.
 
 \begin{figure}
   \centering
@@ -739,7 +727,7 @@ accuracy.
 
 \subsection{Quality and quantity of calibration and validation datasets}
 
-The methodology used to acquire the radius, area and volume of AIRs (see Appendix \ref{sec:drone_method}) from
+The methodology used to acquire the radius, area and volume of AIRs ( Appendix \ref{sec:drone_method}) from
 each drone survey has several drawbacks. The calibration and validation process used has an inherent temporal
 and spatial bias due to the following subjective choices:
 
@@ -774,6 +762,26 @@ looking at the bulk effect of an ensemble of obstacles. We deal with a case of a
 terrain, and we are confident that the roughness of the surface and the exposure will lead to larger turbulent
 fluxes.
 
+\subsection{Fountain quantification}
+
+Contrary to our model assumptions, the parameters used to define the fountain were not independent. The fountain
+height, fountain aperture diameter (both ignored in this analysis), discharge rate, water temperature and spray
+radius were related through the trajectories of the water droplets. Particularly, the temporal variation of both
+the spray radius and the water temperature were completely ignored in the model. 
+
+The model requires the fountain spray radius to be provided as input. This is a significant limitation since the
+model is very sensitive to the spray radius parameter. Moreover, spray radius is not only determined by the fountain
+characteristics but also due to wind-driven redistribution, refreezing and melting events across the AIR
+perimeter. The same fountain was observed to produce different spray radius corresponding to different winters
+for the Swiss experiments. Further discussion on this can be found at Section \ref{sec:interannual}.
+
+During the IN21 experiment, snow formation was observed, indicating that the fountain water droplets have the
+potential to freeze before deposition on the AIR surface. Modelling such processes would require modelling the
+conduction, convection and nucleation processes that all droplets undergo during their flight time. Therefore, a
+proper quantification of the fountain is much more complex and requires a closer look at the correlation of the
+fountain parameters amongst themselves and with the weather parameters. This will be investigated in a follow-up
+study, with this study focusing on the weather aspects of the model.
+
 \subsection{Shape parameterization}
 
 The RMSE between the drone and the model estimates of the surface area for the IN21, CH21 and CH20 AIRs were 69
@@ -784,28 +792,8 @@ Better quantification of the surface area can be achieved by assuming AIR cross 
 rather than a triangle.
 
 Better quantification of the spray radius can be achieved by modelling the projectile motion of fountain water
-droplets using wind speed values and fountain characteristics. A preliminary application of this methodology is
-shown in Section \ref{sec:interannual}
+droplets using wind speed values and fountain characteristics. 
 
-\subsection{Fountain quantification}
-
-Contrary to our model assumptions, the parameters used to define the fountain were not independent. The fountain
-height, fountain aperture diameter (both ignored in this analysis), discharge rate, water temperature and spray
-radius were related through the trajectories of the water droplets. Particularly, the temporal variation of both
-the spray radius and the water temperature were completely ignored in the model. 
-
-The model requires the fountain spray radius to be provided as input. This is a significant limitation since the
-model is very sensitive to the spray radius parameter. Moreover, $r_F$ is not only determined by the fountain
-characteristics but also due to wind-driven redistribution, refreezing and melting events across the AIR
-perimeter. The same fountain was observed to produce different spray radius corresponding to different winters
-for the Swiss experiments. Further discussion on this can be found at section \ref{}.  
-
-During the IN21 experiment, snow formation was observed, indicating that the fountain water droplets have the
-potential to freeze before deposition on the AIR surface. Modelling such processes would require modelling the
-conduction, convection and nucleation processes that all droplets undergo during their flight time. Therefore, a
-proper quantification of the fountain is much more complex and requires a closer look at the correlation of the
-fountain parameters amongst themselves and with the weather parameters. This will be investigated in a follow-up
-study, with this study focusing on the weather aspects of the model.
 
 \subsection{Albedo parametrisation}
 
@@ -905,9 +893,9 @@ modelling ice reservoirs. This modified COSIPY model will be referred to as COSI
 In this section, we describe all the adjustments to COSIPY modules necessary to convert it to the COSISTUPA
 model.
 
-The cosipy model input was extended to include discharge rate and cloudiness index measurements. Additionally,
+The COSIPY model input was extended to include discharge rate and cloudiness index measurements. Additionally,
 spray radius parameter was provided as input during model initialization. The model initialization of the ice
-dimensions were made identical to the AIR model. 
+cone dimensions were made identical to the AIR model. 
 
 Several parameterizations are available for estimating each of the surface processes in COSIPY. Most of the
 parameterizations used in the AIR model are among these options. But some parameterizations required minor
@@ -936,38 +924,36 @@ rate. To extend COSIPY into COSISTUPA, parametrizations of the following process
 Please note the above list of changes are not exhaustive and represent only the major modifications necessary to
 develop the COSISTUPA model.
 
-\subsubsection{Model intercomparison}
+\subsubsection{Advantages of the COSISTUPA model}
+
+The COSISTUPA model has a modular structure so that the exchange of routines or parametrizations of physical
+processes is possible with little effort for the user. The framework consists of a computational kernel, which
+forms the runtime environment and takes care of the initialization, the input-output routines, and the
+parallelization, as well as the grid and data structures. This structure offers maximum flexibility without
+having to worry about the internal numerical flow. The adaptive subsurface scheme allows an efficient and fast
+calculation of the otherwise computationally demanding fundamental equations. The surface energy balance scheme
+uses established standard parametrizations for radiation as well as for the energy exchange between the
+atmosphere and surface. The schemes are coupled by solving both surface energy balance and subsurface fluxes
+iteratively such that consistent skin temperature is returned at the interface. COSISTUPA uses a one-dimensional
+approach limited to the vertical fluxes of energy and matter but neglects any lateral processes. Accordingly,
+the model can be easily set up in parallel computational environments for calculating both energy balance and
+climatic surface mass balance of glacier surfaces based on flexible horizontal grids and with varying temporal
+resolution.
+
 
 Execution time and multiprocessing workflow
 RMSE error
-User friendly and long-term maintenance
+long-term maintenance
 
 \begin{figure}[t]
 \centering
 \includegraphics[width=12cm]{figs/model_compare.jpg}
 
-\caption{}
+\caption{Comparison of volume estimates generated from the AIR and COSISTUPA models.}
 
 \label{fig:Cosistupa}
 \end{figure}
 
-
-% Field measurements are the key to successfully setting up models of AIR volume evolution. However, little field
-% data is available. Moreover,   
-
-% Comprehensive weather and water information is required both to determine the mass and energy balance of AIRs
-% and to provide insight on the worldwide applicability of this water storage technology. Prior to this thesis,
-% AIR volume estimates suffered from high uncertainties and were limited to the Ladakh region
-% \cite{nusserSociohydrologyArtificialGlaciers2019, norphelSnowWaterHarvesting2015}. 
-
-% This chapter describes the datasets available and provides the methodology used to estimate the ice volume
-% evolution of AIRs. The equations governing the mass and energy balance of ice stupas is explained along with the
-% associated datasets required for forcing, calibration and validation of this AIR model.
-
-% In a first step, the influence of the chosen location and fountain used was quantified by feeding weather and
-% fountain data to an energy balance model and validating the ice volume estimates produced with volume
-% observations from drone flights. In a second step, the model was extended to serve as a tool for recommending
-% discharge rates and identifying favourable construction locations worldwide.
 
 
 
