@@ -803,76 +803,7 @@ a simplistic approach of increasing the decay rate by a constant factor is used.
 factor is chosen without any basis on measurements. Field based albedo measurements are required to better
 parametrize the effect of water spray on the surface albedo decay rate.
 
-\section{Model extensions}
-
-The AIR model presented above was extended in order to (a) develop automated fountain scheduling strategies and
-(b) improve its transferability to new locations.
-
-\subsection{Automated fountain scheduling system}
-
-Recommended discharge rates can only be produced if more information about the AIR surface properties and
-weather conditions are available. Particularly, resolving the uncertainty in the expected freezing rate requires
-quantification of the following three model variables: slope, albedo and cloudiness. But these properties cannot
-be predicted beforehand. Therefore, we instead associate the upper and lower bound of each variable to a
-different model depending on whether they increase the freezing rate or not. Higher slope and albedo values
-decrease the shortwave radiation impact. Higher cloudiness values increase both the shortwave and the longwave
-radiation impact. The model overestimating the freezing rate will be referred to as ice volume optimised model
-(IVOM) and the model underestimating the freezing rate will be referred to as water-use efficiency optimised
-model (WEOM), respectively. Accordingly, the values assigned for all the three variables in the respective model
-is shown in Table \ref{tab:assumptions}.
-
-The fountain scheduling software implements two types of fountain scheduling strategies depending on which
-model type is suitable. WEOM model type is used if the location has limited quantity since it is expected to
-produce better water-use efficiency. IVOM model type is used if the location had limited duration of favourable
-weather windows since it is expected to produce higher ice volumes. These two kinds of scheduled fountains will
-be referred to as water-sensitive fountain and weather-sensitive fountain henceforth.
-
-\begin{table}[htb]
-\centering
-\caption{Assumptions for the parametrisation introduced to simplify the ice volume optimised model (IVOM) and
-water-use efficiency optimised model (WEOM). $\alpha_{snow/ice}$ represents albedo of snow or ice respectively.}
-\label{tab:assumptions}
-\begin{tabular}{|lllll|}
-\toprule
-\textbf{Estimation of} & \textbf{Symbol} & \textbf{IVOM} & \textbf{WEOM} & \\\midrule
-\multicolumn{1}{|l}{Slope}        & $s_{cone}$ & $ 45 \degree $ & $0 \degree$ & \multicolumn{1}{l|}{} \\ 
-\multicolumn{1}{|l}{Albedo} & $\alpha$ & $\alpha_{snow}$ & $\alpha_{ice}$ & \multicolumn{1}{l|}{} \\
-\multicolumn{1}{|l}{Cloudiness}  & $cld$ & $0$ & $1$ & \multicolumn{1}{l|}{} \\\bottomrule 
-\end{tabular}
-\end{table}
-
-We apply the assumptions described in Table \ref{tab:assumptions} on the one-dimensional description of energy
-fluxes through Eqn. \ref{eqn:EB}. The derivation of the individual energy and mass balance terms for the IVOM
-and WEOM model versions are discussed in the Appendix \ref{sec:auto_software}.
-
-Equation \ref{eqn:EB} is implemented in the automation software. The user interface of the software enables
-input of the spray radius, altitude, latitude and longitude of the construction location. The automation
-hardware consists of an AWS, flowmeter, control valve, drain valves, air valves, fountain, pipeline and a
-logger. The logger feeds the AWS data to the automation software and informs the recommended discharge rate to
-the flowmeter. The flowmeter adjusts the control valve to match the recommendation. In case a termination
-criteria gets met, the drain and air valves begin to allow the removal of water from the pipeline and entry of
-air in the pipeline respectively.
-
-The recommended discharge rate is equal to the mass change rate. However, certain termination criteria listed
-below override the discharge rate recommendation and drain the pipeline to prevent water loss or fountain
-freezing events:
-
-\begin{itemize}
-
-\item High water loss is assumed if wind speed is greater than the user-defined critical wind speed.
-
-\item High risk of fountain freezing event is assumed if mass change rate is lower than the user-defined minimum fountain discharge rate. 
-
-\item Freezing events in the fountain pipeline are assumed if measured discharge rate is zero for at least 20
-  seconds. 
-
-\item Pipeline leakage is assumed if measured discharge rate is greater than the user-defined maximum fountain discharge rate.
-
-\end{itemize}
-
-
-\subsection{COSISTUPA: A COSIPY based model with lower calibration requirements }
-% \subsection{Location classifier}
+\subsection{COSISTUPA: COSIPY + AIR model}
 
 The model, in its current form, is not expected to perform well for locations where it has not been calibrated
 for before. This limits its ability to identify and classify other favourable locations worldwide.
@@ -953,6 +884,7 @@ long-term maintenance
 
 \label{fig:Cosistupa}
 \end{figure}
+
 
 
 
