@@ -6,7 +6,7 @@
 }{Chewang Norphel}{(Padmashree awardee, Inventor of ice terraces)}
 
 Prior AIR volume estimates differ widely from each other, suffer from high uncertainties and are restricted to
-the Ladakh region \cite{nusserSociohydrologyArtificialGlaciers2019, norphelSnowWaterHarvesting2015}. Moreover,
+the Ladakh region \citep{nusserSociohydrologyArtificialGlaciers2019, norphelSnowWaterHarvesting2015}. Moreover,
 their dependence on the weather and construction strategy used limits their utility in estimating AIR volumes
 across future winters or in new locations.  
 
@@ -20,9 +20,7 @@ In this chapter, we showcase the AIR datasets collected and develop a physically
 their volume evolution. Mass and energy balance equations were used to estimate the quantity of ice, meltwater,
 sublimation, and wastewater. Sensitivity and uncertainty analysis were performed to identify the most sensitive
 parameters and the variance they caused. For calibration, we chose two AIRs built across the winter of 2020/21
-in India and Switzerland, and validated the model on a Swiss AIR built during 2019/20. In a second step, the
-model was extended to serve as a tool for recommending discharge rates and identifying favourable construction
-locations worldwide.
+in India and Switzerland, and validated the model on a Swiss AIR built during 2019/20. 
 
 
 \section{Study sites and data}
@@ -779,8 +777,7 @@ During the IN21 experiment, snow formation was observed, indicating that the fou
 potential to freeze before deposition on the AIR surface. Modelling such processes would require modelling the
 conduction, convection and nucleation processes that all droplets undergo during their flight time. Therefore, a
 proper quantification of the fountain is much more complex and requires a closer look at the correlation of the
-fountain parameters amongst themselves and with the weather parameters. This will be investigated in a follow-up
-study, with this study focusing on the weather aspects of the model.
+fountain parameters amongst themselves and with the weather parameters. 
 
 \subsection{Shape parameterization}
 
@@ -792,7 +789,7 @@ Better quantification of the surface area can be achieved by assuming AIR cross 
 rather than a triangle.
 
 Better quantification of the spray radius can be achieved by modelling the projectile motion of fountain water
-droplets using wind speed values and fountain characteristics. 
+droplets using wind speed values and fountain characteristics as illustrated in Section \ref{sec:interannual}.
 
 
 \subsection{Albedo parametrisation}
@@ -809,9 +806,9 @@ The model, in its current form, is not expected to perform well for locations wh
 for before. This limits its ability to identify and classify other favourable locations worldwide.
 
 In this section, we showcase a strategy to improve the AIR model's transferability to new locations.
-Specifically, in paper I, we highlight the sensitivity of the model to the surface layer thickness parameter.
-This parameter requires prior calibration for better model performance. However, the dependence of the model on
-this parameter can be removed if spatial temperature fluctuations across the ice structure are resolved.
+Specifically, the surface layer thickness parameter requires prior calibration for better model performance.
+However, the dependence of the model on this parameter can be removed if spatial temperature fluctuations across
+the ice structure are resolved.
 
 In order to remove the calibration requirements for model performance, we combine the AIR model with the COupled
 Snowpack and Ice surface energy and mass balance model in PYthon (COSIPY) . COSIPY is typically used for
@@ -832,7 +829,7 @@ Several parameterizations are available for estimating each of the surface proce
 parameterizations used in the AIR model are among these options. But some parameterizations required minor
 modifications to be applicable for processes on a conical surface. Additionally, new parameterizations were
 required to estimate the conical shape evolution and model the freezing process due to the fountain discharge
-rate. To extend COSIPY into COSISTUPA, parametrizations of the following processes were modified:
+events. To extend COSIPY into COSISTUPA, parametrizations of the following processes were modified:
 
 \begin{itemize}
 
@@ -868,22 +865,23 @@ atmosphere and surface. The schemes are coupled by solving both surface energy b
 iteratively such that consistent skin temperature is returned at the interface. COSISTUPA uses a one-dimensional
 approach limited to the vertical fluxes of energy and matter but neglects any lateral processes. Accordingly,
 the model can be easily set up in parallel computational environments for calculating both energy balance and
-climatic surface mass balance of glacier surfaces based on flexible horizontal grids and with varying temporal
+climatic surface mass balance of multiple AIRs based on flexible horizontal grids and with varying temporal
 resolution.
 
+The RMSE error of the 5 icestupas studied in this thesis were within 20 \% of their maximum ice volumes for both
+the models (Fig. \ref{fig:Cosistupa}). However, the COSISTUPA model was 3 times slower than the AIR model. This
+is likely due to the additional effort required to resolve the ice temperature spatially.
 
-Execution time and multiprocessing workflow
-RMSE error
-long-term maintenance
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=12cm]{figs/model_compare.jpg}
+\includegraphics[width=\textwidth]{figs/model_compare.jpg}
 
 \caption{Comparison of volume estimates generated from the AIR and COSISTUPA models.}
 
 \label{fig:Cosistupa}
 \end{figure}
+
 
 
 
