@@ -200,20 +200,20 @@ survival duration of AIRs.
 
 \subsection{Automated fountain scheduling system}
 
+
 Recommended discharge rates can only be produced if more information about the AIR surface properties and
 weather conditions are available. Particularly, resolving the uncertainty in the expected freezing rate requires
 quantification of the following three model variables: slope, albedo and cloudiness. But these properties cannot
 be predicted beforehand. Therefore, we instead associate the upper and lower bound of each variable to a
 different model depending on whether they increase the freezing rate or not. Higher slope and albedo values
 decrease the shortwave radiation impact. Higher cloudiness values increase both the shortwave and the longwave
-radiation impact. The model overestimating the freezing rate will be referred to as ice volume optimised model
-(IVOM) and the model underestimating the freezing rate will be referred to as water-use efficiency optimised
-model (WEOM), respectively. Accordingly, the values assigned for all the three variables in the respective model
-is shown in Table \ref{tab:assumptions}.
+radiation impact. The model overestimating the freezing rate will be referred to as \ac{IVOM} and the model
+underestimating the freezing rate will be referred to as  \ac{WEOM}, respectively. Accordingly, the values
+assigned for all the three variables in the respective model is shown in Table \ref{tab:assumptions}.
 
 The fountain scheduling software implements two types of fountain scheduling strategies depending on which
 model type is suitable. WEOM model type is used if the location has limited quantity since it is expected to
-produce better water-use efficiency. IVOM model type is used if the location had limited duration of favourable
+produce better water-use efficiency. \ac{IVOM} model type is used if the location had limited duration of favourable
 weather windows since it is expected to produce higher ice volumes. These two kinds of scheduled fountains will
 be referred to as water-sensitive fountain and weather-sensitive fountain henceforth.
 
@@ -232,8 +232,8 @@ water-use efficiency optimised model (WEOM). $\alpha_{snow/ice}$ represents albe
 \end{table}
 
 We apply the assumptions described in Table \ref{tab:assumptions} on the one-dimensional description of energy
-fluxes through Eqn. \ref{eqn:EB}. The derivation of the individual energy and mass balance terms for the IVOM
-and WEOM model versions are discussed in the Appendix \ref{sec:auto_software}.
+fluxes through Eqn. \ref{eqn:EB}. The derivation of the individual energy and mass balance terms for the
+\ac{IVOM} and \ac{WEOM} model versions are discussed in the Appendix \ref{sec:auto_software}.
 
 Equation \ref{eqn:EB} is implemented in the automation software. The user interface of the software enables
 input of the spray radius, altitude, latitude and longitude of the construction location. The automation
@@ -278,18 +278,6 @@ processes is shown in Fig. \ref{fig:dis_processes}.
   AIRS due to the differences in their discharge rates.}
 \label{fig:dis_processes}
 \end{figure*}
-
-% A considerable difference exists in the contribution of the shortwave radiation due to process A. Although the
-% unscheduled fountain was active for a longer duration, frequent snowfall events counteracted the albedo feedback
-% of the fountain discharge. In contrast, the albedo of the automated AIR was reduced by late fountain spray
-% events, in particular in March and April, as shown in Fig. \ref{fig:dis_processes}. These poorly timed fountain
-% spray events occurred because of the global solar radiation diurnal variation, since these were calibrated based
-% on values for February in the automation system. Therefore, poor calibration of the automation system resulted
-% in an increased impact of shortwave radiation on the automated AIR. Similarly, the fountain discharge heat flux
-% for the traditional AIR was enhanced due to process B. The higher discharge value of the unscheduled fountain
-% and its longer duration are responsible for the higher contribution of fountain discharge heat flux in the
-% overall energy turnover. Therefore, higher melt of the automated AIR due to process A counteracted the higher
-% melt of the traditional AIR due to process B.
 
 The difference in water-use efficiency and maximum ice volume between unscheduled and scheduled fountains in the
 Indian and Swiss locations across two winters is shown in Fig. \ref{fig:wue}a. Four experimental values

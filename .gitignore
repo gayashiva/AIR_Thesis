@@ -19,3 +19,7 @@ dist
 *.dvi
 *.pdf
 *.synctex*
+*.acn
+*.glo
+*.ist
+*.gls*

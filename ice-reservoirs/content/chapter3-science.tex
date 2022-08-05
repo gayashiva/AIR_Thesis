@@ -14,12 +14,12 @@ Modelling is a powerful tool that allows estimation of AIR volumes across space 
 measurements are required to tie these models to reality. The weather, water and volume measurements carried out
 with an enormous input of manpower in the Indian Himalayas and the Swiss Alps provide a unique data basis for
 AIR studies. The combination of measurements and modelling provides the key to understanding the influence of
-the construction strategy and location on AIRs. 
+the construction strategy and location on \ac{AIRs}. 
 
 In this chapter, we showcase the AIR datasets collected and develop a physically-based model that can estimate
 their volume evolution. Mass and energy balance equations were used to estimate the quantity of ice, meltwater,
 sublimation, and wastewater. Sensitivity and uncertainty analysis were performed to identify the most sensitive
-parameters and the variance they caused. For calibration, we chose two AIRs built across the winter of 2020/21
+parameters and the variance they caused. For calibration, we chose two \ac{AIRs} built across the winter of 2020/21
 in India and Switzerland, and validated the model on a Swiss AIR built during 2019/20. 
 
 
@@ -32,10 +32,10 @@ construction strategy used, prefix of the country code and the suffix of the yea
 construction strategies are distinguished based on whether they used fountain scheduling strategies to regulate
 water supply. Those that did were codenamed automated construction strategy whereas the rest were codenamed
 traditional construction strategy. All except one construction campaign used traditional construction
-strategies. Therefore, traditional AIRs are referred to without explicitly specifying their construction
+strategies. Therefore, traditional \ac{AIRs} are referred to without explicitly specifying their construction
 strategy henceforth.
 
-In total, 23 AIRs were studied in these two regions across four winters  However, only four AIRs located in
+In total, 23 \ac{AIRs} were studied in these two regions across four winters  However, only four \ac{AIRs} located in
 Guttannen, Switzerland and one in Gangles, India had complete weather, water and volume measurements. Therefore,
 only these AIR datasets are used in the following analysis. The rest of the AIR datasets are described in the
 Appendix table \ref{tab:Ladakh_AIRs} and are used in later chapters to perform qualitative analysis.
@@ -43,7 +43,7 @@ Appendix table \ref{tab:Ladakh_AIRs} and are used in later chapters to perform q
 \begin{figure}[htb]
   \centering
 	\includegraphics[width=12 cm]{figs/2AIRs.jpg}
-  \caption{The Swiss and Indian AIRs were 5 $m$ and 13 $m$ tall on January 9 and March 3, 2021 respectively. Picture
+  \caption{The Swiss and Indian \ac{AIRs} were 5 $m$ and 13 $m$ tall on January 9 and March 3, 2021 respectively. Picture
 credits: Daniel Bürki (left) and Thinles Norboo (right)}
 \label{fig:2AIRs}
 \end{figure}
@@ -54,7 +54,7 @@ The Guttannen site (46.66 $\degree$N, 8.29 $\degree$E) is situated in the Berne 
 altitude of 1047 $m$ a.s.l. In the winter (Oct-Apr), mean daily minimum and maximum air temperatures vary
 between -13 and 15 $\degree C$. Clear skies are rare, averaging around 7 days during winter. Daily winter
 precipitation can sometimes be as high as 100 $mm$. These values are based on 30 years of hourly historical
-weather data measurements \citep{meteoblueClimateGuttannen2021}. Several AIRs were constructed by the Guttannen
+weather data measurements \citep{meteoblueClimateGuttannen2021}. Several \ac{AIRs} were constructed by the Guttannen
 Bewegt Association, the University of Fribourg and the Lucerne University of Applied Sciences and Arts during
 the winters of 2020-22.
 
@@ -67,7 +67,7 @@ characterized by high seasonal variation. During January, the coldest month, the
 \citep{nusserIrrigationDevelopmentUpper2012}. Because of the rain shadow effect of the Himalayan Range, the mean
 annual precipitation in Leh totals less than 100 $mm$, and there is high interannual variability. Whereas the
 average summer rainfall between July and September reaches 37.5 $mm$, the average winter precipitation between
-January and March amounts to 27.3 $ mm$ and falls almost entirely as snow. AIRs were constructed here as part of
+January and March amounts to 27.3 $ mm$ and falls almost entirely as snow. \ac{AIRs} were constructed here as part of
 the Ice Stupa Competition by the Himalayan Institute of Alternatives, Ladakh (HIAL). 
 
 \subsection{Meteorological data}
@@ -79,7 +79,7 @@ meteorological influences driving ice volume evolution in the two study sites ( 
 
 \begin{table}
   \centering
-  \caption{Summary of the weather observations for AIRs built during the repective study period. 
+  \caption{Summary of the weather observations for \ac{AIRs} built during the repective study period. 
 The weather measurements are shown using their mean ($\mu$) and standard deviation ($\sigma$) during the study
 period as $\mu \pm \sigma$. }
 
@@ -120,7 +120,7 @@ the observed ice radius formed from the fountain water droplets is denoted as sp
 
 \begin{table}
   \centering
-  \caption{List of all the studied AIRs. The study period starts when the fountain was first switched on
+  \caption{List of all the studied \ac{AIRs}. The study period starts when the fountain was first switched on
   (denoted as Start Date) and ends when the respective AIR either melted or broke into several ice blocks
 (denoted as Expiry Date). }
 	\label{tab:AIRs}
@@ -136,9 +136,10 @@ the observed ice radius formed from the fountain water droplets is denoted as sp
 	\end{tabular}
 \end{table}
 
-Several photogrammetric surveys were conducted for each of the AIRs. The details of these surveys and the
-methodology used to produce the corresponding outputs are explained in paper I. The digital elevation models
-(DEMs) generated from the obtained imagery were analysed to document the ice radius, the surface area and the
+
+Several photogrammetric surveys were conducted for each of the \ac{AIRs}. The details of these surveys and the
+methodology used to produce the corresponding outputs are explained in paper I. The 
+\ac{DEMs} generated from the obtained imagery were analysed to document the ice radius, the surface area and the
 volume of the ice structures. Ice radius measurements of drone flights which observed either an increase in AIR
 circumference or volume were averaged to determine the fountain's spray radius. The number of drone surveys
 conducted for each of the AIRs and the corresponding spray radius observed is shown in Table \ref{tab:AIRs}. 
@@ -342,7 +343,7 @@ proposed by \cite{garrattAtmosphericBoundaryLayer1992}:
 	v_a(p_{v,w}-p_{v,ice})}{{(\ln{\frac{h_{AWS}}{z_{0}}})}^2}
 \end{equation}
 
-where $h_{AWS}$ is the measurement height above the ground surface of the AWS (around $2\,m$ for all sites),
+where $h_{AWS}$ is the measurement height above the ground surface of the \ac{AWS} (around $2\,m$ for all sites),
 $v_a$ is the wind speed in [$m\,s^{-1}$], $c_a$ is the specific heat of air at constant pressure (1010 J
 $kg^{-1} K^{-1}$), $\rho_{a}$ is the air density at standard sea level (1.29 $kg m^{-3}$), $p_{0,a}$ is the air
 pressure at standard sea level (1013 $hPa$), $p_{a}$ is the measured air pressure, $\kappa$ is the von Karman
@@ -367,7 +368,7 @@ as follows:
 	\label{eqn:mu}
 \end{equation}
 
-A possible source of error is the fact that wind measurements from the horizontal plane at the AWS are used,
+A possible source of error is the fact that wind measurements from the horizontal plane at the \ac{AWS} are used,
 which might be different from those on a slope. However, without detailed datasets from the AIR surface, we
 retain this assumption.
 
@@ -412,7 +413,7 @@ Eqn. \ref{eqn:qG} as follows:
 
 \begin{equation} T_{bulk}^{i+1} = T_{bulk} - (q_{G} \cdot A \cdot \Delta t)/(M_{ice} \cdot c_{ice}) \end{equation}
 
-Since AIRs typically have conical shapes with $r_{cone} > h_{cone}$, we assume that the center of mass of the cone
+Since \ac{AIRs} typically have conical shapes with $r_{cone} > h_{cone}$, we assume that the center of mass of the cone
 body is near the base of the fountain. Thus, the distance of every point in the AIR surface layer from the cone
 body's center of mass is between $h_{cone}$ and $r_{cone}$. Therefore, we calculate $q_{G}$ assuming $l_{cone} = (r_{cone} +
 	h_{cone})/2$.
@@ -534,7 +535,7 @@ time step can be calculated using Eqn. \ref{eq:MB}.
 	\end{align}
 \end{subequations}
 
-Considering AIRs as water reservoirs, their net water loss can be defined as:
+Considering \ac{AIRs} as water reservoirs, their net water loss can be defined as:
 
 \begin{equation} \textit{Net water losses} = \frac{M_{waste}+M_{sub}}{(M_F+M_{ppt}+M_{dep})} \cdot 100 \end{equation}
 
@@ -544,11 +545,12 @@ Considering AIRs as water reservoirs, their net water loss can be defined as:
 The uncertainty in the model of estimating ice volumes is caused by three sources, namely, model forcing
 data, model hyperparameters and model parameters. Model forcing data can further be divided into weather and
 fountain forcing data. Significant uncertainty exists in the weather forcing data, particularly for all the
-radiation measurements ($SW_{direct}, SW_{diffuse}, LW_{in}$) since they were taken from ERA5 dataset or an AWS
+radiation measurements ($SW_{direct}, SW_{diffuse}, LW_{in}$) since they were taken from ERA5 dataset or an
+\ac{AWS}
 far away from the construction sites. Since no other weather datasets exist for comparison, especially near the
 IN21 AIR, we are not accounting for uncertainties related to meteorological forcing data in this analysis.
 Uncertainty in the fountain forcing data arises due to only some fountain parameters listed in Table
-\ref{tab:parameters}. Fountain runtime $t_F$ has no uncertainty for the Swiss AIRs because no interruptions
+\ref{tab:parameters}. Fountain runtime $t_F$ has no uncertainty for the Swiss \ac{AIRs} because no interruptions
 occured during the study period. However, significant uncertainty exists for the IN21 AIR , where the
 interruptions due to pipeline freezing events happened overnight but this was ignored in this analysis. Fountain
 spray radius $r_F$ was measured using the drone survey and therefore also doesn't contribute to model
@@ -571,10 +573,10 @@ volume estimates. In order to reduce this uncertainty, we perform a global sensi
 water loss as our objective. The objective of this sensitivity analysis was to reduce the dimension of the
 parameter space by calibrating the parameters with high total-order sensitivities ($S_{T_{j}} > 0.5$). The
 methodology to determine $S_{T_{j}}$ is described in Appendix \ref{sec:uncertainpy}. These sensitive model
-parameters were calibrated based on the root mean squared error (RMSE) between the drone surveys and the model
+parameters were calibrated based on the \ac{RMSE} between the drone surveys and the model
 estimations of the ice volume. For this calibration procedure, all the other parameters were set to the median
 value of their respective ranges defined in Table \ref{tab:parameters}.  The sensitivity analysis and
-calibration were carried out with the drone surveys of CH21 and IN21 AIRs. 
+calibration were carried out with the drone surveys of CH21 and IN21 \ac{AIRs}. 
 
 The model uncertainty was quantified separately for the remaining parameters in $Q^M, Q^F$ and $Q^W$ using the
 corresponding $90\, \%$ prediction interval $I^M, I^F$ and $I^W$. The $90\, \%$ prediction interval, $I^k$, gives us the
@@ -582,7 +584,7 @@ interval within which $90\,\%$ of the ice volume outcomes occur when all the par
 assuming each has an independent uniform probability density function. $5\,\%$ of the outcomes are above and
 $5\,\%$ are below this interval. The methodology to obtain this is described in Appendix \ref{sec:uncertainpy}.
 
-For validation, the calibrated model was tested with two datasets namely, the expiry date of all AIRs and the
+For validation, the calibrated model was tested with two datasets namely, the expiry date of all \ac{AIRs} and the
 drone surveys of CH20 AIR.
 
 \begin{table}
@@ -650,10 +652,10 @@ drone surveys of CH20 AIR.
 
 The total-order sensitivities of all the nine parameters with respect to the net water loss objective are shown
 in Fig. \ref{fig:param_hist} (a) . In total, the global sensitivity analysis required 1432 model runs to determine
-these sensitivities for each site. The only sensitive parameter ($S_{T_{j}} > 0.5$) for both AIRs was the
+these sensitivities for each site. The only sensitive parameter ($S_{T_{j}} > 0.5$) for both \ac{AIRs} was the
 surface layer thickness. The RMSE between the drone surveys and the model ice volume estimates for different
 surface layer thickness are shown in Fig. \ref{fig:param_hist} (b). The optimum value of $\Delta x$ was found to
-be 45 $mm$ and 65 $mm$ with an RMSE of 9 $m^3$ and 30 $m^3$ for CH21 and IN21 AIRs respectively.
+be 45 $mm$ and 65 $mm$ with an RMSE of 9 $m^3$ and 30 $m^3$ for CH21 and IN21 \ac{AIRs} respectively.
 
 \begin{figure}
 	\centering
@@ -661,7 +663,7 @@ be 45 $mm$ and 65 $mm$ with an RMSE of 9 $m^3$ and 30 $m^3$ for CH21 and IN21 AI
   \caption{(a) Total-order sensitivities of all the uncertain parameters of the model with net water loss as the
   objective. (b) The calibration of the sensitive parameter, $\Delta x$ with the RMSE between the drone and
 model estimates of the ice volume. The dots denote the optimum values. The estimates from the Swiss and Indian
-AIRs are denoted with blue and red colors respectively. }
+\ac{AIRs} are denoted with blue and red colors respectively. }
 	\label{fig:param_hist}
 \end{figure}
 
@@ -676,7 +678,7 @@ ablation periods. The accumulation (ablation) period ends (starts) at the last f
  
 
 The prediction interval of the weather and fountain forcing parameters behave differently during the
-accumulation and ablation period for all AIRs. Prediction interval of the weather parameters increase
+accumulation and ablation period for all \ac{AIRs}. Prediction interval of the weather parameters increase
 throughout the simulation period, but that of the fountain forcing parameters only increase during the
 accumulation period. This is to be expected since the fountain forcing parameters directly affect the model
 estimates only during the accumulation period. 
@@ -698,7 +700,7 @@ forcing parameters was expected to be larger for the Indian location.
 
 \subsection{Validation}
 
-Model performance can be judged based on the ice volume left on the expiry date of all AIRs. In the case of CH21
+Model performance can be judged based on the ice volume left on the expiry date of all \ac{AIRs}. In the case of CH21
 AIR no ice volume was left whereas for CH20 AIR ice volume of 12 $m^3$ was left on the expiry date. For the IN21
 AIR, the determination of the expiry date was not possible. In reality, the IN21 AIR was found to have
 disintegrated into several ice blocks on 20th June, 2021. 
@@ -709,7 +711,7 @@ with the modelled volume was $19\, m^3$ which is 18 \% of the maximum simulated 
 \begin{figure}
   \centering
 	\includegraphics[width=\linewidth]{figs/model_validation.jpg}
-	\caption{Simulated ice volume during the lifetime of the AIRs (blue curve). The shaded regions (light blue and
+	\caption{Simulated ice volume during the lifetime of the \ac{AIRs} (blue curve). The shaded regions (light blue and
 		orange) represent the 90\% prediction interval of the AIR ice volume caused by the variations in weather and
     fountain forcing parameters, respectively. Violet points indicate the drone ice volume observations.  The grey
   dashed line represents the observed expiry date for each AIR.  }
@@ -725,7 +727,7 @@ accuracy.
 
 \subsection{Quality and quantity of calibration and validation datasets}
 
-The methodology used to acquire the radius, area and volume of AIRs ( Appendix \ref{sec:drone_method}) from
+The methodology used to acquire the radius, area and volume of \ac{AIRs} ( Appendix \ref{sec:drone_method}) from
 each drone survey has several drawbacks. The calibration and validation process used has an inherent temporal
 and spatial bias due to the following subjective choices:
 
@@ -735,7 +737,7 @@ and spatial bias due to the following subjective choices:
     location were more evenly spaced out in comparison.
 
   \item \textbf{The weather conditions under which surveys were performed.} Particularly, precipitation events reduce DEM quality since
-    they create uniform snow surfaces over AIRs. These surfaces dont have many identifiable features that can be
+    they create uniform snow surfaces over \ac{AIRs}. These surfaces dont have many identifiable features that can be
     used to extract the radius and area of the AIR.
 
 \end{itemize}
@@ -780,8 +782,8 @@ fountain parameters amongst themselves and with the weather parameters.
 
 \subsection{Shape parameterization}
 
-The RMSE between the drone and the model estimates of the surface area for the IN21, CH21 and CH20 AIRs were 69
-\%, 25 \% and 65 \% of the maximum area of the respective AIRs. There are two crude assumptions that lead to
+The RMSE between the drone and the model estimates of the surface area for the IN21, CH21 and CH20 \ac{AIRs} were 69
+\%, 25 \% and 65 \% of the maximum area of the respective \ac{AIRs}. There are two crude assumptions that lead to
 such a large error namely, assuming a conical shape and assuming a constant spray radius.
 
 Better quantification of the surface area can be achieved by assuming AIR cross section to be a gaussian curve
@@ -864,7 +866,7 @@ atmosphere and surface. The schemes are coupled by solving both surface energy b
 iteratively such that consistent skin temperature is returned at the interface. COSISTUPA uses a one-dimensional
 approach limited to the vertical fluxes of energy and matter but neglects any lateral processes. Accordingly,
 the model can be easily set up in parallel computational environments for calculating both energy balance and
-climatic surface mass balance of multiple AIRs based on flexible horizontal grids and with varying temporal
+climatic surface mass balance of multiple \ac{AIRs} based on flexible horizontal grids and with varying temporal
 resolution.
 
 The RMSE error of the 5 icestupas studied in this thesis were within 20 \% of their maximum ice volumes for both

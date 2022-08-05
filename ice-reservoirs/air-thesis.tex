@@ -83,7 +83,7 @@
 \input{content/chapter4-technology}   % INCLUDE: related work
 \input{content/chapter5-habitat}   % INCLUDE: related work
 \input{content/chapter6-heritage}     % INCLUDE: conclusion
-\input{content/chapter7-papers}
+% \input{content/chapter7-papers}
 
 
 % --------------------------
@@ -97,7 +97,8 @@
 \setlength{\bibitemsep}{0.5\baselineskip plus 0.5\baselineskip}
 \printbibliography[nottype=online]
 \newrefcontext[labelprefix={@}]
-\printbibliography[heading=subbibliography,title={Webpages},type=online]
+\printbibliography[heading=subbibliography]
+% \printglossary[title=Special Terms, toctitle=List of terms, type=\acronymtype]
 }
 \cleardoublepage
 
@@ -108,6 +109,14 @@
 \cleardoublepage
 
 \lstlistoflistings
+\begin{acronym}[WEOM] % Give the longest label here so that the list is nicely aligned
+\acro{AIRs}{Artificial Ice Reservoirs}
+\acro{AWS}{Automatic Weather Station}
+\acro{DEMs}{Digital Elevation Maps}
+\acro{RMSE}{Root Mean Squared Error}
+\acro{IVOM}{Ice Volume Optimised Model}
+\acro{WEOM}{Water-use Efficiency Optimised Model}
+\end{acronym}
 \cleardoublepage
 
 \appendix\cleardoublepage
