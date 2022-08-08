@@ -55,14 +55,15 @@
 \pagestyle{empty}				% no header or footers
 \input{content/titlepages}		% INCLUDE: all titlepages
 \cleardoublepage
+%
+\input{content/preface} 
+\cleardoublepage
+%
 
 \pagestyle{plain}				% display just page numbers
 \input{content/abstract}		% INCLUDE: the abstracts (english and german)
 \cleardoublepage
-%
-\input{content/acknowledgement} % INCLUDE: acknowledgement
-\cleardoublepage
-%
+
 \currentpdfbookmark{\contentsname}{toc}
 \setcounter{tocdepth}{1}		% define depth of toc
 \tableofcontents				% display table of contents
@@ -121,13 +122,17 @@
 
 \appendix\cleardoublepage
 \input{content/chapter-appendix}       % INCLUDE: appendix
-
-% \cleardoublepage
-% \input{content/colophon}
-
+%
+\input{content/acknowledgement} % INCLUDE: acknowledgement
+\cleardoublepage
+%
 \cleardoublepage
 \input{content/declaration}
 \clearpage
+%
+% \cleardoublepage
+\input{content/colophon}
+%
 
 \newpage
 \mbox{}
