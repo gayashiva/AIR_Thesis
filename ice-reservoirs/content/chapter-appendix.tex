@@ -47,7 +47,7 @@
 	\label{fig:DEM}
 \end{figure}
 
-The drone flew automatically along a predefined flight course and took photographs at a certain time interval. The
+The drone flew along a predefined flight course and took photographs at a set time interval. The
 position and altitude of the drone at the exposure stations, which were obtained by the built-in integrated
 Position and Orientation System (POS, composed of a global positioning system and inertial measurement units),
 were recorded in JPEG pictures. In this study, we adopted a three-step workflow as implemented in the
@@ -73,14 +73,14 @@ near the ice boundary to mark as vertices of this perimeter. For the Swiss AIR, 
 to snowfall, so instead the perimeter was marked by identifying the ice and snow boundary.
 
 There is temporal and spatial uncertainty associated with this process. Weather conditions influence the quality
-of each drone survey variably. Moreover, since ice/snow surfaces do not have many identifiable features, few
+of each drone survey to various degrees. Moreover, since ice/snow surfaces do not have many identifiable features, few
 feature points can be detected and matched in the vicinity of the AIR. Thus, we attach a high uncertainty of
 $\pm 10 \%$ for all the AIR observations to accommodate for this.
 
 \section{Sensitivity and uncertainty analysis} \label{sec:uncertainpy}
 
 In this section, we summarise the theory behind the methods for uncertainty quantification and sensitivity
-analysis used. For detailed explanation of this methodology, see \cite{tennoeUncertainpyPythonToolbox2018}.
+analysis used. For a detailed explanation of this methodology, see \cite{tennoeUncertainpyPythonToolbox2018}.
 
 \subsection{Problem definition}
 Consider our model $U$ that depends on timestep $i$, has $d$ uncertain parameters $Q = [Q_1, Q_2, \dots, Q_d]$, and
@@ -115,12 +115,12 @@ I^k = [P_{(0.9/2)}, P_{(1-0.9/2)}]
 
 \subsection{Sensitivity analysis}
 
-We use a variance-based sensitivity analysis and compute the commonly considered Sobol sensitivity indices
+We use a variance-based sensitivity analysis and compute the widely renowned Sobol sensitivity indices
 (Sobol, 1990). The Sobol sensitivity indices quantify how much of the variance in the model output each
 uncertain parameter is responsible for. There are several types of Sobol indices. The first order Sobol
 sensitivity index $S_j$ measures the direct effect each parameter has on the variance of the model. Higher order
 Sobol indices give the sensitivity due to interactions between a parameter $Q_j$ and various other parameters.
-The total Sobol sensitivity $S_{T_{j}}$ includes the sensitivity of both first-order effects, as well as the
+The total Sobol sensitivity $S_{T_{j}}$ includes the sensitivity of both first order effects, as well as the
 sensitivity due to interactions between a given parameter $Q_j$ and all combinations of the other
 parameters. The sum of the total Sobol sensitivity indices is equal to or greater than one, and is only equal to
 one if there are no interactions between the parameters. Our goal is to use sensitivity analysis to fix
@@ -162,7 +162,7 @@ two kinds of assumptions applied on each of the energy balance components below:
 
 \subsection{Surface Area $A_{cone}$ assumptions}
 
-Determination of the surface area during the accumulation period is achieved by assuming a constant ice cone
+The surface area during the accumulation period is determined by assuming a constant ice cone
 radius equal to the fountain spray radius. The surface area scales the freezing rate of the AIR. Hence, for the
 IVOM version, we assume the maximum possible slope of 1 for the ice cone or in other words $h_{cone} = r_{F}$.
 Therefore, area is estimated as:  
