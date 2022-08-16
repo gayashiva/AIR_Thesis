@@ -6,14 +6,12 @@
 }{Chewang Norphel}{(Padmashree awardee, Inventor of ice terraces)}
 
 Prior AIR volume estimates differ widely from each other, are highly uncertain and restricted to
-the Ladakh region \citep{nusserSociohydrologyArtificialGlaciers2019, norphelSnowWaterHarvesting2015}. Moreover,
-their dependence on the weather and the construction strategy used limits their utility in estimating AIR volumes
-across future winters or in new locations.  
+the Ladakh region \citep{nusserSociohydrologyArtificialGlaciers2019, norphelSnowWaterHarvesting2015}. Moreover, each structure is an accumulation of ice generated using specific weather conditions and differing construction strategies. This makes it challenging to extrapolate these findings across future winters or in new locations.  
 
 Modelling is a powerful tool that allows estimation of AIR volumes across space and time. However, in-situ
-measurements are required to tie these models to reality. The weather, water and volume measurements carried out
-with an enormous input of manpower in the Indian Himalayas and the Swiss Alps provide a unique data basis for
-AIR studies. The combination of measurements and modelling provides the key to understanding the influence of
+measurements are required to tie these models to reality. The weather, water and volume measurements we carried out
+with an enormous input of manpower in the Indian Himalayas and the Swiss Alps provide a unique data basis for present and future 
+AIR studies. The combination of measurements and modelling is key to understanding the influence of
 the construction strategy and location on \ac{AIRs}. 
 
 In this chapter, we showcase the AIR datasets collected and develop a physically-based model that can estimate
@@ -30,13 +28,13 @@ above. The study period starts when the fountain was first switched on (start da
 AIR either melted or broke into several ice blocks (expiry date).  Each AIR dataset was abbreviated based on the
 construction strategy used, prefix of the country code and the suffix of the year of its expiry date. The
 construction strategies are distinguished based on whether they used fountain scheduling strategies to regulate
-water supply. Those that did were codenamed automated construction strategy whereas the rest were codenamed
-traditional construction strategy. All except one construction campaign used traditional construction
+water supply. Those that did were codenamed "automated" whereas the rest were codenamed
+"traditional". All except one construction campaign used traditional construction
 strategies. Therefore, traditional \ac{AIRs} are referred to without explicitly specifying their construction
 strategy henceforth.
 
 In total, 23 \ac{AIRs} were studied in these two regions across four winters.  However, only four \ac{AIRs} located in
-Guttannen, Switzerland and one in Gangles, India had complete weather, water and volume measurements. Therefore,
+Guttannen, Switzerland, and one in Gangles, India, had complete weather, water and volume measurements. Therefore,
 only these AIR datasets are used in the following analysis. The rest of the AIR datasets are described in the
 Appendix table \ref{tab:Ladakh_AIRs} and are used in later chapters to perform qualitative analysis.
 
@@ -64,11 +62,10 @@ The Gangles site (34.22 $\degree$N, 77.61 $\degree$E) is located around 20 km no
 region, lying at 4025 $m$ a.s.l.. The mean annual temperature is $5.6 \, \degree C$, and the thermal range is
 characterized by high seasonal variation. During January, the coldest month, the mean temperature drops to $-7.2
 \, \degree C$. During August, the warmest month, the mean temperature rises to $17.5 \, \degree C$
-\citep{nusserIrrigationDevelopmentUpper2012}. Because of the rain shadow effect of the Himalayan Range, the mean
-annual precipitation in Leh totals less than 100 $mm$, and there is high interannual variability. Whereas the
+\citep{nusserIrrigationDevelopmentUpper2012}. Because of the rain shadow effect of the Himalayan range, the mean
+annual precipitation in Leh totals less than 100 $mm$, and there is high interannual variability. While the
 average summer rainfall between July and September reaches 37.5 $mm$, the average winter precipitation between
-January and March amounts to 27.3 $ mm$ and falls almost entirely as snow. \ac{AIRs} were constructed here as part of
-the Ice Stupa Competition by the Himalayan Institute of Alternatives, Ladakh (HIAL). 
+January and March amounts to 27.3 $ mm$ and falls almost entirely as snow.  
 
 \subsection{Meteorological data}
 
@@ -99,13 +96,13 @@ period as $\mu \pm \sigma$. }
 
 \subsection{Fountain observations}
 
-The fountain consists of a pipeline and a nozzle. The pipeline has three attributes, namely : discharge rate
-($Q$), height ($h$) and water temperature ($T_F$). Discharge rate represents the discharge rate of the water in
-the fountain pipeline. Height denotes the height of the fountain pipeline installed. Fountain water temperature
+The fountain consists of a pipeline and a nozzle. The pipeline has three attributes, namely discharge rate
+($Q$), height ($h$) and water temperature ($T_F$). "Discharge rate" represents the discharge rate of the water in
+the fountain pipeline. "Height" denotes the height of the fountain pipeline installed. "Fountain water temperature"
 is the temperature of water droplets produced by the fountain.
 
-The fountain nozzle has three characteristics, namely : the aperture diameter ($dia$) and pressure loss
-($P_{nozzle}$) . Pressure loss denotes the loss of water head caused due to the fountain nozzle. Additionally,
+The fountain nozzle has three characteristics, namely the aperture diameter ($dia$) and pressure loss
+($P_{nozzle}$). "Pressure loss" denotes the loss of water head due to the fountain nozzle. Additionally,
 the observed ice radius formed from the fountain water droplets is denoted as spray radius ($r_F$) (Fig.
 \ref{fig:CH20_rad}). 
 
@@ -212,9 +209,9 @@ steps, the volume is parameterised using Eqn. \ref{eq:V} as:
 \begin{equation} V_{cone} = \frac{\pi \cdot {(r_{cone})}^3
 		\cdot s_{cone}}{3} \label{eq:V2} \end{equation}
 
-We define the Icestupa boundary through its spray radius, i.e. we assume ice formation is negligible when $r_{cone} >
+We define the ice stupa boundary through its spray radius, i.e. we assume ice formation is negligible when $r_{cone} >
 	r_{F}$. Combining Eqns. \ref{eq:V},  \ref{eq:V1}, \ref{eq:h0} and \ref{eq:V2}, the geometric evolution of the
-Icestupa at each time step $i$ can be determined by considering the following rules:
+Ice stupa at each time step $i$ can be determined by considering the following rules:
 
 \begin{equation} (r_{cone},\, h_{cone}) = \left\{ \begin{array}{ll} (r_F ,\, h_0)                                                                          & \textit{ if } i=0 \\
 		(r_{cone}^{i-1},\, \frac{3 \cdot M_{ice}}{\pi \cdot \rho_{ice} \cdot {(r_{cone}^{i-1})}^2}) & \textit{ if }
@@ -250,7 +247,7 @@ heat flux between the AIR surface and its interior.
 
 The energy flux acts upon the AIR surface layer, which has an upper and lower boundary defined by the atmosphere
 and the ice body of the AIR, respectively. Here, we define the surface temperature $T_{ice}$ to be the modelled
-average temperature of the icestupa surface layer.
+average temperature of the ice stupa surface layer.
 
 \subsubsection{Net Shortwave Radiation \texorpdfstring{$q_{SW}$}{Lg}} \label{sec:SW}
 
@@ -280,7 +277,7 @@ The solar area fraction $f_{cone}$ of the ice structure exposed to the direct sh
 considered. Using the solar elevation angle $\theta_{sun}$, the solar beam can be considered to have a vertical
 component, impinging on the horizontal surface (semicircular base of the AIR), and a horizontal component
 impinging on the vertical cross section (a triangle). The solar elevation angle $\theta_{sun}$ used is modelled
-using the parametrisation proposed by \cite{woolfComputationSolarElevation1968}. Accordingly, $f_{cone}$ is determined as follows:
+using the parametrization proposed by \cite{woolfComputationSolarElevation1968}. Accordingly, $f_{cone}$ is determined as follows:
 
 \begin{equation}
 	\begin{split}
@@ -348,7 +345,7 @@ $v_a$ is the wind speed in [$m\,s^{-1}$], $c_a$ is the specific heat of air at c
 $kg^{-1} K^{-1}$), $\rho_{a}$ is the air density at standard sea level (1.29 $kg m^{-3}$), $p_{0,a}$ is the air
 pressure at standard sea level (1013 $hPa$), $p_{a}$ is the measured air pressure, $\kappa$ is the von Karman
 constant (0.4), $z_{0}$ is the surface roughness (3 $mm$) and $L_s$ is the heat of sublimation (2848
-$kJ\,kg^{-1}$).  The vapor pressure of air with respect to water ($p_{v,w}$) and with respect to ice
+$kJ\,kg^{-1}$). The vapor pressure of air with respect to water ($p_{v,w}$) and with respect to ice
 ($p_{v,ice}$) was obtained using the formulation given in \cite{huangSimpleAccurateFormula2018} :
 
 \begin{equation}
@@ -389,7 +386,7 @@ with $c_{water}$ as the specific heat of water (4186 J $kg^{-1} K^{-1}$).
 
 \subsubsection{Rain heat flux \texorpdfstring{$q_{R}$}{Lg} }
 
-The influence of rain events on the albedo and the energy balance was assumed to be similar to that of discharge
+The influence of rain events on the albedo and on the Ice stupa's energy balance was assumed to be similar to that of discharge
 events. However, the water temperature of a rain event was assumed to equal to the air temeperature. Accordingly,
 the heat flux generated due to a rain event was equal to:
 
@@ -400,14 +397,14 @@ the heat flux generated due to a rain event was equal to:
 
 \subsubsection{Bulk Icestupa heat flux \texorpdfstring{$q_{G}$}{Lg}} \label{sec:Bulkflux}
 
-The bulk Icestupa heat flux $q_{G}$ corresponds to the ground heat flux in normal soils and is caused by the
+The bulk ice stupa heat flux $q_{G}$ corresponds to the ground heat flux in normal soils and is caused by the
 temperature gradient between the surface layer ($T_{ice}$) and the ice body ($T_{bulk}$). It is expressed by
 using the heat conduction equation as follows:
 
 \begin{equation} q_{G} = k_{ice} \cdot (T_{bulk}-T_{ice}^{i-1})/l_{cone} \label{eqn:qG}    \end{equation}
 
 where $k_{ice}$ is the thermal conductivity of ice (2.123 $W\, m^{-1}\,K^{-1}$) , $T_{bulk}$ is the mean
-temperature of the ice body within the icestupa and $l_{cone}$ is the average distance of any point in the
+temperature of the ice body within the ice stupa and $l_{cone}$ is the average distance of any point in the
 surface to any other point in the ice body. $T_{bulk}$ is initialised as 0 $\degree C$ and later determined from
 Eqn. \ref{eqn:qG} as follows:
 
@@ -420,7 +417,7 @@ body's center of mass is between $h_{cone}$ and $r_{cone}$. Therefore, we calcul
 
 \subsubsection{Phase changes}\label{sec:phase}
 
-In this section, the numerical procedures to model phase changes at the surface layer are explained. Let
+This section explains the numerical procedures to model phase changes at the surface layer. Let
 $T_{temp}$ be the calculated surface temperature. Therefore, Eqn. \ref{eqn:EB} can be rewritten as:
 
 $$q_{total} =\rho_{ice} \cdot c_{ice} \cdot \frac{(T_{temp}-T_{ice})}{\Delta t} \cdot \Delta x$$
@@ -542,7 +539,7 @@ Considering \ac{AIRs} as water reservoirs, their net water loss can be defined a
 
 \subsection{Uncertainty Quantification}
 
-The uncertainty in the model of estimating ice volumes is caused by three sources, namely, model forcing
+The uncertainty in the model of estimating ice volumes is caused by three sources, namely model forcing
 data, model hyperparameters and model parameters. Model forcing data can further be divided into weather and
 fountain forcing data. Significant uncertainty exists in the weather forcing data, particularly for all the
 radiation measurements ($SW_{direct}, SW_{diffuse}, LW_{in}$) since they were taken from ERA5 dataset or an
@@ -554,19 +551,19 @@ Uncertainty in the fountain forcing data arises due to only some fountain parame
 occured during the study period. However, significant uncertainty exists for the IN21 AIR , where the
 interruptions due to pipeline freezing events happened overnight but this was ignored in this analysis. Fountain
 spray radius $r_F$ was measured using the drone survey and therefore also doesn't contribute to model
-uncertainty. The choice of mean discharge rate $d_F$ for both sites was just a best guess, based on few observations made by the
-flowmeter. So we associate this parameter by a large uncertainty of $\pm \,50\, \%$. For the fountain water
+uncertainty. The choice of mean discharge rate $d_F$ for both sites was just a best guess, based on a few observations made by the
+flowmeter. So we associate this parameter with a large uncertainty of $\pm \,50\, \%$. For the fountain water
 temperature $T_F$, we assumed an upper bound of $3\, \degree C$ since it is unlikely for it to have been beyond
 this range considering winter conditions at all the sites. The model structure introduces uncertainty through
 the spatial and temporal hyperparameters $\Delta x$ and $\Delta t$. By definition, $\Delta x$ is directly
 proportional to $\Delta t$. Therefore, we fix the temporal resolution of the model at hourly timesteps and only
 investigate the uncertainty caused by $\Delta x$ here. Since the surface layer thickness for an AIR does not
-resemble to any parameter in the glaciological literature, we attribute a wide range of values for it (from 1 cm
+resemble any parameters in the glaciological literature, we attribute a wide range of values to it (from 1 cm
 to 10 cm). The model parameters are henceforth called as weather parameters to distinguish them from the
-fountain forcing parameters. These were fixed within a range based on literature values ( Table
+fountain forcing parameters. These were fixed within a range based on literature values (Table
 \ref{tab:parameters}). 
 
-The three types of uncertain parameters namely, model hyperparameters ($\Delta x$), fountain forcing parameters
+The three types of uncertain parameters, namely model hyperparameters ($\Delta x$), fountain forcing parameters
 ($d_F, T_F$) and weather parameters ($\epsilon_{ice}, z_0, \alpha_{ice}, \alpha_{snow}, T_{ppt}, \tau$) are
 denoted as $Q^M, Q^F$ and $Q^W$ henceforth. Together, these nine parameters cause a large uncertainty in the ice
 volume estimates. In order to reduce this uncertainty, we perform a global sensitivity analysis with the net
@@ -584,7 +581,7 @@ interval within which $90\,\%$ of the ice volume outcomes occur when all the par
 assuming each has an independent uniform probability density function. $5\,\%$ of the outcomes are above and
 $5\,\%$ are below this interval. The methodology to obtain this is described in Appendix \ref{sec:uncertainpy}.
 
-For validation, the calibrated model was tested with two datasets namely, the expiry date of all \ac{AIRs} and the
+For validation, the calibrated model was tested with two datasets, namely the expiry date of all \ac{AIRs} and the
 drone surveys of CH20 AIR.
 
 \begin{table}
@@ -651,7 +648,7 @@ drone surveys of CH20 AIR.
 \subsection{Calibration of sensitive parameters}
 
 The total-order sensitivities of all the nine parameters with respect to the net water loss objective are shown
-in Fig. \ref{fig:param_hist} (a) . In total, the global sensitivity analysis required 1432 model runs to determine
+in Fig. \ref{fig:param_hist} (a). In total, the global sensitivity analysis required 1432 model runs to determine
 these sensitivities for each site. The only sensitive parameter ($S_{T_{j}} > 0.5$) for both \ac{AIRs} was the
 surface layer thickness. The RMSE between the drone surveys and the model ice volume estimates for different
 surface layer thickness are shown in Fig. \ref{fig:param_hist} (b). The optimum value of $\Delta x$ was found to
@@ -674,7 +671,7 @@ Fig. \ref{fig:results}. The ranges highlighted represent the corresponding $90\,
 ice volume estimates. Weather uncertainty determination required 422 simulations whereas fountain forcing
 uncertainty determination required 32 simulations for each AIR. Since the results presented below differ
 significantly during the fountain runtime, we divided the simulation duration of the AIR into accumulation and
-ablation periods. The accumulation (ablation) period ends (starts) at the last fountain discharge event. 
+ablation periods. The accumulation period ends and the ablation period starts after the last fountain discharge event. 
  
 
 The prediction interval of the weather and fountain forcing parameters behave differently during the
@@ -683,7 +680,7 @@ throughout the simulation period, but that of the fountain forcing parameters on
 accumulation period. This is to be expected since the fountain forcing parameters directly affect the model
 estimates only during the accumulation period. 
 
-Weather uncertainty for the Indian site was low compared to the Swiss since precipitation and the associated
+Weather uncertainty for the Indian site was low compared to the Swiss one since precipitation and the associated
 variation in albedo was negligible. At the end of the accumulation period, the Indian weather prediction
 interval had a magnitude of  $73\,m^3$ which was 10 \% of the maximum simulated volume, whereas the magnitude of
 the Swiss weather prediction interval was much higher (28 \% of the maximum simulated volume for the CH21 AIR).
@@ -721,7 +718,7 @@ with the modelled volume was $19\, m^3$ which is 18 \% of the maximum simulated 
 
 \section{Model limitations and suggestions for improvement}
 
-Model development is an art where subjective choices seek a balance between model simplicity and its accuracy.
+Model development is an art where subjective choices seek a balance between a model's simplicity and its accuracy.
 Below we detail some of these choices and recommend strategies that shift this balance towards further model
 accuracy.
 
@@ -784,18 +781,18 @@ fountain parameters amongst themselves and with the weather parameters.
 
 The RMSE between the drone and the model estimates of the surface area for the IN21, CH21 and CH20 \ac{AIRs} were 69
 \%, 25 \% and 65 \% of the maximum area of the respective \ac{AIRs}. There are two crude assumptions that lead to
-such a large error namely, assuming a conical shape and assuming a constant spray radius.
+such a large error, namely assuming a conical shape and assuming a constant spray radius.
 
-Better quantification of the surface area can be achieved by assuming AIR cross section to be a gaussian curve
+Better quantification of the surface area can be achieved by assuming AIR cross section to be a Gaussian curve
 rather than a triangle.
 
 Better quantification of the spray radius can be achieved by modelling the projectile motion of fountain water
 droplets using wind speed values and fountain characteristics as illustrated in Section \ref{sec:interannual}.
 
 
-\subsection{Albedo parametrisation}
+\subsection{Albedo parametrization}
 
-The albedo parametrisation illustrated by Equation \ref{eqn:alb} had to be modified to accomodate the fountain
+The albedo parametrization illustrated by Equation \ref{eqn:alb} had to be modified to accomodate the fountain
 discharge events. Little knowledge is available to understand the decay of albedo due to such events. Therefore,
 a simplistic approach of increasing the decay rate by a constant factor is used. However, the value of this
 factor is chosen without any basis on measurements. Field based albedo measurements are required to better
@@ -813,23 +810,23 @@ However, the dependence of the model on this parameter can be removed if spatial
 the ice structure are resolved.
 
 In order to remove the calibration requirements for model performance, we combine the AIR model with the COupled
-Snowpack and Ice surface energy and mass balance model in PYthon (COSIPY) . COSIPY is typically used for
+Snowpack and Ice surface energy and mass balance model in PYthon (COSIPY). COSIPY is typically used for
 modelling distributed snow and glacier mass changes \citep{sauterCOSIPYV1Opensource2020}. However, its flexible,
 user-friendly and modular framework makes it an ideal platform to implement the alternate modules required for
 modelling ice reservoirs. This modified COSIPY model will be referred to as COSISTUPA model henceforth.
 
 \subsubsection{Model configuration}
 
-In this section, we describe all the adjustments to COSIPY modules necessary to convert it to the COSISTUPA
+In this section, we describe the main adjustments needed to convert COSIPY modules into the COSISTUPA
 model.
 
 The COSIPY model input was extended to include discharge rate and cloudiness index measurements. Additionally,
 spray radius parameter was provided as input during model initialization. The model initialization of the ice
 cone dimensions were made identical to the AIR model. 
 
-Several parameterizations are available for estimating each of the surface processes in COSIPY. Most of the
-parameterizations used in the AIR model are among these options. But some parameterizations required minor
-modifications to be applicable for processes on a conical surface. Additionally, new parameterizations were
+Several parametrizations are available for estimating each of the surface processes in COSIPY. Most of the
+parametrizations used in the AIR model are among these options. But some parametrizations required minor
+modifications to be applicable for processes on a conical surface. Additionally, new parametrizations were
 required to estimate the conical shape evolution and model the freezing process due to the fountain discharge
 events. To extend COSIPY into COSISTUPA, parametrizations of the following processes were modified:
 
