@@ -28,7 +28,7 @@ above. The study period starts when the fountain was first switched on (start da
 AIR either melted or broke into several ice blocks (expiry date).  Each AIR dataset was abbreviated based on the
 construction strategy used, prefix of the country code and the suffix of the year of its expiry date. The
 construction strategies are distinguished based on whether they used fountain scheduling strategies to regulate
-water supply. Those that did were codenamed "automated" whereas the rest were codenamed
+water supply. Fountain scheduling was realized through a control valve that was automated with optimal discharge rates computed using real-time weather input and location metadata. Those that did were codenamed "automated" whereas the rest were codenamed
 "traditional". All except one construction campaign used traditional construction
 strategies. Therefore, traditional \ac{AIRs} are referred to without explicitly specifying their construction
 strategy henceforth.
@@ -62,7 +62,7 @@ The Gangles site (34.22 $\degree$N, 77.61 $\degree$E) is located around 20 km no
 region, lying at 4025 $m$ a.s.l.. The mean annual temperature is $5.6 \, \degree C$, and the thermal range is
 characterized by high seasonal variation. During January, the coldest month, the mean temperature drops to $-7.2
 \, \degree C$. During August, the warmest month, the mean temperature rises to $17.5 \, \degree C$
-\citep{nusserIrrigationDevelopmentUpper2012}. Because of the rain shadow effect of the Himalayan range, the mean
+\citep{nusserIrrigationDevelopmentUpper2012}. Because of the rain shadow effect of the Himalayan range, whereby rainfall is reduced where the mountains shield an area from prevailing winds, the mean
 annual precipitation in Leh totals less than 100 $mm$, and there is high interannual variability. While the
 average summer rainfall between July and September reaches 37.5 $mm$, the average winter precipitation between
 January and March amounts to 27.3 $ mm$ and falls almost entirely as snow.  
@@ -824,8 +824,8 @@ The COSIPY model input was extended to include discharge rate and cloudiness ind
 spray radius parameter was provided as input during model initialization. The model initialization of the ice
 cone dimensions were made identical to the AIR model. 
 
-Several parametrizations are available for estimating each of the surface processes in COSIPY. Most of the
-parametrizations used in the AIR model are among these options. But some parametrizations required minor
+Several parametrizations are available for estimating each of the surface processes in COSIPY. Most of the ones
+used in the AIR model are among the available options. But some required minor
 modifications to be applicable for processes on a conical surface. Additionally, new parametrizations were
 required to estimate the conical shape evolution and model the freezing process due to the fountain discharge
 events. To extend COSIPY into COSISTUPA, parametrizations of the following processes were modified:
