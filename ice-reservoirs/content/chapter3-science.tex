@@ -868,9 +868,8 @@ climatic surface mass balance of multiple \ac{AIRs} based on flexible horizontal
 resolution.
 
 The RMSE error of the 5 icestupas studied in this thesis were within 20 \% of their maximum ice volumes for both
-the models (Fig. \ref{fig:Cosistupa}). However, the COSISTUPA model was 3 times slower than the AIR model. This
+the models (Fig. \ref{fig:Cosistupa}).  However, the COSISTUPA model was 3 times slower than the AIR model. This
 is likely due to the additional effort required to resolve the ice temperature spatially.
-
 
 \begin{figure}[t]
 \centering
@@ -880,6 +879,28 @@ is likely due to the additional effort required to resolve the ice temperature s
 
 \label{fig:Cosistupa}
 \end{figure}
+
+We consider the COSISTUPA model to be the better one among the two models due to these three reasons: 
+
+\begin{itemize}
+
+  \item \textbf{Better spatial temperature and density resolution} : It provides temperature and density
+    information of subsurface layers of the AIR. In contrast, the AIR model only computes the bulk and the
+    surface temperature. Moreover, COSISTUPA is better able to approximate bulk density since it has records of
+    previous snowfall events in its subsurface layers.
+
+  \item \textbf{Better parametrization of snowfall} : The densification and albedo decay of snowfall are better
+    handled in COSISTUPA due to its awareness of the snowfall content in each of its subsurface layers.
+
+  \item \textbf{Better validation} : COSISTUPA, being a model derived from COSIPY is expected to validate better
+    since the core parametrizations are unchanged and have been extensively validated before \citep{arndtAtmosphereDrivenMassBalance2021}.
+
+  \item \textbf{Future support} : COSISTUPA will be extensively supported in the future through the COSIPY
+    community.
+
+\end{itemize}
+
+
 
 
 
