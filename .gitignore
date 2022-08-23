@@ -14,10 +14,10 @@
 *.fls
 *.lol
 example-thesis/cleanthesis.sty
+misc/*
 dist
 *.out.ps
 *.dvi
-*.pdf
 *.synctex*
 *.acn
 *.glo
