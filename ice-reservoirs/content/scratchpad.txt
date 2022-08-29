@@ -157,3 +157,54 @@ location can be summarised as follows:
 
  It is not known who started the practice of glacier grafting, but according to oral history it is as old as the
 local communities.
+
+% Finally, the scripts developed are also shared and could be adapted in various contexts to
+% efficiently calculate ice surface processes over arbitrary complex and/or large geometries, including in
+% non-mountain applications; a further benefit of the “Open Science” approach taken.
+
+% \section{Final thoughts}
+
+% Progressing glacier melt and the associated growing number of lakes rises the threat of glacier lake outburst
+% floods (GLOFs); at the same time declining melt water supply changes the hydological regime, resulting in
+% changing water availability especially during dry seasons. AIRs could become a crucial water resource management
+% strategy to deal with both these high and low flow water hazards.
+
+% With suitable technological development, GLOF risk can be mitigated through artificial glaciers.
+
+% Successfully creating such an artificial glacier could provide unprecedented scientific insights in the
+% processes governing glacial formation. More importantly, they could be used to harvest glacial lakes into ice
+% reservoirs and pave the way for scalable climate adaptation strategies.
+
+% \subsubsection{Educational tool}
+
+% , climate change communication, scientific experiments
+
+% \subsubsection{Sustainable tourism}
+
+% Sculpture, religious monument, accomodation, ice climbing
+
+% The model has been shown to perform excellently when calibrated with the AIR datasets.  It could be shown that
+% the maximum volume of AIRs located in the IN and CH regions differ by an order of magnitude. These differences
+% were caused by the stronger sublimation process due to the colder and drier weather conditions of the IN region. 
+
+% AIR maintenance requirement was reduced and their fountain freezing events were prevented by developing an
+% automated construction strategy. Fountain operation was made 8 times more efficient and effortless through the
+% use of an automation system that scheduled discharge rates based on the recommendations of the AIR model. 
+
+% For example, the catchment of Chicon, Peru has a current glacier coverage of more than 6 \%. In general, the
+% runoff in Chicon is low, barely exceeding 1.2 $m^3/s$ even during the wet season. Runoff during the dry months
+% is very low and goes down to only 0.2 $m^3/s$ \cite{motschmannIntegratedAssessmentsWater2020}. The glacier
+% meltwater contribution is comparatively low but still has an important impact. The situation potentially worsens
+% in the future, where the runoff in the high emission scenorio is constantly below 1 $m^3/s$ and goes down to 0.1
+% $m^3/s$.
+
+% Glaciers, seasonal snow, and permafrost buffer flow in water catchments between the dry and wet seasons. 
+
+
+% \section{Quantification of the adaptation potential of Stok catchment}\label{sec:adaptation}
+
+% Stok catchment in Ladakh is fed by a glacier with area of 0.8 $km^2$ (1969) and has a dry season melt rate of
+% 0.25 $mm/day$ \cite{sohebMassbalanceObservationReconstruction2020}. This implies the village receives around
+% 0.002 $m^3/s$ of glacial meltwater supply during April and May. Icestupa meltwater quantities measured in nearby
+% villages supply more than 10 $m^3/day$ (Fig.\ref{fig:ISmelt}) or about 10 percent of Stok's glacial water supply.
+% Therefore, to adapt against 8 \% reduction in glacial meltwater supply only 1 ice stupa is required.
