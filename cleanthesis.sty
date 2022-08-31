@@ -91,6 +91,7 @@
 % --> values = biber|bibtex
 \define@choicekey*[ct]{cthesis}{bibsys}[\val\bibsysnr]{biber,bibtex}[bibtex]{\def\cthesis@bibsys{#1}}
 \setkeys[ct]{cthesis}{bibsys=bibtex}
+% \setkeys[ct]{cthesis}{bibsys=biber}
 
 % OPTION bibfile
 % --> values = file name of your bibtex file
@@ -100,7 +101,10 @@
 % OPTION bibstyle
 % --> values = biblatex style options
 \define@key[ct]{cthesis}{bibstyle}[alphabetic]{\def\cthesis@bibstyle{#1}}
-\setkeys[ct]{cthesis}{bibstyle=alphabetic}
+% \setkeys[ct]{cthesis}{bibstyle=alphabetic}
+% \setkeys[ct]{cthesis}{bibstyle=plainnat}
+% \setkeys[ct]{cthesis}{bibstyle=ieee}
+% \setkeys[ct]{cthesis}{bibstyle=nature}
 
 % OPTION bibsorting
 % --> values = biblatex sorting options
@@ -299,19 +303,19 @@
 	\RequirePackage[					% use biblatex for bibliography
 		backend=\cthesis@bibsys,		% 	- use biber backend (bibtex replacement) or bibtex
 		style=\cthesis@bibstyle,		% 	- use alphabetic (or numeric) bib style
-		natbib=true,					% 	- allow natbib commands
+		natbib=false,					% 	- allow natbib commands
 		hyperref=true,					% 	- activate hyperref support
 		backref=true,					% 	- activate backrefs
 		isbn=false,						% 	- don't show isbn tags
 		url=false,						% 	- don't show url tags
 		doi=false,						% 	- don't show doi tags
 		urldate=long,					% 	- display type for dates
-		maxnames=2,%
-		minnames=1,%
-		maxbibnames=2,%
-		minbibnames=1,%
-		maxcitenames=2,%
-		mincitenames=1,%,
+		maxnames=1,%
+		minnames=0,%
+		maxbibnames=1,%
+		minbibnames=0,%
+		maxcitenames=1,%
+		mincitenames=0,%,
 		sorting=\cthesis@bibsorting%
 	]{biblatex}
 	\bibliography{\cthesis@bibfile}
