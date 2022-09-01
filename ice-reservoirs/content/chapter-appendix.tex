@@ -3,12 +3,81 @@
 \chapter{Appendix}
 \label{sec:appendix}
 
+\section{Glacier marriage ceremony}
+\label{sec:glacier_marriage}
+
+This description of the glacier marriage ceremony is adapted from \citet{khanMarriageGlaciersPrzekroj2020}.
+
+A 12-man party carries the pieces of female ice in woven baskets, another 12 men carry the male ice, the water
+drawn from the Indus river is carried traditionally in 12 gourd bottles, but sometimes clay pots or goatskins
+are also required, as well as charcoal and wheat husks or sawdust which act as insulators for the ice. The last
+ingredient is salt, which, according to some glacier grafters, helps protect the new glacier from impurities.
+The bride and groom party walk from different sites and meet at a certain point to climb together to their
+destination, where the new glacier will be created. No greetings are exchanged, as the people involved in the
+ceremony must remain silent until the ice is deposited in its new home. They walk continuously without
+any breaks, but if the distance is too much and rest is required, they do not put their loads on the ground:
+Instead, they hang the baskets on trees, or on walking sticks if nothing else is available. Each man has to
+carry around 15 to 25 kilograms of ice, walking in cold air, silently up the mountains, for a day or more. Once
+they reach the glacier growing site, they deposit their valuable loads. The ice lumps and water vessels are
+placed in between the boulders, or in a small cave, or sometimes in a pit dug specifically for this purpose, and
+are covered with layers of salt, charcoal and sawdust. The silence is finally broken as religious leaders recite
+verses of the Quran and pray for the success of the glacier marriage and for protection from the djinns. Once
+the male and female glaciers are placed in their new home and covered, a man from the glacier grafters' party
+stands up and offers his life for the success of the process. His symbolic sacrifice is matched by the actual
+sacrifice of a goat – its meat is distributed to a charity, because prayers are more likely to be answered if
+accompanied by a charitable act. They will not visit the place for at least three years, so as not to disturb
+the glacier. It is said that a person who disturbs the glacier before its maturation will die. The celebrations
+continue in the village with traditional songs and prayers, alongside festive food and the joy of the
+accomplished mission.
+
+
 \section{Drone surveys processing methodology}
 \label{sec:drone_method}
 
-\begin{table}
+The drone flew along a predefined flight course and took photographs at a set time interval. The
+position and altitude of the drone at the exposure stations, which were obtained by the built-in integrated
+Position and Orientation System (POS, composed of a global positioning system and inertial measurement units),
+were recorded in JPEG pictures. In this study, we adopted a three-step workflow as implemented in the
+commercial software package Pix4Dmapper version 4.6.4 (\cite{pix4dsaPix4DmapperUserManual2020}). A short summary of this workflow is
+described below:
+
+\begin{figure}
+	\begin{center}
+		\includegraphics[width=12 cm]{figs/pix4d.jpg}
+	\end{center}
+	\caption{Digital elevation map of Indian AIR constructed from the drone survey on March 3, 2021. The green
+		area represents the area bounded by the marked perimeter and the red area represents gaps in the point cloud
+    that were filled to compute the associated volume.
+	}
+	\label{fig:DEM}
+\end{figure}
+
+(1) Initial processing: This process generates a sparse point cloud with the structure-from motion algorithm
+(\cite{turnerAutomatedTechniqueGenerating2012}). First, it searches for and matches key points in the photos that have certain overlapping
+areas using a feature matching algorithm (e.g., the scale-invariant feature transform (SIFT) algorithm, which can
+detect key points in photos with different views and illumination conditions;
+\cite{loweDistinctiveImageFeatures2004}). Second, the approximate locations and orientations of the camera at
+each exposure station are reconstructed with the internal parameters (focal length, coordinates of the principal
+point of the photograph), and external parameters (i.e. POS data). A sparse point cloud is created.
+
+(2) Point cloud densification: In this step, the multi-view stereo technique is applied to achieve a higher
+point cloud density than in the previous step (\cite{furukawaAccurateDenseRobust2010};
+\cite{molgStructurefromMotionUsingHistorical2017}). Thus, the spatial resolution of the products can be
+increased, and an irregular network for the next step can be created (\cite{kungACCURACYAUTOMATICPHOTOGRAMMETRIC2011}).
+
+(3) AIR delineation: Ice radius, area and volume are the three final products. Perimeter was manually marked
+on the point cloud by identifying the AIR boundary (see Fig. \ref{fig:DEM}). For the Indian location, we identified identical rock features
+near the ice boundary to mark as vertices of this perimeter. For the Swiss AIR, no such feature was available due
+to snowfall, so instead the perimeter was marked by identifying the ice and snow boundary.
+
+There is temporal and spatial uncertainty associated with this process. Weather conditions influence the quality
+of each drone survey to various degrees. Moreover, since ice/snow surfaces do not have many identifiable features, few
+feature points can be detected and matched in the vicinity of the AIR. Thus, we attach a high uncertainty of
+$\pm 10 \%$ for all the AIR observations to accommodate for this.
+
+\begin{table}[htb]
   \centering
-  \caption{List of all the studied AIRs in Ladakh.}
+  \caption{List of all the studied AIRs in Ladakh. Adapted from \citet{mariagruberIceStupasLadakh2022}}
 	\label{tab:Ladakh_AIRs}
 	\begin{tabular}{|lllll|}
     \hline
@@ -36,51 +105,10 @@
 	\end{tabular}
 \end{table}
 
-\begin{figure}
-	\begin{center}
-		\includegraphics[width=12 cm]{figs/pix4d.jpg}
-	\end{center}
-	\caption{Digital elevation map of Indian AIR constructed from the drone survey on March 3, 2021. The green
-		area represents the area bounded by the marked perimeter and the red area represents gaps in the point cloud
-    that were filled to compute the associated volume.
-	}
-	\label{fig:DEM}
-\end{figure}
-
-The drone flew along a predefined flight course and took photographs at a set time interval. The
-position and altitude of the drone at the exposure stations, which were obtained by the built-in integrated
-Position and Orientation System (POS, composed of a global positioning system and inertial measurement units),
-were recorded in JPEG pictures. In this study, we adopted a three-step workflow as implemented in the
-commercial software package Pix4Dmapper version 4.6.4 (\cite{pix4dsaPix4DmapperUserManual2020}). A short summary of this workflow is
-described below:
-
-(1) Initial processing: This process generates a sparse point cloud with the structure-from motion algorithm
-(\cite{turnerAutomatedTechniqueGenerating2012}). First, it searches for and matches key points in the photos that have certain overlapping
-areas using a feature matching algorithm (e.g., the scale-invariant feature transform (SIFT) algorithm, which can
-detect key points in photos with different views and illumination conditions;
-\cite{loweDistinctiveImageFeatures2004}). Second, the approximate locations and orientations of the camera at
-each exposure station are reconstructed with the internal parameters (focal length, coordinates of the principal
-point of the photograph), and external parameters (i.e. POS data). A sparse point cloud is created.
-
-(2) Point cloud densification: In this step, the multi-view stereo technique is applied to achieve a higher
-point cloud density than in the previous step (\cite{furukawaAccurateDenseRobust2010};
-\cite{molgStructurefromMotionUsingHistorical2017}). Thus, the spatial resolution of the products can be
-increased, and an irregular network for the next step can be created (\cite{kungACCURACYAUTOMATICPHOTOGRAMMETRIC2011}).
-
-(3) AIR delineation: Ice radius, area and volume are the three final products. Perimeter was manually marked
-on the point cloud by identifying the AIR boundary (see Fig. \ref{fig:DEM}). For the Indian location, we identified identical rock features
-near the ice boundary to mark as vertices of this perimeter. For the Swiss AIR, no such feature was available due
-to snowfall, so instead the perimeter was marked by identifying the ice and snow boundary.
-
-There is temporal and spatial uncertainty associated with this process. Weather conditions influence the quality
-of each drone survey to various degrees. Moreover, since ice/snow surfaces do not have many identifiable features, few
-feature points can be detected and matched in the vicinity of the AIR. Thus, we attach a high uncertainty of
-$\pm 10 \%$ for all the AIR observations to accommodate for this.
-
 \section{Sensitivity and uncertainty analysis} \label{sec:uncertainpy}
 
 In this section, we summarise the theory behind the methods for uncertainty quantification and sensitivity
-analysis used. For a detailed explanation of this methodology, see \cite{tennoeUncertainpyPythonToolbox2018}.
+analysis used. For a detailed explanation of this methodology, see \citet{tennoeUncertainpyPythonToolbox2018}.
 
 \subsection{Problem definition}
 Consider our model $U$ that depends on timestep $i$, has $d$ uncertain parameters $Q = [Q_1, Q_2, \dots, Q_d]$, and
@@ -129,7 +157,7 @@ parameters with high sensitivity, so the total-order Sobol indices are an approp
 \subsection{Polynomial Chaos Expansions}
 
 A recent mathematical framework for efficient uncertainty quantification and sensitivity analysis is that of
-polynomial chaos expansions (\cite{xiuHighOrderCollocationMethods2005}). This method calculates the same statistical metrics as the Monte
+polynomial chaos expansions \citep{xiuHighOrderCollocationMethods2005}. This method calculates the same statistical metrics as the Monte
 Carlo method but typically much faster.
 
 The general idea behind polynomial chaos expansions is to approximate the model $U$ with a polynomial expansion
