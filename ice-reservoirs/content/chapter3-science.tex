@@ -5,44 +5,48 @@
   where glaciers form best so that I can improve on them and people can use the technique elsewhere.
 }{Chewang Norphel}{(Padmashree awardee, Inventor of ice terraces)}
 
-Prior AIR volume estimates differ widely from each other, are highly uncertain and restricted to
-the Ladakh region \citep{nusserSociohydrologyArtificialGlaciers2019, norphelSnowWaterHarvesting2015}. Moreover, each structure is an accumulation of ice generated using specific weather conditions and differing construction strategies. This makes it challenging to extrapolate these findings across future winters or in new locations.  
+Given the importance of \ac{AIRs} in different mountainous regions, it is key to adequately understand their
+functioning, as well as to quantify their water storage at a global scale. Addressing these research questions,
+calls for the use of holistic modeling frameworks in which all relevant processes are represented, including
+components of the terrestrial hydrological cycle, human water management, atmospheric processes and climate
+change drivers, in a globally integrated way. In such coupled frameworks, interactions and feedbacks between the
+land surface and climate are directly modelled, and land cover and management change are represented under
+different scenarios and for different time periods, which allow to investigate both the physical mechanisms and
+spatial and temporal extents of impacts. To date, glacial models provide this type of integrated framework, but
+do generally not include accurate representations of \ac{AIRs}. With some modifications, however, they can
+become ideal tools to estimate the meltwater quantities of \ac{AIRs}, for the historical and present-day
+periods, and for scenarios of future climate change. Such model-based assessments can aid future mitigation and
+adaptation strategies linked to AIR construction and operation to assess future water scarcity and ensure future
+water availability in a changing climate.
 
-Modelling is a powerful tool that allows estimation of AIR volumes across space and time. However, in-situ
-measurements are required to tie these models to reality. The weather, water and volume measurements we carried out
-with an enormous input of manpower in the Indian Himalayas and the Swiss Alps provide a unique data basis for present and future 
-AIR studies. The combination of measurements and modelling is key to understanding the influence of
-the construction strategy and location on \ac{AIRs}. 
-
-In this chapter, we showcase the AIR datasets collected and develop a physically-based model that can estimate
-their volume evolution. Mass and energy balance equations were used to estimate the quantity of ice, meltwater,
+In this chapter, we present the AIR data sets collected and develop a physically-based model that can estimate
+their volume evolution. Mass and energy balance equations were used to assess the quantity of ice, meltwater,
 sublimation, and wastewater. Sensitivity and uncertainty analysis were performed to identify the most sensitive
-parameters and the variance they caused. For calibration, we chose two \ac{AIRs} built across the winter of 2020/21
-in India and Switzerland, and validated the model on a Swiss AIR built during 2019/20. 
-
+parameters and the variance they caused. Calibration was performed at two \ac{AIRs} in India and Switzerland
+during winter 2020/21 and compared with the model on a Swiss AIR built on 2019/20.
 
 \section{Study sites and data}
 
 We chose the Swiss Alps and the Indian Himalayan mountain regions as study sites due to two reasons. First, we
 wanted to perform a comparative study between locations where AIR volumes differ by orders of magnitude. Second,
 we preferred locations where the logistics of performing the construction and measurement campaign did not
-present significant hurdles. Previous experiments in these mountain ranges satisfied the first condition (Paper
-III). Moreover, both the selected sites had dedicated teams that were capable to manage the construction and
+present significant hurdles. Previous experiments in these mountain ranges satisfied the first condition.
+Moreover, both the selected sites had dedicated teams that were capable to manage the construction and
 measurement campaigns.
 
 The study period starts when the fountain was first switched on (start date) and ends when the respective AIR
 either melted or broke into several ice blocks (expiry date).  Each AIR dataset was abbreviated based on the
-construction strategy used, prefix of the country code and the suffix of the year of its expiry date. The
-construction strategies are distinguished based on whether they used fountain scheduling strategies to regulate
-water supply. Fountain scheduling was realized through a control valve that was automated with optimal discharge
-rates computed using real-time weather input and location metadata. Those that did were codenamed "automated"
-whereas the rest were codenamed "traditional". All except one construction campaign used traditional
-construction strategies. Therefore, traditional \ac{AIRs} are referred to without explicitly specifying their
-construction strategy henceforth.
+construction strategy used, prefix of the country code and the suffix of the year of its expiry date
+(Tab. \ref{tab:AIRs}). The construction strategies are distinguished based on whether they used fountain scheduling
+strategies to regulate water supply. Fountain scheduling was realized through a control valve that was automated
+with optimal discharge rates computed using real-time meteorological input and location metadata. Those that did were
+codenamed "automated" whereas the rest were codenamed "traditional". All except one construction campaign used
+traditional construction strategies. Therefore, traditional \ac{AIRs} are referred to without explicitly
+specifying their construction strategy.
 
 In total, 23 \ac{AIRs} were studied in these two regions across four winters.  However, only four \ac{AIRs} located in
-Guttannen, Switzerland, and one in Gangles, India, had complete weather, water and volume measurements. Therefore,
-only these AIR datasets are used in the following analysis. The rest of the AIR datasets are described in the
+Guttannen, Switzerland, and one in Gangles, India, had complete meteorological, water and volume measurements. Therefore,
+only these AIR data sets are used in the following analysis. The rest of the AIR data sets are described in the
 Appendix table \ref{tab:Ladakh_AIRs} and are used in later chapters to perform qualitative analysis.
 
 \begin{figure}[htb]
@@ -59,7 +63,7 @@ The Guttannen site (46.66 $\degree$N, 8.29 $\degree$E) is situated in the Berne 
 altitude of 1047 $m$ a.s.l. In the winter (Oct-Apr), mean daily minimum and maximum air temperatures vary
 between -13 and 15 $\degree C$. Clear skies are rare, averaging around 7 days during winter. Daily winter
 precipitation can sometimes be as high as 100 $mm$. These values are based on 30 years of hourly historical
-weather data measurements \citep{meteoblueClimateGuttannen2021}. Several \ac{AIRs} were constructed by the Guttannen
+meteorological data series \citep{meteoblueClimateGuttannen2021}. Several \ac{AIRs} were constructed by the Guttannen
 Bewegt Association, the University of Fribourg and the Lucerne University of Applied Sciences and Arts during
 the winters of 2020-22.
 
@@ -69,10 +73,11 @@ The Gangles site (34.22 $\degree$N, 77.61 $\degree$E) is located around 20 km no
 region, lying at 4025 $m$ a.s.l.. The mean annual temperature is $5.6 \, \degree C$, and the thermal range is
 characterized by high seasonal variation. During January, the coldest month, the mean temperature drops to $-7.2
 \, \degree C$. During August, the warmest month, the mean temperature rises to $17.5 \, \degree C$
-\citep{nusserIrrigationDevelopmentUpper2012}. Because of the rain shadow effect of the Himalayan range, whereby a peak obstructs the path of the clouds, the mean
+\citep{nusserIrrigationDevelopmentUpper2012}. Because of the rain shadow effect of the Himalayan range, the mean
 annual precipitation in Leh totals less than 100 $mm$, and there is high interannual variability. While the
 average summer rainfall between July and September reaches 37.5 $mm$, the average winter precipitation between
-January and March amounts to 27.3 $ mm$ and falls almost entirely as snow.  
+January and March amounts to 27.3 $ mm$ and falls almost entirely as snow. \ac{AIRs} were constructed here by the
+Himalayan Institute of Alternatives, Ladakh during the winter of 2020-21.  
 
 \subsection{Meteorological data}
 
@@ -81,10 +86,13 @@ as model input.  The resulting dataset highlights the difference in
 meteorological influences driving ice volume evolution in the two study sites ( Table
 \ref{tab:Observations}).
 
+\TODO{Here you have to carefully describe, which meteo series are measured in India and in Switzerland. Please
+give all details here!}
+
 \begin{table}
   \centering
-  \caption{Summary of the weather observations for \ac{AIRs} built during the respective study period. 
-The weather measurements are shown using their mean ($\mu$) and standard deviation ($\sigma$) during the study
+  \caption{Summary of the meteorological observations for \ac{AIRs} built during the respective study period. 
+The meteorological measurements are shown using their mean ($\mu$) and standard deviation ($\sigma$) during the study
 period as $\mu \pm \sigma$. }
 
 	\label{tab:Observations}
@@ -100,6 +108,9 @@ period as $\mu \pm \sigma$. }
 		Pressure                    & $p_a         $  & $623 \pm 3$   & $794 \pm 9$   & $hPa$            \\\hline
 	\end{tabular}
 \end{table}
+
+\TODO{zero is actually not possible then your site is in shadow of a mountain or in morning and evening a quite
+large amount of diffuse shortwave radiation will hit your sensor!}
 
 \subsection{Fountain observations}
 
@@ -151,9 +162,8 @@ conducted for each of the AIRs and the corresponding spray radius observed is sh
 \section{AIR Model}
 
 A bulk energy and mass balance model is used to calculate the amounts of ice, meltwater, water vapour and
-wastewater of the AIR. In each hourly time step, the model uses the AIR surface area, energy balance and mass
-balance calculations to estimate its ice volume, surface temperature and wastewater as shown in Fig.
-\ref{fig:schema}.
+wastewater of the AIR. In each hourly time step, the model uses the AIR surface area, energy and mass balance
+calculations to estimate its ice volume, surface temperature and wastewater as shown in Fig. \ref{fig:schema}.
 
 \begin{figure}
 	\begin{center}
@@ -307,7 +317,7 @@ The net longwave radiation $q_{LW}$ is determined as follows:
 
 where $T_{ice}$ is the modelled surface temperature given in [$\degree C$],
 $\sigma=5.67\cdot10^{-8}\,Jm^{-2}s^{-1}K^{-4}$ is the Stefan-Boltzmann constant, $LW_{in}$ denotes the incoming
-longwave radiation and $\epsilon_{ice}$ is the corresponding emissivity value for the Icestupa surface (0.97).
+longwave radiation and $\epsilon_{ice}$ is the corresponding emissivity value for the ice stupa surface (0.97).
 
 The incoming longwave radiation $LW_{in}$ for the Indian site, where no direct measurements were available, is
 determined as follows:
@@ -373,7 +383,7 @@ as follows:
 \end{equation}
 
 A possible source of error is the fact that wind measurements from the horizontal plane at the \ac{AWS} are used,
-which might be different from those on a slope. However, without detailed datasets from the AIR surface, we
+which might be different from those on a slope. However, without detailed data sets from the AIR surface, we
 retain this assumption.
 
 \subsubsection{Fountain discharge heat flux \texorpdfstring{$q_{F}$}{Lg} } \label{sec:heatflux}
@@ -393,16 +403,16 @@ with $c_{water}$ as the specific heat of water (4186 J $kg^{-1} K^{-1}$).
 
 \subsubsection{Rain heat flux \texorpdfstring{$q_{R}$}{Lg} }
 
-The influence of rain events on the albedo and on the Ice stupa's energy balance was assumed to be similar to that of discharge
-events. However, the water temperature of a rain event was assumed to equal to the air temeperature. Accordingly,
-the heat flux generated due to a rain event was equal to:
+The influence of rain events on the albedo and on the ice stupa's energy balance was assumed to be similar to that of discharge
+events. However, the water temperature of a rain event was assumed to be equal to the air temperature. Accordingly,
+the heat flux generated due to a rain event was determined:
 
 \begin{equation}
   q_{R} = \frac{ \Delta M_{ppt} \cdot c_{water} \cdot T_a}{\Delta t \cdot A_{cone}}
 	\label{eqn:qR}
 \end{equation}
 
-\subsubsection{Bulk Icestupa heat flux \texorpdfstring{$q_{G}$}{Lg}} \label{sec:Bulkflux}
+\subsubsection{Bulk ice stupa heat flux \texorpdfstring{$q_{G}$}{Lg}} \label{sec:Bulkflux}
 
 The bulk ice stupa heat flux $q_{G}$ corresponds to the ground heat flux in normal soils and is caused by the
 temperature gradient between the surface layer ($T_{ice}$) and the ice body ($T_{bulk}$). It is expressed by
@@ -547,31 +557,34 @@ Considering \ac{AIRs} as water reservoirs, their net water loss can be defined a
 \subsection{Uncertainty Quantification}
 
 The uncertainty in the model of estimating ice volumes is caused by three sources, namely model forcing
-data, model hyperparameters and model parameters. Model forcing data can further be divided into weather and
-fountain forcing data. Significant uncertainty exists in the weather forcing data, particularly for all the
+data, model hyperparameters and model parameters. Model forcing data can further be divided into meteorological and
+fountain forcing data. Significant uncertainty exists in the meteorological forcing data, particularly for all the
 radiation measurements ($SW_{direct}, SW_{diffuse}, LW_{in}$) since they were taken from ERA5 dataset or an
-\ac{AWS}
-far away from the construction sites. Since no other weather datasets exist for comparison, especially near the
-IN21 AIR, we are not accounting for uncertainties related to meteorological forcing data in this analysis.
-Uncertainty in the fountain forcing data arises due to only some fountain parameters listed in Table
-\ref{tab:parameters}. Fountain runtime $t_F$ has no uncertainty for the Swiss \ac{AIRs} because no interruptions
-occured during the study period. However, significant uncertainty exists for the IN21 AIR , where the
-interruptions due to pipeline freezing events happened overnight but this was ignored in this analysis. Fountain
-spray radius $r_F$ was measured using the drone survey and therefore also doesn't contribute to model
-uncertainty. The choice of mean discharge rate $d_F$ for both sites was just a best guess, based on a few observations made by the
-flowmeter. So we associate this parameter with a large uncertainty of $\pm \,50\, \%$. For the fountain water
-temperature $T_F$, we assumed an upper bound of $3\, \degree C$ since it is unlikely for it to have been beyond
-this range considering winter conditions at all the sites. The model structure introduces uncertainty through
-the spatial and temporal hyperparameters $\Delta x$ and $\Delta t$. By definition, $\Delta x$ is directly
-proportional to $\Delta t$. Therefore, we fix the temporal resolution of the model at hourly timesteps and only
-investigate the uncertainty caused by $\Delta x$ here. Since the surface layer thickness for an AIR does not
-resemble any parameters in the glaciological literature, we attribute a wide range of values to it (from 1 cm
-to 10 cm). The model parameters are henceforth called as weather parameters to distinguish them from the
-fountain forcing parameters. These were fixed within a range based on literature values (Table
-\ref{tab:parameters}). 
+\ac{AWS} far away from the construction sites. Since no other meteorological data sets exist for comparison,
+especially near the IN21 AIR, we are not accounting for uncertainties related to meteorological forcing data in
+this analysis. Uncertainty in the fountain forcing data arises due to some fountain parameters listed in
+Table \ref{tab:parameters}. Fountain runtime $t_F$ has no uncertainty for the Swiss \ac{AIRs} because no
+interruptions occured during the study period. However, significant uncertainty exists for the IN21 AIR, where
+the duration of interruptions caused by pipeline freezing events had to be estimated based on field records.
+Fountain spray radius $r_F$ was measured using a drone survey and therefore doesn't contribute to model
+uncertainty. The choice of mean discharge rate $d_F$ for both sites was estimated, based on a few
+observations made by the flowmeter. We associate this parameter with a large uncertainty of $\pm \,50\, \%$.
+The fountain water temperature $T_F$, has an upper bound of $3\, \degree C$ as we always consider winter
+conditions at all the sites. The model structure introduces uncertainty through the spatial and temporal
+hyperparameters $\Delta x$ and $\Delta t$. By definition, $\Delta x$ is directly proportional to $\Delta t$.
+Therefore, we fix the temporal resolution of the model at hourly timesteps and only investigate the uncertainty
+caused by $\Delta x$ here. Since the surface layer thickness for an AIR does not resemble any parameters in the
+glaciological literature, we attribute a wide range of values to it (from 1 cm to 10 cm). The model parameters
+are henceforth called as meteorological parameters to distinguish them from the fountain forcing parameters.
+These were fixed within a range based on literature values (Table \ref{tab:parameters}). 
+
+\TODO{But mean discharge rate is a variable and not a parameter???}
+
+\TODO{how is a 'hyperparameter' defined. I think you have to introduce all your parameters somewhere in detail
+and it seems that you mixed up again some parameters which are acutally variables!}
 
 The three types of uncertain parameters, namely model hyperparameters ($\Delta x$), fountain forcing parameters
-($d_F, T_F$) and weather parameters ($\epsilon_{ice}, z_0, \alpha_{ice}, \alpha_{snow}, T_{ppt}, \tau$) are
+($d_F, T_F$) and meteorological parameters ($\epsilon_{ice}, z_0, \alpha_{ice}, \alpha_{snow}, T_{ppt}, \tau$) are
 denoted as $Q^M, Q^F$ and $Q^W$ henceforth. Together, these nine parameters cause a large uncertainty in the ice
 volume estimates. In order to reduce this uncertainty, we perform a global sensitivity analysis with the net
 water loss as our objective. The objective of this sensitivity analysis was to reduce the dimension of the
@@ -588,11 +601,11 @@ interval within which $90\,\%$ of the ice volume outcomes occur when all the par
 assuming each has an independent uniform probability density function. $5\,\%$ of the outcomes are above and
 $5\,\%$ are below this interval. The methodology to obtain this is described in Appendix \ref{sec:uncertainpy}.
 
-For validation, the calibrated model was tested with two datasets, namely the expiry date of all \ac{AIRs} and the
+For validation, the calibrated model was tested with two data sets, namely the expiry date of all \ac{AIRs} and the
 drone surveys of CH20 AIR.
 
 \begin{table}
-  \caption{Free parameters in the model categorised as constant, derived, model hyperparameters, weather and
+  \caption{Free parameters in the model categorised as constant, derived, model hyperparameters, meteorological and
   fountain forcing parameters with their respective values/ranges.}
 	\label{tab:parameters}
 	\begin{tabular}{lllll}
@@ -613,7 +626,7 @@ drone surveys of CH20 AIR.
     Latent Heat of Sublimation & $L_{s}$ & \num{2.848e6}  & $J\, kg^{-1}$ &   \cite{cuffeyPhysicsGlaciers2010}\\
     Latent Heat of Fusion & $L_{f}$ & \num{3.34e5} & $J\, kg^{-1}$ & \cite{cuffeyPhysicsGlaciers2010}\\
     Gravitational acceleration & $g$ & 9.81 & $m\, s^{-2}$ &\cite{cuffeyPhysicsGlaciers2010}\\
-    Weather station height & $h_{AWS}$ & 2 & $m$ & assumed \\
+    meteorological station height & $h_{AWS}$ & 2 & $m$ & assumed \\
     Model timestep                            & $\Delta t$            & $3600$           & $s$ & assumed \\
     Fountain spray radius & $r_{F}$             &             & $m$& measured \\
     Fountain runtime & $t_{F}$             &             &  $hours$ & measured \\\midrule
@@ -635,7 +648,7 @@ drone surveys of CH20 AIR.
 		\textbf{Model Hyperparameters} & \textbf{Symbol} & \textbf{Range} & \textbf{Unit} & \textbf{Refs} \\
     Surface layer thickness             & $\Delta x$            & $[\num{1e-2},\num{1e-1}]$           & $m$ & assumed
     \\\midrule
-		\textbf{Weather Parameters} & \textbf{Symbol} & \textbf{Range} & \textbf{Unit} & \textbf{Refs} \\
+		\textbf{meteorological Parameters} & \textbf{Symbol} & \textbf{Range} & \textbf{Unit} & \textbf{Refs} \\
     Ice Emissivity                      & $\epsilon_{ice}$      & $[0.95,0.99]$         & dimensionless & \cite{horiInsituMeasuredSpectral2006}             \\
     Surface Roughness                   & $z_0$                 & $[\num{1e-3},\num{5e-3}]$            & $m$  & \cite{brockMeasurementParameterizationAerodynamic2006}       \\
     Ice Albedo                          & $\alpha_{ice}$        & $[0.15,0.35]$         & dimensionless  &
@@ -671,34 +684,34 @@ model estimates of the ice volume. The dots denote the optimum values. The estim
 	\label{fig:param_hist}
 \end{figure}
 
-\subsection{Weather and fountain forcing uncertainty quantification}
+\subsection{meteorological and fountain forcing uncertainty quantification}
 
-The uncertainty in the ice volume estimates caused by the weather and fountain forcing parameters are shown in
+The uncertainty in the ice volume estimates caused by the meteorological and fountain forcing parameters are shown in
 Fig. \ref{fig:results}. The ranges highlighted represent the corresponding $90\,\%$ prediction interval of the
-ice volume estimates. Weather uncertainty determination required 422 simulations whereas fountain forcing
+ice volume estimates. meteorological uncertainty determination required 422 simulations whereas fountain forcing
 uncertainty determination required 32 simulations for each AIR. Since the results presented below differ
 significantly during the fountain runtime, we divided the simulation duration of the AIR into accumulation and
 ablation periods. The accumulation period ends and the ablation period starts after the last fountain discharge event. 
  
 
-The prediction interval of the weather and fountain forcing parameters behave differently during the
-accumulation and ablation period for all \ac{AIRs}. Prediction interval of the weather parameters increase
+The prediction interval of the meteorological and fountain forcing parameters behave differently during the
+accumulation and ablation period for all \ac{AIRs}. Prediction interval of the meteorological parameters increase
 throughout the simulation period, but that of the fountain forcing parameters only increase during the
 accumulation period. This is to be expected since the fountain forcing parameters directly affect the model
 estimates only during the accumulation period. 
 
-Weather uncertainty for the Indian site was low compared to the Swiss one since precipitation and the associated
-variation in albedo was negligible. At the end of the accumulation period, the Indian weather prediction
+meteorological uncertainty for the Indian site was low compared to the Swiss one since precipitation and the associated
+variation in albedo was negligible. At the end of the accumulation period, the Indian meteorological prediction
 interval had a magnitude of  $73\,m^3$ which was 10 \% of the maximum simulated volume, whereas the magnitude of
-the Swiss weather prediction interval was much higher (28 \% of the maximum simulated volume for the CH21 AIR).
-This was expected since four out of the six uncertain Indian weather parameters were part of the albedo module. Among
-all the weather parameters, surface roughness caused the most variance in both Indian and the Swiss ice
+the Swiss meteorological prediction interval was much higher (28 \% of the maximum simulated volume for the CH21 AIR).
+This was expected since four out of the six uncertain Indian meteorological parameters were part of the albedo module. Among
+all the meteorological parameters, surface roughness caused the most variance in both Indian and the Swiss ice
 volume estimates.
 
-Fountain forcing uncertainty for the Indian site was higher than its weather uncertainty (28 \% of the maximum
+Fountain forcing uncertainty for the Indian site was higher than its meteorological uncertainty (28 \% of the maximum
 simulated volume at the end of the accumulation period). This was predominantly due to the uncertainty in the
 fountain's water temperature. However, for the Swiss site, the prediction interval of the fountain forcing
-parameters was similar to that of the weather parameters during the accumulation period. Since the mean fountain
+parameters was similar to that of the meteorological parameters during the accumulation period. Since the mean fountain
 discharge rate of the Indian location was eight times that of the Swiss, the uncertainty due to the fountain
 forcing parameters was expected to be larger for the Indian location.
 
@@ -716,7 +729,7 @@ with the modelled volume was $19\, m^3$ which is 18 \% of the maximum simulated 
   \centering
 	\includegraphics[width=\linewidth]{figs/model_validation.jpg}
 	\caption{Simulated ice volume during the lifetime of the \ac{AIRs} (blue curve). The shaded regions (light blue and
-		orange) represent the 90\% prediction interval of the AIR ice volume caused by the variations in weather and
+		orange) represent the 90\% prediction interval of the AIR ice volume caused by the variations in meteorological and
     fountain forcing parameters, respectively. Violet points indicate the drone ice volume observations.  The grey
   dashed line represents the observed expiry date for each AIR.  }
 	\label{fig:results}
@@ -725,11 +738,13 @@ with the modelled volume was $19\, m^3$ which is 18 \% of the maximum simulated 
 
 \section{Model limitations and suggestions for improvement}
 
+\TODO{This chapter actually belongs to the discussion section and perspectives!}
+
 Model development is an art where subjective choices seek a balance between a model's simplicity and its accuracy.
 Below we detail some of these choices and recommend strategies that shift this balance towards further model
 accuracy.
 
-\subsection{Quality and quantity of calibration and validation datasets}
+\subsection{Quality and quantity of calibration and validation data sets}
 
 The methodology used to acquire the radius, area and volume of \ac{AIRs} ( Appendix \ref{sec:drone_method}) from
 each drone survey has several drawbacks. The calibration and validation process used has an inherent temporal
@@ -738,28 +753,31 @@ and spatial bias due to the following subjective choices:
 \begin{itemize}
   \item \textbf{The number and timing of the drone surveys}. For example, among the five surveys of IN21 AIR, most of them were
     conducted around early March when the AIR volume was near its maximum whereas the seven surveys of the CH21
-    location were more evenly spaced out in comparison.
+    location were more evenly spaced out in comparison. This observation bias occured due to logistical issues
+    in conducting measurements in regular intervals.
 
-  \item \textbf{The weather conditions under which surveys were performed.} Particularly, precipitation events reduce DEM quality since
-    they create uniform snow surfaces over \ac{AIRs}. These surfaces dont have many identifiable features that can be
-    used to extract the radius and area of the AIR.
+  \item \textbf{The meteorological conditions under which surveys were performed.} Particularly, precipitation events reduce DEM quality since
+    they create uniform snow surfaces over \ac{AIRs}. These surfaces do not allow the identification of features
+    that can be used to extract the radius and area of the AIR.
 
 \end{itemize}
 
-Thus, the quality of AIR calibration and validation is severely limited by the high uncertainties attached with
-the drone processing methodology.
+Thus, the quality of AIR validation is severely limited by the high uncertainties attached with the drone
+processing methodology.
 
 This limitation can be overcome by extending the model validation set with daily AIR meltwater measurements.
-However, the study site needs to satisfy two conditions in order to do this. First, the terrain of the site
-needs to be waterproof and oriented so that most of the AIR runoff can be collected. Second, the chosen location
-should not have high wind speeds, otherwise a significant fraction of AIR wastewater would be dispersed in the
-air.
+However, the study site needs to satisfy two conditions. First, the terrain of the site needs to be waterproof
+and oriented so that most of the AIR runoff can be collected. Second, the chosen location should not have high
+wind speeds, otherwise a significant fraction of AIR wastewater would be dispersed in the air.
 
 \subsection{Turbulent heat flux parametrization}
 
+\TODO{This chapter is not clear and you have really to extend literature research, when you state some
+conclusions inside this chapter?}
+
 The method used to calculate turbulent heat fluxes by \citet{garrattAtmosphericBoundaryLayer1992} assumes that
 these fluxes are acting over a uniform planar surface. This leads us to use the exposure/roughness parameter
-$\mu$ as a correction factor. However, equation \ref{eqn:mu} about $\mu$ is no more than an educated guess. It
+$\mu$ as a correction factor. However, equation \ref{eqn:mu} about $\mu_{cone}$ is no more than an educated guess. It
 is hard to base estimates of this parameter on information in the literature. Many studies have been carried out
 on the effect of obstacles on atmospheric boundary layer flow (e.g. trees), but always in an ensemble setting,
 looking at the bulk effect of an ensemble of obstacles. We deal with a case of a single obstacle in open
@@ -778,17 +796,20 @@ characteristics but also due to wind-driven redistribution, refreezing and melti
 perimeter. The same fountain was observed to produce different spray radius corresponding to different winters
 for the Swiss experiments. Further discussion on this can be found at Section \ref{sec:interannual}.
 
+\TODO{This is a fundamental missing part in your thesis and you have to take exactly such a sentence also in
+your introduction chapter and say that you have not taken this processes into account into your study!}
+
 During the IN21 experiment, snow formation was observed, indicating that the fountain water droplets have the
 potential to freeze before deposition on the AIR surface. Modelling such processes would require modelling the
 conduction, convection and nucleation processes that all droplets undergo during their flight time. Therefore, a
 proper quantification of the fountain is much more complex and requires a closer look at the correlation of the
-fountain parameters amongst themselves and with the weather parameters. 
+fountain parameters amongst themselves and with the meteorological parameters. 
 
 \subsection{Shape parameterization}
 
-The RMSE between the drone and the model estimates of the surface area for the IN21, CH21 and CH20 \ac{AIRs} were 69
-\%, 25 \% and 65 \% of the maximum area of the respective \ac{AIRs}. There are two crude assumptions that lead to
-such a large error, namely assuming a conical shape and assuming a constant spray radius.
+The RMSE between the drone and the model estimates of the surface area for the IN21, CH21 and CH20 \ac{AIRs}
+were 69 \%, 25 \% and 65 \% of the maximum area of the respective \ac{AIRs}. There are two rough assumptions
+leading to such a large error, assuming a conical shape and assuming a constant spray radius.
 
 Better quantification of the surface area can be achieved by assuming AIR cross section to be a Gaussian curve
 rather than a triangle.
@@ -809,18 +830,19 @@ parametrize the effect of water spray on the surface albedo decay rate.
 \label{sec:Cosistupa}
 
 The model, in its current form, is not expected to perform well for locations where it has not been calibrated
-for before. This limits its ability to identify and classify other favourable locations worldwide.
+in advance. This limits its ability to identify and classify other favourable locations worldwide.
 
-In this section, we showcase a strategy to improve the AIR model's transferability to new locations.
+In this section, we present a strategy to improve the AIR model's transferability to new locations.
 Specifically, the surface layer thickness parameter requires prior calibration for better model performance.
 However, the dependence of the model on this parameter can be removed if spatial temperature fluctuations across
 the ice structure are resolved.
 
 In order to remove the calibration requirements for model performance, we combine the AIR model with the COupled
 Snowpack and Ice surface energy and mass balance model in PYthon (COSIPY). COSIPY is typically used for
-modelling distributed snow and glacier mass changes \citep{sauterCOSIPYV1Opensource2020}. However, its flexible,
-user-friendly and modular framework makes it an ideal platform to implement the alternate modules required for
-modelling ice reservoirs. This modified COSIPY model will be referred to as COSISTUPA model henceforth.
+modelling distributed snow and glacier mass changes \citep{sauterCOSIPYV1Opensource2020}. However, it is a
+flexible, user-friendly and modular framework allowing it to be an ideal platform to implement the alternate
+modules required for modelling ice reservoirs. This modified COSIPY model will be referred to as COSISTUPA model
+henceforth.
 
 \subsubsection{Model configuration}
 
@@ -837,11 +859,14 @@ modifications to be applicable for processes on a conical surface. Additionally,
 required to estimate the conical shape evolution and model the freezing process due to the fountain discharge
 events. To extend COSIPY into COSISTUPA, parametrizations of the following processes were modified:
 
+\TODO{What is now the case? some minor modifications or some new parametrizations. These two sentence contradict
+each other please be more specific and more clear!}
+
 \begin{itemize}
 
   \item \textbf{Fountain rain heat flux} : The heat flux generated due to the difference in fountain water droplet
     temperature and surface temperature was introduced as a new energy balance component. This implementation is
-    identical to that described in Sec. \ref{sec:heatflux}
+    identical to the selected approach described in Sec. \ref{sec:heatflux}
 
   \item \textbf{Turbulent flux scaling} : The sensible and the latent heat fluxes were scaled by the $\mu_{cone}$ factor
     introduced in Sec. \ref{sec:Qs}
@@ -860,21 +885,21 @@ develop the COSISTUPA model.
 
 \subsubsection{Advantages of the COSISTUPA model}
 
-The COSISTUPA model has a modular structure so that the exchange of routines or parametrizations of physical
-processes is possible with little effort for the user. The framework consists of a computational kernel, which
-forms the runtime environment and takes care of the initialization, the input-output routines, and the
+The COSISTUPA model has a modular structure allowing the exchange of routines or parametrizations of physical
+processes with little effort for the user. The framework consists of a computational kernel, forming
+the runtime environment and taking care of the initialization, the input-output routines, and the
 parallelization, as well as the grid and data structures. This structure offers maximum flexibility without
 having to worry about the internal numerical flow. The adaptive subsurface scheme allows an efficient and fast
 calculation of the otherwise computationally demanding fundamental equations. The surface energy balance scheme
 uses established standard parametrizations for radiation as well as for the energy exchange between the
 atmosphere and surface. The schemes are coupled by solving both surface energy balance and subsurface fluxes
-iteratively such that consistent skin temperature is returned at the interface. COSISTUPA uses a one-dimensional
+iteratively in which consistent skin temperature is returned at the interface. COSISTUPA uses a one-dimensional
 approach limited to the vertical fluxes of energy and matter but neglects any lateral processes. Accordingly,
 the model can be easily set up in parallel computational environments for calculating both energy balance and
 climatic surface mass balance of multiple \ac{AIRs} based on flexible horizontal grids and with varying temporal
 resolution.
 
-The RMSE error of the 5 icestupas studied in this thesis were within 20 \% of their maximum ice volumes for both
+The RMSE error of the 5 ice stupas studied in this thesis were within 20 \% of their maximum ice volumes for both
 the models (Fig. \ref{fig:Cosistupa}).  However, the COSISTUPA model was 3 times slower than the AIR model. This
 is likely due to the additional effort required to resolve the ice temperature spatially.
 
@@ -900,17 +925,26 @@ We consider the COSISTUPA model to be the better one among the two models due to
     handled in COSISTUPA due to its awareness of the snowfall content in each of its subsurface layers.
 
   \item \textbf{Better validation} : COSISTUPA, being a model derived from COSIPY is expected to validate better
-    since the core parametrizations are unchanged and have been extensively validated before \citep{arndtAtmosphereDrivenMassBalance2021}.
+    since the core parametrizations are unchanged and have been extensively validated within other studies \citep{arndtAtmosphereDrivenMassBalance2021}.
 
   \item \textbf{Future support} : COSISTUPA will be extensively supported in the future through the COSIPY
     community.
 
 \end{itemize}
 
+% The combination of measurements and modelling is key to understanding the influence of the construction strategy
+% and location on \ac{AIRs}. Modelling is a powerful tool that allows estimation of AIR volumes across space and
+% time. However, conventional models in glaciology require significant modifications in order to capture the
+% spatio-temporal scale of AIR surface processes. Furthermore, these modelling approaches need to be validated and
+% calibrated with comprehensive data from field measurements.
 
+% The meteorological, water and volume
+% measurements we carried out with an enormous input of manpower in the Indian Himalayas and the Swiss Alps
+% provide a unique data basis for present and future AIR studies.  
 
-
-
-
+% Prior AIR volume estimates differ widely from each other, are highly uncertain and restricted to the Ladakh
+% region \citep{nusserSociohydrologyArtificialGlaciers2019, norphelSnowWaterHarvesting2015}. Moreover, each
+% structure is an accumulation of ice generated using specific meteorological conditions and differing construction
+% strategies. This makes it challenging to extrapolate these findings across future winters or in new locations.  
 
 
