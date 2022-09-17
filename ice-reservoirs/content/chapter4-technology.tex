@@ -20,7 +20,7 @@ these solutions that can play a role in increasing water security of mountain ca
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=\textwidth]{figs/AIR_designs}
-	\caption{Different types of ice reservoirs. Adapted from \cite{nusserSociohydrologyArtificialGlaciers2019}.}
+	\caption{Different types of ice reservoirs. Adapted from \citet{nusserSociohydrologyArtificialGlaciers2019}.}
 	\label{fig:AIRdesigns}
 \end{figure}
 
@@ -29,7 +29,6 @@ In this chapter, we describe the different construction strategies of ice reserv
 reduction in water losses and maintenance expected through them.
 
 
-% \section{Traditional construction strategy}
 \section{Types of ice reservoirs}
 
 \subsection{Ice terraces}
@@ -45,7 +44,7 @@ Project, introduced this practice to Ladakh \citep{vinceGlacierMan2009}. Cascade
 	\centering
 	\includegraphics[width=\textwidth]{figs/IT_example.png}
 	\caption{Ice terrace of Phuktse, viewpoint 4430 m. (a) February 2014 (b) October 2014 Adapted from:
-		\cite{nusserSociohydrologyArtificialGlaciers2019}.}
+		\citet{nusserSociohydrologyArtificialGlaciers2019}.}
 	\label{fig:ITexample}
 \end{figure}
 
@@ -164,7 +163,7 @@ conditions. The median daily AIR meltwater quantities measured were higher than 
 
 \section{The need for water supply management}
 
-A common issue of AIR construction systems is water supply management, namely answering the questions "when to
+A common issue of AIR construction systems is water supply management, answering the questions "when to
 water?", "how much?", and "for how long?". Starting water supply too early, spraying too much water, or
 running water supply for too long might lead to overwatering; at the very least, this practice wastes water.
 Similarly, starting the water supply too late, supplying too little water, or not running the water supply long
@@ -192,12 +191,13 @@ traditional and automated construction strategies. First, two AIRs were built in
 without automated fountain scheduling strategies; both were measured and compared (Fig. \ref{fig:autovsman}).
 The associated datasets and the methods used to analyze them are described in paper II. In a second step,
 differences in construction strategies between the Indian and Swiss AIRs studied in previous winters were quantified
-using model simulations. Later we discuss how these construction strategies can help scale the ice volumes and
+using model simulations. Later we discuss how these construction strategies can help to scale the ice volumes and
 survival duration of AIRs.
 
 \begin{figure}[htb]
 	\includegraphics[width=\textwidth]{figs/AIR_fountains.jpg}
-	\caption{Unscheduled and scheduled fountains used for construction of traditional and automated AIRs at Guttannen. Picture credits: Daniel Bürki}
+	\caption{Unscheduled and scheduled fountains used for construction of traditional and automated AIRs at
+		Guttannen. Picture credits: Daniel Bürki.}
 	\label{fig:autovsman}
 \end{figure}
 
@@ -206,10 +206,14 @@ survival duration of AIRs.
 
 Recommended discharge rates can only be produced if more information about the AIR surface properties and
 weather conditions are available. Particularly, resolving the uncertainty in the expected freezing rate requires
-quantification of the following three model variables: slope, albedo and cloudiness. But these properties cannot
-be predicted beforehand. Therefore, we instead associate the upper and lower bound of each variable to a
+quantification of the following three model variables: slope, albedo and cloudiness. However, these properties cannot
+be predicted beforehand. Therefore, we associate the upper and lower bound of each variable to a
 different model depending on whether they increase the freezing rate or not. Higher slope and albedo values
-decrease the shortwave radiation impact. Higher cloudiness values increase both the shortwave and the longwave
+decrease the shortwave radiation impact.
+
+\TODO{we increase longwave incoming radiation but how should we increase solar radiation with clouds?}
+
+Higher cloudiness values increase both the shortwave and the longwave
 radiation impact. The model overestimating the freezing rate will be referred to as \ac{IVOM} and the model
 underestimating the freezing rate will be referred to as  \ac{WEOM}, respectively. Accordingly, the values
 assigned for all the three variables in the respective model is shown in Table \ref{tab:assumptions}.
@@ -278,7 +282,7 @@ processes is shown in Fig. \ref{fig:dis_processes}.
 \begin{figure*}[htb]
 	\includegraphics[width=\textwidth]{figs/dis_processes.png}
 	\caption{(a) Surface albedo  and (b) fountain discharge heat flux showed significant variations between the two
-		AIRS due to the differences in their discharge rates.}
+		\ac{AIRs} due to the differences in their discharge rates.}
 	\label{fig:dis_processes}
 \end{figure*}
 
