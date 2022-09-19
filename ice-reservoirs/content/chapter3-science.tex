@@ -27,20 +27,18 @@ model parameters and validate the volume estimations it provided. The third one,
 reduces model calibration overhead while providing a user-friendly framework to update model parametrizations
 and apply the model to new construction sites. 
 
-In this chapter, we present the mass and energy balance equations that were used in these models to assess the
-quantity of ice, meltwater, sublimation, and wastewater. Then we perform a model intercomparison 
-
-Sensitivity and uncertainty analysis were performed to identify the most sensitive parameters and the variance
-they caused. Calibration was performed at two \ac{AIRs} in India and Switzerland during winter 2020/21 and
-compared with the model on a Swiss AIR built on 2019/20.
+In this chapter, we present the data sets acquired in our measurement campaigns in two different mountain
+regions (Alps and the Himalayas). Then we describe all the shape, mass and energy balance modules that were used
+in these models to assess the quantity of ice, meltwater, sublimation, and wastewater. Finally, we compare the
+features and shortcomings of each of the models.
 
 \section{Study sites and data}
 
-We chose study sites in these different mountain regions due to two reasons. First, we wanted to perform a
-comparative study between locations where AIR volumes differ by orders of magnitude. Second, we preferred
-locations where the logistics of performing the construction and measurement campaign did not present
-significant hurdles. Previous experiments in these mountain ranges satisfied the first condition. Moreover, both
-the selected sites had dedicated teams that were capable to manage the construction and measurement campaigns.
+We chose study sites in the Alps and the Himalayas due to two reasons. First, we wanted to perform a comparative
+study between locations where AIR volumes differ by orders of magnitude. Second, we preferred locations where
+the logistics of performing the construction and measurement campaign did not present significant hurdles.
+Previous experiments in these mountain ranges satisfied the first condition. Moreover, both the selected sites
+had dedicated teams that were capable to manage the construction and measurement campaigns.
 
 The study period starts when the fountain was first switched on (start date) and ends when the respective AIR
 either melted or broke into several ice blocks (expiry date).  Each AIR dataset was abbreviated based on the
@@ -90,9 +88,8 @@ Himalayan Institute of Alternatives, Ladakh during the winter of 2020-21.
 \subsection{Meteorological data}
 
 Air temperature, relative humidity, wind speed, pressure, longwave and global shortwave radiation are required
-as model input.  The resulting dataset highlights the difference in
-meteorological influences driving ice volume evolution in the two study sites ( Table
-\ref{tab:Observations}).
+as model input.  The resulting dataset highlights the difference in meteorological influences driving ice volume
+evolution in the two study sites ( Table \ref{tab:Observations}).
 
 \TODO{Here you have to carefully describe, which meteo series are measured in India and in Switzerland. Please
 	give all details here!}
@@ -168,6 +165,7 @@ circumference or volume were averaged to determine the fountain's spray radius. 
 conducted for each of the AIRs and the corresponding spray radius observed is shown in Table \ref{tab:AIRs}.
 
 \section{Model modules}
+\label{sec:modules}
 
 A bulk energy and mass balance model is used to calculate the amounts of ice, meltwater, water vapour and
 wastewater of the AIR. In each hourly time step, the model uses the AIR surface area, energy and mass balance
@@ -231,8 +229,10 @@ During the subsequent time steps, the dimensions of the AIR evolve assuming a un
 across its surface area with an invariant slope $s_{cone} = \frac{h_{cone}}{r_{cone}}$ .  During these time
 steps, the volume is parameterised using Eqn. \ref{eq:V} as:
 
-\begin{equation} V_{cone} = \frac{\pi \cdot {(r_{cone})}^3
-		\cdot s_{cone}}{3} \label{eq:V2} \end{equation}
+\begin{equation} 
+  V_{cone} = \frac{\pi \cdot {(r_{cone})}^3 \cdot s_{cone}}{3} 
+\label{eq:V2} 
+\end{equation}
 
 We define the ice stupa boundary through its spray radius, i.e. we assume ice formation is negligible when $r_{cone} >
 	r_{F}$. Combining Eqns. \ref{eq:V},  \ref{eq:V1}, \ref{eq:h0} and \ref{eq:V2}, the geometric evolution of the
@@ -242,7 +242,6 @@ Ice stupa at each time step $i$ can be determined by considering the following r
              (r_{cone}^{i-1},\, \frac{3 \cdot M_{ice}}{\pi \cdot \rho_{ice} \cdot {(r_{cone}^{i-1})}^2}) & \textit{ if }
              r_{cone}^{i-1} \geq r_{F} \textit{ and } \Delta M_{ice} > 0                                                     \\ (\frac{3 \cdot M_{ice}}{\pi \cdot \rho_{ice} \cdot s_{cone}})^{1/3} \cdot (1,\,  s_{cone}) &
              otherwise\end{array} \right.  \label{eq:A2} \end{equation}
-
 
 \subsection{Energy balance module} \label{sec:energy}
 
@@ -563,7 +562,12 @@ Considering \ac{AIRs} as water reservoirs, their net water loss can be defined a
 \section{Overview of different models}
 \label{sec:MIP}
 
-\begin{table}
+The model modules described above where used in three different models with varying degree of complexity as
+shown in Table \ref{tab:MIP}. The Oerlemans model is the simplest, implemented in just one page of code whereas
+the COSISTUPA model is the most complex maintained by a community of modellers. Below we describe the motivation
+involved in developing each of these models.
+
+\begin{table}[ht]
 	\centering
   \caption{Characteristics of the models used in the estimation of AIR volumes. The models are referred to by
   the short name given in the first row. Full model documentation is given in the original literature (marked in
@@ -573,51 +577,48 @@ Considering \ac{AIRs} as water reservoirs, their net water loss can be defined a
 	\begin{tabular}{|llll|}
 		\hline
 		\textbf{Module}        & \textbf{Oerlemans} & \textbf{AIR} & \textbf{COSISTUPA}     \\ 
-		                       & \textit{Paper III} & \textit{Paper I} & \textit{\citet{sauterCOSIPYV1Opensource2020} and Section \ref{sec:Cosistupa}}     \\ \hline
-		% Objective              & Integrate glacial model & Validate modelled volume & Provide user-friendly interface  \\
-  %                          & with a shape evolution module & & for model updates and application \\ 
+		\textit{Documentation} & \textit{Paper III} & \textit{Paper I} & \textit{\citet{sauterCOSIPYV1Opensource2020} and Section \ref{sec:Cosistupa}}     \\ \hline
 		Shape evolution        & Simplified         & Full         & Full                     \\
-		Energy balance         & Neglected temperature & 1-D temperature & 2-D temperature \\
-		                       &           variation &        variation & variation \\
-    Mass balance           & Neglected fountain & Neglected spatial & Full          \\
-                           & water supply          &   density variations & \\ \hline
+		Energy balance         & No temperature & 1-D temperature & 2-D temperature \\
+		                       &           variation &        variation & variation \\ \hline
 	\end{tabular}
 \end{table}
 
 \subsection{Oerlemans model}
 
 The objective of the Oerlemans model was to integrate a shape evolution module with glacial models to obtain
-first-order estimates of growth and decay rates under various conditions. Effects of snow cover, switching off
-water during daytime, switching of water for high wind speeds, different starting dates, differences between
-warm and cold winters, etc. can be evaluated.
+first-order estimates of growth and decay rates under various conditions. This model was designed to
+qualitatively assess the effects of snow cover, different starting dates, differences between warm and cold
+winters, etc. It simulated ice stupa evolution using data from field measurements in Val Roseg, Switzerland. 
 
-However, validation of the model with AIR volume measurements was expected to perform poorly. This was because
-the model considers the ice stupa to be a single unit with a surface temperature close to the melting point.
-This assumption limits the quantification of surface processes which depend strongly on surface temperature
-variations. Moreover, the model assumes unlimited water availability which is often not th case during AIR
-construction. This leads to overestimation of modelled volumes. Also, the model uses a simplistic shape
-evolution module. It was observed that ice stupa shape evolution depends on the fountain characteristics and
-differs for the growth phase and decay phase. These shortcomings made it necessary to extend the Oerlemans model
-into the AIR model described below.
+However, this model was not ideal for comparing between simulated and observed ice stupa volumes. This was
+because the model considers the ice stupa to be a single unit with a surface temperature close to the melting
+point. This assumption limits the quantification of surface processes which depend strongly on surface
+temperature variations. Moreover, the model assumes unlimited water availability which is often not the case
+during AIR construction. Also, the model uses a simplistic shape evolution module that ignores the dependence of
+shape variables with fountain characteristics. These shortcomings made it necessary to extend the Oerlemans
+model further.
 
 \subsection{AIR model}
 
-The objective of the AIR model was to model ice volumes  the observed integrate the data sets acquired 
+The AIR model was designed to obtain better validation with measured ice stupa volumes than the Oerlemans model.
+In order to do this, it incorporated all the mass and energy balance modules described in Section
+\ref{sec:modules} and simulated AIR evolution using data from field measurements in Gangles, India and
+Guttannen, Switzerland. The model was calibrated and validated with ice volume and surface area observations
+obtained via drone surveys. We calculated the freezing and melting rates for each of the three AIRs and
+explained their corresponding magnitudes in terms of the influence of the chosen location and the fountain used.
+The model was successful in reproducing the observed ice volume evolution with a correlation greater than 0.96
+and an RMSE less than 18 \% of the maximum ice volume for three AIRs (Paper I). 
 
-The model, in its current form, is not expected to perform well for locations where it has not been calibrated
-in advance. This limits its ability to identify and classify other favourable locations worldwide.
-
-In this section, we present a strategy to improve the AIR model's transferability to new locations.
+However, the model is not expected to perform well for locations where it has not been calibrated in advance.
 Specifically, the surface layer thickness parameter requires prior calibration for better model performance.
-However, the dependence of the model on this parameter can be removed if spatial temperature fluctuations across
-the ice structure are resolved.
 
 \subsection{COSISTUPA: COSIPY + AIR model}
 \label{sec:Cosistupa}
 
-In order to remove the calibration requirements for model performance, we combine the AIR model with the COupled
+In order to reduce the calibration requirements for the AIR model, we combine the AIR model with the COupled
 Snowpack and Ice surface energy and mass balance model in PYthon (COSIPY). COSIPY is typically used for
-modelling distributed snow and glacier mass changes \citep{sauterCOSIPYV1Opensource2020}. However, it is a
+modelling distributed snow and glacier mass changes \citep{sauterCOSIPYV1Opensource2020}. However, it has a
 flexible, user-friendly and modular framework allowing it to be an ideal platform to implement the alternate
 modules required for modelling ice reservoirs. This modified COSIPY model will be referred to as COSISTUPA model
 henceforth.
