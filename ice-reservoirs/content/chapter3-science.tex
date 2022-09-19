@@ -167,7 +167,7 @@ volume of the ice structures. Ice radius measurements of drone flights which obs
 circumference or volume were averaged to determine the fountain's spray radius. The number of drone surveys
 conducted for each of the AIRs and the corresponding spray radius observed is shown in Table \ref{tab:AIRs}.
 
-\section{AIR Model}
+\section{Model methodology}
 
 A bulk energy and mass balance model is used to calculate the amounts of ice, meltwater, water vapour and
 wastewater of the AIR. In each hourly time step, the model uses the AIR surface area, energy and mass balance
@@ -501,6 +501,64 @@ temperature at melting point. The total energy flux distribution during a meltin
 	\end{array} \right.
 \end{equation}
 
+\begin{table}
+	\caption{Free parameters in the model categorised as constant, derived, model hyperparameters, meteorological and
+		fountain forcing parameters with their respective values/ranges.}
+	\label{tab:parameters}
+	\begin{tabular}{lllll}
+		\toprule
+		\textbf{Constant Parameters}         & \textbf{Symbol}  & \textbf{Value}                      &
+		\textbf{Unit}                        & \textbf{Refs}                                                                                                                                   \\
+		Van Karman constant                  & $\kappa$         & 0.4                                 & dimensionless                 & \cite{cuffeyPhysicsGlaciers2010}                       \\
+		Stefan Boltzmann constant            & $\sigma$         & $\num{5.67 e-8} $                   & $W\, m^{-2}\, K^{-4}$         & \cite{cuffeyPhysicsGlaciers2010}                       \\
+		Air pressure at sea level            & $p_{0,a}$        & 1013                                & $hPa$                         & \cite{molgAblationAssociatedEnergy2004}                \\
+		Density of water                     & $\rho_{w}$       & 1000                                & $kg\, m^{-3}$                 & \cite{cuffeyPhysicsGlaciers2010}                       \\
+		Density of ice                       & $\rho_{ice}$     & 917                                 & $kg\, m^{-3}$                 & \cite{cuffeyPhysicsGlaciers2010}                       \\
+		Density of air                       & $\rho_{a}$       & 1.29                                & $kg\, m^{-3}$                 & \cite{molgAblationAssociatedEnergy2004}                \\
+		Specific heat of water               & $c_{w}$          & 4186                                & $J\, kg^{-1}\,\degree C^{-1}$ & \cite{cuffeyPhysicsGlaciers2010}                       \\
+		Specific heat of ice                 & $c_{ice}$        & 2097                                & $J\, kg^{-1}\,\degree C^{-1}$ & \cite{cuffeyPhysicsGlaciers2010}                       \\
+		Specific heat of air                 & $c_{a}$          & 1010                                & $J\, kg^{-1}\,\degree C^{-1}$ &
+		\cite{molgAblationAssociatedEnergy2004}                                                                                                                                                \\
+		Thermal conductivity of ice          & $k_{ice}$        & 2.123                               & $W\, m^{-1}\, K^{-1}$         & \cite{bonalesThermalConductivityIce2017}               \\
+		Latent Heat of Sublimation           & $L_{s}$          & \num{2.848e6}                       & $J\, kg^{-1}$                 & \cite{cuffeyPhysicsGlaciers2010}                       \\
+		Latent Heat of Fusion                & $L_{f}$          & \num{3.34e5}                        & $J\, kg^{-1}$                 & \cite{cuffeyPhysicsGlaciers2010}                       \\
+		Gravitational acceleration           & $g$              & 9.81                                & $m\, s^{-2}$                  & \cite{cuffeyPhysicsGlaciers2010}                       \\
+		meteorological station height        & $h_{AWS}$        & 2                                   & $m$                           & assumed                                                \\
+		Model timestep                       & $\Delta t$       & $3600$                              & $s$                           & assumed                                                \\
+		Fountain spray radius                & $r_{F}$          &                                     & $m$                           & measured                                               \\
+		Fountain runtime                     & $t_{F}$          &                                     & $hours$                       & measured                                               \\\midrule
+		\textbf{Derived Parameters}          & \textbf{Symbol}  & \textbf{}                           & \textbf{Unit}                 & \textbf{Section}                                       \\
+		Radius of AIR                        & $r_{cone}$       &                                     & $m$                           & \ref{sec:shape}                                        \\
+		Height of AIR                        & $h_{cone}$       &                                     & $m$                           & \ref{sec:shape}                                        \\
+		Slope of AIR                         & $s_{cone}$       &                                     & dimensionless                 & \ref{sec:shape}                                        \\
+		Thickness change of AIR              & $j_{cone}$       &                                     & $m$                           & \ref{sec:shape}                                        \\
+		Atmospheric emissivity               & $\epsilon_{a}$   &                                     & dimensionless                 & \ref{sec:LW}                                           \\
+		Cloudiness                           & $cld$            &                                     & dimensionless                 & assumed                                                \\
+		Vapour pressure over water           & $p_{v,w}$        &                                     & $hPa$                         & \ref{sec:Qs}                                           \\
+		Vapour pressure over ice             & $p_{v,ice}$      &                                     & $hPa$                         & \ref{sec:Qs}                                           \\
+		Solar elevation angle                & $\theta_{sun}$   &                                     & $\degree$                     & \ref{sec:SW}                                           \\
+		Albedo                               & $\alpha$         &                                     & dimensionless                 & \ref{sec:SW}                                           \\
+		Solar area fraction                  & $f_{cone}$       &                                     & dimensionless                 & \ref{sec:SW}                                           \\
+		Ice body and surface distance        & $l_{cone}$       &                                     & $m$                           & \ref{sec:Bulkflux}                                     \\
+		AIR surface temperature              & $T_{ice}$        &                                     & $\degree C$                   & \ref{sec:Bulkflux}                                     \\
+		AIR bulk temperature                 & $T_{bulk}$       &                                     & $\degree C$                   & \ref{sec:Bulkflux}                                     \\\midrule
+		\textbf{Model Hyperparameters}       & \textbf{Symbol}  & \textbf{Range}                      & \textbf{Unit}                 & \textbf{Refs}                                          \\
+		Surface layer thickness              & $\Delta x$       & $[\num{1e-2},\num{1e-1}]$           & $m$                           & assumed
+		\\\midrule
+		\textbf{Meteorological Parameters}   & \textbf{Symbol}  & \textbf{Range}                      & \textbf{Unit}                 & \textbf{Refs}                                          \\
+		Ice Emissivity                       & $\epsilon_{ice}$ & $[0.95,0.99]$                       & dimensionless                 & \cite{horiInsituMeasuredSpectral2006}                  \\
+		Surface Roughness                    & $z_0$            & $[\num{1e-3},\num{5e-3}]$           & $m$                           & \cite{brockMeasurementParameterizationAerodynamic2006} \\
+		Ice Albedo                           & $\alpha_{ice}$   & $[0.15,0.35]$                       & dimensionless                 &
+		\cite{steinerModellingIcecliffBackwasting2015, zollesRobustUncertaintyAssessment2019}                                                                                                  \\
+		Snow Albedo                          & $\alpha_{snow}$  & $[0.8,0.9]$                         & dimensionless                 & \cite{zollesRobustUncertaintyAssessment2019}           \\
+		Precipitation Temperature threshold  & $T_{ppt}$        & $[0,2]$                             & $\degree C$                   & \cite{shichangResponseZhadangGlacier2010}              \\
+		Albedo Decay Rate                    & $\tau$           & $[10,22]$                           & $days$                        &
+		\cite{schmidtImportanceAccurateGlacier2017, oerlemansYearRecordGlobal1998}                                                                                                             \\\midrule
+		\textbf{Fountain Forcing Parameters} & \textbf{Symbol}  & \textbf{Range}                      & \textbf{Unit}                 & \textbf{Refs}                                          \\
+		Discharge rate                       & $d_{F}$          & $[0.5 \cdot d_{F},1.5 \cdot d_{F}]$ & $l/min$                       & assumed                                                \\
+		Water temperature                    & $T_{F}$          & $[0,3]$                             & $\degree C$                   & assumed                                                \\\bottomrule
+	\end{tabular}
+\end{table}
 
 \subsection{Mass balance calculation}
 
@@ -561,278 +619,11 @@ Considering \ac{AIRs} as water reservoirs, their net water loss can be defined a
 
 \begin{equation} \textit{Net water losses} = \frac{M_{waste}+M_{sub}}{(M_F+M_{ppt}+M_{dep})} \cdot 100 \end{equation}
 
+\section{Overview of different models}
 
-\subsection{Uncertainty Quantification}
+\subsection{Oerlemans model}
 
-The uncertainty in the model of estimating ice volumes is caused by three sources, namely model forcing
-data, model hyperparameters and model parameters. Model forcing data can further be divided into meteorological and
-fountain forcing data. Significant uncertainty exists in the meteorological forcing data, particularly for all the
-radiation measurements ($SW_{direct}, SW_{diffuse}, LW_{in}$) since they were taken from ERA5 dataset or an
-\ac{AWS} far away from the construction sites. Since no other meteorological data sets exist for comparison,
-especially near the IN21 AIR, we are not accounting for uncertainties related to meteorological forcing data in
-this analysis. Uncertainty in the fountain forcing data arises due to some fountain parameters listed in
-Table \ref{tab:parameters}. Fountain runtime $t_F$ has no uncertainty for the Swiss \ac{AIRs} because no
-interruptions occured during the study period. However, significant uncertainty exists for the IN21 AIR, where
-the duration of interruptions caused by pipeline freezing events had to be estimated based on field records.
-Fountain spray radius $r_F$ was measured using a drone survey and therefore doesn't contribute to model
-uncertainty. The choice of mean discharge rate $d_F$ for both sites was estimated, based on a few
-observations made by the flowmeter. We associate this parameter with a large uncertainty of $\pm \,50\, \%$.
-The fountain water temperature $T_F$, has an upper bound of $3\, \degree C$ as we always consider winter
-conditions at all the sites. The model structure introduces uncertainty through the spatial and temporal
-hyperparameters $\Delta x$ and $\Delta t$. By definition, $\Delta x$ is directly proportional to $\Delta t$.
-Therefore, we fix the temporal resolution of the model at hourly timesteps and only investigate the uncertainty
-caused by $\Delta x$ here. Since the surface layer thickness for an AIR does not resemble any parameters in the
-glaciological literature, we attribute a wide range of values to it (from 1 cm to 10 cm). The model parameters
-are henceforth called as meteorological parameters to distinguish them from the fountain forcing parameters.
-These were fixed within a range based on literature values (Table \ref{tab:parameters}).
-
-\TODO{But mean discharge rate is a variable and not a parameter???}
-
-\TODO{how is a 'hyperparameter' defined. I think you have to introduce all your parameters somewhere in detail
-	and it seems that you mixed up again some parameters which are acutally variables!}
-
-The three types of uncertain parameters, namely model hyperparameters ($\Delta x$), fountain forcing parameters
-($d_F, T_F$) and meteorological parameters ($\epsilon_{ice}, z_0, \alpha_{ice}, \alpha_{snow}, T_{ppt}, \tau$) are
-denoted as $Q^M, Q^F$ and $Q^W$ henceforth. Together, these nine parameters cause a large uncertainty in the ice
-volume estimates. In order to reduce this uncertainty, we perform a global sensitivity analysis with the net
-water loss as our objective. The objective of this sensitivity analysis was to reduce the dimension of the
-parameter space by calibrating the parameters with high total-order sensitivities ($S_{T_{j}} > 0.5$). The
-methodology to determine $S_{T_{j}}$ is described in Appendix \ref{sec:uncertainpy}. These sensitive model
-parameters were calibrated based on the \ac{RMSE} between the drone surveys and the model
-estimations of the ice volume. For this calibration procedure, all the other parameters were set to the median
-value of their respective ranges defined in Table \ref{tab:parameters}.  The sensitivity analysis and
-calibration were carried out with the drone surveys of CH21 and IN21 \ac{AIRs}.
-
-The model uncertainty was quantified separately for the remaining parameters in $Q^M, Q^F$ and $Q^W$ using the
-corresponding $90\, \%$ prediction interval $I^M, I^F$ and $I^W$. The $90\, \%$ prediction interval, $I^k$, gives us the
-interval within which $90\,\%$ of the ice volume outcomes occur when all the parameters in $Q^k$ are varied
-assuming each has an independent uniform probability density function. $5\,\%$ of the outcomes are above and
-$5\,\%$ are below this interval. The methodology to obtain this is described in Appendix \ref{sec:uncertainpy}.
-
-For validation, the calibrated model was tested with two data sets, namely the expiry date of all \ac{AIRs} and the
-drone surveys of CH20 AIR.
-
-\begin{table}
-	\caption{Free parameters in the model categorised as constant, derived, model hyperparameters, meteorological and
-		fountain forcing parameters with their respective values/ranges.}
-	\label{tab:parameters}
-	\begin{tabular}{lllll}
-		\toprule
-		\textbf{Constant Parameters}         & \textbf{Symbol}  & \textbf{Value}                      &
-		\textbf{Unit}                        & \textbf{Refs}                                                                                                                                   \\
-		Van Karman constant                  & $\kappa$         & 0.4                                 & dimensionless                 & \cite{cuffeyPhysicsGlaciers2010}                       \\
-		Stefan Boltzmann constant            & $\sigma$         & $\num{5.67 e-8} $                   & $W\, m^{-2}\, K^{-4}$         & \cite{cuffeyPhysicsGlaciers2010}                       \\
-		Air pressure at sea level            & $p_{0,a}$        & 1013                                & $hPa$                         & \cite{molgAblationAssociatedEnergy2004}                \\
-		Density of water                     & $\rho_{w}$       & 1000                                & $kg\, m^{-3}$                 & \cite{cuffeyPhysicsGlaciers2010}                       \\
-		Density of ice                       & $\rho_{ice}$     & 917                                 & $kg\, m^{-3}$                 & \cite{cuffeyPhysicsGlaciers2010}                       \\
-		Density of air                       & $\rho_{a}$       & 1.29                                & $kg\, m^{-3}$                 & \cite{molgAblationAssociatedEnergy2004}                \\
-		Specific heat of water               & $c_{w}$          & 4186                                & $J\, kg^{-1}\,\degree C^{-1}$ & \cite{cuffeyPhysicsGlaciers2010}                       \\
-		Specific heat of ice                 & $c_{ice}$        & 2097                                & $J\, kg^{-1}\,\degree C^{-1}$ & \cite{cuffeyPhysicsGlaciers2010}                       \\
-		Specific heat of air                 & $c_{a}$          & 1010                                & $J\, kg^{-1}\,\degree C^{-1}$ &
-		\cite{molgAblationAssociatedEnergy2004}                                                                                                                                                \\
-		Thermal conductivity of ice          & $k_{ice}$        & 2.123                               & $W\, m^{-1}\, K^{-1}$         & \cite{bonalesThermalConductivityIce2017}               \\
-		Latent Heat of Sublimation           & $L_{s}$          & \num{2.848e6}                       & $J\, kg^{-1}$                 & \cite{cuffeyPhysicsGlaciers2010}                       \\
-		Latent Heat of Fusion                & $L_{f}$          & \num{3.34e5}                        & $J\, kg^{-1}$                 & \cite{cuffeyPhysicsGlaciers2010}                       \\
-		Gravitational acceleration           & $g$              & 9.81                                & $m\, s^{-2}$                  & \cite{cuffeyPhysicsGlaciers2010}                       \\
-		meteorological station height        & $h_{AWS}$        & 2                                   & $m$                           & assumed                                                \\
-		Model timestep                       & $\Delta t$       & $3600$                              & $s$                           & assumed                                                \\
-		Fountain spray radius                & $r_{F}$          &                                     & $m$                           & measured                                               \\
-		Fountain runtime                     & $t_{F}$          &                                     & $hours$                       & measured                                               \\\midrule
-		\textbf{Derived Parameters}          & \textbf{Symbol}  & \textbf{}                           & \textbf{Unit}                 & \textbf{Section}                                       \\
-		Radius of AIR                        & $r_{cone}$       &                                     & $m$                           & \ref{sec:shape}                                        \\
-		Height of AIR                        & $h_{cone}$       &                                     & $m$                           & \ref{sec:shape}                                        \\
-		Slope of AIR                         & $s_{cone}$       &                                     & dimensionless                 & \ref{sec:shape}                                        \\
-		Thickness change of AIR              & $j_{cone}$       &                                     & $m$                           & \ref{sec:shape}                                        \\
-		Atmospheric emissivity               & $\epsilon_{a}$   &                                     & dimensionless                 & \ref{sec:LW}                                           \\
-		Cloudiness                           & $cld$            &                                     & dimensionless                 & assumed                                                \\
-		Vapour pressure over water           & $p_{v,w}$        &                                     & $hPa$                         & \ref{sec:Qs}                                           \\
-		Vapour pressure over ice             & $p_{v,ice}$      &                                     & $hPa$                         & \ref{sec:Qs}                                           \\
-		Solar elevation angle                & $\theta_{sun}$   &                                     & $\degree$                     & \ref{sec:SW}                                           \\
-		Albedo                               & $\alpha$         &                                     & dimensionless                 & \ref{sec:SW}                                           \\
-		Solar area fraction                  & $f_{cone}$       &                                     & dimensionless                 & \ref{sec:SW}                                           \\
-		Ice body and surface distance        & $l_{cone}$       &                                     & $m$                           & \ref{sec:Bulkflux}                                     \\
-		AIR surface temperature              & $T_{ice}$        &                                     & $\degree C$                   & \ref{sec:Bulkflux}                                     \\
-		AIR bulk temperature                 & $T_{bulk}$       &                                     & $\degree C$                   & \ref{sec:Bulkflux}                                     \\\midrule
-		\textbf{Model Hyperparameters}       & \textbf{Symbol}  & \textbf{Range}                      & \textbf{Unit}                 & \textbf{Refs}                                          \\
-		Surface layer thickness              & $\Delta x$       & $[\num{1e-2},\num{1e-1}]$           & $m$                           & assumed
-		\\\midrule
-		\textbf{meteorological Parameters}   & \textbf{Symbol}  & \textbf{Range}                      & \textbf{Unit}                 & \textbf{Refs}                                          \\
-		Ice Emissivity                       & $\epsilon_{ice}$ & $[0.95,0.99]$                       & dimensionless                 & \cite{horiInsituMeasuredSpectral2006}                  \\
-		Surface Roughness                    & $z_0$            & $[\num{1e-3},\num{5e-3}]$           & $m$                           & \cite{brockMeasurementParameterizationAerodynamic2006} \\
-		Ice Albedo                           & $\alpha_{ice}$   & $[0.15,0.35]$                       & dimensionless                 &
-		\cite{steinerModellingIcecliffBackwasting2015, zollesRobustUncertaintyAssessment2019}                                                                                                  \\
-		Snow Albedo                          & $\alpha_{snow}$  & $[0.8,0.9]$                         & dimensionless                 & \cite{zollesRobustUncertaintyAssessment2019}           \\
-		Precipitation Temperature threshold  & $T_{ppt}$        & $[0,2]$                             & $\degree C$                   & \cite{shichangResponseZhadangGlacier2010}              \\
-		Albedo Decay Rate                    & $\tau$           & $[10,22]$                           & $days$                        &
-		\cite{schmidtImportanceAccurateGlacier2017, oerlemansYearRecordGlobal1998}                                                                                                             \\\midrule
-		\textbf{Fountain Forcing Parameters} & \textbf{Symbol}  & \textbf{Range}                      & \textbf{Unit}                 & \textbf{Refs}                                          \\
-		Discharge rate                       & $d_{F}$          & $[0.5 \cdot d_{F},1.5 \cdot d_{F}]$ & $l/min$                       & assumed                                                \\
-		Water temperature                    & $T_{F}$          & $[0,3]$                             & $\degree C$                   & assumed                                                \\\bottomrule
-	\end{tabular}
-\end{table}
-
-\section{Model calibration, uncertainty and validation}
-
-\subsection{Calibration of sensitive parameters}
-
-The total-order sensitivities of all the nine parameters with respect to the net water loss objective are shown
-in Fig. \ref{fig:param_hist} (a). In total, the global sensitivity analysis required 1432 model runs to determine
-these sensitivities for each site. The only sensitive parameter ($S_{T_{j}} > 0.5$) for both \ac{AIRs} was the
-surface layer thickness. The RMSE between the drone surveys and the model ice volume estimates for different
-surface layer thickness are shown in Fig. \ref{fig:param_hist} (b). The optimum value of $\Delta x$ was found to
-be 45 $mm$ and 65 $mm$ with an RMSE of 9 $m^3$ and 30 $m^3$ for CH21 and IN21 \ac{AIRs} respectively.
-
-\begin{figure}
-	\centering
-	\includegraphics[width=\linewidth]{figs/model_calibration.jpg}
-	\caption{(a) Total-order sensitivities of all the uncertain parameters of the model with net water loss as the
-		objective. (b) The calibration of the sensitive parameter, $\Delta x$ with the RMSE between the drone and
-		model estimates of the ice volume. The dots denote the optimum values. The estimates from the Swiss and Indian
-		\ac{AIRs} are denoted with blue and red colors respectively. }
-	\label{fig:param_hist}
-\end{figure}
-
-\subsection{meteorological and fountain forcing uncertainty quantification}
-
-The uncertainty in the ice volume estimates caused by the meteorological and fountain forcing parameters are shown in
-Fig. \ref{fig:results}. The ranges highlighted represent the corresponding $90\,\%$ prediction interval of the
-ice volume estimates. meteorological uncertainty determination required 422 simulations whereas fountain forcing
-uncertainty determination required 32 simulations for each AIR. Since the results presented below differ
-significantly during the fountain runtime, we divided the simulation duration of the AIR into accumulation and
-ablation periods. The accumulation period ends and the ablation period starts after the last fountain discharge event.
-
-
-The prediction interval of the meteorological and fountain forcing parameters behave differently during the
-accumulation and ablation period for all \ac{AIRs}. Prediction interval of the meteorological parameters increase
-throughout the simulation period, but that of the fountain forcing parameters only increase during the
-accumulation period. This is to be expected since the fountain forcing parameters directly affect the model
-estimates only during the accumulation period.
-
-meteorological uncertainty for the Indian site was low compared to the Swiss one since precipitation and the associated
-variation in albedo was negligible. At the end of the accumulation period, the Indian meteorological prediction
-interval had a magnitude of  $73\,m^3$ which was 10 \% of the maximum simulated volume, whereas the magnitude of
-the Swiss meteorological prediction interval was much higher (28 \% of the maximum simulated volume for the CH21 AIR).
-This was expected since four out of the six uncertain Indian meteorological parameters were part of the albedo module. Among
-all the meteorological parameters, surface roughness caused the most variance in both Indian and the Swiss ice
-volume estimates.
-
-Fountain forcing uncertainty for the Indian site was higher than its meteorological uncertainty (28 \% of the maximum
-simulated volume at the end of the accumulation period). This was predominantly due to the uncertainty in the
-fountain's water temperature. However, for the Swiss site, the prediction interval of the fountain forcing
-parameters was similar to that of the meteorological parameters during the accumulation period. Since the mean fountain
-discharge rate of the Indian location was eight times that of the Swiss, the uncertainty due to the fountain
-forcing parameters was expected to be larger for the Indian location.
-
-\subsection{Validation}
-
-Model performance can be judged based on the ice volume left on the expiry date of all \ac{AIRs}. In the case of CH21
-AIR no ice volume was left whereas for CH20 AIR ice volume of 12 $m^3$ was left on the expiry date. For the IN21
-AIR, the determination of the expiry date was not possible. In reality, the IN21 AIR was found to have
-disintegrated into several ice blocks on 20th June, 2021.
-
-There was also one drone survey of the CH20 AIR volume for validation purposes. The RMSE of that observation
-with the modelled volume was $19\, m^3$ which is 18 \% of the maximum simulated ice volume of CH20 AIR.
-
-\begin{figure}
-	\centering
-	\includegraphics[width=\linewidth]{figs/model_validation.jpg}
-	\caption{Simulated ice volume during the lifetime of the \ac{AIRs} (blue curve). The shaded regions (light blue and
-		orange) represent the 90\% prediction interval of the AIR ice volume caused by the variations in meteorological and
-		fountain forcing parameters, respectively. Violet points indicate the drone ice volume observations.  The grey
-		dashed line represents the observed expiry date for each AIR.  }
-	\label{fig:results}
-\end{figure}
-
-
-\section{Model limitations and suggestions for improvement}
-
-\TODO{This chapter actually belongs to the discussion section and perspectives!}
-
-Model development is an art where subjective choices seek a balance between a model's simplicity and its accuracy.
-Below we detail some of these choices and recommend strategies that shift this balance towards further model
-accuracy.
-
-\subsection{Quality and quantity of calibration and validation data sets}
-
-The methodology used to acquire the radius, area and volume of \ac{AIRs} ( Appendix \ref{sec:drone_method}) from
-each drone survey has several drawbacks. The calibration and validation process used has an inherent temporal
-and spatial bias due to the following subjective choices:
-
-\begin{itemize}
-	\item \textbf{The number and timing of the drone surveys}. For example, among the five surveys of IN21 AIR, most of them were
-	      conducted around early March when the AIR volume was near its maximum whereas the seven surveys of the CH21
-	      location were more evenly spaced out in comparison. This observation bias occured due to logistical issues
-	      in conducting measurements in regular intervals.
-
-	\item \textbf{The meteorological conditions under which surveys were performed.} Particularly, precipitation events reduce DEM quality since
-	      they create uniform snow surfaces over \ac{AIRs}. These surfaces do not allow the identification of features
-	      that can be used to extract the radius and area of the AIR.
-
-\end{itemize}
-
-Thus, the quality of AIR validation is severely limited by the high uncertainties attached with the drone
-processing methodology.
-
-This limitation can be overcome by extending the model validation set with daily AIR meltwater measurements.
-However, the study site needs to satisfy two conditions. First, the terrain of the site needs to be waterproof
-and oriented so that most of the AIR runoff can be collected. Second, the chosen location should not have high
-wind speeds, otherwise a significant fraction of AIR wastewater would be dispersed in the air.
-
-\subsection{Turbulent heat flux parametrization}
-
-\TODO{This chapter is not clear and you have really to extend literature research, when you state some
-	conclusions inside this chapter?}
-
-The method used to calculate turbulent heat fluxes by \citet{garrattAtmosphericBoundaryLayer1992} assumes that
-these fluxes are acting over a uniform planar surface. This leads us to use the exposure/roughness parameter
-$\mu$ as a correction factor. However, equation \ref{eqn:mu} about $\mu_{cone}$ is no more than an educated guess. It
-is hard to base estimates of this parameter on information in the literature. Many studies have been carried out
-on the effect of obstacles on atmospheric boundary layer flow (e.g. trees), but always in an ensemble setting,
-looking at the bulk effect of an ensemble of obstacles. We deal with a case of a single obstacle in open
-terrain, and we are confident that the roughness of the surface and the exposure will lead to larger turbulent
-fluxes.
-
-\subsection{Fountain quantification}
-
-Contrary to our model assumptions, the parameters used to define the fountain were not independent. The fountain
-height, fountain aperture diameter (both ignored in this analysis), discharge rate, water temperature and spray
-radius were related through the trajectories of the water droplets.
-
-The model requires the fountain spray radius to be provided as input. This is a significant limitation since the
-model is very sensitive to the spray radius parameter. Moreover, spray radius is not only determined by the fountain
-characteristics but also due to wind-driven redistribution, refreezing and melting events across the AIR
-perimeter. The same fountain was observed to produce different spray radius corresponding to different winters
-for the Swiss experiments. Further discussion on this can be found at Section \ref{sec:interannual}.
-
-\TODO{This is a fundamental missing part in your thesis and you have to take exactly such a sentence also in
-	your introduction chapter and say that you have not taken this processes into account into your study!}
-
-During the IN21 experiment, snow formation was observed, indicating that the fountain water droplets have the
-potential to freeze before deposition on the AIR surface. Modelling such processes would require modelling the
-conduction, convection and nucleation processes that all droplets undergo during their flight time. Therefore, a
-proper quantification of the fountain is much more complex and requires a closer look at the correlation of the
-fountain parameters amongst themselves and with the meteorological parameters.
-
-\subsection{Shape parameterization}
-
-The RMSE between the drone and the model estimates of the surface area for the IN21, CH21 and CH20 \ac{AIRs}
-were 69 \%, 25 \% and 65 \% of the maximum area of the respective \ac{AIRs}. There are two rough assumptions
-leading to such a large error, assuming a conical shape and assuming a constant spray radius.
-
-Better quantification of the surface area can be achieved by assuming AIR cross section to be a Gaussian curve
-rather than a triangle.
-
-Better quantification of the spray radius can be achieved by modelling the projectile motion of fountain water
-droplets using wind speed values and fountain characteristics as illustrated in Section \ref{sec:interannual}.
-
-
-\subsection{Albedo parametrization}
-
-The albedo parametrization illustrated by Equation \ref{eqn:alb} had to be modified to accomodate the fountain
-discharge events. Little knowledge is available to understand the decay of albedo due to such events. Therefore,
-a simplistic approach of increasing the decay rate by a constant factor is used. However, the value of this
-factor is chosen without any basis on measurements. Field based albedo measurements are required to better
-parametrize the effect of water spray on the surface albedo decay rate.
+\subsection{AIR model}
 
 \subsection{COSISTUPA: COSIPY + AIR model}
 \label{sec:Cosistupa}
@@ -939,6 +730,131 @@ We consider the COSISTUPA model to be the better one among the two models due to
 	      community.
 
 \end{itemize}
+
+
+% \subsection{Uncertainty Quantification}
+%
+% The uncertainty in the model of estimating ice volumes is caused by three sources, namely model forcing
+% data, model hyperparameters and model parameters. Model forcing data can further be divided into meteorological and
+% fountain forcing data. Significant uncertainty exists in the meteorological forcing data, particularly for all the
+% radiation measurements ($SW_{direct}, SW_{diffuse}, LW_{in}$) since they were taken from ERA5 dataset or an
+% \ac{AWS} far away from the construction sites. Since no other meteorological data sets exist for comparison,
+% especially near the IN21 AIR, we are not accounting for uncertainties related to meteorological forcing data in
+% this analysis. Uncertainty in the fountain forcing data arises due to some fountain parameters listed in
+% Table \ref{tab:parameters}. Fountain runtime $t_F$ has no uncertainty for the Swiss \ac{AIRs} because no
+% interruptions occured during the study period. However, significant uncertainty exists for the IN21 AIR, where
+% the duration of interruptions caused by pipeline freezing events had to be estimated based on field records.
+% Fountain spray radius $r_F$ was measured using a drone survey and therefore doesn't contribute to model
+% uncertainty. The choice of mean discharge rate $d_F$ for both sites was estimated, based on a few
+% observations made by the flowmeter. We associate this parameter with a large uncertainty of $\pm \,50\, \%$.
+% The fountain water temperature $T_F$, has an upper bound of $3\, \degree C$ as we always consider winter
+% conditions at all the sites. The model structure introduces uncertainty through the spatial and temporal
+% hyperparameters $\Delta x$ and $\Delta t$. By definition, $\Delta x$ is directly proportional to $\Delta t$.
+% Therefore, we fix the temporal resolution of the model at hourly timesteps and only investigate the uncertainty
+% caused by $\Delta x$ here. Since the surface layer thickness for an AIR does not resemble any parameters in the
+% glaciological literature, we attribute a wide range of values to it (from 1 cm to 10 cm). The model parameters
+% are henceforth called as meteorological parameters to distinguish them from the fountain forcing parameters.
+% These were fixed within a range based on literature values (Table \ref{tab:parameters}).
+%
+% \TODO{But mean discharge rate is a variable and not a parameter???}
+%
+% \TODO{how is a 'hyperparameter' defined. I think you have to introduce all your parameters somewhere in detail
+% 	and it seems that you mixed up again some parameters which are acutally variables!}
+%
+% The three types of uncertain parameters, namely model hyperparameters ($\Delta x$), fountain forcing parameters
+% ($d_F, T_F$) and meteorological parameters ($\epsilon_{ice}, z_0, \alpha_{ice}, \alpha_{snow}, T_{ppt}, \tau$) are
+% denoted as $Q^M, Q^F$ and $Q^W$ henceforth. Together, these nine parameters cause a large uncertainty in the ice
+% volume estimates. In order to reduce this uncertainty, we perform a global sensitivity analysis with the net
+% water loss as our objective. The objective of this sensitivity analysis was to reduce the dimension of the
+% parameter space by calibrating the parameters with high total-order sensitivities ($S_{T_{j}} > 0.5$). The
+% methodology to determine $S_{T_{j}}$ is described in Appendix \ref{sec:uncertainpy}. These sensitive model
+% parameters were calibrated based on the \ac{RMSE} between the drone surveys and the model
+% estimations of the ice volume. For this calibration procedure, all the other parameters were set to the median
+% value of their respective ranges defined in Table \ref{tab:parameters}.  The sensitivity analysis and
+% calibration were carried out with the drone surveys of CH21 and IN21 \ac{AIRs}.
+%
+% The model uncertainty was quantified separately for the remaining parameters in $Q^M, Q^F$ and $Q^W$ using the
+% corresponding $90\, \%$ prediction interval $I^M, I^F$ and $I^W$. The $90\, \%$ prediction interval, $I^k$, gives us the
+% interval within which $90\,\%$ of the ice volume outcomes occur when all the parameters in $Q^k$ are varied
+% assuming each has an independent uniform probability density function. $5\,\%$ of the outcomes are above and
+% $5\,\%$ are below this interval. The methodology to obtain this is described in Appendix \ref{sec:uncertainpy}.
+%
+% For validation, the calibrated model was tested with two data sets, namely the expiry date of all \ac{AIRs} and the
+% drone surveys of CH20 AIR.
+
+
+% \section{Model calibration, uncertainty and validation}
+
+% \subsection{Calibration of sensitive parameters}
+%
+% The total-order sensitivities of all the nine parameters with respect to the net water loss objective are shown
+% in Fig. \ref{fig:param_hist} (a). In total, the global sensitivity analysis required 1432 model runs to determine
+% these sensitivities for each site. The only sensitive parameter ($S_{T_{j}} > 0.5$) for both \ac{AIRs} was the
+% surface layer thickness. The RMSE between the drone surveys and the model ice volume estimates for different
+% surface layer thickness are shown in Fig. \ref{fig:param_hist} (b). The optimum value of $\Delta x$ was found to
+% be 45 $mm$ and 65 $mm$ with an RMSE of 9 $m^3$ and 30 $m^3$ for CH21 and IN21 \ac{AIRs} respectively.
+%
+% \begin{figure}
+% 	\centering
+% 	\includegraphics[width=\linewidth]{figs/model_calibration.jpg}
+% 	\caption{(a) Total-order sensitivities of all the uncertain parameters of the model with net water loss as the
+% 		objective. (b) The calibration of the sensitive parameter, $\Delta x$ with the RMSE between the drone and
+% 		model estimates of the ice volume. The dots denote the optimum values. The estimates from the Swiss and Indian
+% 		\ac{AIRs} are denoted with blue and red colors respectively. }
+% 	\label{fig:param_hist}
+% \end{figure}
+%
+% \subsection{meteorological and fountain forcing uncertainty quantification}
+%
+% The uncertainty in the ice volume estimates caused by the meteorological and fountain forcing parameters are shown in
+% Fig. \ref{fig:results}. The ranges highlighted represent the corresponding $90\,\%$ prediction interval of the
+% ice volume estimates. meteorological uncertainty determination required 422 simulations whereas fountain forcing
+% uncertainty determination required 32 simulations for each AIR. Since the results presented below differ
+% significantly during the fountain runtime, we divided the simulation duration of the AIR into accumulation and
+% ablation periods. The accumulation period ends and the ablation period starts after the last fountain discharge event.
+%
+%
+% The prediction interval of the meteorological and fountain forcing parameters behave differently during the
+% accumulation and ablation period for all \ac{AIRs}. Prediction interval of the meteorological parameters increase
+% throughout the simulation period, but that of the fountain forcing parameters only increase during the
+% accumulation period. This is to be expected since the fountain forcing parameters directly affect the model
+% estimates only during the accumulation period.
+%
+% meteorological uncertainty for the Indian site was low compared to the Swiss one since precipitation and the associated
+% variation in albedo was negligible. At the end of the accumulation period, the Indian meteorological prediction
+% interval had a magnitude of  $73\,m^3$ which was 10 \% of the maximum simulated volume, whereas the magnitude of
+% the Swiss meteorological prediction interval was much higher (28 \% of the maximum simulated volume for the CH21 AIR).
+% This was expected since four out of the six uncertain Indian meteorological parameters were part of the albedo module. Among
+% all the meteorological parameters, surface roughness caused the most variance in both Indian and the Swiss ice
+% volume estimates.
+%
+% Fountain forcing uncertainty for the Indian site was higher than its meteorological uncertainty (28 \% of the maximum
+% simulated volume at the end of the accumulation period). This was predominantly due to the uncertainty in the
+% fountain's water temperature. However, for the Swiss site, the prediction interval of the fountain forcing
+% parameters was similar to that of the meteorological parameters during the accumulation period. Since the mean fountain
+% discharge rate of the Indian location was eight times that of the Swiss, the uncertainty due to the fountain
+% forcing parameters was expected to be larger for the Indian location.
+%
+% \subsection{Validation}
+%
+% Model performance can be judged based on the ice volume left on the expiry date of all \ac{AIRs}. In the case of CH21
+% AIR no ice volume was left whereas for CH20 AIR ice volume of 12 $m^3$ was left on the expiry date. For the IN21
+% AIR, the determination of the expiry date was not possible. In reality, the IN21 AIR was found to have
+% disintegrated into several ice blocks on 20th June, 2021.
+%
+% There was also one drone survey of the CH20 AIR volume for validation purposes. The RMSE of that observation
+% with the modelled volume was $19\, m^3$ which is 18 \% of the maximum simulated ice volume of CH20 AIR.
+%
+% \begin{figure}
+% 	\centering
+% 	\includegraphics[width=\linewidth]{figs/model_validation.jpg}
+% 	\caption{Simulated ice volume during the lifetime of the \ac{AIRs} (blue curve). The shaded regions (light blue and
+% 		orange) represent the 90\% prediction interval of the AIR ice volume caused by the variations in meteorological and
+% 		fountain forcing parameters, respectively. Violet points indicate the drone ice volume observations.  The grey
+% 		dashed line represents the observed expiry date for each AIR.  }
+% 	\label{fig:results}
+% \end{figure}
+
 
 % The combination of measurements and modelling is key to understanding the influence of the construction strategy
 % and location on \ac{AIRs}. Modelling is a powerful tool that allows estimation of AIR volumes across space and
