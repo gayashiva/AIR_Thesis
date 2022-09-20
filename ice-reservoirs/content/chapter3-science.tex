@@ -12,9 +12,9 @@ components of the terrestrial hydrological cycle, human water management, atmosp
 change drivers, in a globally integrated way. In such coupled frameworks, interactions and feedbacks between the
 ice surface and climate are directly modelled, and represented under different scenarios and for different time
 periods, which allow to investigate both the physical mechanisms and spatial and temporal extents of water
-storage. To date, glacial models provide this type of integrated framework, but do generally not include
-accurate representations of \ac{AIRs}. With some modifications, however, they can become ideal tools to estimate
-the meltwater quantities of \ac{AIRs}, for the historical and present-day periods, and for scenarios of future
+storage. To date, glacial models provide this type of integrated framework, but do not include accurate
+representations of \ac{AIRs}. With some modifications, however, they can become ideal tools to estimate the
+meltwater quantities of \ac{AIRs}, for the historical and present-day periods, and for scenarios of future
 climate change. Such model-based assessments can aid future mitigation and adaptation strategies linked to AIR
 construction and operation to assess future water scarcity and ensure future water availability in a changing
 climate.
@@ -28,7 +28,7 @@ reduces model calibration overhead while providing a user-friendly framework to 
 and apply the model to new construction sites. 
 
 In this chapter, we present the data sets acquired in our measurement campaigns in two different mountain
-regions (Alps and the Himalayas). Then we describe all the shape, mass and energy balance modules that were used
+regions (Alps and the Himalayas). Then we describe all the shape evolution, mass and energy balance modules that were used
 in these models to assess the quantity of ice, meltwater, sublimation, and wastewater. Finally, we compare the
 features and shortcomings of each of the models.
 
@@ -38,7 +38,7 @@ We chose study sites in the Alps and the Himalayas due to two reasons. First, we
 study between locations where AIR volumes differ by orders of magnitude. Second, we preferred locations where
 the logistics of performing the construction and measurement campaign did not present significant hurdles.
 Previous experiments in these mountain ranges satisfied the first condition. Moreover, both the selected sites
-had dedicated teams that were capable to manage the construction and measurement campaigns.
+had dedicated teams who were able to manage the construction and measurement campaigns.
 
 The study period starts when the fountain was first switched on (start date) and ends when the respective AIR
 either melted or broke into several ice blocks (expiry date).  Each AIR dataset was abbreviated based on the
@@ -577,10 +577,12 @@ involved in developing each of these models.
 	\begin{tabular}{|llll|}
 		\hline
 		\textbf{Module}        & \textbf{Oerlemans} & \textbf{AIR} & \textbf{COSISTUPA}     \\ 
-		\textit{Documentation} & \textit{Paper III} & \textit{Paper I} & \textit{\citet{sauterCOSIPYV1Opensource2020} and Section \ref{sec:Cosistupa}}     \\ \hline
-		Shape evolution        & Simplified         & Full         & Full                     \\
-		Energy balance         & No temperature & 1-D temperature & 2-D temperature \\
-		                       &           variation &        variation & variation \\ \hline
+		\textit{Documentation} & \textit{Paper III} & \textit{Paper I} & \textit{\citet{sauterCOSIPYV1Opensource2020}} \\ 
+		                       &                    &                  & \textit{and Section \ref{sec:Cosistupa}}     \\ \hline
+		Shape evolution        & Constant radius     & Derived from  & Derived from        \\
+                           & or slope            & energy balance & surface mass balance        \\\hline
+		Density and temperature& None & 1-dimensional   & 2-dimensional   \\
+		variation              &           &        & \\ \hline
 	\end{tabular}
 \end{table}
 
@@ -589,7 +591,8 @@ involved in developing each of these models.
 The objective of the Oerlemans model was to integrate a shape evolution module with glacial models to obtain
 first-order estimates of growth and decay rates under various conditions. This model was designed to
 qualitatively assess the effects of snow cover, different starting dates, differences between warm and cold
-winters, etc. It simulated ice stupa evolution using data from field measurements in Val Roseg, Switzerland. 
+winters, etc. It simulated ice stupa evolution using data from field measurements in Oberengadin region,
+Switzerland. 
 
 However, this model was not ideal for comparing between simulated and observed ice stupa volumes. This was
 because the model considers the ice stupa to be a single unit with a surface temperature close to the melting
