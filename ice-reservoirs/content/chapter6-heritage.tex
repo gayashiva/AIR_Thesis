@@ -4,13 +4,6 @@
 	crops, even potatoes, which need to be planted earlier in the spring, but sell for much more money.
 }{Tashi Tundup}{(A 76 year old farmer in Ladakh)}
 
-% This chapter provides conclusions based on research findings from data collected on AIRs in Switzerland and
-% India, as well as discussion. This chapter will review the purpose of the study, research questions, literature
-% review, and findings of the study. It will then present conclusions, discussion of the conclusions, and
-% recommendations for further research.
-
-% \section{Summary}
-
 Climate warming has resulted in retreat and thinning of mountain glaciers
 \citep{ipccCrossChapterPaperMountains2022}. This has implications for water availability in river basins that
 have considerable glacierized areas in their headwaters, such as \ac{HMA}. Glaciers in HMA provide an important
@@ -30,16 +23,16 @@ ice reservoirs with man-made ones that provide supplementary irrigation during t
 	\label{fig:airs_ladakh}
 \end{figure}
 
-While these technologies have gained renewed attention as a potential strategy to increase water security,
-limited scientific evidence exists about their potential hydrological contributions. AIR observations and
-investigations date back to the mid-2000s \citep{tveitenGlacierGrowingLocal2007}. The vast majority have been
-published in the 2010s, mostly using qualitative methods. Because small-scale processes, complex feedbacks and
-non-linearities govern their evolution, modelling the volume evolution of ice stupas is difficult and only
-feasible if backed up with comprehensive datasets. Recent advances in glacial models and drones provide the
-opportunity to quantify these surface processes using high-resolution data on surface changes of \ac{AIRs}. The
-main objective of the thesis therefore was \textit{to increase understanding of surface dynamics of \ac{AIRs} in order to
-integrate this tool in the water resource management strategy of mountain catchments}, with a specific focus on
-the potential application of glacial models. This has been achieved by focusing on the following two specific
+While these technologies have gained renewed attention as a strategy to increase water security, limited
+scientific evidence exists about their potential hydrological contributions. AIR observations and investigations
+date back to the mid-2000s \citep{tveitenGlacierGrowingLocal2007}. The vast majority have been published in the
+2010s, mostly using qualitative methods. Because small-scale processes, complex feedbacks and non-linearities
+govern their evolution, modelling the volume evolution of ice stupas is difficult and only feasible if backed up
+with comprehensive datasets. Recent advances in glacial models and drones provide the opportunity to quantify
+these surface processes using high-resolution data on volume changes of \ac{AIRs}. The main objective of the
+thesis therefore was \textit{to increase understanding of volume dynamics of \ac{AIRs} in order to integrate
+this tool in the water resource management strategy of mountain catchments}, with a specific focus on the
+potential application of glacial models. This has been achieved by focusing on the following two specific
 research questions:
 
 \begin{enumerate}
@@ -48,8 +41,8 @@ research questions:
   \item{How can ice stupa fountain systems be engineered to reduce their water losses and maintenance efforts?}
 \end{enumerate}
 
-In this chapter, I synthesize the research presented in this thesis. I discuss the main findings,
-integrate them in a broader perspective, and provide recommendations and a future outlook.
+In this chapter, I synthesize the research presented in this thesis. I discuss the main findings, integrate them
+in a broader perspective, and provide recommendations and a future outlook.
 
 % In response, we conducted measurement campaigns using drones, flowmeters and weather stations on almost a dozen
 % AIRs across two locations (India and Switzerland), over four winters (2019, 2020, 2021 and 2022) and using two
@@ -65,7 +58,7 @@ integrate them in a broader perspective, and provide recommendations and a futur
 \begin{figure}[htb]
 	\includegraphics[width=\textwidth]{figs/Kullum_potatoes}
 	\caption{One of the deserted villages in Ladakh where AIR meltwater supported a harvest of 1300 kg of
-		potatoes in October 2021. (P.C. Icestupa Project)}
+		potatoes in October 2021. (Picture credits: Icestupa Project)}
 	\label{fig:kullum_potatoes}
 \end{figure}
 
@@ -130,6 +123,146 @@ development, AIRs can also be used to mitigate high flow water risks. The glacia
 Himalayas can be siphoned to form AIRs in scale that last perpetually. Such AIRs can compound over the years to
 become another source of perennial water supply for the respective catchments.
 
+\subsection{Metrics to judge site suitability}
+
+We propose two sets of guidelines to identify future construction sites at a regional and a local scale. These
+suggestions are guided by the different case studies presented in this thesis and field experiences in
+Ladakh over the past six winters.
+
+\subsubsection{Regional scale}
+
+\begin{enumerate}
+
+	\item Minimum median monthly temperature less than $0 \degree C$.
+	\item Water supply with median discharge rate more than $2\, l/min$.
+	\item Terrain slope between water source and site greater than 20 m every km.
+
+\end{enumerate}
+
+\subsubsection{Local scale}
+
+Given a valley or a region satisfying the above requirements, further selection of sites around the particular
+water supply can be performed using the criterions below:
+
+\begin{enumerate}
+	\item Water source temperature is higher.
+	\item Daylight hours are lower due to shadows.
+	\item Altitude is higher.
+\end{enumerate}
+
+% \section{Model limitations and suggestions for improvement}
+\subsection{Model development}
+
+The COSISTUPA model developed in section \ref{sec:Cosistupa} should be used for future estimations for AIR
+volume. This model needs to be extended so that it can account for future climate variability and produce
+accurate meltwater predictions. Modelling the future is fundamentally different from simulating the past: In the
+past the model serves as a tool for interpreting and best exploiting field measurements - and can be directly
+constrained by them. Models for the future must understand climate variability to be able to yield realistic
+projections. Almost all methodological steps in the modelling of future AIR runoff are subject to possible
+enhancements, always bearing in mind that we will only know whether the effort led to an enhanced or even a
+worsened performance, when we're old...
+
+% \section{Model limitations and suggestions for improvement}
+
+Model development is an art where subjective choices seek a balance between a model's simplicity and its
+accuracy. Below we detail some of these choices and recommend strategies that shift this balance towards further
+model accuracy.
+
+\subsubsection{Quality and quantity of calibration and validation data sets}
+
+The methodology used to acquire the radius, area and volume of \ac{AIRs} ( Appendix \ref{sec:drone_method}) from
+each drone survey has several drawbacks. The calibration and validation process used has an inherent temporal
+and spatial bias due to the following subjective choices:
+
+\begin{itemize}
+	\item \textbf{The number and timing of the drone surveys}. For example, among the five surveys of IN21 AIR, most of them were
+	      conducted around early March when the AIR volume was near its maximum whereas the seven surveys of the CH21
+	      location were more evenly spaced out in comparison. This observation bias occured due to logistical issues
+	      in conducting measurements in regular intervals.
+
+	\item \textbf{The meteorological conditions under which surveys were performed.} Particularly, precipitation events reduce DEM quality since
+	      they create uniform snow surfaces over \ac{AIRs}. These surfaces do not allow the identification of features
+	      that can be used to extract the radius and area of the AIR.
+
+\end{itemize}
+
+Thus, the quality of AIR validation is severely limited by the high uncertainties attached with the drone
+processing methodology.
+
+This limitation can be overcome by extending the model validation set using two measurement approaches. First,
+we suggest measuring daily AIR meltwater quantities. Accuracy of this validation method depends on the wind
+speeds of the location but can be improved if the terrain is made waterproof and oriented so that most of the
+AIR runoff can be collected. 
+
+Second, we suggest conducting \ac{GPR} surveys. Ice is very transparent to \ac{GPR} signals, allowing tremendous
+penetration. \ac{GPR} is also sensitive to subtle changes in the properties of ice layers. This makes it a
+powerful tool to image the internal structure of glaciers and ice sheets at a scale of meters or hundreds of
+meters. The basic principle of a pulsed \ac{GPR} system is to send an electromagnetic signal into the ground and
+to record the signal reflections as a function of their two-way travel time. Partial reflections of the
+electromagnetic wave recorded as internal reflection horizons (IRH) occur at vertical discontinuities in the
+dielectric material. From polar studies, IRH are known to coincide with variations in density and liquid water
+content \citep{forster2014extensive}. Therefore, \ac{GPR} can be a crucial method to calibrate and validate spatial density
+and volume variations of \ac{AIRs}.
+
+\ac{GPR} survey was already conducted on four ice stupas in March 2020. However, they are yet to be analysed.
+These data sets are open-sourced at \citet{balasubramanian_suryanarayanan_2022_7056646}.
+
+\subsubsection{Turbulent heat flux parametrization}
+
+\TODO{This chapter is not clear and you have really to extend literature research, when you state some
+	conclusions inside this chapter?}
+
+The method used to calculate turbulent heat fluxes by \citet{garrattAtmosphericBoundaryLayer1992} assumes that
+these fluxes are acting over a uniform planar surface. This leads us to use the exposure/roughness parameter
+$\mu$ as a correction factor. However, equation \ref{eqn:mu} about $\mu_{cone}$ is no more than an educated guess. It
+is hard to base estimates of this parameter on information in the literature. Many studies have been carried out
+on the effect of obstacles on atmospheric boundary layer flow (e.g. trees), but always in an ensemble setting,
+looking at the bulk effect of an ensemble of obstacles. We deal with a case of a single obstacle in open
+terrain, and we are confident that the roughness of the surface and the exposure will lead to larger turbulent
+fluxes.
+
+\subsubsection{Fountain quantification}
+
+Contrary to our model assumptions, the parameters used to define the fountain were not independent. The fountain
+height, fountain aperture diameter (both ignored in this analysis), discharge rate, water temperature and spray
+radius were related through the trajectories of the water droplets.
+
+The model requires the fountain spray radius to be provided as input. This is a significant limitation since the
+model is very sensitive to the spray radius parameter. Moreover, spray radius is not only determined by the fountain
+characteristics but also due to wind-driven redistribution, refreezing and melting events across the AIR
+perimeter. The same fountain was observed to produce different spray radius corresponding to different winters
+for the Swiss experiments. Further discussion on this can be found at Section \ref{sec:interannual}.
+
+\TODO{This is a fundamental missing part in your thesis and you have to take exactly such a sentence also in
+	your introduction chapter and say that you have not taken this processes into account into your study!}
+
+During the IN21 experiment, snow formation was observed, indicating that the fountain water droplets have the
+potential to freeze before deposition on the AIR surface. Modelling such processes would require modelling the
+conduction, convection and nucleation processes that all droplets undergo during their flight time. Therefore, a
+proper quantification of the fountain is much more complex and requires a closer look at the correlation of the
+fountain parameters amongst themselves and with the meteorological parameters.
+
+\subsubsection{Shape parameterization}
+
+The RMSE between the drone and the model estimates of the surface area for the IN21, CH21 and CH20 \ac{AIRs}
+were 69 \%, 25 \% and 65 \% of the maximum area of the respective \ac{AIRs}. There are two rough assumptions
+leading to such a large error, assuming a conical shape and assuming a constant spray radius.
+
+Better quantification of the surface area can be achieved by assuming AIR cross section to be a Gaussian curve
+rather than a triangle.
+
+Better quantification of the spray radius can be achieved by modelling the projectile motion of fountain water
+droplets using wind speed values and fountain characteristics as illustrated in Section \ref{sec:interannual}.
+
+
+\subsubsection{Albedo parametrization}
+
+The albedo parametrization illustrated by Equation \ref{eqn:alb} had to be modified to accomodate the fountain
+discharge events. Little knowledge is available to understand the decay of albedo due to such events. Therefore,
+a simplistic approach of increasing the decay rate by a constant factor is used. However, the value of this
+factor is chosen without any basis on measurements. Field based albedo measurements are required to better
+parametrize the effect of water spray on the surface albedo decay rate.
+
 \section{Future research direction}
 
 Any future research can take advantage of the meteorological, fountain and drone datasets acquired in the two field
@@ -140,65 +273,6 @@ Insights from this research could contribute to efforts to better estimate the f
 climate change adaptation and mitigation under multiple plausible future climatic, demographic, economic, and
 land use scenarios.
 
-\subsection{Model development}
-
-The COSISTUPA model developed in section \ref{sec:Cosistupa} should be used for future estimations for AIR volume. This model
-needs to be extended so that it can account for future climate variability and produce accurate meltwater
-predictions. Modelling the future is fundamentally different from simulating the past: In the past the model
-serves as a tool for interpreting and best exploiting field measurements - and can be directly constrained by
-them. Models for the future must understand climate variability to be able to yield realistic projections.
-Almost all methodological steps in the modelling of future AIR runoff are subject to possible enhancements,
-always bearing in mind that we will only know whether the effort led to an enhanced or even a worsened
-performance, when we're old...
-
-\subsubsection{Advantages of the COSISTUPA model}
-
-The COSISTUPA model has a modular structure allowing the exchange of routines or parametrizations of physical
-processes with little effort for the user. The framework consists of a computational kernel, forming
-the runtime environment and taking care of the initialization, the input-output routines, and the
-parallelization, as well as the grid and data structures. This structure offers maximum flexibility without
-having to worry about the internal numerical flow. The adaptive subsurface scheme allows an efficient and fast
-calculation of the otherwise computationally demanding fundamental equations. The surface energy balance scheme
-uses established standard parametrizations for radiation as well as for the energy exchange between the
-atmosphere and surface. The schemes are coupled by solving both surface energy balance and subsurface fluxes
-iteratively in which consistent skin temperature is returned at the interface. COSISTUPA uses a one-dimensional
-approach limited to the vertical fluxes of energy and matter but neglects any lateral processes. Accordingly,
-the model can be easily set up in parallel computational environments for calculating both energy balance and
-climatic surface mass balance of multiple \ac{AIRs} based on flexible horizontal grids and with varying temporal
-resolution.
-
-The RMSE error of the 5 ice stupas studied in this thesis were within 20 \% of their maximum ice volumes for both
-the models (Fig. \ref{fig:Cosistupa}).  However, the COSISTUPA model was 3 times slower than the AIR model. This
-is likely due to the additional effort required to resolve the ice temperature spatially.
-
-\begin{figure}[t]
-	\centering
-	\includegraphics[width=\textwidth]{figs/model_compare.jpg}
-
-	\caption{Comparison of volume estimates generated from the AIR and COSISTUPA models.}
-
-	\label{fig:Cosistupa}
-\end{figure}
-
-We consider the COSISTUPA model to be the better one among the three models due to these three reasons:
-
-\begin{itemize}
-
-	\item \textbf{Better spatial temperature and density resolution} : It provides temperature and density
-	      information of subsurface layers of the AIR. In contrast, the AIR model only computes the bulk and the
-	      surface temperature. Moreover, COSISTUPA is better able to approximate bulk density since it has records of
-	      previous snowfall events in its subsurface layers.
-
-	\item \textbf{Better parametrization of snowfall} : The densification and albedo decay of snowfall are better
-	      handled in COSISTUPA due to its awareness of the snowfall content in each of its subsurface layers.
-
-	\item \textbf{Better validation} : COSISTUPA, being a model derived from COSIPY is expected to validate better
-	      since the core parametrizations are unchanged and have been extensively validated within other studies \citep{arndtAtmosphereDrivenMassBalance2021}.
-
-	\item \textbf{Future support} : COSISTUPA will be extensively supported in the future through the COSIPY
-	      community.
-
-\end{itemize}
 
 \subsection{Quantification and development of ice terraces}
 
@@ -249,125 +323,7 @@ water security.
 
 \TODO{Integrate papers and appendi better}
 \TODO{Note conclusions of all papers}
-\TODO{Bring all discussions here}
 
-
-\subsection{Metrics to judge site suitability}
-
-Accordingly, we propose two sets of guidelines to identify future construction sites at a regional and a local
-scale. These decisions are guided by both the different case studies presented in this thesis and field
-experiences in Ladakh over the past six winters.
-
-\subsubsection{Regional scale}
-
-\begin{enumerate}
-
-	\item Minimum median monthly temperature less than $0 \degree C$.
-	\item Water supply with median discharge rate more than $2\, l/min$.
-	\item Terrain slope between water source and site greater than 20 m every km.
-
-\end{enumerate}
-
-\subsubsection{Local scale}
-
-Given a valley or a region satisfying the above requirements, further selection of sites around the particular
-water supply can be performed using the criterions below:
-
-\begin{enumerate}
-	\item Water source temperature is higher.
-	\item Daylight hours are lower due to shadows.
-	\item Altitude is higher.
-\end{enumerate}
-
-\section{Model limitations and suggestions for improvement}
-
-\TODO{This chapter actually belongs to the discussion section and perspectives!}
-
-Model development is an art where subjective choices seek a balance between a model's simplicity and its accuracy.
-Below we detail some of these choices and recommend strategies that shift this balance towards further model
-accuracy.
-
-\subsection{Quality and quantity of calibration and validation data sets}
-
-The methodology used to acquire the radius, area and volume of \ac{AIRs} ( Appendix \ref{sec:drone_method}) from
-each drone survey has several drawbacks. The calibration and validation process used has an inherent temporal
-and spatial bias due to the following subjective choices:
-
-\begin{itemize}
-	\item \textbf{The number and timing of the drone surveys}. For example, among the five surveys of IN21 AIR, most of them were
-	      conducted around early March when the AIR volume was near its maximum whereas the seven surveys of the CH21
-	      location were more evenly spaced out in comparison. This observation bias occured due to logistical issues
-	      in conducting measurements in regular intervals.
-
-	\item \textbf{The meteorological conditions under which surveys were performed.} Particularly, precipitation events reduce DEM quality since
-	      they create uniform snow surfaces over \ac{AIRs}. These surfaces do not allow the identification of features
-	      that can be used to extract the radius and area of the AIR.
-
-\end{itemize}
-
-Thus, the quality of AIR validation is severely limited by the high uncertainties attached with the drone
-processing methodology.
-
-This limitation can be overcome by extending the model validation set with daily AIR meltwater measurements.
-However, the study site needs to satisfy two conditions. First, the terrain of the site needs to be waterproof
-and oriented so that most of the AIR runoff can be collected. Second, the chosen location should not have high
-wind speeds, otherwise a significant fraction of AIR wastewater would be dispersed in the air.
-
-\subsection{Turbulent heat flux parametrization}
-
-\TODO{This chapter is not clear and you have really to extend literature research, when you state some
-	conclusions inside this chapter?}
-
-The method used to calculate turbulent heat fluxes by \citet{garrattAtmosphericBoundaryLayer1992} assumes that
-these fluxes are acting over a uniform planar surface. This leads us to use the exposure/roughness parameter
-$\mu$ as a correction factor. However, equation \ref{eqn:mu} about $\mu_{cone}$ is no more than an educated guess. It
-is hard to base estimates of this parameter on information in the literature. Many studies have been carried out
-on the effect of obstacles on atmospheric boundary layer flow (e.g. trees), but always in an ensemble setting,
-looking at the bulk effect of an ensemble of obstacles. We deal with a case of a single obstacle in open
-terrain, and we are confident that the roughness of the surface and the exposure will lead to larger turbulent
-fluxes.
-
-\subsection{Fountain quantification}
-
-Contrary to our model assumptions, the parameters used to define the fountain were not independent. The fountain
-height, fountain aperture diameter (both ignored in this analysis), discharge rate, water temperature and spray
-radius were related through the trajectories of the water droplets.
-
-The model requires the fountain spray radius to be provided as input. This is a significant limitation since the
-model is very sensitive to the spray radius parameter. Moreover, spray radius is not only determined by the fountain
-characteristics but also due to wind-driven redistribution, refreezing and melting events across the AIR
-perimeter. The same fountain was observed to produce different spray radius corresponding to different winters
-for the Swiss experiments. Further discussion on this can be found at Section \ref{sec:interannual}.
-
-\TODO{This is a fundamental missing part in your thesis and you have to take exactly such a sentence also in
-	your introduction chapter and say that you have not taken this processes into account into your study!}
-
-During the IN21 experiment, snow formation was observed, indicating that the fountain water droplets have the
-potential to freeze before deposition on the AIR surface. Modelling such processes would require modelling the
-conduction, convection and nucleation processes that all droplets undergo during their flight time. Therefore, a
-proper quantification of the fountain is much more complex and requires a closer look at the correlation of the
-fountain parameters amongst themselves and with the meteorological parameters.
-
-\subsection{Shape parameterization}
-
-The RMSE between the drone and the model estimates of the surface area for the IN21, CH21 and CH20 \ac{AIRs}
-were 69 \%, 25 \% and 65 \% of the maximum area of the respective \ac{AIRs}. There are two rough assumptions
-leading to such a large error, assuming a conical shape and assuming a constant spray radius.
-
-Better quantification of the surface area can be achieved by assuming AIR cross section to be a Gaussian curve
-rather than a triangle.
-
-Better quantification of the spray radius can be achieved by modelling the projectile motion of fountain water
-droplets using wind speed values and fountain characteristics as illustrated in Section \ref{sec:interannual}.
-
-
-\subsection{Albedo parametrization}
-
-The albedo parametrization illustrated by Equation \ref{eqn:alb} had to be modified to accomodate the fountain
-discharge events. Little knowledge is available to understand the decay of albedo due to such events. Therefore,
-a simplistic approach of increasing the decay rate by a constant factor is used. However, the value of this
-factor is chosen without any basis on measurements. Field based albedo measurements are required to better
-parametrize the effect of water spray on the surface albedo decay rate.
 
 % Our findings are essential to design nature-based solutions that increase the reliability of water supply in
 % highly seasonal and arid environments and improve water security and climate change adaptation in mountain

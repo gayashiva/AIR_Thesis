@@ -661,4 +661,53 @@ extend COSIPY into COSISTUPA, parametrizations of the following processes were m
 Please note the above list of changes are not exhaustive and represent only the major modifications necessary to
 develop the COSISTUPA model.
 
+\subsubsection{Advantages of the COSISTUPA model}
+
+The COSISTUPA model has a modular structure allowing the exchange of routines or parametrizations of physical
+processes with little effort for the user. The framework consists of a computational kernel, forming
+the runtime environment and taking care of the initialization, the input-output routines, and the
+parallelization, as well as the grid and data structures. This structure offers maximum flexibility without
+having to worry about the internal numerical flow. The adaptive subsurface scheme allows an efficient and fast
+calculation of the otherwise computationally demanding fundamental equations. The surface energy balance scheme
+uses established standard parametrizations for radiation as well as for the energy exchange between the
+atmosphere and surface. The schemes are coupled by solving both surface energy balance and subsurface fluxes
+iteratively in which consistent skin temperature is returned at the interface. COSISTUPA uses a one-dimensional
+approach limited to the vertical fluxes of energy and matter but neglects any lateral processes. Accordingly,
+the model can be easily set up in parallel computational environments for calculating both energy balance and
+climatic surface mass balance of multiple \ac{AIRs} based on flexible horizontal grids and with varying temporal
+resolution.
+
+The RMSE error of the 5 ice stupas studied in this thesis were within 20 \% of their maximum ice volumes for both
+the models (Fig. \ref{fig:Cosistupa}).  However, the COSISTUPA model was 3 times slower than the AIR model. This
+is likely due to the additional effort required to resolve the ice temperature spatially.
+
+\begin{figure}[t]
+	\centering
+	\includegraphics[width=\textwidth]{figs/model_compare.jpg}
+
+	\caption{Comparison of volume estimates generated from the AIR and COSISTUPA models.}
+
+	\label{fig:Cosistupa}
+\end{figure}
+
+We consider the COSISTUPA model to be the better one among the three models due to these three reasons:
+
+\begin{itemize}
+
+	\item \textbf{Better spatial temperature and density resolution} : It provides temperature and density
+	      information of subsurface layers of the AIR. In contrast, the AIR model only computes the bulk and the
+	      surface temperature. Moreover, COSISTUPA is better able to approximate bulk density since it has records of
+	      previous snowfall events in its subsurface layers.
+
+	\item \textbf{Better parametrization of snowfall} : The densification and albedo decay of snowfall are better
+	      handled in COSISTUPA due to its awareness of the snowfall content in each of its subsurface layers.
+
+	\item \textbf{Better validation} : COSISTUPA, being a model derived from COSIPY is expected to validate better
+	      since the core parametrizations are unchanged and have been extensively validated within other studies \citep{arndtAtmosphereDrivenMassBalance2021}.
+
+	\item \textbf{Future support} : COSISTUPA will be extensively supported in the future through the COSIPY
+	      community.
+
+\end{itemize}
+
 
