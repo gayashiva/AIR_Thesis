@@ -564,8 +564,8 @@ Considering \ac{AIRs} as water reservoirs, their net water loss can be defined a
 
 The model modules described above where used in three different models with varying degree of complexity as
 shown in Table \ref{tab:MIP}. The Oerlemans model is the simplest, implemented in just one page of code whereas
-the COSISTUPA model is the most complex maintained by a community of modellers. Below we describe the motivation
-involved in developing each of these models.
+the COSISTUPA model is the most complex maintained by a community of modellers.  Below we describe the
+motivation involved in developing each of these models.
 
 \begin{table}[ht]
 	\centering
@@ -611,7 +611,9 @@ Guttannen, Switzerland. The model was calibrated and validated with ice volume a
 obtained via drone surveys. We calculated the freezing and melting rates for each of the three AIRs and
 explained their corresponding magnitudes in terms of the influence of the chosen location and the fountain used.
 The model was successful in reproducing the observed ice volume evolution with a correlation greater than 0.96
-and an \ac{RMSE} less than 18 \% of the maximum ice volume for three AIRs (Paper I). 
+and an \ac{RMSE} less than 18 \% of the maximum ice volume for three AIRs (Paper I). The AIR model is freely
+provided through a git repository for non-profit purposes (\url{https://github.com/gayashiva/air_model}, last
+access: August 1, 2022). 
 
 However, the model is not expected to perform well for locations where it has not been calibrated in advance.
 Specifically, the surface layer thickness parameter requires prior calibration for better model performance.
@@ -624,7 +626,9 @@ Snowpack and Ice surface energy and mass balance model in PYthon (COSIPY). COSIP
 modelling distributed snow and glacier mass changes \citep{sauterCOSIPYV1Opensource2020}. However, it has a
 flexible, user-friendly and modular framework allowing it to be an ideal platform to implement the alternate
 modules required for modelling ice reservoirs. This modified COSIPY model will be referred to as COSISTUPA model
-henceforth.
+henceforth. The COSISTUPA model is freely provided through a git repository for non-profit purposes
+(\url{https://github.com/cryotools/cosipy/tree/cosistupa}, last access: August 1, 2022). 
+
 
 \subsubsection{Model configuration}
 
@@ -677,9 +681,10 @@ the model can be easily set up in parallel computational environments for calcul
 climatic surface mass balance of multiple \ac{AIRs} based on flexible horizontal grids and with varying temporal
 resolution.
 
-The \ac{RMSE} error of the 5 ice stupas studied in this thesis were within 20 \% of their maximum ice volumes for both
-the models (Fig. \ref{fig:Cosistupa}).  However, the COSISTUPA model was 3 times slower than the AIR model. This
-is likely due to the additional effort required to resolve the ice temperature spatially.
+The \ac{RMSE} error of the 5 ice stupas studied in this thesis were within 20 \% of their maximum ice volumes
+for both the models (Fig. \ref{fig:Cosistupa}).  However, the COSISTUPA model was 3 times slower than the AIR
+model. This is likely due to the additional effort required to resolve the density and temperature across the
+two dimensional model grid.
 
 \begin{figure}[t]
 	\centering

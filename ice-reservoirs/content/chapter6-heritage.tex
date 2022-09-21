@@ -41,17 +41,9 @@ research questions:
   \item{How can ice stupa fountain systems be engineered to reduce their water losses and maintenance efforts?}
 \end{enumerate}
 
-In this chapter, I synthesize the research presented in this thesis. I discuss the main findings, integrate them
-in a broader perspective, and provide recommendations and a future outlook.
+In this chapter, I discuss the main findings, integrate them in a broader perspective, point out limitations in
+the methodology used, and provide recommendations and a future outlook.
 
-% In response, we conducted measurement campaigns using drones, flowmeters and weather stations on almost a dozen
-% AIRs across two locations (India and Switzerland), over four winters (2019, 2020, 2021 and 2022) and using two
-% different construction methods (traditional and automated). Each dataset contained information on the
-% meteorological conditions, fountain characteristics and AIR volume evolution.
-
-% The primary objective of this thesis was to improve our understanding of AIRs' response to changes in
-% their construction location. The secondary objective was to propose automated construction strategies that reduce
-% water losses and maintenance efforts.
 
 \section{Conclusions}
 
@@ -89,7 +81,61 @@ results of these papers can be summarised as follows:
 \end{enumerate}
 
 
-\section{Discussion}
+\section{Challenges}
+
+\subsection{Turbulent heat flux parametrization}
+
+\TODO{This chapter is not clear and you have really to extend literature research, when you state some
+	conclusions inside this chapter?}
+
+The method used to calculate turbulent heat fluxes by \citet{garrattAtmosphericBoundaryLayer1992} assumes that
+these fluxes are acting over a uniform planar surface. This leads us to use the exposure/roughness parameter
+$\mu$ as a correction factor. However, equation \ref{eqn:mu} about $\mu_{cone}$ is no more than an educated guess. It
+is hard to base estimates of this parameter on information in the literature. Many studies have been carried out
+on the effect of obstacles on atmospheric boundary layer flow (e.g. trees), but always in an ensemble setting,
+looking at the bulk effect of an ensemble of obstacles. We deal with a case of a single obstacle in open
+terrain, and we are confident that the roughness of the surface and the exposure will lead to larger turbulent
+fluxes.
+
+\subsection{Fountain quantification}
+
+Contrary to our model assumptions, the parameters used to define the fountain were not independent. The fountain
+height, fountain aperture diameter (both ignored in this analysis), discharge rate, water temperature and spray
+radius were related through the trajectories of the water droplets.
+
+The model requires the fountain spray radius to be provided as input. This is a significant limitation since the
+model is very sensitive to the spray radius parameter. Moreover, spray radius is not only determined by the fountain
+characteristics but also due to wind-driven redistribution, refreezing and melting events across the AIR
+perimeter. The same fountain was observed to produce different spray radius corresponding to different winters
+for the Swiss experiments. Further discussion on this can be found at Section \ref{sec:interannual}.
+
+\TODO{This is a fundamental missing part in your thesis and you have to take exactly such a sentence also in
+	your introduction chapter and say that you have not taken this processes into account into your study!}
+
+During the IN21 experiment, snow formation was observed, indicating that the fountain water droplets have the
+potential to freeze before deposition on the AIR surface. Modelling such processes would require modelling the
+conduction, convection and nucleation processes that all droplets undergo during their flight time. Therefore, a
+proper quantification of the fountain is much more complex and requires a closer look at the correlation of the
+fountain parameters amongst themselves and with the meteorological parameters.
+
+\subsection{Shape parameterization}
+
+The \ac{RMSE} between the drone and the model estimates of the surface area for the IN21, CH21 and CH20 \ac{AIRs}
+were 69 \%, 25 \% and 65 \% of the maximum area of the respective \ac{AIRs}. There are two rough assumptions
+leading to such a large error, assuming a conical shape and assuming a constant spray radius.
+
+Better quantification of the surface area can be achieved by assuming AIR cross section to be a Gaussian curve
+rather than a triangle.
+
+Better quantification of the spray radius can be achieved by modelling the projectile motion of fountain water
+droplets using wind speed values and fountain characteristics as illustrated in Section \ref{sec:interannual}.
+
+\section{Recommendations and research outlook}
+
+The studies presented in this thesis provide insights into the volume evolution of \ac{AIRs}. There are,
+however, still various research gaps to overcome before \ac{AIRs} can be integrated into future water resource
+management plans. In this section, I indicate important remaining scientific challenges, and provide
+recommendations and an outlook for future research.
 
 \subsection{The state of ice stupa technology}
 
@@ -150,7 +196,6 @@ water supply can be performed using the criterions below:
 	\item Altitude is higher.
 \end{enumerate}
 
-% \section{Model limitations and suggestions for improvement}
 \subsection{Model development}
 
 The COSISTUPA model developed in section \ref{sec:Cosistupa} should be used for future estimations for AIR
@@ -161,8 +206,6 @@ constrained by them. Models for the future must understand climate variability t
 projections. Almost all methodological steps in the modelling of future AIR runoff are subject to possible
 enhancements, always bearing in mind that we will only know whether the effort led to an enhanced or even a
 worsened performance, when we're old...
-
-% \section{Model limitations and suggestions for improvement}
 
 Model development is an art where subjective choices seek a balance between a model's simplicity and its
 accuracy. Below we detail some of these choices and recommend strategies that shift this balance towards further
@@ -194,14 +237,14 @@ we suggest measuring daily AIR meltwater quantities. Accuracy of this validation
 speeds of the location but can be improved if the terrain is made waterproof and oriented so that most of the
 AIR runoff can be collected. 
 
-Second, we suggest conducting \ac{GPR} surveys. Ice is very transparent to \ac{GPR} signals. \ac{GPR} is also
-sensitive to subtle changes in the properties of ice layers. This makes it a powerful tool to image the internal
-structure of ice structures. The basic principle of a pulsed \ac{GPR} system is to send an electromagnetic
-signal into the ground and to record the signal reflections as a function of their two-way travel time. Partial
-reflections of the electromagnetic wave recorded as internal reflection horizons (IRH) occur at vertical
-discontinuities in the dielectric material. From polar studies, IRH are known to coincide with variations in
-density and liquid water content \citep{forster2014extensive}. Therefore, \ac{GPR} can be a crucial method to
-calibrate and validate spatial density and volume variations of \ac{AIRs}.
+Second, we suggest conducting \ac{GPR} surveys. \ac{GPR} is sensitive to subtle changes in the properties of ice
+layers. This makes it a powerful tool to image the internal structure of ice structures. The basic principle of
+a pulsed \ac{GPR} system is to send an electromagnetic signal into the ground and to record the signal
+reflections as a function of their two-way travel time. Partial reflections of the electromagnetic wave recorded
+as internal reflection horizons (IRH) occur at vertical discontinuities in the dielectric material. From polar
+studies, IRH are known to coincide with variations in density and liquid water content
+\citep{forster2014extensive}. Therefore, \ac{GPR} can be a crucial method to calibrate and validate spatial
+density and volume variations of \ac{AIRs}.
 
 
 \begin{figure}[htb]
@@ -212,59 +255,8 @@ calibrate and validate spatial density and volume variations of \ac{AIRs}.
 	\label{fig:gpr_survey}
 \end{figure}
 
-\ac{GPR} survey was already conducted on four ice stupas in March 2020 (Fig. \ref{fig:gpr_survey}). However,
-they are yet to be analysed. These data sets can be obtained at
-\citet{balasubramanian_suryanarayanan_2022_7056646}.
-
-\subsubsection{Turbulent heat flux parametrization}
-
-\TODO{This chapter is not clear and you have really to extend literature research, when you state some
-	conclusions inside this chapter?}
-
-The method used to calculate turbulent heat fluxes by \citet{garrattAtmosphericBoundaryLayer1992} assumes that
-these fluxes are acting over a uniform planar surface. This leads us to use the exposure/roughness parameter
-$\mu$ as a correction factor. However, equation \ref{eqn:mu} about $\mu_{cone}$ is no more than an educated guess. It
-is hard to base estimates of this parameter on information in the literature. Many studies have been carried out
-on the effect of obstacles on atmospheric boundary layer flow (e.g. trees), but always in an ensemble setting,
-looking at the bulk effect of an ensemble of obstacles. We deal with a case of a single obstacle in open
-terrain, and we are confident that the roughness of the surface and the exposure will lead to larger turbulent
-fluxes.
-
-\subsubsection{Fountain quantification}
-
-Contrary to our model assumptions, the parameters used to define the fountain were not independent. The fountain
-height, fountain aperture diameter (both ignored in this analysis), discharge rate, water temperature and spray
-radius were related through the trajectories of the water droplets.
-
-The model requires the fountain spray radius to be provided as input. This is a significant limitation since the
-model is very sensitive to the spray radius parameter. Moreover, spray radius is not only determined by the fountain
-characteristics but also due to wind-driven redistribution, refreezing and melting events across the AIR
-perimeter. The same fountain was observed to produce different spray radius corresponding to different winters
-for the Swiss experiments. Further discussion on this can be found at Section \ref{sec:interannual}.
-
-\TODO{This is a fundamental missing part in your thesis and you have to take exactly such a sentence also in
-	your introduction chapter and say that you have not taken this processes into account into your study!}
-
-During the IN21 experiment, snow formation was observed, indicating that the fountain water droplets have the
-potential to freeze before deposition on the AIR surface. Modelling such processes would require modelling the
-conduction, convection and nucleation processes that all droplets undergo during their flight time. Therefore, a
-proper quantification of the fountain is much more complex and requires a closer look at the correlation of the
-fountain parameters amongst themselves and with the meteorological parameters.
-
-\subsubsection{Shape parameterization}
-
-The \ac{RMSE} between the drone and the model estimates of the surface area for the IN21, CH21 and CH20 \ac{AIRs}
-were 69 \%, 25 \% and 65 \% of the maximum area of the respective \ac{AIRs}. There are two rough assumptions
-leading to such a large error, assuming a conical shape and assuming a constant spray radius.
-
-Better quantification of the surface area can be achieved by assuming AIR cross section to be a Gaussian curve
-rather than a triangle.
-
-Better quantification of the spray radius can be achieved by modelling the projectile motion of fountain water
-droplets using wind speed values and fountain characteristics as illustrated in Section \ref{sec:interannual}.
-
-
-\subsubsection{Albedo parametrization}
+\ac{GPR} surveys were already conducted on four ice stupas in March 2020 (Fig. \ref{fig:gpr_survey}). However,
+these data sets remain unused. They can be downloaded at \citet{balasubramanian_suryanarayanan_2022_7056646}.
 
 The albedo parametrization illustrated by Equation \ref{eqn:alb} had to be modified to accomodate the fountain
 discharge events. Little knowledge is available to understand the decay of albedo due to such events. Therefore,
@@ -272,18 +264,7 @@ a simplistic approach of increasing the decay rate by a constant factor is used.
 factor is chosen without any basis on measurements. Field based albedo measurements are required to better
 parametrize the effect of water spray on the surface albedo decay rate.
 
-
-\subsection{Application of automated construction strategy}
-
-\section{Future research direction}
-
-Any future research can take advantage of the meteorological, fountain and drone datasets acquired in the two field
-sites described in this thesis. Both AIR and COSISTUPA models are also freely provided through git repositories
-for non-profit purposes (https://github.com/gayashiva, last access: August 1, 2022).
-
-Insights from this research could contribute to efforts to better estimate the future potential of AIRs for
-climate change adaptation and mitigation under multiple plausible future climatic, demographic, economic, and
-land use scenarios.
+% \subsection{Application of automated construction strategy}
 
 
 \subsection{Quantification and development of ice terraces}
@@ -345,3 +326,12 @@ water security.
 % longer deliver adequate water to sustain agricultural output and take advantage of the complete growing season.
 % As a consequence, some mountain villages have either been abandoned or lie on the brink of desertification
 % \citep{grossmanHimalayanGlaciersMelt2015}.
+
+% In response, we conducted measurement campaigns using drones, flowmeters and weather stations on almost a dozen
+% AIRs across two locations (India and Switzerland), over four winters (2019, 2020, 2021 and 2022) and using two
+% different construction methods (traditional and automated). Each dataset contained information on the
+% meteorological conditions, fountain characteristics and AIR volume evolution.
+
+% The primary objective of this thesis was to improve our understanding of AIRs' response to changes in
+% their construction location. The secondary objective was to propose automated construction strategies that reduce
+% water losses and maintenance efforts.
