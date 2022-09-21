@@ -1,4 +1,80 @@
 
+% To cope with this recurrent water scarcity, villagers have developed two types of \ac{AIRs}: ice stupas
+% and ice terraces (Fig. \ref{fig:AIRforms}). Both the ice reservoirs capture water in the autumn and winter,
+% allowing it to freeze, and hold it until spring, when it melts and flows down to the fields
+% \citep{ipccChapterHighMountain2019, vinceGlacierMan2009, clouseLadakhArtificialGlaciers2017,
+% nusserSociohydrologyArtificialGlaciers2019}. In this way, they retain a previously unused portion of the annual
+% flow and facilitate its use to supplement the decreased flow during the following spring (Fig.
+% \ref{fig:irrigation_cycles}).
+
+% There is a long tradition of developing ice harvesting structures in the upper Indus Basin, in both Ladakh,
+% northern India \citep{labbalTraditionalOasesLadakh2000, nusserIrrigationDevelopmentUpper2012} and various
+% locations in northern Pakistan \citep{kreutzmannScarcityOpulenceWater2011}. Villagers here have developed two
+% types of \ac{AIRs}: ice stupas and ice terraces (Fig. \ref{fig:AIRforms}). Both the ice reservoirs capture water
+% in the autumn and winter, allowing it to freeze, and hold it until spring, when it melts and flows down to the
+% fields \citep{ipccChapterHighMountain2019, vinceGlacierMan2009, clouseLadakhArtificialGlaciers2017,
+% nusserSociohydrologyArtificialGlaciers2019}. In this way, they retain a previously unused portion of the annual
+% flow and facilitate its use to supplement the decreased flow during the following spring (Fig.
+% \ref{fig:irrigation_cycles}).
+
+% \section{Structure}
+%
+% Chapter 1 introduces the motivation of this work and provides a summary of the state of knowledge about \ac{AIRs}
+% prior to this thesis. Chapter 2 describes the origins of this technology as a religious practice. Chapter 3
+% gives an overview about the study sites and introduces the different field techniques applied. The engineering
+% design of AIR technologies are showcased in Chapter 4 along with suggestions for their improvement. The observed
+% spatio-temporal variations in AIR volume evolution are presented in Chapter 5 along with suggestions for
+% choosing future construction locations. Chapter 6 concludes the thesis with a synthesis and some recommendations
+% for future work. Chapter 7 lays out the peer-reviewed work supporting the conclusions of this thesis.
+%
+% Global climate change is accelerating glacial ablation in many mountain regions of the world, generating
+% concerns about the impact on local and regional water resources \citep{}. 
+% Sources of freshwater from mountains, such as rainfall, snow and glacier melt, and groundwater are strongly
+% affected by climate change, leading to important changes in water supply in terms of quantity and timing (e.g.
+% shifts and changes in seasonality).
+
+% Irrigation networks in arid mountain regions are completely dependent on the timely availability of meltwater
+% from glaciers, snow and permafrost
+% \citep{immerzeelImportanceVulnerabilityWorld2020,farhanHydrologicalRegimesConjunction2015,tveitenGlacierGrowingLocal2007}.
+% With the accelerated decline of glaciers due to climate change \citep{nusserLocalKnowledgeGlobal2016}, these
+% regions are experiencing acute water scarcity \citep{norphelSnowWaterHarvesting2015,
+% mukhopadhyayReevaluationSnowmeltGlacial2015}. Further, the unreliability and the foreseen decrease of seasonal
+% snow cover \citep{chevuturiClimateChangeLeh2018} affects the cryosphere's ability to store water, especially in
+% spring.
+
+% More than 700 million people live in mountain areas, of these, around 300 million are vulnerable to food
+% insecurity \citep{messerliMountainsWorldVulnerable2004}.
+
+% Even the choice of the glacier grafting site suggests that the technique was developed as a result of
+% the residents' deep understanding of local environmental processes.
+
+% Our findings are essential to design nature-based solutions that increase the reliability of water supply in
+% highly seasonal and arid environments and improve water security and climate change adaptation in mountain
+% regions.
+
+% Irrigation networks in arid mountain regions are completely dependant on the timely availability of meltwater
+% from glaciers, snow and permafrost. With the accelerated decline of glaciers, these irrigation networks can no
+% longer deliver adequate water to sustain agricultural output and take advantage of the complete growing season.
+% As a consequence, some mountain villages have either been abandoned or lie on the brink of desertification
+% \citep{grossmanHimalayanGlaciersMelt2015}.
+
+% In response, we conducted measurement campaigns using drones, flowmeters and weather stations on almost a dozen
+% AIRs across two locations (India and Switzerland), over four winters (2019, 2020, 2021 and 2022) and using two
+% different construction methods (traditional and automated). Each dataset contained information on the
+% meteorological conditions, fountain characteristics and AIR volume evolution.
+
+% The primary objective of this thesis was to improve our understanding of AIRs' response to changes in
+% their construction location. The secondary objective was to propose automated construction strategies that reduce
+% water losses and maintenance efforts.
+
+% In paper I, an AIR model was designed to resolve surface processes and used to compare their volume evolution in
+% Indian Himalayas and the Swiss Alps. In paper II, the evolution of AIRs using different fountain scheduling
+% strategies were compared. In paper III, the possibility of sustaining artificial ice reservoirs perpetually was
+% explored. The methodology presented in this thesis accounts for variations in a location's meteorology and AIR
+% construction design. Although the approach is demonstrated on specific locations using fountain pipeline
+% systems, it can be extended to account for different construction strategies used in other locations. The
+% results of these papers can be summarised as follows:
+
 
 This provided a unique data basis for quantifying the feasibility and potential of this water storage technology
 worldwide.
