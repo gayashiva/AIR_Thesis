@@ -93,7 +93,9 @@
 \usepackage{acronym} 
 \usepackage[natbib=true, 
             style=authoryear, 
+            % style=apa-good, 
             maxcitenames=1, 
+            mincitenames=1, 
             maxbibnames=100, 
             backref=true
 		        hyperref=true,					% 	- activate hyperref support
@@ -102,6 +104,7 @@
             doi=false,						% 	- don't show doi tags
             urldate=long,					% 	- display type for dates
             sorting=nty,
+            backend=biber
             ]{biblatex} 
 \bibliography{refs} 
 
