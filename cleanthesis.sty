@@ -90,8 +90,7 @@
 % OPTION bibsys
 % --> values = biber|bibtex
 \define@choicekey*[ct]{cthesis}{bibsys}[\val\bibsysnr]{biber,bibtex}[bibtex]{\def\cthesis@bibsys{#1}}
-\setkeys[ct]{cthesis}{bibsys=bibtex}
-% \setkeys[ct]{cthesis}{bibsys=biber}
+\setkeys[ct]{cthesis}{bibsys=biber}
 
 % OPTION bibfile
 % --> values = file name of your bibtex file
@@ -301,22 +300,22 @@
 % **************************************************
 \ifct@cthesis@configurebiblatex
 	\RequirePackage[					% use biblatex for bibliography
-		backend=\cthesis@bibsys,		% 	- use biber backend (bibtex replacement) or bibtex
-		style=\cthesis@bibstyle,		% 	- use alphabetic (or numeric) bib style
-		natbib=true,					% 	- allow natbib commands
-		hyperref=true,					% 	- activate hyperref support
-		backref=true,					% 	- activate backrefs
-		isbn=false,						% 	- don't show isbn tags
-		url=false,						% 	- don't show url tags
-		doi=false,						% 	- don't show doi tags
-		urldate=long,					% 	- display type for dates
-		maxnames=99,%
-		minnames=99,%
-		maxbibnames=99,%
-		minbibnames=99,%
-		maxcitenames=99,%
-		mincitenames=99,%,
-		sorting=\cthesis@bibsorting%
+		% backend=\cthesis@bibsys,		% 	- use biber backend (bibtex replacement) or bibtex
+		% style=\cthesis@bibstyle,		% 	- use alphabetic (or numeric) bib style
+		% natbib=true,					% 	- allow natbib commands
+		% hyperref=true,					% 	- activate hyperref support
+		% backref=true,					% 	- activate backrefs
+		% isbn=false,						% 	- don't show isbn tags
+		% url=false,						% 	- don't show url tags
+		% doi=false,						% 	- don't show doi tags
+		% urldate=long,					% 	- display type for dates
+		% maxnames=99,%
+		% minnames=99,%
+		% maxbibnames=100,%
+		% minbibnames=99,%
+		% maxcitenames=1,%
+		% mincitenames=99,%,
+		% sorting=\cthesis@bibsorting%
 	]{biblatex}
 	\bibliography{\cthesis@bibfile}
 	\DefineBibliographyStrings{ngerman}{%

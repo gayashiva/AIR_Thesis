@@ -64,11 +64,8 @@
     configurelistings=true,%
     colorize=reduced,%
     colortheme=bluemagenta,%
-    configurebiblatex=true,%
-    bibsys=biber,%
+    configurebiblatex=false,%
     bibfile=refs,%
-    bibstyle=authoryear,%
-    bibsorting=nty,%
 }{cleanthesis}
 \usepackage{cleanthesis}
 
@@ -94,7 +91,17 @@
 \usepackage{pdfpages}
 \usepackage{booktabs}
 \usepackage{acronym} 
-% \usepackage{biblatex} 
-% \usepackage{natbib} 
-% \bibliography{zot_refs} 
+\usepackage[natbib=true, 
+            style=authoryear, 
+            maxcitenames=1, 
+            maxbibnames=100, 
+            backref=true
+		        hyperref=true,					% 	- activate hyperref support
+            isbn=false,						% 	- don't show isbn tags
+            url=false,						% 	- don't show url tags
+            doi=false,						% 	- don't show doi tags
+            urldate=long,					% 	- display type for dates
+            sorting=nty,
+            ]{biblatex} 
+\bibliography{refs} 
 
