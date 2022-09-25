@@ -56,13 +56,12 @@ the methodology used, and provide recommendations and a future outlook.
 
 In this thesis, we have developed three energy and mass balance models to simulate AIR evolution using data from
 field measurements in Gangles, India and Guttannen, Switzerland. The use of these data sets, in combination with
-the models, allowed for an accurate representation of the complex evolution that is typical of an AIR. The model
-was calibrated and validated with ice volume observations obtained via drone surveys. We studied the volume
-variation among eighteen AIRs and explained their corresponding magnitudes in terms of the influence of the
-chosen location's meteorology, topography and the construction strategy used. Although the approach is
-demonstrated on specific locations, it can be extended using the open-sourced models and global reanalysis data
-sets to account for spatio-temporal meteorological influences of future locations on AIR's volume dynamics. Our
-main conclusions are summarized below:
+the models, allowed for an accurate representation of the complex evolution that is typical of an AIR. We
+studied the volume variation among eighteen AIRs and explained their corresponding magnitudes in terms of the
+influence of the chosen location's meteorology, topography and the construction strategy used. Although the
+approach is demonstrated on specific locations, it can be extended using the open-sourced models and global
+reanalysis data sets to account for spatio-temporal meteorological influences of future locations on AIR's
+volume dynamics. Our main conclusions are summarized below:
 
 \begin{enumerate}
 
@@ -96,9 +95,10 @@ Ladakh over the past six winters.
 
 \begin{enumerate}
 
-	\item Minimum median monthly temperature less than $0 \degree C$.
-	\item Water supply with median discharge rate more than $2\, l/min$.
-	\item Terrain slope between water source and site greater than 20 m every km.
+	\item Minimum median monthly temperature less than $0 \degree C$ to ensure sufficient freezing rate.
+	\item Water supply with median discharge rate more than $2\, l/min$ to ensure sufficient water supply.
+	\item Terrain slope between water source and site greater than 20 m every km to ensure sufficient
+    gravitational head for fountain operation.
 
 \end{enumerate}
 
@@ -108,9 +108,9 @@ Given a valley or a region satisfying the above requirements, further selection 
 water supply can be performed using the criterions below:
 
 \begin{enumerate}
-	\item Water source temperature is higher.
-	\item Daylight hours are lower due to shadows.
-	\item Altitude is higher.
+	\item Higher water source temperature to minimise risk of pipeline freezing events.
+	\item Low daylight hours to decrease solar radiation induced melt.
+	\item Higher altitude for higher freezing rates.
 \end{enumerate}
 
 \subsection{New ways to upscale irrigation water supply}
@@ -251,7 +251,7 @@ model accuracy.
 
 \subsubsection{Quality and quantity of calibration and validation data sets}
 
-The methodology used to acquire the radius, area and volume of \ac{AIRs} ( Appendix \ref{sec:drone_method}) from
+The methodology used to acquire the radius, area and volume of \ac{AIRs} (Appendix \ref{sec:drone_method}) from
 each drone survey has several drawbacks. The calibration and validation process used has an inherent temporal
 and spatial bias due to the following subjective choices:
 
