@@ -1,4 +1,31 @@
 
+% As a vision for the future, it is important to foster a space where scientific, engineering and farming
+% communities can develop and integrate nature-based solutions like the \ac{AIRs} into water resource management
+% strategies together. 
+
+% In arid and semiarid regions, in particular, it is estimated that between 50 \% and 90 \% of freshwater
+% resources originate from mountain catchments \citep{messerliMountainsWorldVulnerable2004}. During drought
+% conditions in the tropical mountain regions, glacial meltwater is used by upto 3.92 million domestic users and
+% to irrigate 2096 $km^2$ of land \citep{buytaertGlacialMeltContent2017}.
+
+% Identifying which combination of interventions optimizes the return-on-investment and adaptive capacity in view
+% of future climate uncertainty remains a challenge, especially in arid mountain regions. 
+
+% The implementation of adequate adaptation strategies will need to respond to these changes,
+% as well as a growing anthropogenic demand for water \citep{buytaertWaterCitiesImpact2012}.
+
+% \subsection{Shape parameterization}
+%
+% The \ac{RMSE} between the drone and the model estimates of the surface area for the IN21, CH21 and CH20 \ac{AIRs}
+% were 69 \%, 25 \% and 65 \% of the maximum area of the respective \ac{AIRs}. There are two rough assumptions
+% leading to such a large error, assuming a conical shape and assuming a constant spray radius.
+%
+% Better quantification of the surface area can be achieved by assuming AIR cross section to be a Gaussian curve
+% rather than a triangle.
+%
+% Better quantification of the spray radius can be achieved by modelling the projectile motion of fountain water
+% droplets using wind speed values and fountain characteristics as illustrated in Section \ref{sec:interannual}.
+
 % To cope with this recurrent water scarcity, villagers have developed two types of \ac{AIRs}: ice stupas
 % and ice terraces (Fig. \ref{fig:AIRforms}). Both the ice reservoirs capture water in the autumn and winter,
 % allowing it to freeze, and hold it until spring, when it melts and flows down to the fields
