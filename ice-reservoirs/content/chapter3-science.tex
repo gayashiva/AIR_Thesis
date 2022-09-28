@@ -19,26 +19,25 @@ climate change. Such model-based assessments can aid future mitigation and adapt
 construction and operation to assess future water scarcity and ensure future water availability in a changing
 climate.
 
-In order to achieve this, we developed three physically-based models of increasing complexity that can estimate
-AIR volume evolution. The first one, referred to as Oerlemans model (Paper III), integrated a simple shape
+In order to achieve this, three physically-based models of increasing complexity that can estimate
+AIR volume evolution were developed. The first one, referred to as Oerlemans model (Paper III), integrated a simple shape
 evolution module to demonstrate that AIR volume estimations are possible using equations used for modelling
 glacial surfaces. The second one, referred to as AIR model (Paper I), extended this approach to calibrate the
 model parameters and validate the volume estimations it provided. The third one, referred to as COSISTUPA,
 reduces model calibration overhead while providing a user-friendly framework to update model parametrizations
 and apply the model to new construction sites. 
 
-In this chapter, we present the data sets acquired in our measurement campaigns in two different mountain
-regions (Alps and the Himalayas). Then we describe all the shape evolution, mass and energy balance modules that were used
-in these models to assess the quantity of ice, meltwater, sublimation, and wastewater. Finally, we compare the
-features and shortcomings of each of the models.
+In this chapter, the data sets acquired across measurement campaigns in two different mountain regions (Alps and
+the Himalayas) are presented. Then, description of the shape evolution, mass and energy balance modules that
+were used in these models to assess the quantity of ice, meltwater, sublimation, and wastewater are provided.
+Finally, the features and shortcomings of each of the models are compared.
 
 \section{Study sites and data}
 
-We chose study sites in the Alps and the Himalayas due to two reasons. First, we wanted to perform a comparative
-study between locations where AIR volumes differ by orders of magnitude. Second, we preferred locations where
-the logistics of performing the construction and measurement campaign did not present significant hurdles.
-Previous experiments in these mountain ranges satisfied the first condition. Moreover, both the selected sites
-had dedicated teams who were able to manage the construction and measurement campaigns.
+These study sites in the Alps and the Himalayas were chosen due to two reasons. First, they enabled a
+comparative study between locations with considerable differences in meteorological characteristics. Second,
+these locations did not present significant logistical hurdles  since both the selected sites had dedicated
+teams for performing the construction and measurement campaigns.
 
 The study period starts when the fountain was first switched on (start date) and ends when the respective AIR
 either melted or broke into several ice blocks (expiry date).  Each AIR dataset was abbreviated based on the
@@ -227,9 +226,9 @@ steps, the volume is parameterised using Eqn. \ref{eq:V} as:
 \label{eq:V2} 
 \end{equation}
 
-We define the ice stupa boundary through its spray radius, i.e. we assume ice formation is negligible when $r_{cone} >
-	r_{F}$. Combining Eqns. \ref{eq:V},  \ref{eq:V1}, \ref{eq:h0} and \ref{eq:V2}, the geometric evolution of the
-Ice stupa at each time step $i$ can be determined by considering the following rules:
+The ice stupa boundary is defined through its spray radius, i.e. ice formation is assumed negligible when
+$r_{cone} > r_{F}$. Combining Eqns. \ref{eq:V},  \ref{eq:V1}, \ref{eq:h0} and \ref{eq:V2}, the geometric
+evolution of the Ice stupa at each time step $i$ can be determined by considering the following rules:
 
 \begin{equation} (r_{cone},\, h_{cone}) = \left\{ \begin{array}{ll} (r_F ,\, h_0)                                                                          & \textit{ if } i=0 \\
              (r_{cone}^{i-1},\, \frac{3 \cdot M_{ice}}{\pi \cdot \rho_{ice} \cdot {(r_{cone}^{i-1})}^2}) & \textit{ if }
@@ -247,7 +246,7 @@ Ice stupa at each time step $i$ can be determined by considering the following r
 	\label{fig:shape}
 \end{figure}
 
-We approximate the energy balance at the surface of an AIR by a one-dimensional description of energy fluxes
+The energy balance at the surface of an AIR is approximated by a one-dimensional description of energy fluxes
 into and out of a (thin) layer with thickness $\Delta x$:
 
 \begin{equation}
@@ -263,7 +262,7 @@ the fountain water droplets and rain droplets with the AIR ice surface respectiv
 heat flux between the AIR surface and its interior.
 
 The energy flux acts upon the AIR surface layer, which has an upper and lower boundary defined by the atmosphere
-and the ice body of the AIR, respectively. Here, we define the surface temperature $T_{ice}$ to be the modelled
+and the ice body of the AIR, respectively. Here, the surface temperature $T_{ice}$ is defined to be the modelled
 average temperature of the ice stupa surface layer.
 
 \subsubsection{Net Shortwave Radiation \texorpdfstring{$q_{SW}$}{Lg}} \label{sec:SW}
@@ -339,7 +338,7 @@ ice was obtained using Eqn. \ref{eqn:vp}.  The expression defined in \cite{bruts
 \end{equation}
 
 with a cloudiness index $cld$, ranging from 0 for clear skies to 1 for complete overcast skies. For the Indian
-site, we assume cloudiness to be negligible.
+site, cloudiness is assumed to be negligible.
 
 \subsubsection{Turbulent fluxes} \label{sec:Qs}
 
@@ -427,10 +426,10 @@ Eqn. \ref{eqn:qG} as follows:
 
 \begin{equation} T_{bulk}^{i+1} = T_{bulk} - (q_{G} \cdot A \cdot \Delta t)/(M_{ice} \cdot c_{ice}) \end{equation}
 
-Since \ac{AIRs} typically have conical shapes with $r_{cone} > h_{cone}$, we assume that the center of mass of the cone
-body is near the base of the fountain. Thus, the distance of every point in the AIR surface layer from the cone
-body's center of mass is between $h_{cone}$ and $r_{cone}$. Therefore, we calculate $q_{G}$ assuming $l_{cone} = (r_{cone} +
-	h_{cone})/2$.
+Since \ac{AIRs} typically have conical shapes with $r_{cone} > h_{cone}$, the center of mass of the cone body is
+assumed to be near the base of the fountain. Thus, the distance of every point in the AIR surface layer from the
+cone body's center of mass is between $h_{cone}$ and $r_{cone}$. Therefore, $q_{G}$ is calculated by assuming
+$l_{cone} = (r_{cone} + h_{cone})/2$.
 
 \subsubsection{Phase changes}\label{sec:phase}
 
@@ -514,17 +513,18 @@ $kg\,m^{-3}$), $\Delta ppt/ \Delta t$ is the measured precipitation rate in [$m\
 below which precipitation falls as snow. Here, snowfall events were identified using $T_{ppt}$ as $1 \degree C$. Snow
 mass input is calculated by assuming a uniform deposition over the entire circular footprint of the AIR.
 
-The latent heat flux is used to estimate either the evaporation and condensation processes or sublimation and deposition
-processes as shown in equation \ref{eq:vap}. During the time steps at which the surface temperature is below 0 $\degree C$ only
-sublimation and deposition can occur, but if the surface temperature reaches 0 $\degree C$, evaporation and condensation
-can also occur. As the differentiation between evaporation and sublimation (and condensation and deposition) when the
-air temperature reaches 0 $\degree C$ is challenging, we assume that negative (positive) latent heat fluxes correspond
-only to sublimation (deposition), i.e. no evaporation (condensation) is calculated.
+The latent heat flux is used to estimate either the evaporation and condensation processes or sublimation and
+deposition processes as shown in equation \ref{eq:vap}. During the time steps at which the surface temperature
+is below 0 $\degree C$ only sublimation and deposition can occur, but if the surface temperature reaches 0
+$\degree C$, evaporation and condensation can also occur. As the differentiation between evaporation and
+sublimation (and condensation and deposition) when the air temperature reaches 0 $\degree C$ is challenging,
+negative (positive) latent heat fluxes are assumed to correspond only to sublimation (deposition), i.e. no
+evaporation (condensation) is calculated.
 
-Since we have categorized every time step as a freezing or melting event, we can determine the melting/freezing
-rates and the corresponding meltwater/ice quantities as shown in equations \ref{eq:m_freeze/melt}, \ref{eq:mwat}
-and \ref{eq:mcone}. Having calculated all other mass components, the fountain wastewater generated every
-time step can be calculated using Eqn. \ref{eq:MB}.
+Since every time step has been categorized as a freezing or melting event, the melting/freezing rates and the
+corresponding meltwater/ice quantities can be determined as shown in equations \ref{eq:m_freeze/melt},
+\ref{eq:mwat} and \ref{eq:mcone}. Having calculated all other mass components, the fountain wastewater generated
+every time step can be calculated using Eqn. \ref{eq:MB}.
 
 \begin{subequations}
 	\begin{align}
@@ -557,8 +557,8 @@ Considering \ac{AIRs} as water reservoirs, their net water loss can be defined a
 
 The model modules described above where used in three different models with varying degree of complexity as
 shown in Table \ref{tab:MIP}. The Oerlemans model is the simplest, implemented in just one page of code whereas
-the COSISTUPA model is the most complex maintained by a community of modellers.  Below we describe the
-motivation involved in developing each of these models.
+the COSISTUPA model is the most complex maintained by a community of modellers. Below the motivation involved
+in developing each of these models are described.
 
 \begin{table}[ht]
 	\centering
@@ -601,7 +601,7 @@ The AIR model was designed to obtain better validation with measured ice stupa v
 In order to do this, it incorporated all the mass and energy balance modules described in Section
 \ref{sec:modules} and simulated AIR evolution using data from field measurements in Gangles, India and
 Guttannen, Switzerland. The model was calibrated and validated with ice volume and surface area observations
-obtained via drone surveys. We calculated the freezing and melting rates for each of the three AIRs and
+obtained via drone surveys. The freezing and melting rates for each of the three \ac{AIRs} were calculated and
 explained their corresponding magnitudes in terms of the influence of the chosen location and the fountain used.
 The model was successful in reproducing the observed ice volume evolution with a correlation greater than 0.96
 and an \ac{RMSE} less than 18 \% of the maximum ice volume for three AIRs (Paper I). The AIR model is freely
@@ -614,7 +614,7 @@ Specifically, the surface layer thickness parameter requires prior calibration f
 \subsection{COSISTUPA: COSIPY + AIR model}
 \label{sec:Cosistupa}
 
-In order to reduce the calibration requirements for the AIR model, we combine the AIR model with the COupled
+In order to reduce the calibration requirements for the AIR model, the AIR model was combined with the COupled
 Snowpack and Ice surface energy and mass balance model in PYthon (COSIPY). COSIPY is typically used for
 modelling distributed snow and glacier mass changes \citep{sauterCOSIPYV1Opensource2020}. However, it has a
 flexible, user-friendly and modular framework allowing it to be an ideal platform to implement the alternate
@@ -625,8 +625,8 @@ henceforth. The COSISTUPA model is freely provided through a git repository for 
 
 \subsubsection{Model configuration}
 
-In this section, we describe the main adjustments needed to convert COSIPY modules into the COSISTUPA
-model.
+In this section, the main adjustments needed to convert COSIPY modules into the COSISTUPA
+model are described.
 
 The COSIPY model input was extended to include discharge rate and cloudiness index measurements. Additionally,
 spray radius parameter was provided as input during model initialization. The model initialization of the ice
@@ -688,7 +688,7 @@ dimensional model grid.
 	\label{fig:Cosistupa}
 \end{figure}
 
-We consider the COSISTUPA model to be the better one among the three models due to these three reasons:
+The COSISTUPA model is considered to be the better one among the three models due to these three reasons:
 
 \begin{itemize}
 
