@@ -45,8 +45,8 @@ construction strategy used, prefix of the country code and the suffix of the yea
 (Tab. \ref{tab:AIRs}). The construction strategies are distinguished based on whether they used fountain scheduling
 strategies to regulate water supply. Fountain scheduling was realized through a control valve that was automated
 with optimal discharge rates computed using real-time meteorological input and location metadata. Those that did were
-codenamed "automated" whereas the rest were codenamed "traditional". All except one construction campaign used
-traditional construction strategies. Therefore, traditional \ac{AIRs} are referred to without explicitly
+codenamed "automated" whereas the rest were codenamed "manual". All except one construction campaign used
+manual construction strategies. Therefore, manual \ac{AIRs} are referred to without explicitly
 specifying their construction strategy.
 
 In total, 23 \ac{AIRs} were studied in these two regions across four winters.  However, only four \ac{AIRs} located in
@@ -140,10 +140,10 @@ the observed ice radius formed from the fountain water droplets is denoted as sp
 		\hline
 		\textbf{Name}    & \textbf{Start Date} & \textbf{Expiry Date} & \textbf{No. of flights} & \textbf{Spray
 		radius}                                                                                                 \\ \hline
-		Traditional CH20 & Jan 3 2020          & Apr 6 2020           & 2                       & 7.7 $m$       \\
-		Traditional CH21 & Nov 22 2020         & May 10 2021          & 8                       & 6.9 $m$       \\
-		Traditional IN21 & Jan 18 2021         & June 20 2021         & 6                       & 10.2 $m$      \\
-		Traditional CH22 & Dec 8 2021          & April 12 2022        & 8                       & 4.1 $m$       \\
+		Manual CH20 & Jan 3 2020          & Apr 6 2020           & 2                       & 7.7 $m$       \\
+		Manual CH21 & Nov 22 2020         & May 10 2021          & 8                       & 6.9 $m$       \\
+		Manual IN21 & Jan 18 2021         & June 20 2021         & 6                       & 10.2 $m$      \\
+		Manual CH22 & Dec 8 2021          & April 12 2022        & 8                       & 4.1 $m$       \\
 		Automated CH22   & Dec 8 2021          & April 12 2022        & 6                       & 4.8 $m$       \\ \hline
 	\end{tabular}
 \end{table}
@@ -258,7 +258,7 @@ Upward and downward fluxes relative to the ice surface are positive and negative
 is the energy change of the surface layer, which can be translated into a phase change energy should phase
 changes occur. $q_{SW}$ is the net shortwave radiation; $q_{LW}$ is the net longwave radiation; $q_{L}$ and
 $q_{S}$ are the turbulent latent and sensible heat fluxes. $q_{F}$ and $q_{R}$ represent the heat exchange of
-the fountain water droplets and rain droplets with the AIR ice surface respectively. $q_{G}$ represents ground
+the fountain water droplets and rain droplets with the AIR ice surface respectively. $q_{G}$ represents bulk
 heat flux between the AIR surface and its interior.
 
 The energy flux acts upon the AIR surface layer, which has an upper and lower boundary defined by the atmosphere
@@ -411,9 +411,9 @@ the heat flux generated due to a rain event was determined:
 	\label{eqn:qR}
 \end{equation}
 
-\subsubsection{Bulk ice stupa heat flux \texorpdfstring{$q_{G}$}{Lg}} \label{sec:Bulkflux}
+\subsubsection{Bulk heat flux \texorpdfstring{$q_{G}$}{Lg}} \label{sec:Bulkflux}
 
-The bulk ice stupa heat flux $q_{G}$ corresponds to the ground heat flux in normal soils and is caused by the
+The bulk heat flux $q_{G}$ corresponds to the ground heat flux in normal soils and is caused by the
 temperature gradient between the surface layer ($T_{ice}$) and the ice body ($T_{bulk}$). It is expressed by
 using the heat conduction equation as follows:
 
