@@ -6,71 +6,70 @@
 }{Chewang Norphel}{(Padmashree awardee, Inventor of ice terraces)}
 
 Given the importance of \ac{AIRs} in different mountainous regions, it is key to adequately understand their
-functioning, as well as to quantify their water storage at a global scale. Addressing these research questions,
-calls for the use of holistic modeling frameworks in which all relevant processes are represented, including
-components of the terrestrial hydrological cycle, human water management, atmospheric processes and climate
-change drivers, in a globally integrated way. In such coupled frameworks, interactions and feedbacks between the
-ice surface and climate are directly modelled, and represented under different scenarios and for different time
-periods, which allow to investigate both the physical mechanisms and spatial and temporal extents of water
-storage. To date, glacial models provide this type of integrated framework, but do not include accurate
-representations of \ac{AIRs}. With some modifications, however, they can become ideal tools to estimate the
-meltwater quantities of \ac{AIRs}, for the historical and present-day periods, and for scenarios of future
+functioning and to quantify their water storage at global scale. Addressing these research questions
+calls for the use of holistic modelling frameworks in which all relevant processes are represented, including
+components of the terrestrial hydrological cycle, human water management, atmospheric processes, and climate
+change drivers, in a globally integrated way. In such coupled frameworks, interactions and feedback between
+ice surface and climate are directly modelled and represented under different scenarios and for different time
+periods, allowing the investigation of both the physical mechanisms and the spatial and temporal extents of water
+storage. To date, glacial models have provided this type of integrated framework but without accurate
+representations of \ac{AIRs}. However, with some modifications, glacial models can become ideal tools to estimate the
+meltwater quantities of \ac{AIRs} for the historical and present-day periods and for scenarios of future
 climate change. Such model-based assessments can aid future mitigation and adaptation strategies linked to AIR
 construction and operation to assess future water scarcity and ensure future water availability in a changing
 climate.
 
-In order to achieve this, three physically-based models of increasing complexity that can estimate
-AIR volume evolution were developed. The first one, referred to as Oerlemans model (Paper III), integrated a simple shape
+To achieve this, three physically based models of increasing complexity are developed in the present thesis to estimate
+AIR volume evolution. The first one, referred to as Oerlemans model (Paper III), integrates a simple shape
 evolution module to demonstrate that AIR volume estimations are possible using equations used for modelling
-glacial surfaces. The second one, referred to as AIR model (Paper I), extended this approach to calibrate the
+glacial surfaces. The second one, referred to as AIR model (Paper I), extends this approach to calibrate the
 model parameters and validate the volume estimations it provided. The third one, referred to as COSISTUPA,
 reduces model calibration overhead while providing a user-friendly framework to update model parametrizations
 and apply the model to new construction sites. 
 
-In this chapter, the data sets acquired across measurement campaigns in two different mountain regions (Alps and
-the Himalayas) are presented. Then, description of the shape evolution, mass and energy balance modules that
-were used in these models to assess the quantity of ice, meltwater, sublimation, and wastewater are provided.
-Finally, the features and shortcomings of each of the models are compared.
+In this chapter, the datasets obtained across measurement campaigns in two different mountain regions (the Alps and
+the Himalayas) are presented. Description of the shape evolution and mass and energy balance modules used to assess quantity of ice, meltwater, sublimation, and wastewater are also provided herein.
+Finally, features and shortcomings of each model are compared.
 
 \section{Study sites and data}
 
-These study sites in the Alps and the Himalayas were chosen due to two reasons. First, they enabled a
+The study sites in the Alps and the Himalayas were chosen for two reasons. First, they enable a
 comparative study between locations with considerable differences in meteorological characteristics. Second,
-these locations did not present significant logistical hurdles  since both the selected sites had dedicated
-teams for performing the construction and measurement campaigns.
+these locations do not present significant logistical hurdles, since both selected sites have dedicated
+teams for construction and measurement campaigns.
 
-The study period starts when the fountain was first switched on (start date) and ends when the respective AIR
-either melted or broke into several ice blocks (expiry date).  Each AIR dataset was abbreviated based on the
-construction strategy used, prefix of the country code and the suffix of the year of its expiry date
-(Tab. \ref{tab:AIRs}). The construction strategies are distinguished based on whether they used fountain scheduling
-strategies to regulate water supply. Fountain scheduling was realized through a control valve that was automated
-with optimal discharge rates computed using real-time meteorological input and location metadata. Those that did were
-codenamed "automated" whereas the rest were codenamed "manual". All except one construction campaign used
+The study period starts when the fountain is first switched on (start date) and ends when the respective AIR
+either melts or brakes into several ice blocks (expiry date). Each AIR dataset was abbreviated based on the
+construction strategy used, prefix of the country code, and suffix of the year of its expiry date
+(Table \ref{tab:AIRs}). The construction strategies are distinguished based on whether they use fountain scheduling
+strategies or not to regulate water supply. Fountain scheduling was set with a control valve that was automated
+with optimal discharge rates computed using real-time meteorological input and location metadata. Those using fountain scheduling were
+code named "automated", whereas the rest were code named "manual". All except one construction campaign used
 manual construction strategies. Therefore, manual \ac{AIRs} are referred to without explicitly
 specifying their construction strategy.
 
-In total, 23 \ac{AIRs} were studied in these two regions across four winters.  However, only four \ac{AIRs} located in
-Guttannen, Switzerland, and one in Gangles, India, had complete meteorological, water and volume measurements. Therefore,
-only these AIR data sets are used in the following analysis. The rest of the AIR data sets are described in the
-Appendix table \ref{tab:Ladakh_AIRs} and are used in later chapters to perform qualitative analysis.
+In total, 23 \ac{AIRs} were studied in these two regions across four winters. However, complete meteorological, water, and volume measurements were available for only four \ac{AIRs} located in
+Guttannen, Switzerland and one in Gangles, India. Therefore,
+only these AIR datasets are used in the following analysis. The rest AIR datasets are described in the
+Appendix table \ref{tab:Ladakh_AIRs} and are used in later chapters for qualitative analysis.
 
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=12 cm]{figs/2AIRs.jpg}
-	\caption{The Swiss and Indian \ac{AIRs} were 5 $m$ and 13 $m$ tall on January 9 and March 3, 2021
+	\caption{The Swiss and Indian \ac{AIRs} were 5 $m$ and 13 $m$ tall on January 9 and March 3, 2021,
     respectively. Photos: Daniel Bürki (left) and Thinles Norboo (right)}
 	\label{fig:2AIRs}
 \end{figure}
 
 \subsection{Swiss site}
 
-The Guttannen site (46.66 $\degree$N, 8.29 $\degree$E) is situated in the Berne region, Switzerland and has an
-altitude of 1047 $m$ a.s.l. In the winter (Oct-Apr), mean daily minimum and maximum air temperatures vary
-between -13 and 15 $\degree C$. Clear skies are rare, averaging around 7 days during winter. Daily winter
+The Guttannen site (46.66 $\degree$N, 8.29 $\degree$E) is situated in the Berne region, Switzerland and presents an
+altitude of 1047 $m$ a.s.l. In the winter (Oct–Apr), mean daily minimum and maximum air temperatures vary
+between $-13$ and 15 $\degree C$. Clear skies are rare, averaging around 7 days during winter. Daily winter
 precipitation can sometimes be as high as 100 $mm$. These values are based on 30 years of hourly historical
 meteorological data series \citep{meteoblueClimateGuttannen2021}. Several \ac{AIRs} were constructed by the Guttannen
-Bewegt Association, the University of Fribourg and the Lucerne University of Applied Sciences and Arts during
-the winters of 2020-22.
+Bewegt Association, the University of Fribourg, and the Lucerne University of Applied Sciences and Arts during
+the winters of 2020–22.
 
 \subsection{Indian site}
 
@@ -82,12 +81,12 @@ characterized by high seasonal variation. During January, the coldest month, the
 annual precipitation in Leh totals less than 100 $mm$, and there is high interannual variability. While the
 average summer rainfall between July and September reaches 37.5 $mm$, the average winter precipitation between
 January and March amounts to 27.3 $ mm$ and falls almost entirely as snow. \ac{AIRs} were constructed here by the
-Himalayan Institute of Alternatives, Ladakh during the winter of 2020-21.
+Himalayan Institute of Alternatives, Ladakh during the winter of 2020/21.
 
 \subsection{Meteorological data}
 
-Air temperature, relative humidity, wind speed, pressure, longwave and global shortwave radiation are required
-as model input.  The resulting data set highlights the difference in meteorological influences driving ice
+Air temperature, relative humidity, wind speed, pressure, longwave, and global shortwave radiation are required
+as model input. The resulting dataset highlights the difference in meteorological influences driving ice
 volume evolution in the two study sites ( Table \ref{tab:Observations}).
 
 \begin{table}
@@ -103,16 +102,16 @@ volume evolution in the two study sites ( Table \ref{tab:Observations}).
 		Air temperature      & $T_a    $       & $0 \pm 7$     & $2 \pm 6$     & $\degree C$    \\
 		Relative humidity    & $RH     $       & $35 \pm 20$   & $79 \pm 18$   & \%             \\
 		Wind speed           & $v_a        $   & $3 \pm 1$     & $2 \pm 2$     & $m/s$          \\
-		Global Shortwave     & $SW_{global} $  & $246 \pm 333$ & $138 \pm 243$  & $W\,m^{-2}$    \\
-		Hourly Precipitation & $ppt        $   & $0 \pm 0$     & $139 \pm 457$ & $mm$           \\
+		Global shortwave     & $SW_{global} $  & $246 \pm 333$ & $138 \pm 243$  & $W\,m^{-2}$    \\
+		Hourly precipitation & $ppt        $   & $0 \pm 0$     & $139 \pm 457$ & $mm$           \\
 		Pressure             & $p_a         $  & $623 \pm 3$   & $794 \pm 9$   & $hPa$          \\\hline
 	\end{tabular}
 \end{table}
 
 \subsection{Fountain observations}
 
-The fountain consists of a pipeline and a nozzle. The pipeline has three attributes, namely discharge rate
-($Q$), height ($h$) and water temperature ($T_F$). "Discharge rate" represents the discharge rate of the water in
+A fountain consists of a pipeline and a nozzle. The pipeline has three attributes, namely discharge rate
+($Q$), height ($h$), and water temperature ($T_F$). "Discharge rate" represents the discharge rate of the water in
 the fountain pipeline. "Height" denotes the height of the fountain pipeline installed. "Fountain water temperature"
 is the temperature of water droplets produced by the fountain.
 
@@ -132,8 +131,8 @@ the observed ice radius formed from the fountain water droplets is denoted as sp
 
 \begin{table}
 	\centering
-	\caption{List of all the studied \ac{AIRs}. The study period starts when the fountain was first switched on
-		(denoted as Start Date) and ends when the respective AIR either melted or broke into several ice blocks
+	\caption{List of all \ac{AIRs} studied. The study period starts when the fountain is first switched on
+		(denoted as Start Date) and ends when the respective AIR either melts or brakes into several ice blocks
 		(denoted as Expiry Date). }
 	\label{tab:AIRs}
 	\begin{tabular}{|lllll|}
@@ -149,19 +148,19 @@ the observed ice radius formed from the fountain water droplets is denoted as sp
 \end{table}
 
 
-Several photogrammetric surveys were conducted for each of the \ac{AIRs}. The details of these surveys and the
+Several photogrammetric surveys were conducted for each \ac{AIR}. Details of these surveys and the
 methodology used to produce the corresponding outputs are explained in paper I. The
-\ac{DEMs} generated from the obtained imagery were analysed to document the ice radius, the surface area and the
-volume of the ice structures. Ice radius measurements of drone flights which observed either an increase in AIR
+\ac{DEMs} generated from the obtained imagery were analyzed to document the ice radius, the surface area, and the
+volume of the ice structures. Ice radius measurements of drone flights which observed an increase in either AIR
 circumference or volume were averaged to determine the fountain's spray radius. The number of drone surveys
-conducted for each of the AIRs and the corresponding spray radius observed is shown in Table \ref{tab:AIRs}.
+conducted for each AIR and the corresponding spray radius observed are presented in Table \ref{tab:AIRs}.
 
 \section{Model modules}
 \label{sec:modules}
 
-A bulk energy and mass balance model is used to calculate the amounts of ice, meltwater, water vapour and
-wastewater of the AIR. In each hourly time step, the model uses the AIR surface area, energy and mass balance
-calculations to estimate its ice volume, surface temperature and wastewater as shown in Fig. \ref{fig:schema}.
+A bulk energy and mass balance model is used to calculate the amounts of ice, meltwater, water vapor, and
+wastewater of the AIR. In each hourly time step, the model uses the AIR surface area, energy, and mass balance
+calculations to estimate its ice volume, surface temperature, and wastewater, as shown in Fig. \ref{fig:schema}.
 
 \begin{figure}
 	\begin{center}
@@ -186,10 +185,10 @@ The model assumes the AIR shape to be a cone and assigns the following shape att
 	\end{align}
 \end{subequations}
 
-where $i$ denotes the model time step, $r_{cone}^i$ is the radius; $h_{cone}^i$ is the height; $A_{cone}^i$ is
-the surface area; $V_{cone}^i$ is the volume and $j_{cone}^i$ is the AIR surface normal thickness change as shown
-in Fig. \ref{fig:shape}. $M_{ice}^i$ is the mass of the AIR and $\Delta M_{ice}^i = M_{ice}^{i-1} -
-	M_{ice}^{i-2}$. Henceforth, the equations used display the model time step superscript $i$ only if it is different
+where $i$ denotes the model time step; $r_{cone}^i$ is the radius; $h_{cone}^i$ is the height; $A_{cone}^i$ is
+the surface area; $V_{cone}^i$ is the volume, and $j_{cone}^i$ is the AIR surface normal thickness change as shown
+in Fig. \ref{fig:shape}. $M_{ice}^i$ is the mass of the AIR, and $\Delta M_{ice}^i = M_{ice}^{i-1} -
+	M_{ice}^{i-2}$. Henceforth, the equations used display the model time step superscript $i$ only if this is different
 from the current time step.
 
 AIR density can be defined as:
@@ -199,9 +198,9 @@ AIR density can be defined as:
 \end{equation}
 
 where $M_F$ is the cumulative mass of the fountain discharge; $M_{ppt}$ is the cumulative precipitation;
-$M_{dep}$ is the cumulative accumulation through water vapour deposition; $\rho_{ice}$ is the ice density (917
+$M_{dep}$ is the cumulative accumulation through water vapor deposition; $\rho_{ice}$ is the ice density (917
 $kg\,m^{-3}$) and $\rho_{snow}$ is the density of wet snow (300 $kg\,m^{-3}$) taken from
-\cite{cuffeyPhysicsGlaciers2010} .
+\cite{cuffeyPhysicsGlaciers2010}.
 
 AIR volume can also be expressed as:
 
@@ -215,20 +214,20 @@ $V_{dome}$ used to construct the AIR as follows:
 	\label{eq:h0}
 \end{equation}
 
-where $\Delta x$ is the surface layer thickness (defined in Section \ref{sec:energy})
+where $\Delta x$ is the surface layer thickness (defined in Section \ref{sec:energy}).
 
 During the subsequent time steps, the dimensions of the AIR evolve assuming a uniform thickness change ($j_{cone}$)
 across its surface area with an invariant slope $s_{cone} = \frac{h_{cone}}{r_{cone}}$ .  During these time
-steps, the volume is parameterised using Eqn. \ref{eq:V} as:
+steps, the volume is parameterized using Eqn. \ref{eq:V} as:
 
 \begin{equation} 
   V_{cone} = \frac{\pi \cdot {(r_{cone})}^3 \cdot s_{cone}}{3} 
 \label{eq:V2} 
 \end{equation}
 
-The ice stupa boundary is defined through its spray radius, i.e. ice formation is assumed negligible when
-$r_{cone} > r_{F}$. Combining Eqns. \ref{eq:V},  \ref{eq:V1}, \ref{eq:h0} and \ref{eq:V2}, the geometric
-evolution of the Ice stupa at each time step $i$ can be determined by considering the following rules:
+The ice stupa boundary is defined through its spray radius, i.e., ice formation is assumed negligible when
+$r_{cone} > r_{F}$. Combining Eqns. \ref{eq:V},  \ref{eq:V1}, \ref{eq:h0}, and \ref{eq:V2}, the geometric
+evolution of the ice stupa at each time step $i$ can be determined by considering the following rules:
 
 \begin{equation} (r_{cone},\, h_{cone}) = \left\{ \begin{array}{ll} (r_F ,\, h_0)                                                                          & \textit{ if } i=0 \\
              (r_{cone}^{i-1},\, \frac{3 \cdot M_{ice}}{\pi \cdot \rho_{ice} \cdot {(r_{cone}^{i-1})}^2}) & \textit{ if }
@@ -241,8 +240,8 @@ evolution of the Ice stupa at each time step $i$ can be determined by considerin
 	\begin{center}
 		\includegraphics[width=10 cm]{figs/AIR_schematic.jpeg}
 	\end{center}
-	\caption{Shape variables of the AIR. $r_{cone}$ is the radius, $h_{cone}$ is the height, $j_{cone}$ is the
-		thickness change and $s_{cone}$ is the slope of the ice cone. $r_F$ is the spray radius of the fountain.}
+	\caption{Shape variables of the AIR. $r_{cone}$ is the radius; $h_{cone}$ is the height; $j_{cone}$ is the
+		thickness change, and $s_{cone}$ is the slope of the ice cone. $r_F$ is the spray radius of the fountain.}
 	\label{fig:shape}
 \end{figure}
 
@@ -257,22 +256,22 @@ into and out of a (thin) layer with thickness $\Delta x$:
 Upward and downward fluxes relative to the ice surface are positive and negative, respectively. The first term
 is the energy change of the surface layer, which can be translated into a phase change energy should phase
 changes occur. $q_{SW}$ is the net shortwave radiation; $q_{LW}$ is the net longwave radiation; $q_{L}$ and
-$q_{S}$ are the turbulent latent and sensible heat fluxes. $q_{F}$ and $q_{R}$ represent the heat exchange of
-the fountain water droplets and rain droplets with the AIR ice surface respectively. $q_{G}$ represents bulk
+$q_{S}$ are the turbulent latent and sensible heat fluxes, respectively. $q_{F}$ and $q_{R}$ represent the heat exchange of
+the fountain water droplets and rain droplets with the AIR ice surface, respectively. $q_{G}$ represents bulk
 heat flux between the AIR surface and its interior.
 
 The energy flux acts upon the AIR surface layer, which has an upper and lower boundary defined by the atmosphere
 and the ice body of the AIR, respectively. Here, the surface temperature $T_{ice}$ is defined to be the modelled
 average temperature of the ice stupa surface layer.
 
-\subsubsection{Net Shortwave Radiation \texorpdfstring{$q_{SW}$}{Lg}}
+\subsubsection{Net shortwave radiation \texorpdfstring{$q_{SW}$}{Lg}}
 
 The net shortwave radiation $q_{SW}$ is computed as follows:
 
 \begin{equation} q_{SW} = (1- \alpha)\cdot (SW_{direct} \cdot f_{cone} + SW_{diffuse}) \label{eqn:SW} \end{equation}
 
-where $SW_{direct}$ and $SW_{diffuse}$ are the direct and diffuse shortwave radiation, $\alpha$ is the
-modelled albedo and $f_{cone}$ is the area fraction of the ice structure exposed to the direct shortwave
+where $SW_{direct}$ and $SW_{diffuse}$ are the direct and diffuse shortwave radiation, respectively; $\alpha$ is the
+modelled albedo, and $f_{cone}$ is the area fraction of the ice structure exposed to direct shortwave
 radiation.
 
 The albedo varies depending on the water source that formed the current AIR surface layer. During the fountain
@@ -285,13 +284,13 @@ steps after the last snowfall event. After snowfall, albedo changes over a time 
 \begin{equation} \alpha=\alpha_{ice}+(\alpha_{snow}-\alpha_{ice}) \cdot e^{(-\delta t)/\tau} \label{eqn:alb}
 \end{equation}
 
-where $\alpha_{ice}$ is the bare ice albedo value (0.25), $\alpha_{snow}$ is the fresh snow albedo value (0.85)
+where $\alpha_{ice}$ is the bare ice albedo value (0.25); $\alpha_{snow}$ is the fresh snow albedo value (0.85),
 and $\tau$ is a decay rate (16 $days$), which determines how fast the albedo of the ageing snow recedes back to
 ice albedo. Discharge events decrease the decay rate by a factor of $\alpha_{ice}/\alpha_{snow}$.
 
-The solar area fraction $f_{cone}$ of the ice structure exposed to the direct shortwave radiation depends on the shape
-considered. Using the solar elevation angle $\theta_{sun}$, the solar beam can be considered to have a vertical
-component, impinging on the horizontal surface (semicircular base of the AIR), and a horizontal component
+The solar area fraction $f_{cone}$ of the ice structure exposed to direct shortwave radiation depends on the shape
+considered. Using the solar elevation angle $\theta_{sun}$, the solar beam can be considered to present a vertical
+component, impinging on the horizontal surface (semicircular base of the AIR), and a horizontal component,
 impinging on the vertical cross section (a triangle). The solar elevation angle $\theta_{sun}$ used is modelled
 using the parametrization proposed by \cite{woolfComputationSolarElevation1968}. Accordingly, $f_{cone}$ is determined as follows:
 
@@ -305,7 +304,7 @@ using the parametrization proposed by \cite{woolfComputationSolarElevation1968}.
 
 The diffuse shortwave radiation is assumed to impact the conical AIR surface uniformly.
 
-\subsubsection{Net Longwave Radiation \texorpdfstring{$q_{LW}$}{Lg}} \label{sec:LW}
+\subsubsection{Net longwave radiation \texorpdfstring{$q_{LW}$}{Lg}} \label{sec:LW}
 
 The net longwave radiation $q_{LW}$ is determined as follows:
 
@@ -314,9 +313,9 @@ The net longwave radiation $q_{LW}$ is determined as follows:
 	\label{eqn:LW}
 \end{equation}
 
-where $T_{ice}$ is the modelled surface temperature given in [$\degree C$],
-$\sigma=5.67\cdot10^{-8}\,Jm^{-2}s^{-1}K^{-4}$ is the Stefan-Boltzmann constant, $LW_{in}$ denotes the incoming
-longwave radiation and $\epsilon_{ice}$ is the corresponding emissivity value for the ice stupa surface (0.97).
+where $T_{ice}$ is the modelled surface temperature given in [$\degree C$];
+$\sigma=5.67\cdot10^{-8}\,Jm^{-2}s^{-1}K^{-4}$ is the Stefan–Boltzmann constant; $LW_{in}$ denotes the incoming
+longwave radiation, and $\epsilon_{ice}$ is the corresponding emissivity value for the ice stupa surface (0.97).
 
 The incoming longwave radiation $LW_{in}$ for the Indian site, where no direct measurements were available, is
 determined as follows:
@@ -326,10 +325,9 @@ determined as follows:
 	\label{eqn:LWin}
 \end{equation}
 
-here $T_a$ represents the measured air temperature and $\epsilon_a$ denotes the atmospheric emissivity. We
-approximate the atmospheric emissivity $\epsilon_a$ using the equation suggested by \cite{brutsaertEvaporationAtmosphereTheory1982},
+where $T_a$ represents the measured air temperature and $\epsilon_a$ denotes the atmospheric emissivity. The atmospheric emissivity $\epsilon_a$ is approximated using the equation suggested by \cite{brutsaertEvaporationAtmosphereTheory1982},
 considering air temperature and vapor pressure (Eqn.  \ref{eqn:atm_e}). The vapor pressure of air over water and
-ice was obtained using Eqn. \ref{eqn:vp}.  The expression defined in \cite{brutsaertDerivableFormulaLongwave1975} for clear skies
+ice is obtained using Eqn. \ref{eqn:vp}.  The expression defined in \cite{brutsaertDerivableFormulaLongwave1975} for clear skies
 (first term in equation \ref{eqn:atm_e}) is extended with the correction for cloudy skies after
 \cite{brutsaertEvaporationAtmosphereTheory1982} as follows:
 
@@ -356,13 +354,13 @@ proposed by \cite{garrattAtmosphericBoundaryLayer1992}:
 	v_a(p_{v,w}-p_{v,ice})}{{(\ln{\frac{h_{AWS}}{z_{0}}})}^2}
 \end{equation}
 
-where $h_{AWS}$ is the measurement height above the ground surface of the \ac{AWS} (around $2\,m$ for all sites),
-$v_a$ is the wind speed in [$m\,s^{-1}$], $c_a$ is the specific heat of air at constant pressure (1010 J
-$kg^{-1} K^{-1}$), $\rho_{a}$ is the air density at standard sea level (1.29 $kg m^{-3}$), $p_{0,a}$ is the air
-pressure at standard sea level (1013 $hPa$), $p_{a}$ is the measured air pressure, $\kappa$ is the von Karman
-constant (0.4), $z_{0}$ is the surface roughness (3 $mm$) and $L_s$ is the heat of sublimation (2848
+where $h_{AWS}$ is the measurement height above the ground surface of the \ac{AWS} (around $2\,m$ for all sites);
+$v_a$ is the wind speed in [$m\,s^{-1}$]; $c_a$ is the specific heat of air at constant pressure (1010 J
+$kg^{-1} K^{-1}$); $\rho_{a}$ is the air density at standard sea level (1.29 $kg m^{-3}$); $p_{0,a}$ is the air
+pressure at standard sea level (1013 $hPa$); $p_{a}$ is the measured air pressure; $\kappa$ is the von Karman
+constant (0.4); $z_{0}$ is the surface roughness (3 $mm$), and $L_s$ is the heat of sublimation (2848
 $kJ\,kg^{-1}$). The vapor pressure of air with respect to water ($p_{v,w}$) and with respect to ice
-($p_{v,ice}$) was obtained using the formulation given in \cite{huangSimpleAccurateFormula2018} :
+($p_{v,ice}$) was obtained using the formulation given in \cite{huangSimpleAccurateFormula2018}:
 
 \begin{equation}
 	\begin{split}
@@ -371,9 +369,9 @@ $kJ\,kg^{-1}$). The vapor pressure of air with respect to water ($p_{v,w}$) and 
 	\end{split} \label{eqn:vp}
 \end{equation}
 
-The dimensionless parameter $\mu_{cone}$ is an exposure parameter that deals with the fact that AIR has a rough
+The dimensionless parameter $\mu_{cone}$ is an exposure parameter that deals with the fact that an AIR presents a rough
 appearance and forms an obstacle to the wind regime. This factor accounts for the larger turbulent fluxes due to
-the roughness of the surface \citep{oerlemansBriefCommunicationGrowth2021}, and is a function of the AIR slope
+the roughness of the surface \citep{oerlemansBriefCommunicationGrowth2021} and is a function of AIR slope
 as follows:
 
 \begin{equation}
@@ -381,14 +379,13 @@ as follows:
 	\label{eqn:mu}
 \end{equation}
 
-A possible source of error is the fact that wind measurements from the horizontal plane at the \ac{AWS} are used,
-which might be different from those on a slope. However, without detailed data sets from the AIR surface, we
-retain this assumption.
+The use of wind measurements from the horizontal plane at the \ac{AWS} can represent a possible source of error,
+as these measurements might be different from those on a slope. However, this assumption is retained due to the absence of detailed datasets from the AIR surface.
 
 \subsubsection{Fountain discharge heat flux \texorpdfstring{$q_{F}$}{Lg} } \label{sec:heatflux}
 
-The fountain water temperature $T_F$ is assumed to cool to 0 $\degree C$ after contact with the ice surface.
-$T_F$ is equal to the measured source water temperature. But during time periods when the ambient temperature is
+Fountain water temperature, $T_F$, is assumed to cool to 0 $\degree C$ after contact with the ice surface.
+$T_F$ is equal to the measured source water temperature, but during time periods when the ambient temperature is
 subzero, $T_F$ is assumed to be 0 $\degree C$. Thus, the heat flux caused by this process is:
 
 \begin{equation}
@@ -402,9 +399,9 @@ with $c_{water}$ as the specific heat of water (4186 J $kg^{-1} K^{-1}$).
 
 \subsubsection{Rain heat flux \texorpdfstring{$q_{R}$}{Lg} }
 
-The influence of rain events on the albedo and on the ice stupa's energy balance was assumed to be similar to that of discharge
-events. However, the water temperature of a rain event was assumed to be equal to the air temperature. Accordingly,
-the heat flux generated due to a rain event was determined:
+The influence of rain events on the albedo and on the ice stupa's energy balance is assumed to be similar to that of discharge
+events. However, the water temperature of a rain event is assumed to be equal to the air temperature. Accordingly,
+the heat flux generated due to a rain event is determined:
 
 \begin{equation}
 	q_{R} = \frac{ \Delta M_{ppt} \cdot c_{water} \cdot T_a}{\Delta t \cdot A_{cone}}
@@ -419,35 +416,35 @@ using the heat conduction equation as follows:
 
 \begin{equation} q_{G} = k_{ice} \cdot (T_{bulk}-T_{ice}^{i-1})/l_{cone} \label{eqn:qG}    \end{equation}
 
-where $k_{ice}$ is the thermal conductivity of ice (2.123 $W\, m^{-1}\,K^{-1}$) , $T_{bulk}$ is the mean
-temperature of the ice body within the ice stupa and $l_{cone}$ is the average distance of any point in the
-surface to any other point in the ice body. $T_{bulk}$ is initialised as 0 $\degree C$ and later determined from
+where $k_{ice}$ is the thermal conductivity of ice (2.123 $W\, m^{-1}\,K^{-1}$); $T_{bulk}$ is the mean
+temperature of the ice body within the ice stupa, and $l_{cone}$ is the average distance of any point in the
+surface to any other point in the ice body. $T_{bulk}$ is initialized as 0 $\degree C$ and later determined from
 Eqn. \ref{eqn:qG} as follows:
 
 \begin{equation} T_{bulk}^{i+1} = T_{bulk} - (q_{G} \cdot A \cdot \Delta t)/(M_{ice} \cdot c_{ice}) \end{equation}
 
-Since \ac{AIRs} typically have conical shapes with $r_{cone} > h_{cone}$, the center of mass of the cone body is
+Since \ac{AIRs} typically present conical shapes with $r_{cone} > h_{cone}$, the center of mass of the cone body is
 assumed to be near the base of the fountain. Thus, the distance of every point in the AIR surface layer from the
-cone body's center of mass is between $h_{cone}$ and $r_{cone}$. Therefore, $q_{G}$ is calculated by assuming
+cone body's center of mass is between $h_{cone}$ and $r_{cone}$. Therefore, $q_{G}$ is calculated assuming
 $l_{cone} = (r_{cone} + h_{cone})/2$.
 
 \subsubsection{Phase changes}\label{sec:phase}
 
-This section explains the numerical procedures to model phase changes at the surface layer. Let
-$T_{temp}$ be the calculated surface temperature. Therefore, Eqn. \ref{eqn:EB} can be rewritten as:
+This section explains the numerical procedures to model phase changes at the surface layer. Letting
+$T_{temp}$ be the calculated surface temperature, Therefore, Eqn. \ref{eqn:EB} can be rewritten as:
 
 $$q_{total} =\rho_{ice} \cdot c_{ice} \cdot \frac{(T_{temp}-T_{ice})}{\Delta t} \cdot \Delta x$$
 
 where $q_{total}$ represents the total energy available to be redistributed. Even if the numerical heat transfer
-solution produces temperatures which are $T_{temp}>0\, \degree C$, say from intense shortwave radiation, the ice
-temperature must remain at $T_{temp} = 0\, \degree C$. The ‘‘excess’’ energy is used to drive the melting
-process. Moreover, the energy input is used to melt the surface ice layer, and not to raise the surface
-temperature to some unphysical value. Similarly, for freezing to occur, three conditions are required. Firstly,
-fountain water is present ($\Delta M_{F} > 0 $) and secondly the calculated temperature of the ice, $T_{temp}$,
-is below $0\, \degree C$. However, these two conditions are not sufficient as the latent heat turbulent fluxes
-can only contribute to temperature fluctuations. Therefore, an additional condition, namely, $(q_{total}-q_{L})
+solution produces temperatures $T_{temp}>0\, \degree C$, for instance from intense shortwave radiation, the ice
+temperature must remain at $T_{temp} = 0\, \degree C$. The "excess" energy is used to drive the melting
+process. Moreover, the energy input is used to melt the surface ice layer, not to raise the surface
+temperature to some unphysical value. Similarly, for freezing to occur, three conditions are required. First,
+fountain water must be present ($\Delta M_{F} > 0 $); second, the calculated temperature of the ice, $T_{temp}$,
+must be below $0\, \degree C$. However, these two conditions are not sufficient, as the latent heat turbulent fluxes
+can only contribute to temperature fluctuations. Therefore, an additional condition, namely $(q_{total}-q_{L})
 	< 0$, is required. Depending on the above conditions, the total energy $q_{total}$ can be redistributed
-for the melting ($q_{melt}$), freezing ($q_{freeze}$) and surface temperature change ($q_{T}$) processes as
+for the melting ($q_{melt}$), freezing ($q_{freeze}$), and surface temperature change ($q_{T}$) processes as
 follows:
 
 \begin{equation}
@@ -457,8 +454,8 @@ follows:
 	\end{array} \right.
 \end{equation}
 
-Henceforth, time steps when the the total energy is redistributed to the freezing energy are called freezing
-events and the rest of the time steps are called melting events.
+Henceforth, time steps when total energy is redistributed to the freezing energy are called freezing
+events and, the rest of the time, steps are called melting events.
 
 
 During a freezing event, the AIR surface is assumed to warm to $0 \degree C$. The available energy
@@ -503,27 +500,27 @@ The mass balance equation for an AIR is represented as:
 \end{equation}
 
 where $M_{F}$ is the cumulative mass of the fountain discharge; $M_{ppt}$ is the cumulative precipitation;  $M_{dep}$ is the cumulative
-accumulation through water vapour deposition; $M_{ice}$ is the cumulative mass of ice; $M_{water}$ is the cumulative
-mass of melt water; $M_{sub}$ represents the cumulative water vapor loss by sublimation and $M_{waste}$ represents the
-fountain wastewater that did not interact with the AIR. The left hand side of equation \ref{eq:MB} represents the rate of
-mass input and the right hand side represents the rate of mass output for an AIR.
+accumulation through water vapor deposition; $M_{ice}$ is the cumulative mass of ice; $M_{water}$ is the cumulative
+mass of meltwater; $M_{sub}$ represents the cumulative water vapor loss by sublimation, and $M_{waste}$ represents the
+fountain wastewater that did not interact with the AIR. The left hand side of the equation \ref{eq:MB} represents the rate of
+mass input, and the right hand side represents the rate of mass output for an AIR.
 
-Precipitation input is calculated as shown in equation \ref{eq:ppt} where $\rho_{w}$ is the density of water (1000
-$kg\,m^{-3}$), $\Delta ppt/ \Delta t$ is the measured precipitation rate in [$m\,s^{-1}$] and $T_{ppt}$ is the temperature threshold
-below which precipitation falls as snow. Here, snowfall events were identified using $T_{ppt}$ as $1 \degree C$. Snow
+Precipitation input is calculated as shown in equation \ref{eq:ppt}, where $\rho_{w}$ is the density of water (1000
+$kg\,m^{-3}$), $\Delta ppt/ \Delta t$ is the measured precipitation rate in [$m\,s^{-1}$], and $T_{ppt}$ is the temperature threshold
+below which precipitation falls as snow. In the present work, snowfall events are identified using $T_{ppt}$ as $1 \degree C$. Snow
 mass input is calculated by assuming a uniform deposition over the entire circular footprint of the AIR.
 
-The latent heat flux is used to estimate either the evaporation and condensation processes or sublimation and
-deposition processes as shown in equation \ref{eq:vap}. During the time steps at which the surface temperature
-is below 0 $\degree C$ only sublimation and deposition can occur, but if the surface temperature reaches 0
+The latent heat flux is used to estimate either evaporation and condensation processes or sublimation and
+deposition processes, as shown in equation \ref{eq:vap}. During the time steps at which the surface temperature
+is below 0 $\degree C$, only sublimation and deposition can occur; but if the surface temperature reaches 0
 $\degree C$, evaporation and condensation can also occur. As the differentiation between evaporation and
 sublimation (and condensation and deposition) when the air temperature reaches 0 $\degree C$ is challenging,
-negative (positive) latent heat fluxes are assumed to correspond only to sublimation (deposition), i.e. no
+negative (positive) latent heat fluxes are assumed to correspond only to sublimation (deposition), i.e., no
 evaporation (condensation) is calculated.
 
-Since every time step has been categorized as a freezing or melting event, the melting/freezing rates and the
+Since every time step is categorized as a freezing or melting event, the melting/freezing rates and the
 corresponding meltwater/ice quantities can be determined as shown in equations \ref{eq:m_freeze/melt},
-\ref{eq:mwat} and \ref{eq:mcone}. Having calculated all other mass components, the fountain wastewater generated
+\ref{eq:mwat}, and \ref{eq:mcone}. Having calculated all other mass components, the fountain wastewater generated
 every time step can be calculated using Eqn. \ref{eq:MB}.
 
 \begin{subequations}
@@ -555,16 +552,16 @@ Considering \ac{AIRs} as water reservoirs, their net water loss can be defined a
 \section{Overview of different models}
 \label{sec:MIP}
 
-The model modules described above where used in three different models with varying degree of complexity as
-shown in Table \ref{tab:MIP}. The Oerlemans model is the simplest, implemented in just one page of code whereas
-the COSISTUPA model is the most complex maintained by a community of modellers. Below the motivation involved
-in developing each of these models are described.
+The model modules described above were used in three different models with varying degrees of complexity, as
+presented in Table \ref{tab:MIP}. The Oerlemans model is the simplest, implemented in just one page of code, whereas
+the COSISTUPA model is the most complex, maintained by a community of modellers. The motivations involved
+in developing each of these models are described below.
 
 \begin{table}[ht]
 	\centering
   \caption{Characteristics of the models used in the estimation of AIR volumes. The models are referred to by
-  the short name given in the first row. Full model documentation is given in the original literature (marked in
-  italic). }      
+  the short name given in the first row. Full model documentation is provided in the original literature (marked in
+  italics). }      
 
 	\label{tab:MIP}
 	\begin{tabular}{|llll|}
@@ -581,32 +578,32 @@ in developing each of these models are described.
 
 \subsection{Oerlemans model}
 
-The objective of the Oerlemans model was to integrate a shape evolution module with glacial models to obtain
+The objective of the Oerlemans model is to integrate a shape evolution module with glacial models to obtain
 first-order estimates of growth and decay rates under various conditions. This model was designed to
 qualitatively assess the effects of snow cover, different starting dates, differences between warm and cold
-winters, etc. It simulated ice stupa evolution using data from field measurements in Oberengadin region,
+winters, etc. Ice stupa evolution was simulated with this model, using data from field measurements in the Oberengadin region,
 Switzerland. 
 
-However, this model was not ideal for comparing between simulated and observed ice stupa volumes. This was
+However, this model was not ideal to compare simulated ice stupa volumes with observed ones. This is
 because the model considers the ice stupa to be a single unit with a surface temperature close to the melting
 point. This assumption limits the quantification of surface processes which depend strongly on surface
-temperature variations. Moreover, the model assumes unlimited water availability which is often not the case
+temperature variations. Moreover, the model assumes unlimited water availability, which is often not the case
 during AIR construction. Also, the model uses a simplistic shape evolution module that ignores the dependence of
-shape variables with fountain characteristics. These shortcomings made it necessary to extend the Oerlemans
+shape variables on fountain characteristics. These shortcomings made it necessary to extend the Oerlemans
 model further.
 
 \subsection{AIR model}
 
-The AIR model was designed to obtain better validation with measured ice stupa volumes than the Oerlemans model.
-In order to do this, it incorporated all the mass and energy balance modules described in Section
+The AIR model was designed to obtain better validation with measured ice stupa volumes than that the Oerlemans model could offer.
+To do this, the incorporates all mass and energy balance modules described in Section
 \ref{sec:modules} and simulated AIR evolution using data from field measurements in Gangles, India and
 Guttannen, Switzerland. The model was calibrated and validated with ice volume and surface area observations
-obtained via drone surveys. The freezing and melting rates for each of the three \ac{AIRs} were calculated and
-explained their corresponding magnitudes in terms of the influence of the chosen location and the fountain used.
+obtained via drone surveys. The freezing and melting rates for each \ac{AIR} were calculated, and
+their corresponding magnitudes in terms of influence of the chosen location and the fountain used were explained.
 The model was successful in reproducing the observed ice volume evolution with a correlation greater than 0.96
-and an \ac{RMSE} less than 18 \% of the maximum ice volume for three AIRs (Paper I). The AIR model is freely
-provided through a git repository for non-profit purposes (\url{https://github.com/gayashiva/air_model}, last
-access: August 1, 2022). 
+and an \ac{RMSE} less than 18\% of the maximum ice volume for the three AIRs (Paper I). The AIR model is freely
+provided through a git repository for nonprofit purposes (\url{https://github.com/gayashiva/air_model}, last
+access: August 1, 2022).
 
 However, the model is not expected to perform well for locations where it has not been calibrated in advance.
 Specifically, the surface layer thickness parameter requires prior calibration for better model performance.
@@ -614,70 +611,63 @@ Specifically, the surface layer thickness parameter requires prior calibration f
 \subsection{COSISTUPA: COSIPY + AIR model}
 \label{sec:Cosistupa}
 
-In order to reduce the calibration requirements for the AIR model, the AIR model was combined with the COupled
-Snowpack and Ice surface energy and mass balance model in PYthon (COSIPY). COSIPY is typically used for
-modelling distributed snow and glacier mass changes \citep{sauterCOSIPYV1Opensource2020}. However, it has a
-flexible, user-friendly and modular framework allowing it to be an ideal platform to implement the alternate
-modules required for modelling ice reservoirs. This modified COSIPY model will be referred to as COSISTUPA model
-henceforth. The COSISTUPA model is freely provided through a git repository for non-profit purposes
+To reduce the calibration requirements for the AIR model, this was combined with the COupled
+Snowpack and Ice surface energy and mass balance model in PYthon (COSIPY). COSIPY is typically used to
+model distributed snow and glacier mass changes \citep{sauterCOSIPYV1Opensource2020}. However, it presents a
+flexible, user-friendly, and modular framework, making it an ideal platform to implement the alternate
+modules required for modelling ice reservoirs. This modified COSIPY model is henceforth referred to as the COSISTUPA model. The COSISTUPA model is freely provided through a git repository for nonprofit purposes
 (\url{https://github.com/cryotools/cosipy/tree/cosistupa}, last access: August 1, 2022). 
 
 
 \subsubsection{Model configuration}
 
-In this section, the main adjustments needed to convert COSIPY modules into the COSISTUPA
-model are described.
+To convert the COSIPY modules into the COSISTUPA model, the COSIPY model input was extended to include discharge rate and cloudiness index measurements. Additionally, the spray radius parameter was provided as input during model initialization. The model initialization of the ice
+cone dimensions was made identical to that of the AIR model.
 
-The COSIPY model input was extended to include discharge rate and cloudiness index measurements. Additionally,
-spray radius parameter was provided as input during model initialization. The model initialization of the ice
-cone dimensions were made identical to the AIR model.
-
-Several parametrizations are available for estimating each of the surface processes in COSIPY. Most of the ones
+Several parametrizations are available to estimate each surface process in COSIPY. Most of the ones
 used in the AIR model are among the available options. Additionally, new parametrizations were required to
 estimate the conical shape evolution and model the freezing process due to the fountain discharge events. To
 extend COSIPY into COSISTUPA, parametrizations of the following processes were modified:
 
 \begin{itemize}
 
-	\item \textbf{Fountain rain heat flux} : The heat flux generated due to the difference in fountain water droplet
-	      temperature and surface temperature was introduced as a new energy balance component. This implementation is
-	      identical to the selected approach described in Sec. \ref{sec:heatflux}
+	\item \textbf{Fountain rain heat flux}: The heat flux generated as a result of the difference between the fountain water droplet
+	      temperature and the surface temperature was introduced as a new energy balance component. This implementation is
+	      identical to the selected approach described in Sec. \ref{sec:heatflux}.
 
-	\item \textbf{Turbulent flux scaling} : The sensible and the latent heat fluxes were scaled by the $\mu_{cone}$ factor
-	      introduced in Sec. \ref{sec:Qs}
+	\item \textbf{Turbulent flux scaling}: The sensible and the latent heat fluxes were scaled by the $\mu_{cone}$ factor
+	      introduced in Sec. \ref{sec:Qs}.
 
-	\item \textbf{Freezing process} : Phase transition processes were introduced during time periods when the fountain
-	      discharge was active. These processes created new ice layers whenever the energy balance allowed it
-	      following the algorithm introduced in Sec. \ref{sec:phase}
+	\item \textbf{Freezing process}: Phase transition processes were introduced during time periods when the fountain
+	      discharge was active. These processes created new ice layers whenever the energy balance allowed it,
+	      following the algorithm introduced in Sec. \ref{sec:phase}.
 
-	\item \textbf{Conical shape evolution} : The surface mass balance estimation was converted to the volume estimation
-	      through the methodology introduced in Sec. \ref{sec:shape}
+	\item \textbf{Conical shape evolution}: The surface mass balance estimation was converted to the volume estimation
+	      through the methodology described in Sec. \ref{sec:shape}.
 
 \end{itemize}
 
-Please note the above list of changes are not exhaustive and represent only the major modifications necessary to
+Please note the above list of changes is not exhaustive and presents only the major modifications needed to
 develop the COSISTUPA model.
 
 \subsubsection{Advantages of the COSISTUPA model}
 
-The COSISTUPA model has a modular structure allowing the exchange of routines or parametrizations of physical
-processes with little effort for the user. The framework consists of a computational kernel, forming
-the runtime environment and taking care of the initialization, the input-output routines, and the
-parallelization, as well as the grid and data structures. This structure offers maximum flexibility without
-having to worry about the internal numerical flow. The adaptive subsurface scheme allows an efficient and fast
+The COSISTUPA model presents a modular structure that allows the exchange of routines or parametrizations of physical
+processes with little effort from the user. The framework consists of a computational kernel, forming
+the runtime environment and taking care of the initialization, the input–output routines, and the
+parallelization, in addition to the grid and data structures. This structure offers maximum flexibility without
+the concern of the internal numerical flow. The adaptive subsurface scheme facilitates an efficient and fast
 calculation of the otherwise computationally demanding fundamental equations. The surface energy balance scheme
-uses established standard parametrizations for radiation as well as for the energy exchange between the
-atmosphere and surface. The schemes are coupled by solving both surface energy balance and subsurface fluxes
-iteratively in which consistent skin temperature is returned at the interface. COSISTUPA uses a one-dimensional
-approach limited to the vertical fluxes of energy and matter but neglects any lateral processes. Accordingly,
+uses established standard parametrizations for radiation and the energy exchange between atmosphere and surface. The schemes are coupled by solving both surface energy balance and subsurface fluxes
+iteratively, with consistent skin temperature being returned at the interface. COSISTUPA uses a one-dimensional
+approach limited to the vertical fluxes of energy and matter, neglecting any lateral processes. Accordingly,
 the model can be easily set up in parallel computational environments for calculating both energy balance and
 climatic surface mass balance of multiple \ac{AIRs} based on flexible horizontal grids and with varying temporal
 resolution.
 
-The \ac{RMSE} error of the 5 ice stupas studied in this thesis were within 20 \% of their maximum ice volumes
-for the COSISTUPA model (Fig. \ref{fig:Cosistupa}).  However, this model was 3 times slower than the AIR model.
-This is likely due to the additional effort required to resolve the density and temperature across the two
-dimensional model grid.
+The \ac{RMSE} error of the five ice stupas studied in this thesis is within 20\% of their maximum ice volumes
+for the COSISTUPA model (Fig. \ref{fig:Cosistupa}).  However, this model was three times slower than the AIR model.
+This is likely due to the additional effort required to resolve density and temperature across the two-dimensional model grid.
 
 \begin{figure}[t]
 	\centering
@@ -688,22 +678,22 @@ dimensional model grid.
 	\label{fig:Cosistupa}
 \end{figure}
 
-The COSISTUPA model is considered to be the better one among the three models due to these three reasons:
+The COSISTUPA model is considered to be the best one among the three models for the following reasons:
 
 \begin{itemize}
 
-	\item \textbf{Better spatial temperature and density resolution} : It provides temperature and density
-	      information of subsurface layers of the AIR. In contrast, the AIR model only computes the bulk and the
+	\item \textbf{Better spatial temperature and density resolution}: The COSISTUPA model provides temperature and density
+	      information of subsurface layers of the AIR. In contrast, the AIR model computes only the bulk and the
 	      surface temperature. Moreover, COSISTUPA is better able to approximate bulk density since it has records of
 	      previous snowfall events in its subsurface layers.
 
-	\item \textbf{Better parametrization of snowfall} : The densification and albedo decay of snowfall are better
+	\item \textbf{Better parametrization of snowfall}: The densification and albedo decay of snowfall are better
 	      handled in COSISTUPA due to its awareness of the snowfall content in each of its subsurface layers.
 
-	\item \textbf{Better validation} : COSISTUPA, being a model derived from COSIPY is expected to validate better
+	\item \textbf{Better validation}: COSISTUPA, being derived from COSIPY, is expected to validate better
 	      since the core parametrizations are unchanged and have been extensively validated within other studies \citep{arndtAtmosphereDrivenMassBalance2021}.
 
-	\item \textbf{Future support} : COSISTUPA will be extensively supported in the future through the COSIPY
+	\item \textbf{Future support}: COSISTUPA will be extensively supported in the future through the COSIPY
 	      community.
 
 \end{itemize}
