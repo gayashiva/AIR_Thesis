@@ -18,7 +18,7 @@ high-altitude glaciers. This results in increased demand during a period of redu
 agricultural season.
 
 These trends stress the importance of increased water storage capacity for glacierized catchments as a pathway
-for climate adaptation. Because of the challenges and cost related to manual storage efforts, AIRs can be
+for climate adaptation. Because of the challenges and cost related to conventional storage efforts, AIRs can be
 a better tool to adapt against reduced glacial runoff. 
 
 AIRs, located at much lower altitudes than naturally occuring glaciers, serve to bridge the critical gap in
@@ -162,8 +162,10 @@ Threads, tree branches and fishing nets are used to guide and accelerate the ice
 The cost of construction primarily depends on the material, size and length of the pipeline required. The
 fountain nozzle's cost is negligible in comparison. Typical pipeline configuration in Ladakh consists of a high
 density polyethylene pipeline of 63 $mm$ diameter. Based on field estimates, the infrastructure cost of such a
-system is around 6,875 USD per $km$ of pipeline length. \citet{basitafzalArtificialGlaciers2016} estimates that
-this way of water storage is upto 3 times cheaper than concrete water storage tanks.
+system is around 6,875 USD per $km$ of pipeline length. 
+
+% \citet{basitafzalArtificialGlaciers2016} estimates that
+% this way of water storage is upto 3 times cheaper than concrete water storage tanks.
 
 Figure \ref{fig:ISmelt} shows the temporal variation of daily meltwater quantities obtained from 3 different
 AIRs built in Ladakh during their melting periods (mid-April to mid-June). IN17 and IN18 AIRs were constructed
@@ -183,27 +185,22 @@ enough might lead to underwatering and can cause reduced ice volume. The managem
 differs based on the type of the AIR used. The following analysis only considers the ice stupa
 form of AIRs where water supply management can also be referred to as fountain scheduling.
 
-Paper I has shown that manual ice stupa construction systems suffer from overwatering. For example, in
-Indian AIRs, the fountain discharge rate could theoretically be halved since it is always twice as high as the
-modelled freezing rate. However, in practice, the reduction of discharge rate could increase maintenance costs
-due to higher risk of freezing events in the fountain pipeline.
+Paper I has shown that manual ice stupa construction systems suffer from overwatering. To avoid this issue, the
+energy balance models developed in the \textit{Science} chapter can be used to regulate fountain water supply
+through its surface freezing rate estimations. For example, in Indian AIRs, the fountain discharge rate could
+theoretically be halved since it is always twice as high as the modelled freezing rate. However, in practice, a
+reduction of the discharge rate could increase the maintenance cost due to a higher risk of freezing events in
+the fountain pipeline. Therefore, an optimum fountain operation strategy should first prevent the occurrence of
+any freezing events. These events can be prevented by setting a minimum threshold for the recommended discharge
+rate.
 
-An optimum construction strategy, therefore, should first prevent the occurrence of freezing events in the
-fountain pipeline. These events can be prevented by setting a minimum threshold for the recommended discharge
-rate. The discharge scheduler software developed in the previous chapter satisfies these requirements.
-
-Adjusting the fountain discharge rate manually is not practical due to two reasons: first, this would involve
-constant adjustments of discharge rates in response to the significant diurnal and seasonal variations of the
-freezing rates; second, frequent pipeline water drainage would be required to avoid water losses. Therefore, operation
-of scheduled fountains via automation systems is preferred to reduce long-term maintenance costs. The
-hardware used to implement such an automation system is described in paper II.
-
-This section aims to compare the water-use efficiency, maximum ice volume and maintenance effort between
-manual and automated construction strategies. First, two AIRs were built in the same location but with and
-without automated fountain scheduling strategies; both were measured and compared (Fig. \ref{fig:autovsman}).
-The associated datasets and the methods used to analyze them are described in paper II. In a second step,
-differences in construction strategies between the Indian and Swiss AIRs studied in previous winters were quantified
-using model simulations. 
+Adjusting fountain discharge rates in response to significant diurnal and seasonal variations of freezing rates
+requires the use of automation systems. Therefore, this section describes such an automated construction
+strategy that can reduce water losses and maintenance requirements compared to manual construction strategies.
+First, two AIRs were built in the same location with and without automated fountain scheduling strategies; both
+were measured and compared (Fig. \ref{fig:autovsman}). The associated datasets and the methods used to analyze
+them are described in paper II. In a second step, differences in construction strategies between Indian and
+Swiss AIRs studied in previous winters were quantified using model simulations. 
 
 \begin{figure}[htb]
 	\includegraphics[width=\textwidth]{figs/AIR_fountains.jpg}
@@ -224,11 +221,11 @@ radiation impact. The model overestimating the freezing rate will be referred to
 underestimating the freezing rate will be referred to as  \ac{WEOM}, respectively. Accordingly, the values
 assigned for all the three variables in the respective model is shown in Table \ref{tab:assumptions}.
 
-The fountain scheduling software implements two types of fountain scheduling strategies depending on which
-model type is suitable. WEOM model type is used if the location has limited water availability since it is expected to
-produce better water-use efficiency. \ac{IVOM} model type is used if the location had limited duration of favourable
-weather windows since it is expected to produce higher ice volumes. These two kinds of scheduled fountains will
-be referred to as water-sensitive fountain and weather-sensitive fountain henceforth.
+The fountain scheduling software implements two types of fountain scheduling strategies depending on which model
+type is suitable. WEOM model type is used if the location has limited water availability since it is expected to
+produce better water-use efficiency. \ac{IVOM} model type is used if the location had limited duration of
+favourable weather windows since it is expected to produce higher ice volumes. These two kinds of scheduled
+fountains will be referred to as water-sensitive fountain and weather-sensitive fountain henceforth.
 
 \begin{table}[htb]
 	\centering
@@ -248,13 +245,22 @@ The assumptions described in Table \ref{tab:assumptions} are applied on the one-
 energy fluxes through Eqn. \ref{eqn:EB}. The derivation of the individual energy and mass balance terms for the
 \ac{IVOM} and \ac{WEOM} model versions are discussed in the Appendix \ref{sec:auto_software}.
 
+\begin{figure}
+\includegraphics[width=\linewidth]{figs/Automation_schematic.png}
+\caption{Schematic illustrating the measurement and control of the fountain pipeline system through the
+  automation system. Two-way arrows indicate information exchange between different components whereas one-way
+  arrows indicate information transmission.}
+
+\label{fig:auto_schematic} 
+\end{figure}
+
 Equation \ref{eqn:EB} is implemented in the automation software. The user interface of the software enables
-input of the spray radius, altitude, latitude and longitude of the construction location. The automation
-hardware consists of an AWS, flowmeter, control valve, drain valves, air valves, fountain, pipeline and a
-logger. The logger feeds the AWS data to the automation software and informs the recommended discharge rate to
-the flowmeter. The flowmeter adjusts the control valve to match the recommendation. When a termination
-criteria is met, the drain and air valves allow the removal of water from the pipeline and the entry of
-air in the pipeline respectively.
+input of the spray radius, altitude, latitude, and longitude of the construction location. The automation
+hardware consists of an AWS, control box, flowmeter, ball valve, drain valves, air valves, fountain and a
+pipeline (Fig. \ref{fig:auto_schematic}). The control box feeds the AWS data to the automation software to
+obtain the recommended discharge rate. Then, to match this recommendation, it adjusts the ball valve position
+based on the information from the flowmeter. In case a termination criterion gets met, the drain and air valves
+are opened to allow removal of water and entry of air in the pipeline, respectively.
 
 The recommended discharge rate is equal to the mass change rate. However, certain termination criteria listed
 below override the discharge rate recommendation and drain the pipeline to prevent water loss or fountain
