@@ -181,50 +181,26 @@ enough might lead to underwatering and can cause reduced ice volume. The managem
 differs based on the type of AIR used. The following analysis only considers the ice stupa
 form of AIRs, where water supply management can also be referred to as fountain scheduling.
 
-% <<<<<<< HEAD
-% Paper I has shown that manual ice stupa construction systems suffer from overwatering. To avoid this issue, the
-% energy balance models developed in the \textit{Science} chapter can be used to regulate fountain water supply
-% through its surface freezing rate estimations. For example, in Indian AIRs, the fountain discharge rate could
-% theoretically be halved since it is always twice as high as the modelled freezing rate. However, in practice, a
-% reduction of the discharge rate could increase the maintenance cost due to a higher risk of freezing events in
-% the fountain pipeline. Therefore, an optimum fountain operation strategy should first prevent the occurrence of
-% any freezing events. These events can be prevented by setting a minimum threshold for the recommended discharge
-% rate.
-%
-% Adjusting fountain discharge rates in response to significant diurnal and seasonal variations of freezing rates
-% requires the use of automation systems. Therefore, this section describes such an automated construction
-% strategy that can reduce water losses and maintenance requirements compared to manual construction strategies.
-% First, two AIRs were built in the same location with and without automated fountain scheduling strategies; both
-% were measured and compared (Fig. \ref{fig:autovsman}). The associated datasets and the methods used to analyze
-% them are described in paper II. In a second step, differences in construction strategies between Indian and
-% Swiss AIRs studied in previous winters were quantified using model simulations. 
-% =======
-Paper I shows that manual ice stupa construction systems suffer from overwatering. For example, in
-Indian AIRs, the fountain discharge rate could theoretically be halved since it is always twice as high as the
-modelled freezing rate. However, in practice, the reduction of discharge rate could increase maintenance costs
-due to a higher risk of freezing events in the fountain pipeline.
+Paper I shows that manual ice stupa construction systems suffer from overwatering. To avoid this issue, the
+energy balance models developed in the \textit{Science} chapter can be used to regulate fountain water supply
+through its surface freezing rate estimations. For example, in Indian AIRs, the fountain discharge rate could
+theoretically be halved since it is always twice as high as the modelled freezing rate. However, in practice, a
+reduction of the discharge rate could increase the maintenance cost due to a higher risk of freezing events in
+the fountain pipeline. Therefore, an optimum fountain operation strategy should first prevent the occurrence of
+any freezing events. These events can be prevented by setting a minimum threshold for the recommended discharge
+rate.
 
-An optimum construction strategy, therefore, should first prevent the occurrence of freezing events in the
-fountain pipeline. These events can be prevented by setting a minimum threshold for the recommended discharge
-rate. The developed discharge scheduler software described in the previous chapter satisfies these requirements.
-
-Adjusting the fountain discharge rate manually is not practical due to two reasons: first, this would involve
-constant adjustments of discharge rates in response to the significant diurnal and seasonal variations of the
-freezing rates; second, frequent pipeline water drainage would be required to avoid water losses. Therefore, operation
-of scheduled fountains via automation systems is preferred to reduce long-term maintenance costs. The
-hardware used to implement such an automation system is described in paper II.
-
-The aim of this section is to compare water-use efficiency, maximum ice volume, and maintenance effort between
-manual and automated construction strategies. First, two AIRs---one with and one
-without automated fountain scheduling strategies---were built in the same location; both were measured and compared (Fig. \ref{fig:autovsman}).
-The associated datasets and the methods used to analyze them are described in paper II. In a second step,
-differences in construction strategies between the Indian and Swiss AIRs studied in previous winters were quantified
-using model simulations. 
-% >>>>>>> origin/overleaf-2022-10-12-0855
+Adjusting fountain discharge rates in response to significant diurnal and seasonal variations of freezing rates
+requires the use of automation systems. Therefore, this section describes such an automated construction
+strategy that can reduce water losses and maintenance requirements compared to manual construction strategies.
+First, two AIRs were built in the same location with and without automated fountain scheduling strategies; both
+were measured and compared (Fig. \ref{fig:autovsman}). The associated datasets and the methods used to analyze
+them are described in paper II. In a second step, differences in construction strategies between Indian and
+Swiss AIRs studied in previous winters were quantified using model simulations. 
 
 \begin{figure}[htb]
 	\includegraphics[width=\textwidth]{figs/AIR_fountains.jpg}
-	\caption{Unscheduled and scheduled fountains used for construction of manual and automated AIRs, respectively, at
+	\caption{Non-scheduled and scheduled fountains used for construction of manual and automated AIRs, respectively, at
 		Guttannen. Photo: Daniel Bürki.}
 	\label{fig:autovsman}
 \end{figure}
@@ -291,7 +267,8 @@ freezing events:
 
 	\item High risk of fountain freezing event is assumed when mass change rate is lower than the user-defined minimum fountain discharge rate.
 
-	\item Freezing events in the fountain pipeline are assumed when measured discharge rate is zero for at least 20 s.
+	\item Freezing events in the fountain pipeline are assumed when measured discharge rate is zero for at least
+    20 seconds.
 
 	\item Pipeline leakage is assumed when measured discharge rate is greater than the user-defined maximum fountain discharge rate.
 
@@ -300,7 +277,7 @@ freezing events:
 \subsection{Comparison of manual and automated construction strategies}
 
 \begin{figure*}[htb] \includegraphics[width=\textwidth] {figs/CH_validation.png} \caption{Volume validation of the
-		scheduled and unscheduled fountain construction strategies.} \label{fig:validation} \end{figure*}
+		scheduled and non-scheduled fountain construction strategies.} \label{fig:validation} \end{figure*}
 
 Fountain scheduling reduced the fountain discharge input and fountain wastewater output by an order of
 magnitude. However, this did not result in an appreciable difference in the volume evolution of the automated
@@ -316,7 +293,7 @@ processes is shown in Fig. \ref{fig:dis_processes}.
 	\label{fig:dis_processes}
 \end{figure*}
 
-The difference in water-use efficiency and maximum ice volume between unscheduled and scheduled fountains in the
+The difference in water-use efficiency and maximum ice volume between non-scheduled and scheduled fountains in the
 Indian and Swiss locations across two winters is shown in Fig. \ref{fig:wue}a. Four experimental values
 (highlighted in circles) and five simulated values (highlighted in squares) are shown together. The
 experimental values were taken from the IN21 and CH21 AIRs studied in paper I and from the CH22 AIR investigated in
@@ -328,23 +305,23 @@ paper II.
 	\caption{(a) The maximum volume and water-use efficiency estimated for AIRs constructed in different locations
 		(represented by symbols) with different fountain scheduling strategies (represented by colors). Experimental
 		values are highlighted in circles, and simulated values are highlighted in squares. (b) Comparison of
-		the unscheduled and scheduled fountain discharge rates at the IN21 location.}
+		the non-scheduled and scheduled fountain discharge rates at the IN21 location.}
 
 	\label{fig:wue}
 \end{figure}
 
-Water-use efficiency of all the unscheduled fountains is below 20\%. In general, water-use efficiency
+Water-use efficiency of all the non-scheduled fountains is below 20\%. In general, water-use efficiency
 exhibits a threefold increase when the weather- or water-sensitive fountains are used in both
 locations.
 
 For the Indian location, the three different kinds of fountains yielded significantly different results owing to discharge
 duration and maximum discharge rate
-(Fig. \ref{fig:wue}b). The unscheduled fountain showed a maximum discharge rate more than twice that of
+(Fig. \ref{fig:wue}b). The non-scheduled fountain showed a maximum discharge rate more than twice that of
 the scheduled fountains, resulting in higher water loss; freezing events in its pipeline caused frequent
-interruptions in the unscheduled discharge rate (Fig. \ref{fig:wue}b). In contrast, mean freezing
+interruptions in the non-scheduled discharge rate (Fig. \ref{fig:wue}b). In contrast, mean freezing
 rates of the other two fountains during these events were above their median values. This is because very cold
 temperatures freeze the water inside rather than outside the fountain system, instigating such freezing events in
-the fountain pipeline. Therefore, the discharge duration of the unscheduled fountain was much lower, resulting in
+the fountain pipeline. Therefore, the discharge duration of the non-scheduled fountain was much lower, resulting in
 lower ice volume. The water-sensitive fountain underestimated the freezing rate during the construction period
 and therefore produced much lower ice volume compared with the weather-sensitive fountain.
 
