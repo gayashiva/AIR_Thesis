@@ -43,7 +43,7 @@ described below:
 	\begin{center}
 		\includegraphics[width=12 cm]{figs/pix4d.jpg}
 	\end{center}
-	\caption{Digital elevation map of Indian\ac{AIR} constructed from the drone survey on March 3, 2021. The green
+	\caption{Digital elevation map of Indian \ac{AIR} constructed from the drone survey on March 3, 2021. The green
 		area represents the area bounded by the marked perimeter, and the red area represents gaps in the point cloud
     that were filled to compute the associated volume.
 	}
@@ -63,19 +63,19 @@ point cloud density than that in the previous step (\cite{furukawaAccurateDenseR
 \cite{molgStructurefromMotionUsingHistorical2017}). Thus, the spatial resolution of the products can be
 increased, and an irregular network for the next step can be created (\cite{kungACCURACYAUTOMATICPHOTOGRAMMETRIC2011}).
 
-(3)\ac{AIR} delineation: Ice radius, area, and volume are the three final products. Perimeter is manually marked
-on the point cloud by identifying the\ac{AIR} boundary (Fig. \ref{fig:DEM}). For the Indian location, identical rock features were identified
-near the ice boundary to mark as vertices of this perimeter. For the Swiss\ac{AIR}, no such feature was available due
+(3) \ac{AIR} delineation: Ice radius, area, and volume are the three final products. Perimeter is manually marked
+on the point cloud by identifying the \ac{AIR} boundary (Fig. \ref{fig:DEM}). For the Indian location, identical rock features were identified
+near the ice boundary to mark as vertices of this perimeter. For the Swiss \ac{AIR}, no such feature was available due
 to snowfall, so instead, the perimeter was marked by identifying the ice and snow boundary.
 
 Temporal and spatial uncertainty is associated with this process. Weather conditions influence the quality
 of each drone survey to various degrees. Moreover, since ice/snow surfaces do not present many identifiable features, few
-feature points can be detected and matched in the vicinity of the\ac{AIR}. Thus, a high uncertainty of
-$\pm 10 \%$ is attached for all the\ac{AIR} observations to accommodate for this.
+feature points can be detected and matched in the vicinity of the \ac{AIR}. Thus, a high uncertainty of
+$\pm 10 \%$ is attached for all the \ac{AIR} observations to accommodate for this.
 
 \begin{table}[htb]
   \centering
-  \caption{List of all\ac{AIRs} studied in Ladakh. Adapted from \citet{mariagruberIceStupasLadakh2022}}
+  \caption{List of all \ac{AIRs} studied in Ladakh. Adapted from \citet{mariagruberIceStupasLadakh2022}.}
 	\label{tab:Ladakh_AIRs}
 	\begin{tabular}{|lllll|}
     \hline
@@ -116,12 +116,12 @@ is described below.
 \subsection{Surface area assumptions}
 
 Determination of surface area during the accumulation period is achieved by assuming a constant ice cone
-radius equal to the fountain spray radius. The surface area scales the freezing rate of the\ac{AIR}. Hence, for the
+radius equal to the fountain spray radius. The surface area scales the freezing rate of the \ac{AIR}. Hence, for the
 IVOM version, the maximum possible slope is assumed to be 1 for the ice cone. Therefore, area is estimated as:  
 
 \begin{equation} A_{cone} =\sqrt{2} \cdot \pi \cdot r_{F}^2  \end{equation}
 
-Similarly, for the water-use efficiency objective, the area of the conical\ac{AIR} is approximated to the area of
+Similarly, for the water-use efficiency objective, the area of the conical \ac{AIR} is approximated to the area of
 its circular base. Therefore, area is estimated as:
 
 \begin{equation} A_{cone} =\pi \cdot r_{F}^2  \end{equation}
@@ -136,7 +136,7 @@ q_{SW} = (1- \alpha) \cdot ( SW_{direct} \cdot f_{cone} + SW_{diffuse})
 \end{equation}
 
 where $\alpha$ is the albedo value; $SW_{direct}$ is the direct shortwave radiation; $SW_{diffuse}$ is the
-diffuse shortwave radiation, and $f_{cone}$ is the solar area fraction.
+diffuse shortwave radiation; and $f_{cone}$ is the solar area fraction.
 
 Data requirement was reduced by estimating global shortwave radiation and pressure using directly the
 location's coordinates and altitude through the solar radiation model described in
@@ -152,11 +152,11 @@ The diffuse and direct shortwave radiation are determined using the estimated gl
 \end{split}
 \end{equation}
 
-where $cld$ is the cloudiness factor. $cld$ is assumed to be 1 and 0 for the water-use efficiency and ice volume
-objective, respectively.
+where $cld$ is the cloudiness factor. $cld$ is assumed to be 1 for the water-use efficiency objective and 0 for the ice volume
+objective.
 
-The variations in the albedo are ignored, and albedo is assumed to be equal to snow albedo or ice albedo for the
-ice volume and water-use efficiency objectives, respectively.
+The variations in the albedo are ignored, and albedo is assumed to be equal to snow albedo for the
+ice volume objective to the ice albedo for the water-use efficiency objective.
 
 The solar area fraction $f_{cone}$ of the ice structure exposed to the direct shortwave radiation depends on the
 shape considered and is computed as:
@@ -182,8 +182,8 @@ Similarly, for the water-use efficiency objective, the slope of the cone is assu
 
 To determine outgoing longwave radiation, $T_{ice} = 0 \degree C$ is assumed. Constraining the minimum ice
 temperature is challenging; therefore, this assumption is maintained for both objectives. However, to
-estimate atmospheric emissivity, $cld$ is assumed to be 1 or 0 for the water-use efficiency and ice volume
-objectives, respectively.
+estimate atmospheric emissivity, $cld$ is assumed to be 1 for the water-use efficiency objective and 0 for the ice volume
+objective.
 
 \subsection{Turbulent fluxes assumptions} 
 
@@ -194,6 +194,6 @@ by \citet{oerlemansBriefCommunicationGrowth2021}, this parameter is estimated as
   \mu_{cone} =1 + s_{cone}/2
 \end{equation}
 
-Hence, the $\mu_{cone}$ parameter takes values of 1.5 or 1 for the ice volume and water-use efficiency
-objectives, respectively.  Since turbulent fluxes impact both the freezing and the melting rates, this assumption
+Hence, the $\mu_{cone}$ parameter takes the value of 1.5 for the ice volume objective and 1 for the water-use efficiency
+objective. Since turbulent fluxes impact both the freezing and the melting rates, this assumption
 may not favor the corresponding objectives for certain sites.
