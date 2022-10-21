@@ -6,52 +6,54 @@
 }{Chewang Norphel}{(Padmashree awardee, Inventor of ice terraces)}
 
 Given the importance of \ac{AIRs} in different mountainous regions, it is key to adequately understand their
-functioning and to quantify their water storage at global scale. Addressing these research questions
-calls for the use of holistic modelling frameworks in which all relevant processes are represented, including
-components of the terrestrial hydrological cycle, human water management, atmospheric processes, and climate
-change drivers, in a globally integrated way. In such coupled frameworks, interactions and feedback between
-ice surface and climate are directly modelled and represented under different scenarios and for different time
-periods, allowing the investigation of both the physical mechanisms and the spatial and temporal extents of water
+functioning and to quantify their water storage at global scale. Addressing these research questions calls for
+the use of holistic modelling frameworks in which all relevant processes are represented, including components
+of the terrestrial hydrological cycle, human water management, atmospheric processes, and climate change
+drivers, in a globally integrated way. In such coupled frameworks, interactions and feedback between ice surface
+and climate are directly modelled and represented under different scenarios and for different time periods,
+allowing the investigation of both the physical mechanisms and the spatial and temporal extents of water
 storage. To date, glacial models have provided this type of integrated framework but without accurate
-representations of \ac{AIRs}. However, with some modifications, glacial models can become ideal tools to estimate the
-meltwater quantities of \ac{AIRs} for the historical and present-day periods and for scenarios of future
-climate change. Such model-based assessments can aid future mitigation and adaptation strategies linked to \ac{AIR}
-construction and operation to assess future water scarcity and ensure future water availability in a changing
-climate.
+representations of \ac{AIRs}. However, with some modifications, glacial models can become ideal tools to
+estimate the meltwater quantities of \ac{AIRs} for the historical and present-day periods and for scenarios of
+future climate change. Such model-based assessments can aid future mitigation and adaptation strategies linked
+to \ac{AIR} construction and operation to assess future water scarcity and ensure future water availability in a
+changing climate.
 
-To achieve this, three physically based models of increasing complexity are developed in the present thesis to estimate
-AIR volume evolution. The first one, referred to as Oerlemans model (paper III), integrates a simple shape
-evolution module to demonstrate that \ac{AIR} volume estimations are possible using equations used for modelling
-glacial surfaces. The second one, referred to as \ac{AIR} model (paper I), extends this approach to calibrate the
-model parameters and validate the volume estimations it provided. The third one, referred to as COSISTUPA,
-reduces model calibration overhead while providing a user-friendly framework to update model parametrizations
-and apply the model to new construction sites. 
+To achieve this, three physically based models of increasing complexity are developed in the present thesis to
+estimate AIR volume evolution. The first one, referred to as Oerlemans model (paper III), integrates a simple
+shape evolution module to demonstrate that \ac{AIR} volume estimations are possible using equations used for
+modelling glacial surfaces. The second one, referred to as \ac{AIR} model (paper I), extends this approach to
+calibrate the model parameters and validate the volume estimations it provided. The third one, referred to as
+COSISTUPA, reduces model calibration overhead while providing a user-friendly framework to update model
+parametrizations and apply the model to new construction sites. 
 
-In this chapter, the datasets obtained across measurement campaigns in two different mountain regions (the Alps and
-the Himalayas) are presented. Description of the shape evolution and mass and energy balance modules used to assess quantity of ice, meltwater, sublimation, and wastewater are also provided herein.
-Finally, features and shortcomings of each model are compared.
+In this chapter, the datasets obtained across measurement campaigns in two different mountain regions (the Alps
+and the Himalayas) are presented. Description of the shape evolution and mass and energy balance modules used to
+assess quantity of ice, meltwater, sublimation, and wastewater are also provided herein. Finally, features and
+shortcomings of each model are compared.
 
 \section{Study sites and data}
 
-The study sites in the Alps and the Himalayas were chosen for two reasons. First, they enable a
-comparative study between locations with considerable differences in meteorological characteristics. Second,
-these locations do not present significant logistical hurdles, since both selected sites have dedicated
-teams for construction and measurement campaigns.
+The study sites in the Alps and the Himalayas were chosen for two reasons. First, they enable a comparative
+study between locations with considerable differences in meteorological characteristics. Second, these locations
+do not present significant logistical hurdles, since both selected sites have dedicated teams for construction
+and measurement campaigns.
 
-The study period starts when the fountain is first switched on (start date) and ends when the respective \ac{AIR}
-either melts or brakes into several ice blocks (expiry date). Each \ac{AIR} dataset was abbreviated based on the
-construction strategy used, prefix of the country code, and suffix of the year of its expiry date
-(Table \ref{tab:AIRs}). The construction strategies are distinguished based on whether they use fountain scheduling
-strategies or not to regulate water supply. Fountain scheduling was set with a control valve that was automated
-with optimal discharge rates computed using real-time meteorological input and location metadata. Those using fountain scheduling were
-code named "automated", whereas the rest were code named "manual". All except one construction campaign used
-manual construction strategies. Therefore, manual \ac{AIRs} are referred to without explicitly
-specifying their construction strategy.
+The study period starts when the fountain is first switched on (start date) and ends when the respective
+\ac{AIR} either melts or brakes into several ice blocks (expiry date). Each \ac{AIR} dataset was abbreviated
+based on the construction strategy used, prefix of the country code, and suffix of the year of its expiry date
+(Table \ref{tab:AIRs}). The construction strategies are distinguished based on whether they use fountain
+scheduling strategies or not to regulate water supply. Fountain scheduling was set with a control valve that was
+automated with optimal discharge rates computed using real-time meteorological input and location metadata.
+Those using fountain scheduling were code named "automated", whereas the rest were code named "manual". All
+except one construction campaign used manual construction strategies. Therefore, manual \ac{AIRs} are referred
+to without explicitly specifying their construction strategy.
 
-In total, 23 \ac{AIRs} were studied in these two regions across four winters. However, complete meteorological, water, and volume measurements were available for only four \ac{AIRs} located in
-Guttannen, Switzerland and one in Gangles, India. Therefore,
-only these \ac{AIR} datasets are used in the following analysis. The rest \ac{AIR} datasets are described in the
-Appendix table \ref{tab:Ladakh_AIRs} and are used in later chapters for qualitative analysis.
+In total, 23 \ac{AIRs} were studied in these two regions across four winters. However, complete meteorological,
+water, and volume measurements were available for only four \ac{AIRs} located in Guttannen, Switzerland and one
+in Gangles, India. Therefore, only these \ac{AIR} datasets are used in the following analysis. The rest \ac{AIR}
+datasets are described in the Appendix table \ref{tab:Ladakh_AIRs} and are used in later chapters for
+qualitative analysis.
 
 \begin{figure}[htb]
 	\centering
@@ -63,31 +65,31 @@ Appendix table \ref{tab:Ladakh_AIRs} and are used in later chapters for qualitat
 
 \subsection{Swiss site}
 
-The Guttannen site (46.66 $\degree$N, 8.29 $\degree$E) is situated in the Berne region, Switzerland and presents an
-altitude of 1047 $m$ a.s.l. In the winter (Oct–Apr), mean daily minimum and maximum air temperatures vary
+The Guttannen site (46.66 $\degree$N, 8.29 $\degree$E) is situated in the Berne region, Switzerland and presents
+an altitude of 1047 $m$ a.s.l. In the winter (Oct–Apr), mean daily minimum and maximum air temperatures vary
 between $-13$ and 15 $\degree C$. Clear skies are rare, averaging around 7 days during winter. Daily winter
 precipitation can sometimes be as high as 100 $mm$. These values are based on 30 years of hourly historical
-meteorological data series \citep{meteoblueClimateGuttannen2021}. Several \ac{AIRs} were constructed by the Guttannen
-Bewegt Association, the University of Fribourg, and the Lucerne University of Applied Sciences and Arts during
-the winters of 2020–22.
+meteorological data series \citep{meteoblueClimateGuttannen2021}. Several \ac{AIRs} were constructed by the
+Guttannen Bewegt Association, the University of Fribourg, and the Lucerne University of Applied Sciences and
+Arts during the winters of 2020–22.
 
 \subsection{Indian site}
 
 The Gangles site (34.22 $\degree$N, 77.61 $\degree$E) is located around 20 km north of Leh city in the Ladakh
 region, lying at 4025 $m$ a.s.l.. The mean annual temperature is $5.6 \, \degree C$, and the thermal range is
 characterized by high seasonal variation. During January, the coldest month, the mean temperature drops to $-7.2
-	\, \degree C$. During August, the warmest month, the mean temperature rises to $17.5 \, \degree C$
+\, \degree C$. During August, the warmest month, the mean temperature rises to $17.5 \, \degree C$
 \citep{nusserIrrigationDevelopmentUpper2012}. Because of the rain shadow effect of the Himalayan range, the mean
 annual precipitation in Leh totals less than 100 $mm$, and there is high interannual variability. While the
 average summer rainfall between July and September reaches 37.5 $mm$, the average winter precipitation between
-January and March amounts to 27.3 $ mm$ and falls almost entirely as snow. \ac{AIRs} were constructed here by the
-Himalayan Institute of Alternatives, Ladakh during the winter of 2020/21.
+January and March amounts to 27.3 $ mm$ and falls almost entirely as snow. \ac{AIRs} were constructed here by
+the Himalayan Institute of Alternatives, Ladakh during the winter of 2020/21.
 
 \subsection{Meteorological data}
 
 Air temperature, relative humidity, wind speed, pressure, longwave, and global shortwave radiation are required
-as model input. The resulting dataset highlights the difference in meteorological influences driving ice
-volume evolution in the two study sites (Table \ref{tab:Observations}).
+as model input. The resulting dataset highlights the difference in meteorological influences driving ice volume
+evolution in the two study sites (Table \ref{tab:Observations}).
 
 \begin{table}
 	\centering
