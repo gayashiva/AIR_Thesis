@@ -103,7 +103,7 @@ volume evolution in the two study sites (Table \ref{tab:Observations}).
 		Relative humidity    & $RH     $       & $35 \pm 20$   & $79 \pm 18$   & \%             \\
 		Wind speed           & $v_a        $   & $3 \pm 1$     & $2 \pm 2$     & $m/s$          \\
 		Global shortwave     & $SW_{global} $  & $246 \pm 333$ & $138 \pm 243$  & $W\,m^{-2}$    \\
-		Hourly precipitation & $ppt        $   & $0 \pm 0$     & $139 \pm 457$ & $mm$           \\
+		Precipitation        & $ppt        $   & $0 \pm 0$     & $139 \pm 457$ & $mm$           \\
 		Pressure             & $p_a         $  & $623 \pm 3$   & $794 \pm 9$   & $hPa$          \\\hline
 	\end{tabular}
 \end{table}
@@ -590,7 +590,7 @@ during \ac{AIR} construction. Also, the model uses a simplistic shape evolution 
 shape variables on fountain characteristics. These shortcomings made it necessary to extend the Oerlemans
 model further.
 
-\subsection{\ac{AIR} model}
+\subsection{AIR model}
 
 The \ac{AIR} model was designed to obtain better validation with measured ice stupa volumes than that the Oerlemans model could offer. To do this, the model incorporates all mass and energy balance modules described in Section
 \ref{sec:modules} and simulates \ac{AIR} evolution using data from field measurements in Gangles, India and
@@ -602,7 +602,7 @@ and an \ac{RMSE} less than 18\% of the maximum ice volume for the three \ac{AIRs
 provided through a git repository for nonprofit purposes (\url{https://github.com/gayashiva/air_model}, last
 access: August 1, 2022). However, the model is not expected to perform well for locations where it has not been calibrated in advance. Specifically, the surface layer thickness parameter requires prior calibration for better model performance.
 
-\subsection{COSISTUPA: COSIPY + \ac{AIR} model}
+\subsection{COSISTUPA: COSIPY + AIR model}
 \label{sec:Cosistupa}
 
 To reduce the calibration requirements for the \ac{AIR} model, this was combined with the COupled
@@ -687,7 +687,7 @@ The COSISTUPA model is considered to be the best one among the three models for 
 	\item \textbf{Better validation}: COSISTUPA, being derived from COSIPY, is expected to validate better
 	      since the core parametrizations are unchanged and have been extensively validated within other studies \citep{arndtAtmosphereDrivenMassBalance2021}.
 
-	\item \textbf{Future support}: COSISTUPA is expected to be extensively supported in the future through by COSIPY
+	\item \textbf{Future support}: COSISTUPA is expected to be extensively supported in the future by the COSIPY
 	      community.
 
 \end{itemize}
