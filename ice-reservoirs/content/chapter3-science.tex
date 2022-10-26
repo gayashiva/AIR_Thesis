@@ -29,7 +29,7 @@ parametrizations and apply the model to new construction sites.
 
 In this chapter, the datasets obtained across measurement campaigns in two different mountain regions (the Alps
 and the Himalayas) are presented. Description of the shape evolution and mass and energy balance modules used to
-assess quantity of ice, meltwater, sublimation, and wastewater are also provided herein. Finally, features and
+assess quantity of ice, meltwater, sublimation, and spillwater are also provided herein. Finally, features and
 shortcomings of each model are compared.
 
 \section{Study sites and data}
@@ -158,8 +158,11 @@ conducted for each \Ac{AIR} and the corresponding spray radius observed are pres
 
 \subsection{Ground penetrating radar measurements}
 
-\ac{GPR} surveys were conducted on four ice stupas in March, 2020 (Fig. \ref{fig:gpr_survey}). Details of these
-surveys and the methodology used to produce the corresponding outputs are explained in Appendix \ref{sec:gpr}. 
+\ac{GPR} surveys were conducted on four ice stupas in March, 2020. The surveys were conducted using a portable
+\ac{GPR}, with a frequency of 400 $MHz$, which was towed with the help of ropes over profiles marked on the ice
+stupa (Fig. \ref{fig:gpr_survey}). The profiles generated from these surveys were analyzed to document the
+volume of the ice structures. Further details of these surveys and the methodology used to produce the
+corresponding outputs are explained in \citet{balasubramanian_suryanarayanan_2022_7056646}.
 
 \begin{figure}[htb]
   \centering
@@ -174,8 +177,8 @@ surveys and the methodology used to produce the corresponding outputs are explai
 \label{sec:modules}
 
 A bulk energy and mass balance model is used to calculate the amounts of ice, meltwater, water vapor, and
-wastewater of the \ac{AIR}. In each hourly time step, the model uses the \ac{AIR} surface area, energy, and mass balance
-calculations to estimate its ice volume, surface temperature, and wastewater, as shown in Fig. \ref{fig:schema}.
+spillwater of the \ac{AIR}. In each hourly time step, the model uses the \ac{AIR} surface area, energy, and mass balance
+calculations to estimate its ice volume, surface temperature, and spillwater, as shown in Fig. \ref{fig:schema}.
 
 \begin{figure}
 	\begin{center}
@@ -513,16 +516,18 @@ The mass balance equation for an \ac{AIR} is represented as:
 	\label{eq:MB}
 \end{equation}
 
-where $M_{F}$ is the cumulative mass of the fountain discharge; $M_{ppt}$ is the cumulative precipitation; $M_{dep}$ is the cumulative
-accumulation through water vapor deposition; $M_{ice}$ is the cumulative mass of ice; $M_{water}$ is the cumulative
-mass of meltwater; $M_{sub}$ represents the cumulative water vapor loss by sublimation; and $M_{waste}$ represents the
-fountain wastewater that did not interact with the \ac{AIR}. The left hand side of the equation \ref{eq:MB} represents the rate of
-mass input, and the right hand side represents the rate of mass output for an \ac{AIR}.
+where $M_{F}$ is the cumulative mass of the fountain discharge; $M_{ppt}$ is the cumulative precipitation;
+$M_{dep}$ is the cumulative accumulation through water vapor deposition; $M_{ice}$ is the cumulative mass of
+ice; $M_{water}$ is the cumulative mass of meltwater; $M_{sub}$ represents the cumulative water vapor loss by
+sublimation; and $M_{waste}$ represents the fountain spillwater that did not interact with the \ac{AIR}. The
+left hand side of the equation \ref{eq:MB} represents the rate of mass input, and the right hand side represents
+the rate of mass output for an \ac{AIR}.
 
-Precipitation input is calculated as shown in equation \ref{eq:ppt}, where $\rho_{w}$ is the density of water (1000
-$kg\,m^{-3}$), $\Delta ppt/ \Delta t$ is the measured precipitation rate in [$m\,s^{-1}$], and $T_{ppt}$ is the temperature threshold
-below which precipitation falls as snow. In the present work, snowfall events are identified using $T_{ppt}$ as $1 \degree C$. Snow
-mass input is calculated by assuming a uniform deposition over the entire circular footprint of the \ac{AIR}.
+Precipitation input is calculated as shown in equation \ref{eq:ppt}, where $\rho_{w}$ is the density of water
+(1000 $kg\,m^{-3}$), $\Delta ppt/ \Delta t$ is the measured precipitation rate in [$m\,s^{-1}$], and $T_{ppt}$
+is the temperature threshold below which precipitation falls as snow. In the present work, snowfall events are
+identified using $T_{ppt}$ as $1 \degree C$. Snow mass input is calculated by assuming a uniform deposition over
+the entire circular footprint of the \ac{AIR}.
 
 The latent heat flux is used to estimate either evaporation and condensation processes or sublimation and
 deposition processes, as shown in equation \ref{eq:vap}. During the time steps at which the surface temperature
@@ -534,7 +539,7 @@ evaporation (condensation) is calculated.
 
 Since every time step is categorized as a freezing or melting event, the melting/freezing rates and the
 corresponding meltwater/ice quantities can be determined as shown in equations \ref{eq:m_freeze/melt},
-\ref{eq:mwat}, and \ref{eq:mcone}. Having calculated all other mass components, the fountain wastewater generated
+\ref{eq:mwat}, and \ref{eq:mcone}. Having calculated all other mass components, the fountain spillwater generated
 every time step can be calculated using Eqn. \ref{eq:MB}.
 
 \begin{subequations}
@@ -607,24 +612,28 @@ model further.
 
 \subsection{AIR model}
 
-The \ac{AIR} model was designed to obtain better validation with measured ice stupa volumes than that the Oerlemans model could offer. To do this, the model incorporates all mass and energy balance modules described in Section
-\ref{sec:modules} and simulates \ac{AIR} evolution using data from field measurements in Gangles, India and
-Guttannen, Switzerland. The model was calibrated and validated with ice volume and surface area observations
-obtained via drone surveys. The freezing and melting rates for each \ac{AIR} were calculated, and
-their corresponding magnitudes in terms of influence of the chosen location and the fountain used were explained.
-The model was successful in reproducing the observed ice volume evolution with a correlation greater than 0.96
-and an \ac{RMSE} less than 18\% of the maximum ice volume for the three \ac{AIRs} (paper I). The \ac{AIR} model is freely
-provided through a git repository for nonprofit purposes (\url{https://github.com/gayashiva/air_model}, last
-access: August 1, 2022). However, the model is not expected to perform well for locations where it has not been calibrated in advance. Specifically, the surface layer thickness parameter requires prior calibration for better model performance.
+The \ac{AIR} model was designed to obtain better validation with measured ice stupa volumes than that the
+Oerlemans model could offer. To do this, the model incorporates all mass and energy balance modules described in
+Section \ref{sec:modules} and simulates \ac{AIR} evolution using data from field measurements in Gangles, India
+and Guttannen, Switzerland. The model was calibrated and validated with ice volume and surface area observations
+obtained via drone and \ac{GPR} surveys (Fig. \ref{fig:Cosistupa}). The freezing and melting rates for each
+\ac{AIR} were calculated, and their corresponding magnitudes in terms of influence of the chosen location and
+the fountain used were explained. The model was successful in reproducing the observed ice volume evolution with
+a correlation greater than 0.96 and an \ac{RMSE} less than 18\% of the maximum ice volume for the three
+\ac{AIRs} (paper I). The \ac{AIR} model is freely provided through a git repository for nonprofit purposes
+(\url{https://github.com/gayashiva/air_model}, last access: August 1, 2022). However, the model is not expected
+to perform well for locations where it has not been calibrated in advance. Specifically, the surface layer
+thickness parameter requires prior calibration for better model performance.
 
 \subsection{COSISTUPA: COSIPY + AIR model}
 \label{sec:Cosistupa}
 
-To reduce the calibration requirements for the \ac{AIR} model, this was combined with the COupled
-Snowpack and Ice surface energy and mass balance model in PYthon (COSIPY). COSIPY is typically used to
-model distributed snow and glacier mass changes \citep{sauterCOSIPYV1Opensource2020}. However, it presents a
-flexible, user-friendly, and modular framework, making it an ideal platform to implement the alternate
-modules required for modelling ice reservoirs. This modified COSIPY model is henceforth referred to as the COSISTUPA model. The COSISTUPA model is freely provided through a git repository for nonprofit purposes
+To reduce the calibration requirements for the \ac{AIR} model, this was combined with the COupled Snowpack and
+Ice surface energy and mass balance model in PYthon (COSIPY). COSIPY is typically used to model distributed snow
+and glacier mass changes \citep{sauterCOSIPYV1Opensource2020}. However, it presents a flexible, user-friendly,
+and modular framework, making it an ideal platform to implement the alternate modules required for modelling ice
+reservoirs. This modified COSIPY model is henceforth referred to as the COSISTUPA model. The COSISTUPA model is
+freely provided through a git repository for nonprofit purposes
 (\url{https://github.com/cryotools/cosipy/tree/cosistupa}, last access: August 1, 2022). 
 
 
@@ -682,7 +691,8 @@ This is likely due to the additional effort required to resolve density and temp
 	\centering
 	\includegraphics[width=\textwidth]{figs/model_compare.jpg}
 
-	\caption{Comparison of volume estimates generated from the \ac{AIR} and COSISTUPA models.}
+	\caption{Comparison of volume estimates generated from the \ac{AIR} and COSISTUPA models. The validation
+  dataset derived from drone and \ac{GPR} surveys are represented as dots.}
 
 	\label{fig:Cosistupa}
 \end{figure}

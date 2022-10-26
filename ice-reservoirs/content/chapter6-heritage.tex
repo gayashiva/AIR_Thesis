@@ -87,73 +87,61 @@ and spatial biases due to the following subjective choices:
 
 \end{itemize}
 
-Thus, the quality of volume validation is limited by the high uncertainties of the drone processing
-methodology. This limitation can be overcome by extending the model validation set using two measurement
-approaches. First, measuring daily \ac{AIR} meltwater quantities; accuracy of this validation method
-depends on the wind speeds of the location but can be improved if the terrain is made waterproof and oriented so
-that most of the \ac{AIR} runoff can be collected. 
+Thus, the quality of volume validation is limited by the high uncertainties of the drone processing methodology.
+This limitation can be overcome by extending the model validation set using two measurement approaches. First,
+measuring daily \ac{AIR} meltwater quantities; accuracy of this validation method depends on the wind speeds of
+the location but can be improved if the terrain is made waterproof and oriented so that most of the \ac{AIR}
+runoff can be collected. Second, analyzing \ac{GPR} surveys further; \ac{GPR} is sensitive to subtle changes in
+the properties of ice layers, making it a powerful tool to image the internal structure of ice structures. The
+basic principle of a pulsed \ac{GPR} system is to send an electromagnetic signal into the ground and to record
+the signal reflections as a function of their two-way travel time. Partial reflections of the electromagnetic
+wave recorded as internal reflection horizons (IRH) occur at vertical discontinuities in the dielectric
+material. From polar studies, IRH are known to coincide with variations in density and liquid water content
+\citep{forster2014extensive}.  Although \ac{GPR} surveys were conducted on the IN21 AIR, the corresponding
+datasets \citep{balasubramanian_suryanarayanan_2022_7056646} can be further used to study internal density
+variations.
 
-% Second, conducting \ac{GPR} surveys; \ac{GPR} is
-% sensitive to subtle changes in the properties of ice layers, making it a powerful tool to image the internal
-% structure of ice structures. The basic principle of a pulsed \ac{GPR} system is to send an electromagnetic
-% signal into the ground and to record the signal reflections as a function of their two-way travel time. Partial
-% reflections of the electromagnetic wave recorded as internal reflection horizons (IRH) occur at vertical
-% discontinuities in the dielectric material. From polar studies, IRH are known to coincide with variations in
-% density and liquid water content \citep{forster2014extensive}. Therefore, \ac{GPR} can be a crucial method to
-% calibrate and validate spatial density and volume variations of \ac{AIRs}.
-%
-%
-% \begin{figure}[htb]
-%   \centering
-% 	\includegraphics[width=8 cm]{figs/gpr_survey}
-%   \caption{Portable \ac{GPR}s carried across the surface of \ac{AIRs} to produce the associated datasets.
-%     (Photo: Shijay Projects).}
-% 	\label{fig:gpr_survey}
-% \end{figure}
-%
-% Although \ac{GPR} surveys were conducted on four ice stupas in March, 2020 (Fig. \ref{fig:gpr_survey}),
-% these datasets remain unused. They can be downloaded at \citet{balasubramanian_suryanarayanan_2022_7056646}.
+% Therefore, \ac{GPR} can be a crucial method to calibrate and validate spatial
+% density and volume variations of \ac{AIRs}.
 
 \subsubsection{Albedo parametrization}
 
 The albedo parametrization illustrated by equation \ref{eqn:alb} had to be modified to accomodate fountain
 discharge events. Little knowledge is available to understand the decay of albedo due to such events. Therefore,
 a simplistic approach of increasing the decay rate by a constant factor was chosen. However, the value of this
-factor has no basis on measurements. Field-based albedo measurements are required to better
-parametrize the effect of water spray on the surface albedo decay rate.
+factor has no basis on measurements. Field-based albedo measurements are required to better parametrize the
+effect of water spray on the surface albedo decay rate.
 
 \subsubsection{Turbulent heat flux parametrization}
 
 The method used to calculate turbulent heat fluxes by \citet{garrattAtmosphericBoundaryLayer1992} assumes that
 these fluxes act over a uniform planar surface. This leads to the use of a exposure/roughness parameter
-$\mu_{cone}$ as a correction factor. However, equation \ref{eqn:mu} about $\mu_{cone}$ is just an
-educated guess. To base estimates of this parameter on information in literature is difficult. Many studies
-have been performed on the effects of obstacles on atmospheric boundary layer flow (e.g., trees), but always in
-an ensemble setting, focusing on the bulk effect of an ensemble of obstacles. In this thesis, the case is that of a single
-obstacle in open terrain, and the roughness of the surface and the exposure are likely to lead to
-larger turbulent fluxes.
+$\mu_{cone}$ as a correction factor. However, equation \ref{eqn:mu} about $\mu_{cone}$ is just an educated
+guess. To base estimates of this parameter on information in literature is difficult. Many studies have been
+performed on the effects of obstacles on atmospheric boundary layer flow (e.g., trees), but always in an
+ensemble setting, focusing on the bulk effect of an ensemble of obstacles. In this thesis, the case is that of a
+single obstacle in open terrain, and the roughness of the surface and the exposure are likely to lead to larger
+turbulent fluxes.
 
 \subsubsection{Spray radius quantification}
 
-All models require the fountain spray radius as input. This is a significant limitation, since
-these models are very sensitive to the spray radius parameter. Moreover, spray radius is not only determined by
-fountain characteristics but also by wind-driven redistribution, refreezing, and melting events across
-the \ac{AIR} perimeter. The same fountain was observed to produce different spray radius values corresponding to different
+All models require the fountain spray radius as input. This is a significant limitation, since these models are
+very sensitive to the spray radius parameter. Moreover, spray radius is not only determined by fountain
+characteristics but also by wind-driven redistribution, refreezing, and melting events across the \ac{AIR}
+perimeter. The same fountain was observed to produce different spray radius values corresponding to different
 winters for the Swiss experiments. Further discussion on this can be found in Section \ref{sec:interannual}.
 
 \subsubsection{Quantification and development of ice terraces}
 
 Although this thesis focuses on ice stupas, their ice volumes pale in comparison with ice terraces
 \citep{nusserSociohydrologyArtificialGlaciers2019}. This is because ice stupas are limited by their fountain's
-spray radius. Ice terraces have no such limitations. Their thickness is only limited by the water
-supply rate or meteorological conditions, and they can occupy any construction area provided. However, ice stupas
-are the preferred method for ice harvesting due to their longer survival duration, reduced construction cost and
-effort.
+spray radius. Ice terraces have no such limitations. Their thickness is only limited by the water supply rate or
+meteorological conditions, and they can occupy any construction area provided. However, ice stupas are the
+preferred method for ice harvesting due to their longer survival duration, reduced construction cost and effort.
 
 With a suitable redesign of the automation hardware, automated construction strategies can also be applied to
 ice terraces. Such a construction strategy can potentially compound their size every consecutive winter with
-minimal maintenance requirements. Therefore, future research should aim to answer the following
-questions:
+minimal maintenance requirements. Therefore, future research should aim to answer the following questions:
 
 \begin{itemize}
 
@@ -178,16 +166,20 @@ catchment in Peru \citep{motschmannLossesDamagesConnected2020}. Similarly, in th
 glacial ice reserves have shrunk by more than 18\% in the past 16 years, leading to a decline in crop
 productivity \citep{sohebSpatiotemporalQuantificationKey2022}.
 
-\ac{AIRs} can already buffer from low-flow water risks in certain catchments. For example, some ice terraces in Ladakh have been measured with areas up to 19\%
-of the Stok glacier (0.8 $km^2$) \citet{nusserSociohydrologyArtificialGlaciers2019}. With further technology development, \ac{AIRs} can also be used to mitigate high-flow water risks. The glacial lakes of the Andes and the Himalayas can be siphoned to form \ac{AIRs} at scales that can last
-perpetually. Such \ac{AIRs} can compound over the years and become another source of perennial water supply for the
-respective catchments.
+\ac{AIRs} can already buffer from low-flow water risks in certain catchments. For example, some ice terraces in
+Ladakh have been measured with areas up to 19\% of the Stok glacier (0.8 $km^2$)
+\citet{nusserSociohydrologyArtificialGlaciers2019}. With further technology development, \ac{AIRs} can also be
+used to mitigate high-flow water risks. The glacial lakes of the Andes and the Himalayas can be siphoned to form
+\ac{AIRs} at scales that can last perpetually. Such \ac{AIRs} can compound over the years and become another
+source of perennial water supply for the respective catchments.
 
 \subsection{To improve hardware tools}
 
-The \textit{Technology} chapter shows one strategy that can improve the water-use efficiency of \ac{AIRs}. This strategy was chosen because it enables the use of the \ac{AIR} model in a simple and effective manner. However, all these
-construction strategies are limited by the tools they use, namely the fountain and the pipeline. From a scientific point of view,
-the methodology is not suitable to quantify and optimize these hardware tools. This is discussed below, and some recommended methodologies for improvement are provided:
+The \textit{Technology} chapter shows one strategy that can improve the water-use efficiency of \ac{AIRs}. This
+strategy was chosen because it enables the use of the \ac{AIR} model in a simple and effective manner. However,
+all these construction strategies are limited by the tools they use, namely the fountain and the pipeline. From
+a scientific point of view, the methodology is not suitable to quantify and optimize these hardware tools. This
+is discussed below, and some recommended methodologies for improvement are provided:
 
 \subsubsection{Fountain optimization}
 
@@ -196,11 +188,11 @@ height, aperture diameter, discharge rate, water temperature, and spray radius w
 trajectories of the water droplets. The fountain nozzle design is crucial for increasing the ice volume
 obtained. It determines the diameter of the water droplets and the angle of launch for their projectile motion.
 The choice of these two parameters determines the rate of the nucleation process, pressure losses, and discharge
-rate ranges. For example, during the IN21 experiment, snow formation was observed, indicating the potential of the fountain
-water droplets to freeze before deposition on the \ac{AIR} surface. In the CH22 experiment, the
+rate ranges. For example, during the IN21 experiment, snow formation was observed, indicating the potential of
+the fountain water droplets to freeze before deposition on the \ac{AIR} surface. In the CH22 experiment, the
 higher aperture diameter of the nonscheduled fountain nozzle (Fig. \ref{fig:autovsman}) produced bigger droplets
-and, therefore, had a lower fountain pressure loss compared with the scheduled fountain. However, fountains
-with large aperture diameters lose their ability to form water droplets at low discharge rates. Therefore, the
+and, therefore, had a lower fountain pressure loss compared with the scheduled fountain. However, fountains with
+large aperture diameters lose their ability to form water droplets at low discharge rates. Therefore, the
 scheduled fountain nozzle design was used, since it was able to produce water droplets with discharge rates as
 low as 2 $l/min$.
 
@@ -223,22 +215,23 @@ design of the insulated pipeline system.
 
 \subsubsection{Cost reduction of automation system}
 
-The strategy presented in this thesis is not yet suitable for application in current \ac{AIR} construction sites due to the cost of the
-automation system (around 8000 USD). However, an up to 10-fold cost reduction can be possible through
-simpler automation systems that control only the duration of fountain spray, not their quantity. 
+The strategy presented in this thesis is not yet suitable for application in current \ac{AIR} construction sites
+due to the cost of the automation system (around 8000 USD). However, an up to 10-fold cost reduction can be
+possible through simpler automation systems that control only the duration of fountain spray, not their
+quantity. 
 
 \subsection{To improve site selection and operation of AIRs }
 
-Farmers in \ac{HMA} have been improving ice harvesting technologies for generations, as documented in
-the \textit{Religion} chapter. But these technologies can also be leveraged by farmers in many other regions. In
-the absence of an objective global-scale estimation of \ac{AIR} water storage, we propose some subjective guidelines
+Farmers in \ac{HMA} have been improving ice harvesting technologies for generations, as documented in the
+\textit{Religion} chapter. But these technologies can also be leveraged by farmers in many other regions. In the
+absence of an objective global-scale estimation of \ac{AIR} water storage, we propose some subjective guidelines
 that can help narrow down favorable construction sites.
 
 \subsubsection{Metrics to judge site suitability}
 
-Two sets of guidelines are proposed in this thesis to identify future construction sites at regional and local scale. These
-suggestions are guided by the different case studies presented in this thesis and field experiences in
-Ladakh over the past six winters.
+Two sets of guidelines are proposed in this thesis to identify future construction sites at regional and local
+scale. These suggestions are guided by the different case studies presented in this thesis and field experiences
+in Ladakh over the past six winters.
 
 \textbf{Regional scale}
 
@@ -288,13 +281,13 @@ line). }
 
 \textbf{Present scenario}
 
-In the present scenario, only two fountains could be operated simultaneously using the available water
-supply, limiting the construction period of each ice stupa to 2 months. Moreover, pipelines froze
-inside with ice blocks every few nights (Fig. \ref{fig:issues}). This resulted in two farmers spending over 2 months removing ice blocks and, at least, 1000 USD repairing the fountain pipeline system to build
-four ice stupas. Assuming each ice stupa maximum volume to be similar to the one measured in Gangles (paper I:
-Table 5), total ice volumes frozen in this valley are expected to be around 3 million $l$. This amounts to
-a median irrigation water supply of around 44,000 $l$ from mid-April to mid-June (based on measurements
-shown in Section \ref{sec:icestupa_irr}).
+In the present scenario, only two fountains could be operated simultaneously using the available water supply,
+limiting the construction period of each ice stupa to 2 months. Moreover, pipelines froze inside with ice blocks
+every few nights (Fig. \ref{fig:issues}). This resulted in two farmers spending over 2 months removing ice
+blocks and, at least, 1000 USD repairing the fountain pipeline system to build four ice stupas. Assuming each
+ice stupa maximum volume to be similar to the one measured in Gangles (paper I: Table 5), total ice volumes
+frozen in this valley are expected to be around 3 million $l$. This amounts to a median irrigation water supply
+of around 44,000 $l$ from mid-April to mid-June (based on measurements shown in Section \ref{sec:icestupa_irr}).
 
 \begin{figure}[htb]
 	\includegraphics[width=\textwidth]{figs/construction_issues}
