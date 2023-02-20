@@ -16,6 +16,7 @@
 example-thesis/cleanthesis.sty
 ice-reservoirs/air-thesis.pdf
 misc/*
+reviews/*
 dist
 *.out.ps
 *.dvi
